@@ -197,6 +197,7 @@
   if (!viewer || !sets.length) return;
 
   var image = viewer.querySelector('.viewer__image');
+  var caption = viewer.querySelector('.viewer__caption');
   var count = viewer.querySelector('.viewer__count');
   var closeBtn = viewer.querySelector('.viewer__close');
   var prevBtn = viewer.querySelector('.viewer__nav--prev');
@@ -212,7 +213,16 @@
         return all.findIndex(function (x) { return x.dataset.photo === b.dataset.photo; }) === i;
       })
       .sort(function (a, b) { return a.dataset.photo - b.dataset.photo; })
-      .map(function (b) { return b.querySelector('img').getAttribute('src'); });
+      .map(function (b) {
+        var img = b.querySelector('img');
+        var figure = b.closest('figure');
+        var note = figure && figure.querySelector('figcaption');
+        return {
+          src: img.getAttribute('src'),
+          alt: img.alt,
+          caption: note ? note.textContent.trim().replace(/\s+/g, ' ') : ''
+        };
+      });
   }
 
   var sources = [];
@@ -220,10 +230,13 @@
   var opener = null;
 
   function show(i) {
-    current = (i + sources.length) % sources.length;
-    image.src = sources[current];
-    image.alt = 'Photograph ' + (current + 1) + ' of ' + sources.length;
+    current = Math.max(0, Math.min(i, sources.length - 1));
+    image.src = sources[current].src;
+    image.alt = sources[current].alt || 'Photograph ' + (current + 1) + ' of ' + sources.length;
+    caption.textContent = sources[current].caption;
     count.textContent = (current + 1) + ' / ' + sources.length;
+    prevBtn.disabled = current === 0;
+    nextBtn.disabled = current === sources.length - 1;
   }
 
   function open(list, i, from) {
@@ -239,6 +252,7 @@
     viewer.hidden = true;
     document.body.style.overflow = '';
     image.src = '';
+    caption.textContent = '';
     if (opener) opener.focus();
     opener = null;
   }
@@ -265,7 +279,7 @@
     if (e.key === 'ArrowRight') { show(current + 1); return; }
     if (e.key !== 'Tab') return;
     // keep the keyboard inside the dialog while it is open
-    var stops = [closeBtn, prevBtn, nextBtn];
+    var stops = [closeBtn, prevBtn, nextBtn].filter(function (button) { return !button.disabled; });
     var at = stops.indexOf(document.activeElement);
     e.preventDefault();
     stops[(at + (e.shiftKey ? stops.length - 1 : 1)) % stops.length].focus();

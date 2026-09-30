@@ -23,6 +23,7 @@
 
   --gutter:         min(40px, 5vw);               /* 40px in both references   */
   --header-h:       84px;
+  --logo-h:         38px;
 
   /* hero rhythm, kept proportional to the 1920 reference */
   --hero-top:       clamp(34px, 3.28vw, 74px);    /* header bottom -> H1 top   */
@@ -76,7 +77,7 @@ body{
   font-synthesis-weight:none;
   -webkit-font-smoothing:antialiased;
   text-rendering:optimizeLegibility;
-  overflow-x:hidden;
+  overflow-x:clip;
 }
 
 img{ display:block; max-width:100%; }
@@ -186,7 +187,7 @@ body > main{
   aspect-ratio:116.25 / 51.28;
   display:block;
   width:auto;
-  height:38px;                 /* 86 x 38 in reference_01 */
+  height:var(--logo-h);       /* 86 x 38 in reference_01 */
 }
 
 .site-nav{
@@ -294,22 +295,13 @@ body > main{
 .hero__title{
   margin:0;
   clip-path:inset(-.3em -.08em 0 -.08em);
-  max-width:22em;              /* the only thing deciding where the line
-                                  breaks. In em, so it scales with the type:
-                                  the first clause measures ~18em and the whole
-                                  sentence ~30em, so 22em always fits the one
-                                  and never both — in any face, at any width */
+  max-width:21em;
   text-wrap:pretty;
   font-size:var(--h1-fs);
   line-height:var(--h1-lh);
   font-weight:500;
   letter-spacing:-.022em;
 }
-
-/* Kept whole so it travels to the next line as one clause instead of
-   splitting mid-phrase. Not a forced break: given a wider block both clauses
-   would sit on one line — the block's max-width is what decides. */
-.hero__title-clause{ white-space:nowrap; }
 
 /* The headline rises into view from behind its own clipping window.
    clip-path masks without adding to the line box, so the block stays exactly
@@ -526,13 +518,11 @@ body > main{
 @media (max-width:1150px){
   :root{ --header-h:72px; }
 
-  .hero__title{ max-width:none; font-size:clamp(28px, 7.4vw, 46px); }
+  .hero__title{ max-width:16em; font-size:clamp(28px, 7.4vw, 46px); }
   .hero__head{ grid-template-columns:1fr; row-gap:26px; }
   .hero__title,
   .hero__aside{ grid-column:1 / -1; }
   .hero__aside{ padding-left:0; }
-  .hero__title{ max-width:none; }
-  .hero__title-clause{ white-space:normal; }
   .hero__aside{ display:block; padding-top:0; max-width:48ch; }
   .hero__lede{ font-size:15px; line-height:1.5; }
   .link-underline{ font-size:12px; }
@@ -591,10 +581,7 @@ body > main{
 
 .section-title{
   margin:0;
-  max-width:19em;              /* a shorter measure than the column allows,
-                                  so the heading sets in three tighter lines */
-  text-indent:2.5em;           /* the first line starts indented, as in the
-                                  reference */
+  max-width:var(--section-copy-width, calc(35 * var(--lede-fs)));
   font-size:var(--sec-fs);
   line-height:var(--sec-lh);
   font-weight:500;
@@ -603,9 +590,7 @@ body > main{
 
 .section-text{
   margin:var(--gap-title-text) 0 0;
-  max-width:35em;                         /* in em, so it holds the reference's
-                                             ratio (copy ~76% of the heading's
-                                             measure) at every size */
+  max-width:var(--section-copy-width, calc(35 * var(--lede-fs)));
   color:var(--ink-muted);
   font-size:var(--lede-fs);
   line-height:var(--lede-lh);
@@ -1009,6 +994,16 @@ body > main{
 /* every other frame is a touch shorter — enough for a rhythm, not enough to
    read as two different sizes */
 .strip__cell:nth-child(even){ aspect-ratio:9 / 10; }
+.strip__figure{
+  position:relative;
+  width:100%;
+  height:100%;
+  margin:0;
+}
+.strip__figure .disclosure--overlay{
+  max-width:calc(100% - 28px);
+  pointer-events:none;
+}
 
 .strip__image{
   width:100%;
@@ -1069,13 +1064,24 @@ body > main{
   max-width:100%;
   max-height:100%;
   display:flex;
+  flex-direction:column;
+  align-items:flex-start;
 }
 .viewer__image{
   max-width:100%;
-  max-height:calc(100vh - clamp(32px, 6vw, 112px));
+  max-height:calc(100vh - clamp(120px, 12vw, 180px));
   width:auto;
   height:auto;
   object-fit:contain;
+}
+.viewer__caption{
+  width:100%;
+  margin:12px 0 0;
+  color:rgba(255,255,255,.82);
+  font-size:clamp(12px, .68vw, 14px);
+  line-height:1.45;
+  letter-spacing:.01em;
+  text-align:left;
 }
 
 .viewer__close,
@@ -1099,6 +1105,13 @@ body > main{
 .viewer__nav:focus-visible{
   background:rgba(255,255,255,.14);
   border-color:#fff;
+}
+.viewer__nav:disabled,
+.viewer__nav:disabled:hover{
+  opacity:.3;
+  background:none;
+  border-color:rgba(255,255,255,.4);
+  cursor:default;
 }
 
 .viewer__close{
@@ -1188,14 +1201,12 @@ body > main{
   padding-left:var(--rule-inset);
 }
 .projects .section-title{
-  text-indent:0;
   max-width:none;
-  white-space:nowrap;          /* one line: it is short enough to stay whole */
+  white-space:nowrap;
   font-size:var(--sec-fs);     /* the rank the sections above it are set in */
 }
 .projects__lede{
   margin:var(--gap-title-text) 0 0;
-  max-width:46ch;
 }
 
 /* Four tiles in two rows, two to a row: the photograph on top and its
@@ -1236,6 +1247,15 @@ body > main{
   margin:0;
 }
 
+.project__figure .disclosure--overlay{
+  max-width:calc(100% - 28px);
+  font-size:clamp(9px, .52vw, 11px);
+}
+.project__figure .disclosure--overlay span{ display:block; }
+@media (min-width:1151px){
+  .project__figure .disclosure--overlay{ white-space:nowrap; }
+}
+
 /* the photograph is a button, on the same terms as the frames in the running
    strip: it lifts a little under the cursor and opens in the viewer */
 .project__open{
@@ -1266,12 +1286,11 @@ body > main{
   transform:scale(1.04);
 }
 
-/* the copy sits in the middle of its cell, both ways */
+/* category label below each photograph */
 .project__body{
   display:flex;
   flex-direction:column;
-  padding:clamp(10px, .85vw, 18px) 0 0;   /* the title belongs to the plate
-                                             above it, so it sits close */
+  padding:clamp(10px, .85vw, 18px) 0 0;
 }
 
 .project__no{
@@ -1301,7 +1320,7 @@ body > main{
 @media (max-width:1150px){
   .projects__intro{ grid-template-columns:1fr; row-gap:18px; }
   .projects__head{ padding-left:0; }
-  .projects .section-title{ max-width:none; white-space:normal; }
+  .projects .section-title{ white-space:normal; }
 }
 
 /* the pair of labels that closes each row, set as plain words on a rule —
@@ -1418,8 +1437,8 @@ body > main{
 .audiences__head{
   margin-left:calc(33.3333% + var(--rule-inset));
 }
-/* the heading takes the page's own setting, the one The Shift is set in:
-   the same measure, the same indented first line, the same rank */
+.audiences .section-title{ max-width:19em; }
+/* the heading uses the same measure and rank as The Shift */
 
 /* The control, squared off like everything else drawn on this sheet: it reads as a
    control, which is exactly what it is. Hairline outline at rest, solid
@@ -1462,6 +1481,12 @@ body > main{
    card, in the same tone as everything else on the sheet. */
 .audiences__panels{
   margin-top:var(--gap-block-media);
+}
+.audiences__cta{
+  margin-top:var(--gap-text-link);
+}
+@media (min-width:1151px){
+  .mailbtn.audiences__cta{ display:none; }
 }
 .cards{
   display:grid;
@@ -1539,6 +1564,7 @@ body > main{
 .ecosystem__head{
   padding-left:var(--rule-inset);
 }
+.ecosystem .section-title{ max-width:calc(28 * var(--lede-fs)); }
 
 /* the travel is one viewport for the pinned field plus the distance the
    movement itself needs — no spare scroll anywhere */
@@ -1774,12 +1800,14 @@ body > main{
 /* Keep the heading in a narrower column so it wraps naturally. */
 .contact__line{
   margin:0;
-  max-width:var(--contact-measure);
-  text-indent:2.5em;
+  max-width:none;
   font-size:var(--sec-fs);
   line-height:var(--sec-lh);
   font-weight:500;
   letter-spacing:-.018em;
+}
+@media (min-width:1151px){
+  .contact__line span{ display:block; white-space:nowrap; }
 }
 /* the address on the left, the invitation on the right, both on the measure
    the sentence above them is set to */
@@ -1858,7 +1886,7 @@ body > main{
       transparent 1px 11px),
     var(--green);
   color:var(--paper);
-  overflow:hidden;
+  overflow:visible;
 }
 
 /* the column rules and the two edges of the sheet, redrawn in white */
@@ -1911,7 +1939,7 @@ body > main{
   color:var(--paper);
 }
 .foot-logo{
-  height:clamp(34px, 2.4vw, 46px);
+  height:var(--logo-h);
 }
 .foot-brand__role{
   margin:clamp(16px, 1.5vw, 30px) 0 0;
@@ -1949,6 +1977,8 @@ body > main{
 }
 .foot-list a:hover,
 .foot-list a:focus-visible{ color:var(--paper); }
+.foot-list .foot-social{ display:inline-flex; align-items:center; }
+.foot-social svg{ display:block; width:21px; height:21px; }
 
 /* the drawing: full width, closing the sheet. No rule above it — the drawing
    is the close of the page, and a line across the top of it only fences the
@@ -2075,10 +2105,6 @@ body > main{
     padding:clamp(26px, 2.4vw, 50px) clamp(20px, 1.7vw, 36px) clamp(30px, 2.8vw, 58px);
   }
 
-  /* --- Project types: the name of the project leads, the photograph and
-         its caption follow — a reader meets "Schools & Universities"
-         before the picture that illustrates it, not after ------------- */
-  .project{ display:flex; flex-direction:column; }
   .project__body{ order:-1; padding:0 0 clamp(8px, 2vw, 12px); }
 
   /* --- Contact: the address stands on its own line, and the invitation
@@ -2129,13 +2155,6 @@ body > main{
          by the column count, so simply showing it again is enough. ----- */
   .shift__art{ display:block; }
 
-  /* --- long headings stop short of the full measure. Projects lost its
-         cap outright at 1150; Contact's opening line did too — both ran
-         the width of the sheet, which reads as heavier than intended at
-         this width. Shift already keeps its own, narrower cap by default
-         and is left alone. ------------------------------------------- */
-  .projects .section-title{ max-width:26em; }
-
   /* --- the ecosystem's grey cards matched to the audience cards' size —
          same floor height, same padding, so the two grids read as one
          scale rather than two different ones sitting near each other --- */
@@ -2159,18 +2178,18 @@ body > main{
   .foot-cell:nth-child(3){ border-left:1px solid rgba(255,255,255,.07); }
 }
 
-/* --- The hero headline, narrowed to iPad-Pro-sized screens only ---------
-   Forcing the dash clause onto its own line only reads well at a specific
-   container width: on the narrower tablets in the general range above (a
-   768 or 834px-wide screen, say), the first clause itself is already tight
-   enough to drop "happening" onto a second line by itself, and forcing the
-   dash down as well then strands it on a third. Those widths are better
-   left to wrap on their own, exactly as the general ≤1150 rule already has
-   them — so this fix is scoped tighter, to the one width where the room is
-   actually there for a clean two-line break. */
-@media (min-width:1000px) and (max-width:1150px){
-  .hero__title{ max-width:22em; }
-  .hero__title-clause{ white-space:nowrap; }
+/* Keep the entire supplied illustration visible across both iPad Pro sizes,
+   including the 13-inch model in landscape orientation. */
+@media (min-width:769px) and (max-width:1400px){
+  .site-footer__art{
+    width:100%;
+    margin-top:0;
+  }
+  .foot-drawing{
+    width:100%;
+    height:auto;
+    aspect-ratio:2324 / 806;
+  }
 }
 
 /* Annotation positions moved from HTML into the stylesheet. */

@@ -1,5 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <svg viewBox="0 0 616.0 1184.0" fill="none" preserveAspectRatio="xMidYMax meet" xmlns="http://www.w3.org/2000/svg" width="616.0" height="1184.0">
+        <style>.w { opacity: .21; stroke-width: 1; }</style>
         <g class="tw">
         <path class="w" d="M257.0 667.0 L257.0 686.0 L258.0 687.0 L259.0 696.0" stroke="#121212" stroke-width=".79" stroke-linecap="round" stroke-linejoin="round" opacity=".16"/>
         <path class="w" d="M338.0 221.0 L334.0 220.0 L292.0 183.0 L289.0 183.0" stroke="#121212" stroke-width=".79" stroke-linecap="round" stroke-linejoin="round" opacity=".16"/>

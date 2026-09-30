@@ -1,0 +1,2197 @@
+/* =========================================================================
+   Im Holz Nova — Institutional Drafting
+   Step 1: header and hero, both after reference_01
+
+   Measured off the references at 1920px wide, content box 1840px (40px
+   gutters):
+     header        logo 86x38 flush left, nav centred on the page  [ref 01]
+     H1 + aside    two columns, tops and bottoms aligned          [ref 02]
+     hero image    full content width, 16:9                       [ref 01]
+     line-art      200 x 200 square under the image, left gutter  [ref 02]
+   ========================================================================= */
+
+:root{
+  --ink:            #121212;
+  --ink-muted:      #4a544e;
+  --green:          #014335;
+  --green-deep:     #012c22;
+  --paper:          #ffffff;
+  --paper-warm:     #f4f4f4;                      /* the one tinted ground */
+  --hairline:       rgba(18,18,18,.16);
+  --hairline-soft:  rgba(18,18,18,.09);
+  --rule:           rgba(18,18,18,.055);          /* the column rules behind everything */
+
+  --gutter:         min(40px, 5vw);               /* 40px in both references   */
+  --header-h:       84px;
+
+  /* hero rhythm, kept proportional to the 1920 reference */
+  --hero-top:       clamp(34px, 3.28vw, 74px);    /* header bottom -> H1 top   */
+  --hero-head-img:  clamp(18px, 1.74vw, 38px);    /* head bottom  -> image top */
+
+  /* headline scale */
+  --h1-fs:          clamp(34px, 2.292vw, 50px);   /* 44px  @1920 */
+  --h1-lh:          1.3;
+  --lede-fs:        clamp(12.5px, .781vw, 18px);  /* 15px  @1920 */
+  --lede-lh:        1.4;
+  /* distance from the top of a line box down to the top of a capital,
+     as a share of the font size, minus the half-leading */
+  --cap-k:          .08;
+  --sec-fs:         clamp(26px, 1.875vw, 42px);   /* section headings */
+  --sec-lh:         1.3;
+  --label-fs:       clamp(11px, .625vw, 14px);
+  --lede-drop:      10px;                         /* optical breathing room */
+
+  /* Spacing is a scale of relationships, not one distance repeated: the more
+     tightly two elements belong together, the closer they sit. Each pair has
+     its own token, and the same pair is always the same distance anywhere on
+     the page. Values below are what they resolve to at 1920.
+       label -> heading   14   the label names the heading; nearly one unit
+       heading -> copy    32   same block, clearly subordinate
+       copy -> copy       22   one voice continuing
+       copy -> link       40   the copy has ended; an action begins
+       block -> image     50   a different kind of content altogether        */
+  --gap-label-title: clamp(8px, .75vw, 16px);
+  --gap-title-text:  clamp(20px, 1.65vw, 34px);
+  --gap-para:        clamp(14px, 1.15vw, 25px);
+  --gap-text-link:   clamp(24px, 2.1vw, 44px);
+  --gap-block-media: clamp(26px, 2.6vw, 56px);
+
+  /* how far a block stands off a rule when it is set against one rather
+     than starting on it */
+  --rule-inset:      clamp(14px, 1.25vw, 26px);
+  --hero-img-plate: clamp(18px, 1.74vw, 38px);    /* image bottom -> plate top */
+  --hero-lede-link: clamp(20px, 2.03vw, 46px);    /* lede bottom  -> link top  */
+}
+
+*,*::before,*::after{ box-sizing:border-box; }
+
+html{ -webkit-text-size-adjust:100%; }
+
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:"Manrope", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+  font-weight:400;
+  font-synthesis-weight:none;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+  overflow-x:hidden;
+}
+
+img{ display:block; max-width:100%; }
+
+::selection{ background:var(--green); color:var(--paper); }
+
+:where(a):focus-visible,
+:where(button):focus-visible{
+  outline:2px solid var(--green);
+  outline-offset:3px;
+}
+
+.skip-link{
+  position:absolute; left:-9999px; top:0; z-index:100;
+  background:var(--green); color:var(--paper);
+  padding:.75rem 1.25rem; font-size:.875rem; font-weight:700;
+  text-decoration:none;
+}
+.skip-link:focus{ left:var(--gutter); top:12px; }
+
+/* =========================================================================
+   THE SHEET — column rules behind the page
+   Four hairlines: the two that cut the page into three equal parts, plus the
+   two edges of the sheet itself. They are guides, not fences — a text block
+   starts on a rule, and a heading is free to run past the next one. Fixed to
+   the viewport, so they are the ruling of the sheet rather than decoration
+   that scrolls past.
+   ========================================================================= */
+
+.sheet-rules{
+  position:fixed;
+  inset:0;
+  z-index:0;
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  padding-inline:var(--gutter);
+  pointer-events:none;
+}
+/* the two divisions, on the thirds of the content box */
+.sheet-rules i + i{ border-left:1px solid var(--rule); }
+
+/* the edges of the sheet: pushed out beyond the gutter by the same inset the
+   content keeps from any other rule, so nothing sits flush against them */
+.sheet-edge{
+  position:absolute;
+  top:0;
+  bottom:0;
+  width:0;
+}
+.sheet-edge--l{
+  left:calc(var(--gutter) - var(--rule-inset));
+  border-left:1px solid var(--rule);
+}
+.sheet-edge--r{
+  right:calc(var(--gutter) - var(--rule-inset));
+  border-right:1px solid var(--rule);
+}
+
+body > header,
+body > main{
+  position:relative;
+  z-index:1;
+}
+
+@media (max-width:768px){
+  /* halves at this width: the two edges plus one rule down the middle */
+  .sheet-rules{ grid-template-columns:repeat(2, 1fr); }
+  .sheet-rules i:nth-child(3){ display:none; }
+}
+
+/* full-bleed shell with a fixed 40px gutter, exactly as both references */
+.shell{
+  width:100%;
+  padding-inline:var(--gutter);
+}
+
+/* =========================================================================
+   HEADER — reference_01
+   logo flush left · nav optically centred on the page · EN / DE flush right
+   ========================================================================= */
+
+/* Pinned to the top and closed off by a rule of the same weight as the
+   column rules, so the header reads as the head of the sheet. */
+.site-header{
+  position:sticky;
+  top:0;
+  z-index:10;
+  background:var(--paper);
+  border-bottom:1px solid var(--rule);
+}
+
+.site-header__inner{
+  height:var(--header-h);
+  display:grid;
+  grid-template-columns:1fr auto 1fr;
+  align-items:center;
+  column-gap:24px;
+}
+
+.site-header__logo{
+  justify-self:start;
+  display:block;
+  line-height:0;
+  color:var(--green);
+}
+.logo-mark{
+  aspect-ratio:116.25 / 51.28;
+  display:block;
+  width:auto;
+  height:38px;                 /* 86 x 38 in reference_01 */
+}
+
+.site-nav{
+  justify-self:center;
+  display:flex;
+  align-items:center;
+  gap:26px;                    /* measured gap in reference_01 */
+  white-space:nowrap;
+}
+
+.site-nav a{
+  position:relative;
+  color:var(--ink);
+  font-size:15px;
+  font-weight:500;
+  letter-spacing:.002em;
+  text-decoration:none;
+  padding-block:4px;
+}
+.site-nav a::after{
+  content:"";
+  position:absolute;
+  left:0; right:0; bottom:0;
+  height:1px;
+  background:var(--green);
+  transform:scaleX(0);
+  transform-origin:left center;
+  transition:transform .22s ease;
+}
+.site-nav a:hover{ color:var(--green); }
+.site-nav a:hover::after{ transform:scaleX(1); }
+
+.site-lang{
+  justify-self:end;
+  margin:0;
+  font-size:15px;
+  font-weight:500;
+  letter-spacing:.01em;
+  color:var(--ink);
+}
+.site-lang__current{
+  border-bottom:1px solid var(--ink);
+  padding-bottom:1px;
+}
+.site-lang__sep{ color:var(--ink-muted); margin-inline:2px; }
+.site-lang__other{ color:var(--ink-muted); }
+
+/* --- menu button: only present once the inline nav no longer fits --- */
+.nav-toggle{
+  display:none;
+  align-items:center;
+  gap:10px;
+  margin:0;
+  padding:6px 0;
+  border:0;
+  background:none;
+  color:var(--ink);
+  font:inherit;
+  font-size:13px;
+  font-weight:600;
+  letter-spacing:.09em;
+  text-transform:uppercase;
+  cursor:pointer;
+}
+.nav-toggle__bars{
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  width:22px;
+  height:9px;
+}
+.nav-toggle__bars i{
+  display:block;
+  height:1px;
+  background:currentColor;
+  transition:transform .22s ease, opacity .22s ease;
+}
+.nav-toggle[aria-expanded="true"]{ color:var(--green); }
+.nav-toggle[aria-expanded="true"] .nav-toggle__bars i:first-child{
+  transform:translateY(4px) rotate(45deg);
+}
+.nav-toggle[aria-expanded="true"] .nav-toggle__bars i:last-child{
+  transform:translateY(-4px) rotate(-45deg);
+}
+
+/* =========================================================================
+   HERO — reference_02 arrangement, reference_01 image
+   ========================================================================= */
+
+.hero{
+  padding-top:var(--hero-top);
+  padding-bottom:clamp(26px, 2.6vw, 56px);
+}
+
+/* Headline left, note and link right — the arrangement of reference_02.
+   Both columns stretch to the same height, so the link lands on the
+   headline's last line. The note takes the last third, so it is set against
+   the second rule — held off it by a small inset rather than butted to it. */
+.hero__head{
+  display:grid;
+  grid-template-columns:2fr 1fr;
+  align-items:stretch;
+}
+
+.hero__title{
+  margin:0;
+  clip-path:inset(-.3em -.08em 0 -.08em);
+  max-width:22em;              /* the only thing deciding where the line
+                                  breaks. In em, so it scales with the type:
+                                  the first clause measures ~18em and the whole
+                                  sentence ~30em, so 22em always fits the one
+                                  and never both — in any face, at any width */
+  text-wrap:pretty;
+  font-size:var(--h1-fs);
+  line-height:var(--h1-lh);
+  font-weight:500;
+  letter-spacing:-.022em;
+}
+
+/* Kept whole so it travels to the next line as one clause instead of
+   splitting mid-phrase. Not a forced break: given a wider block both clauses
+   would sit on one line — the block's max-width is what decides. */
+.hero__title-clause{ white-space:nowrap; }
+
+/* The headline rises into view from behind its own clipping window.
+   clip-path masks without adding to the line box, so the block stays exactly
+   as tall as its lines; the negative insets spare the sides and ascenders. */
+.hero__title-rise{
+  display:block;
+  will-change:transform;
+  animation:rise-in 1.05s cubic-bezier(.2,.7,.25,1) both;
+}
+@keyframes rise-in{
+  from{ transform:translateY(108%); }
+  to  { transform:translateY(0); }
+}
+
+.hero__aside{
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;      /* the link follows the note directly rather
+                                  than being pushed to the column's foot */
+  padding-left:var(--rule-inset);
+  /* Optical top alignment: both columns start on the same line box, but the
+     headline sits lower inside its own because its half-leading is bigger.
+     This nudges the note down by exactly that difference. */
+  padding-top:calc(
+      (var(--h1-lh)   - 1) / 2 * var(--h1-fs)   + var(--cap-k) * var(--h1-fs)
+    - (var(--lede-lh) - 1) / 2 * var(--lede-fs) - var(--cap-k) * var(--lede-fs)
+    + var(--lede-drop)       /* a little extra air, by eye */
+  );
+}
+
+/* Supporting note, set small and quiet. Its size is deliberately independent
+   of the H1 — the headline can grow without dragging this paragraph with it. */
+.hero__lede{
+  margin:0;
+  max-width:36em;
+  color:var(--ink-muted);
+  font-size:var(--lede-fs);
+  line-height:var(--lede-lh);
+  font-weight:400;
+}
+/* Underlined uppercase text link — reference_02's interactive treatment. */
+/* Every step off the page is the same object: the words, an arrow standing
+   upright beside them, and a rule under both. Under the cursor the arrow
+   turns to point the way it will go, and the rule is drawn again in green
+   from left to right. */
+.link-underline{
+  position:relative;
+  align-self:flex-start;
+  display:inline-flex;
+  align-items:center;
+  gap:.7em;
+  margin-top:var(--gap-text-link);
+  padding-bottom:6px;
+  color:var(--ink);
+  font-size:clamp(11px, .677vw, 15px);     /* 13px @1920 */
+  font-weight:600;
+  letter-spacing:.055em;
+  text-transform:uppercase;
+  text-decoration:none;
+  transition:color .25s ease;
+}
+/* the rule under the words, drawn solid */
+.link-underline::before{
+  content:"";
+  position:absolute;
+  left:0; right:0; bottom:0;
+  height:1px;
+  background:currentColor;
+}
+/* The rule under the words stays put — there is already a line here, and it
+   does not need to perform. The words do: on hover the label rolls up out of
+   sight and its own copy rolls in from below. */
+.link-underline__label{
+  display:block;
+  overflow:hidden;             /* the window the words roll through */
+}
+.link-underline__roll{
+  display:block;
+  white-space:nowrap;
+}
+/* one window per letter, so the words turn over letter by letter rather than
+   all at once — the delay is set on each as the label is split */
+.ch{
+  position:relative;
+  display:inline-block;
+  overflow:hidden;
+  vertical-align:top;
+}
+.ch__a,
+.ch__b{
+  display:block;
+  transition:transform .34s cubic-bezier(.3,.75,.25,1);
+  transition-delay:inherit;
+}
+.ch__b{
+  position:absolute;
+  left:0;
+  top:100%;
+  width:100%;
+}
+.link-underline__mark{
+  display:block;
+  width:1em;
+  height:1em;
+  flex:0 0 auto;
+  background:currentColor;
+  /* an arrow drawn as a mask, so it takes the link's own colour */
+  -webkit-mask:var(--arrow) center / contain no-repeat;
+  mask:var(--arrow) center / contain no-repeat;
+  transform:rotate(-45deg);      /* set on the diagonal at rest */
+  transition:transform .32s cubic-bezier(.2,.7,.25,1);
+}
+:root{
+  --arrow:url("../images/icons/arrow.svg");
+}
+.link-underline:hover,
+.link-underline:focus-visible{ color:var(--green); }
+.link-underline:hover .ch__a,
+.link-underline:hover .ch__b,
+.link-underline:focus-visible .ch__a,
+.link-underline:focus-visible .ch__b{ transform:translateY(-100%); }
+
+@media (prefers-reduced-motion:reduce){
+  .ch__a,
+  .ch__b{ transition:none; }
+}
+.link-underline:hover .link-underline__mark,
+.link-underline:focus-visible .link-underline__mark{ transform:rotate(0deg); }
+
+/* --- the photograph: full content width, 16:9, as in reference_01 --- */
+.hero__figure{
+  position:relative;
+  margin:clamp(16px, 1.74vw, 34px) 0 0;
+  width:100%;
+}
+
+.hero__image{
+  width:100%;
+  height:auto;
+  aspect-ratio:16 / 9;         /* 1360 x 765 in reference_01 */
+  object-fit:cover;
+  background:var(--hairline-soft);
+}
+
+/* The disclosure sits on the photograph itself, bottom left: it belongs to
+   the image, not to the page under it. A flat panel carries it over any
+   frame — no rounding, no shadow. */
+.disclosure.disclosure--overlay{
+  position:absolute;
+  left:clamp(14px, 1.15vw, 24px);
+  bottom:clamp(12px, 1vw, 20px);
+  z-index:2;
+  max-width:min(44ch, 46%);
+  margin:0;
+  padding:7px 11px 8px;
+  font-size:clamp(10px, .573vw, 12.5px);
+  background:rgba(18,18,18,.62);
+  color:#fff;
+}
+
+/* mandatory illustrative-imagery disclosure */
+.disclosure{
+  margin:12px 0 0;
+  max-width:56ch;
+  color:var(--ink-muted);
+  font-size:clamp(10.5px, .625vw, 13px);
+  line-height:1.45;
+  letter-spacing:.01em;
+}
+
+/* =========================================================================
+   Responsive
+   ========================================================================= */
+
+@media (max-width:1080px){
+  .site-header__inner{
+    grid-template-columns:1fr auto auto;
+    column-gap:22px;
+  }
+  .nav-toggle{ display:flex; }
+
+  /* the nav becomes a panel dropped from the header's bottom hairline */
+  .site-nav{
+    position:absolute;
+    top:100%;
+    left:0;
+    right:0;
+    justify-self:stretch;   /* an absolutely positioned grid item still obeys
+                               justify-self, which would otherwise shrink and
+                               centre the panel instead of spanning the header */
+    display:none;
+    flex-direction:column;
+    align-items:flex-start;
+    gap:0;
+    padding:6px var(--gutter) 26px;
+    background:var(--paper);
+    border-top:1px solid var(--hairline);
+    border-bottom:1px solid var(--hairline);
+  }
+  .site-nav[data-open="true"]{ display:flex; }
+
+  .site-nav a{
+    width:100%;
+    padding:15px 0;
+    font-size:17px;
+    border-bottom:1px solid var(--hairline-soft);
+  }
+  .site-nav a:last-child{ border-bottom:0; }
+  .site-nav a::after{ display:none; }
+}
+
+/* Below this width the two-column head can no longer hold the paragraph at a
+   readable size in three lines, so the hero stacks instead of degrading. */
+@media (max-width:1150px){
+  :root{ --header-h:72px; }
+
+  .hero__title{ max-width:none; font-size:clamp(28px, 7.4vw, 46px); }
+  .hero__head{ grid-template-columns:1fr; row-gap:26px; }
+  .hero__title,
+  .hero__aside{ grid-column:1 / -1; }
+  .hero__aside{ padding-left:0; }
+  .hero__title{ max-width:none; }
+  .hero__title-clause{ white-space:normal; }
+  .hero__aside{ display:block; padding-top:0; max-width:48ch; }
+  .hero__lede{ font-size:15px; line-height:1.5; }
+  .link-underline{ font-size:12px; }
+
+  .hero__image{ aspect-ratio:3 / 2; }
+  .disclosure{ font-size:12px; }
+}
+
+@media (prefers-reduced-motion:reduce){
+  *{ transition-duration:.01ms !important; animation-duration:.01ms !important; }
+  /* the headline lands in place immediately rather than not arriving at all */
+  .hero__title-rise{ transform:none; animation:none; }
+}
+
+/* =========================================================================
+   SECTIONS
+   ========================================================================= */
+
+.section{
+  position:relative;
+  padding-block:clamp(52px, 6.5vw, 132px);
+}
+
+/* a hairline closes one section off from the next, drawn between the two
+   edge rules so the sheet reads as one ruled field. The first section needs
+   none: the hero above it is already closed by the header. */
+.section::before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  height:1px;
+  background:var(--rule);
+}
+/* the first section needs none: the hero above it is closed by the header */
+.shift::before{ content:none; }
+
+/* The Shift follows the hero closely rather than opening a full section gap */
+.shift{
+  position:relative;           /* the drawing anchors to the section, so it
+                                  lands in the corner of the section itself
+                                  rather than beside the text block */
+  padding-top:clamp(26px, 2.6vw, 56px);
+}
+
+/* the running head: plain tracked capitals on the outer margin, no bullet */
+.section-label{
+  margin:0;
+  color:var(--ink-muted);
+  font-size:var(--label-fs);
+  font-weight:500;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+}
+
+.section-title{
+  margin:0;
+  max-width:19em;              /* a shorter measure than the column allows,
+                                  so the heading sets in three tighter lines */
+  text-indent:2.5em;           /* the first line starts indented, as in the
+                                  reference */
+  font-size:var(--sec-fs);
+  line-height:var(--sec-lh);
+  font-weight:500;
+  letter-spacing:-.018em;
+}
+
+.section-text{
+  margin:var(--gap-title-text) 0 0;
+  max-width:35em;                         /* in em, so it holds the reference's
+                                             ratio (copy ~76% of the heading's
+                                             measure) at every size */
+  color:var(--ink-muted);
+  font-size:var(--lede-fs);
+  line-height:var(--lede-lh);
+}
+.section-text + .section-text{
+  margin-top:var(--gap-para);
+}
+
+/* --- The Shift: drawing on the left, label on its own axis, text right --- */
+.shift__inner{
+  position:relative;           /* the drawing is placed against this box, so
+                                  its foot lands on the last line of the text */
+  display:grid;
+  /* one third for the label, the rest for the text: the block is set to the
+     first rule — held off it by the same inset used everywhere — and the
+     heading runs on past the second */
+  grid-template-columns:1fr 2fr;
+  align-items:start;
+}
+
+/* the drawing sits in the bottom-left corner, not behind the whole section */
+/* the drawing sits to the right of the text, its foot on the same line as
+   the last line of copy */
+.shift__art{
+  position:absolute;
+  right:calc(var(--gutter) + var(--rule-inset));   /* clear of the edge rule */
+  bottom:0;
+  z-index:1;
+  width:min(38%, 320px);
+  pointer-events:none;
+}
+.shift__drawing{
+  display:block;
+  width:100%;
+  height:auto;
+}
+.shift .section-label{
+  position:relative;
+  z-index:1;
+  /* sits on the first line of the heading beside it */
+  padding-top:calc((var(--sec-lh) - 1) / 2 * var(--sec-fs) + var(--cap-k) * var(--sec-fs)
+                 - (1.45 - 1) / 2 * var(--label-fs) - var(--cap-k) * var(--label-fs));
+}
+
+.shift__body{
+  position:relative;
+  z-index:1;
+  padding-left:var(--rule-inset);
+}
+
+@media (max-width:1150px){
+  .shift__inner{ grid-template-columns:1fr; row-gap:18px; }
+  .shift__inner{ grid-template-columns:1fr; }
+  .shift .section-label{ grid-column:1; padding-top:0; }
+  .shift__body{ grid-column:1; padding-left:0; }
+  .shift__art{ display:none; }
+}
+
+/* --- Sustainable solutions: notes drawn onto an illustrative photograph --- */
+
+.solutions{
+  --sol-foot:clamp(30px, 3vw, 64px);
+  padding-bottom:var(--sol-foot);
+}
+
+/* The column rules run all the way down to the photograph — the frame itself
+   is what cuts them off — and below it they do not return: the foot of the
+   section is plain paper, drawn between the two edge rules so those carry on. */
+.solutions__track::after{
+  content:"";
+  position:absolute;
+  left:calc(var(--rule-inset) * -1 + 1px);
+  right:calc(var(--rule-inset) * -1 + 1px);
+  top:100%;
+  height:var(--sol-foot);
+  background:var(--paper);
+  z-index:0;
+}
+.solutions__stage{ z-index:1; }
+
+/* This heading opens at the column edge, so it takes no first-line indent. */
+.solutions .section-title{ text-indent:0; }
+
+/* the same frame as The Shift: label in the first third, text set to the
+   first rule with the standard inset */
+.solutions__intro{
+  display:grid;
+  grid-template-columns:1fr 2fr;
+  align-items:start;
+}
+.solutions__head{
+  padding-left:var(--rule-inset);
+}
+
+/* The scroll track is exactly as long as the two scenes need: one viewport
+   for the pinned frame, then the run outside, the move through the opening,
+   and the run inside. No spare distance anywhere: every added screen of
+   track is a screen of movement. */
+.solutions__track{
+  position:relative;
+  margin-top:var(--gap-block-media);
+  --stage-h:calc(100vh - var(--header-h));
+  /* outside, the move through the glazing, the walk further in, then the
+     notes inside — no leg of the track stands still */
+  /* the photograph arrives, the notes outside are read, the drive at the
+     glazing, the walk further in, the notes inside are read.  The two reading
+     legs are the long ones: a note that is on screen for less than a screen of
+     scrolling is a note nobody reads. */
+  height:calc(var(--stage-h) + 24vh + 70vh + 88vh + 44vh + 70vh);
+}
+.solutions__stage{
+  position:sticky;
+  top:var(--header-h);
+  height:calc(100vh - var(--header-h));
+  padding-block:clamp(10px, 1.4vh, 20px);
+}
+
+/* the figure fills the pinned viewport, so the photograph is as large as the
+   screen allows and no band of empty page is left above or below it */
+.solutions__figure{
+  margin:0;
+  height:100%;
+  display:flex;
+  flex-direction:column;
+}
+
+.solutions__frame{
+  position:relative;
+  flex:1 1 auto;
+  min-height:0;
+  overflow:hidden;             /* the push happens inside the frame */
+}
+
+/* Both scenes occupy the same frame.  The one outside is driven into the
+   glazing until the glazed hall fills the frame; the one inside comes up
+   through it while both are still moving, and then carries on into the room.
+   The two pictures overlap only while they are both in motion, which is what
+   keeps the change of picture reading as one continuous move rather than as a
+   change of slide.
+
+   The movement is carried by the view, not by the scene, so the notes are not
+   dragged along with the picture: a card should stay the size it is set at. */
+.scene{
+  position:absolute;
+  inset:0;
+}
+.scene__view{
+  position:absolute;
+  inset:0;
+  transform:scale(var(--view-scale, 1));
+  transform-origin:var(--door-x, 60%) var(--door-y, 66%);
+  will-change:transform;
+}
+.scene--in{
+  opacity:var(--in-on, 0);
+  will-change:opacity;
+}
+.scene--in .scene__view{
+  --view-scale:.94;
+  transform-origin:50% 56%;    /* straight ahead, not back towards the door */
+}
+
+.solutions__image{
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  background:var(--hairline-soft);
+}
+
+.annots{
+  position:absolute;
+  inset:0;
+  margin:0;
+  padding:0;
+  list-style:none;
+}
+
+/* One note = a mark on the photograph, a leader line, and a plain card.
+   Flat surfaces and hairlines only — it should read as an annotated drawing,
+   not as a tooltip. */
+.annot{
+  position:absolute;
+  left:var(--x);
+  top:var(--y);
+  display:flex;
+  align-items:center;
+  max-width:min(300px, 30%);
+}
+.annot--left{
+  flex-direction:row-reverse;
+  /* the transform runs after layout, so a note set near the right edge would
+     otherwise be laid out inside the sliver of space left of that edge and
+     its card would come out narrow: give it the measure outright */
+  width:min(300px, 30%);
+  transform:translateX(-100%);
+}
+
+.annot__mark{
+  position:relative;
+  flex:0 0 auto;
+  width:9px;
+  height:9px;
+  border:1px solid var(--green);
+  background:var(--paper);
+}
+.annot__mark::before,
+.annot__mark::after{
+  content:"";
+  position:absolute;
+  background:var(--green);
+}
+.annot__mark::before{ left:3px; right:3px; top:-4px; bottom:-4px; }
+.annot__mark::after { top:3px; bottom:3px; left:-4px; right:-4px; }
+
+.annot__leader{
+  flex:0 0 auto;
+  width:clamp(18px, 2vw, 42px);
+  height:1px;
+  background:var(--green);
+  transform:scaleX(0);
+  transform-origin:left center;
+  transition:transform .5s cubic-bezier(.2,.7,.25,1);
+}
+.annot--left .annot__leader{ transform-origin:right center; }
+
+.annot__card{
+  flex:1 1 auto;
+  min-width:0;
+  padding:12px 14px 14px;
+  background:var(--paper);
+  border:1px solid var(--hairline);
+}
+
+.annot__no{
+  margin:0 0 6px;
+  color:var(--green);
+  font-size:11px;
+  font-weight:600;
+  letter-spacing:.14em;
+}
+.annot__title{
+  margin:0;
+  font-size:clamp(13px, .78vw, 17px);
+  font-weight:600;
+  line-height:1.25;
+  letter-spacing:-.005em;
+}
+.annot__text{
+  margin:5px 0 0;
+  color:var(--ink-muted);
+  font-size:clamp(11.5px, .677vw, 15px);
+  line-height:1.4;
+}
+
+/* the reveal: driven by scroll progress across the track above — each note
+   arrives in turn and stays, so the finished drawing is complete at the end */
+.annot__mark,
+.annot__card{
+  opacity:0;
+  transform:translateY(10px);
+  transition:opacity .42s ease, transform .42s cubic-bezier(.2,.7,.25,1);
+}
+.annot[data-shown="true"] .annot__mark,
+.annot[data-shown="true"] .annot__card{
+  opacity:1;
+  transform:none;
+}
+.annot[data-shown="true"] .annot__leader{ transform:scaleX(1); }
+.annot[data-shown="true"] .annot__card{ transition-delay:.12s; }
+.annot[data-shown="true"] .annot__leader{ transition-delay:.06s; }
+/* the three arrive as one move, a breath apart so it reads as drawn rather
+   than switched on */
+.annot:nth-child(2)[data-shown="true"] .annot__mark{ transition-delay:.07s; }
+.annot:nth-child(2)[data-shown="true"] .annot__leader{ transition-delay:.13s; }
+.annot:nth-child(2)[data-shown="true"] .annot__card{ transition-delay:.19s; }
+.annot:nth-child(3)[data-shown="true"] .annot__mark{ transition-delay:.14s; }
+.annot:nth-child(3)[data-shown="true"] .annot__leader{ transition-delay:.2s; }
+.annot:nth-child(3)[data-shown="true"] .annot__card{ transition-delay:.26s; }
+
+
+.solutions .section-title{ max-width:none; }
+
+/* the per-photograph captions duplicated onto each scene: shown only where
+   the scenes are unstacked (tablet and phone) — see the shared query below.
+   On the pinned, wide view the one caption at the foot of the frame already
+   covers both, and showing both sets would say the same thing twice. */
+.disclosure--scene{ display:none; }
+
+.solutions__link{
+  margin-top:var(--gap-text-link);
+}
+
+@media (max-width:1150px){
+  /* no pinning on small screens: the photograph scrolls normally and the
+     notes stack underneath, where they stay readable */
+  .solutions__intro{ grid-template-columns:1fr; row-gap:18px; }
+  .solutions__head{ padding-left:0; }
+  .solutions .section-label{ padding-top:0; }
+  .solutions__track{ height:auto; }
+  .solutions__stage{ position:static; height:auto; padding-block:0; }
+  .solutions__figure{ height:auto; display:block; }
+  .solutions__image{ height:auto; aspect-ratio:16 / 9; }
+
+  /* stacked under the photograph, where they stay readable */
+  .annots{
+    position:static;
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));
+    gap:1px;
+    margin-top:0;
+    background:var(--hairline);
+    border:1px solid var(--hairline);
+    border-top:0;
+  }
+  .annots{ margin-top:20px; border-top:1px solid var(--hairline); }
+  .annot{
+    position:static;
+    display:block;
+    max-width:none;
+    transform:none;
+    background:var(--paper);
+  }
+  /* the narrow measure is given outright to a note set against the right of
+     the photograph; unpinned it has to be released, or the note comes out at
+     a third of its cell and the ground shows through beside it */
+  .annot--left{ transform:none; width:auto; }
+  .annot__mark,
+  .annot__leader{ display:none; }
+  .annot__card{ border:0; padding:16px; }
+
+  /* both scenes come out of the frame and read one after the other: outside
+     with its notes, then inside with its own */
+  .solutions__frame{ overflow:visible; }
+  .scene{ position:static; inset:auto; opacity:1 !important; }
+  /* the caption moves with its own photograph: each scene keeps its own
+     positioning context so its overlay sits on that photograph, not on
+     whichever scene happens to be legible when both are stacked in flow */
+  .scene__view{ position:relative; inset:auto; transform:none !important; }
+  .scene--in{ margin-top:var(--gap-block-media); }
+
+  /* the caption shared across both scenes belongs to the pinned, wide view;
+     unstacked, each scene shows its own instead, in the ordinary overlay
+     style the rest of the page uses */
+  .solutions__frame > .disclosure.disclosure--overlay{ display:none; }
+  .disclosure--scene{ display:block; }
+}
+
+@media (prefers-reduced-motion:reduce){
+  .solutions__track{ height:auto; }
+  .solutions__stage{ position:static; height:auto; padding-block:0; }
+  .solutions__figure{ height:auto; display:block; }
+  .solutions__image{ height:auto; aspect-ratio:16 / 9; }
+  .annot__mark,
+  .annot__card{ opacity:1; transform:none; }
+  .annot__leader{ transform:scaleX(1); }
+
+  /* both scenes come out of the frame and read one after the other: outside
+     with its notes, then inside with its own */
+  .solutions__frame{ overflow:visible; }
+  .scene{ position:static; inset:auto; opacity:1 !important; }
+  .scene__view{ position:relative; inset:auto; transform:none !important; }
+  .scene--in{ margin-top:var(--gap-block-media); }
+  .solutions__frame > .disclosure.disclosure--overlay{ display:none; }
+  .disclosure--scene{ display:block; }
+}
+
+/* --- the running strip: what the ecosystem builds with ------------------- */
+
+.filmstrip{
+  position:relative;
+  z-index:1;
+  margin-top:clamp(34px, 3.4vw, 72px);
+  margin-inline:var(--gutter);   /* the strip keeps the page's own margins
+                                    instead of running off the edges */
+  overflow:hidden;
+}
+
+.filmstrip__row{
+  display:flex;
+  align-items:center;            /* frames of two heights, centred on one line */
+  gap:clamp(30px, 6vw, 118px);   /* generous air between frames, as measured
+                                    in the reference */
+  width:max-content;
+  margin:0;
+  padding:0 clamp(30px, 6vw, 118px) 0 0;
+  list-style:none;
+  animation:strip-run 64s linear infinite;
+}
+.filmstrip:hover .filmstrip__row{ animation-play-state:paused; }
+
+/* the row holds two identical sets, so a shift of exactly half its width
+   lands back on the starting frame and the loop has no seam */
+@keyframes strip-run{
+  from{ transform:translateX(0); }
+  to  { transform:translateX(calc(-50% - clamp(15px, 3vw, 59px))); }
+}
+
+.strip__cell{
+  flex:0 0 auto;
+  display:block;
+  width:clamp(200px, 20vw, 385px);
+  aspect-ratio:5 / 6;
+  background:var(--paper);
+}
+/* every other frame is a touch shorter — enough for a rhythm, not enough to
+   read as two different sizes */
+.strip__cell:nth-child(even){ aspect-ratio:9 / 10; }
+
+.strip__image{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+@media (prefers-reduced-motion:reduce){
+  .filmstrip{ overflow-x:auto; }
+  .filmstrip__row{ animation:none; }
+}
+
+/* --- opening a photograph ------------------------------------------------ */
+
+.strip__open{
+  display:block;
+  width:100%;
+  height:100%;
+  margin:0;
+  padding:0;
+  border:0;
+  background:none;
+  cursor:zoom-in;
+  overflow:hidden;
+}
+.strip__open .strip__image{
+  transition:transform .5s cubic-bezier(.2,.7,.25,1);
+}
+.strip__open:hover .strip__image,
+.strip__open:focus-visible .strip__image{
+  transform:scale(1.04);
+}
+
+.viewer{
+  position:fixed;
+  inset:0;
+  z-index:60;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:clamp(16px, 3vw, 56px);
+  background:rgba(18,18,18,.94);
+}
+.viewer[hidden]{ display:none; }
+
+.viewer__backdrop{
+  position:absolute;
+  inset:0;
+  border:0;
+  padding:0;
+  background:none;
+  cursor:zoom-out;
+}
+
+.viewer__frame{
+  position:relative;
+  margin:0;
+  max-width:100%;
+  max-height:100%;
+  display:flex;
+}
+.viewer__image{
+  max-width:100%;
+  max-height:calc(100vh - clamp(32px, 6vw, 112px));
+  width:auto;
+  height:auto;
+  object-fit:contain;
+}
+
+.viewer__close,
+.viewer__nav{
+  position:absolute;
+  z-index:1;
+  border:1px solid rgba(255,255,255,.4);
+  background:none;
+  color:#fff;
+  font:inherit;
+  font-size:13px;
+  font-weight:600;
+  letter-spacing:.09em;
+  text-transform:uppercase;
+  cursor:pointer;
+  transition:background-color .2s ease, border-color .2s ease;
+}
+.viewer__close:hover,
+.viewer__nav:hover,
+.viewer__close:focus-visible,
+.viewer__nav:focus-visible{
+  background:rgba(255,255,255,.14);
+  border-color:#fff;
+}
+
+.viewer__close{
+  top:clamp(16px, 3vw, 56px);
+  right:clamp(16px, 3vw, 56px);
+  padding:10px 18px;
+}
+.viewer__nav{
+  top:50%;
+  transform:translateY(-50%);
+  width:46px;
+  height:46px;
+  font-size:17px;
+  letter-spacing:0;
+}
+.viewer__nav--prev{ left:clamp(12px, 2vw, 40px); }
+.viewer__nav--next{ right:clamp(12px, 2vw, 40px); }
+
+.viewer__count{
+  position:absolute;
+  bottom:clamp(14px, 2.4vw, 40px);
+  left:50%;
+  transform:translateX(-50%);
+  margin:0;
+  color:rgba(255,255,255,.7);
+  font-size:12px;
+  letter-spacing:.14em;
+}
+
+@media (max-width:640px){
+  .viewer__nav{ top:auto; bottom:clamp(14px, 2.4vw, 40px); transform:none; }
+  .viewer__nav--prev{ left:clamp(12px, 2vw, 40px); }
+  .viewer__nav--next{ right:clamp(12px, 2vw, 40px); }
+  .viewer__count{ bottom:calc(clamp(14px, 2.4vw, 40px) + 58px); }
+}
+
+@media (prefers-reduced-motion:reduce){
+  .strip__open:hover .strip__image{ transform:none; }
+}
+
+/* --- Project types ------------------------------------------------------
+   Heading on the left, note on the right; below it a column of rows in which
+   the text and the photograph swap sides from one row to the next.
+   ----------------------------------------------------------------------- */
+
+/* the section follows the one above it closely, on the page's own ground */
+/* No rule closes this section off from the one above: the column rules simply
+   stop where the section's own paper begins, under the photographs of the
+   strip, and the section follows on closely. */
+.projects::before{ content:none; }
+
+.projects{
+  position:relative;
+  overflow:hidden;             /* the drawing is a background, not a bleed */
+  /* this section stands on plain paper: the sheet's ruling stops at its edge
+     so the plates and the drawing have the page to themselves */
+  padding-top:clamp(14px, 1.4vw, 30px);
+}
+
+/* the section's own paper, drawn between the two edge rules so that the
+   column rules stop at its top edge while the edges of the sheet run on */
+.projects__ground{
+  position:absolute;
+  top:0;
+  bottom:0;
+  left:calc(var(--gutter) - var(--rule-inset) + 1px);
+  right:calc(var(--gutter) - var(--rule-inset) + 1px);
+  background:var(--paper);
+  z-index:0;
+  pointer-events:none;
+}
+
+.projects .shell{
+  position:relative;
+  z-index:1;
+}
+
+/* the same frame as The Shift and Sustainable Solutions: the running head
+   stays on the outer margin, the heading and its note are set to the first
+   column rule, held off it by the standard inset */
+.projects__intro{
+  display:grid;
+  grid-template-columns:1fr 2fr;
+  align-items:start;
+}
+.projects__head{
+  padding-left:var(--rule-inset);
+}
+.projects .section-title{
+  text-indent:0;
+  max-width:none;
+  white-space:nowrap;          /* one line: it is short enough to stay whole */
+  font-size:var(--sec-fs);     /* the rank the sections above it are set in */
+}
+.projects__lede{
+  margin:var(--gap-title-text) 0 0;
+  max-width:46ch;
+}
+
+/* Four tiles in two rows, two to a row: the photograph on top and its
+   caption directly beneath. The frames are not the same height — one
+   proportion in the left column, a slightly shallower one in the right — so
+   the pairs sit a little off one another rather than ruling a table. It is a
+   small difference on purpose: enough to give the block a rhythm, not enough
+   to read as two different formats. */
+.projects__grid{
+  /* The plates are pinned to the right of the sheet, and every edge keeps the
+     page's standoff from the rule beside it: the set opens one inset past the
+     first rule, the pair parts either side of the second, and it closes one
+     inset short of the edge rule. That makes the two columns differ by the
+     one inset — a difference of a few per cent, and the price of every gap
+     to a rule being the same distance. */
+  margin:var(--gap-block-media) 0 0;   /* the page's own distance from a
+                                          block of copy to the media below */
+  padding:0;
+  display:grid;
+  /* with no ruling behind the section there is nothing to set the plates
+     against, so they are simply two of one size, opening where the heading
+     opens */
+  margin-left:calc(33.3333% + var(--rule-inset));
+  grid-template-columns:repeat(2, 1fr);
+  column-gap:clamp(14px, 1.2vw, 26px);    /* the same gaps the plates keep */
+  row-gap:clamp(14px, 1.2vw, 26px);
+  list-style:none;
+}
+
+/* every plate is cut to one size: the set is a series, not an arrangement */
+.project{
+  display:flex;
+  flex-direction:column;
+}
+
+.project__figure{
+  position:relative;
+  margin:0;
+}
+
+/* the photograph is a button, on the same terms as the frames in the running
+   strip: it lifts a little under the cursor and opens in the viewer */
+.project__open{
+  display:block;
+  width:100%;
+  margin:0;
+  padding:0;
+  border:0;
+  background:none;
+  cursor:zoom-in;
+  overflow:hidden;             /* the enlargement is cropped by the frame, so
+                                  the tile itself never grows */
+}
+.project__image{
+  display:block;
+  width:100%;
+  height:100%;
+  aspect-ratio:598 / 455;      /* the proportion a plate takes in the
+                                  Ecosystem field, so the two sections read
+                                  in one measure */
+  object-fit:cover;
+  background:var(--hairline-soft);
+  transition:transform .5s cubic-bezier(.2,.7,.25,1);
+}
+
+.project__open:hover .project__image,
+.project__open:focus-visible .project__image{
+  transform:scale(1.04);
+}
+
+/* the copy sits in the middle of its cell, both ways */
+.project__body{
+  display:flex;
+  flex-direction:column;
+  padding:clamp(10px, .85vw, 18px) 0 0;   /* the title belongs to the plate
+                                             above it, so it sits close */
+}
+
+.project__no{
+  margin:0 0 14px;
+  color:var(--green);
+  font-size:clamp(11px, .677vw, 15px);
+  font-weight:600;
+  letter-spacing:.14em;
+}
+.project__title{
+  margin:0;
+  max-width:20em;
+  font-size:clamp(18px, 1.25vw, 26px);
+  font-weight:600;
+  line-height:1.26;
+  letter-spacing:-.01em;
+}
+.project__text{
+  margin:calc(var(--gap-label-title) * .7) 0 0;
+  max-width:40ch;
+  color:var(--ink-muted);
+  font-size:var(--lede-fs);    /* the same rank as the section's note above:
+                                  a project's copy never outgrows it */
+  line-height:1.5;
+}
+
+@media (max-width:1150px){
+  .projects__intro{ grid-template-columns:1fr; row-gap:18px; }
+  .projects__head{ padding-left:0; }
+  .projects .section-title{ max-width:none; white-space:normal; }
+}
+
+/* the pair of labels that closes each row, set as plain words on a rule —
+   not chips */
+.project__tags{
+  display:flex;
+  flex-wrap:wrap;
+  gap:6px clamp(16px, 1.5vw, 32px);
+  margin:clamp(16px, 1.6vw, 34px) 0 0;
+  color:var(--ink-muted);
+  font-size:clamp(11px, .677vw, 15px);
+  letter-spacing:.01em;
+}
+
+@media (max-width:1150px){
+  /* the sheet has no outer margin left to stand the drawing in, and the set
+     takes the full measure */
+  .tower-art{ display:none; }
+  .projects__grid{ margin-left:0; }
+}
+
+@media (max-width:640px){
+  .projects__grid{ grid-template-columns:1fr; }
+}
+
+/* --- For Whom -------------------------------------------------------------
+   The section's frame is the one the sections above it use: running head on
+   the outer margin, heading and note set to the first column rule. The pills
+   follow the note in the same column, so the control belongs to the text it
+   qualifies rather than floating over the section.
+   ----------------------------------------------------------------------- */
+
+/* This section opens without a rule across the top: the checkerboard above it
+   already closes itself at the foot, and a second line straight after reads
+   as a double rule. */
+.audiences::before{ content:none; }
+
+.audiences{
+  position:relative;
+  overflow:hidden;             /* the ground is a band, not a bleed */
+}
+/* The tower: it stands on the line where this section ends and the grey band
+   below begins — footed on that edge, never over it.  Drawn at the hairline
+   weight the drawing in The Shift is drawn at, so the two read as one hand. */
+.tower-art{
+  position:absolute;
+  left:calc(var(--gutter) - var(--rule-inset));   /* out on the edge rule */
+  bottom:0;                     /* its foot on the edge of the grey band */
+  width:min(22.8%, 425px);
+  z-index:0;                    /* over the section's paper, under its text */
+  pointer-events:none;
+}
+.tower-art__drawing{
+  display:block;
+  width:100%;
+  height:auto;
+}
+.audiences__ground,
+.contact__ground{
+  position:absolute;
+  inset:0;
+  z-index:0;
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  padding-inline:var(--gutter);
+  /* the ground is hatched rather than flat: a diagonal hairline every eleven
+     pixels, at the edge of visibility — tooth in the paper, not a pattern */
+  background:
+    repeating-linear-gradient(135deg,
+      rgba(18,18,18,.016) 0 1px,
+      transparent 1px 11px),
+    var(--paper-warm);
+  pointer-events:none;
+}
+.audiences__ground i + i,
+.contact__ground i + i{ border-left:1px solid var(--rule); }
+/* the two edges of the sheet, redrawn at the same offsets */
+.audiences__ground::before,
+.audiences__ground::after,
+.contact__ground::before,
+.contact__ground::after{
+  content:"";
+  position:absolute;
+  top:0;
+  bottom:0;
+}
+.audiences__ground::before,
+.contact__ground::before{
+  left:calc(var(--gutter) - var(--rule-inset));
+  border-left:1px solid var(--rule);
+}
+.audiences__ground::after,
+.contact__ground::after{
+  right:calc(var(--gutter) - var(--rule-inset));
+  border-right:1px solid var(--rule);
+}
+.audiences .shell,
+.contact .shell{
+  position:relative;
+  z-index:1;
+}
+
+/* After reference_01: the running head keeps the outer margin, and the
+   heading opens on the first column rule — held off it by the same standoff
+   every other block keeps — then sets centred across the rest of the sheet. */
+.audiences__intro{
+  position:relative;
+}
+.audiences .section-label{
+  position:absolute;
+  left:0;
+  top:0;
+}
+.audiences__head{
+  margin-left:calc(33.3333% + var(--rule-inset));
+}
+/* the heading takes the page's own setting, the one The Shift is set in:
+   the same measure, the same indented first line, the same rank */
+
+/* The control, squared off like everything else drawn on this sheet: it reads as a
+   control, which is exactly what it is. Hairline outline at rest, solid
+   green once chosen. */
+.pills{
+  display:flex;
+  flex-wrap:wrap;
+  gap:clamp(10px, .95vw, 18px);
+  margin-top:var(--gap-text-link);
+}
+.pill{
+  margin:0;
+  padding:.95em 1.6em;         /* a plain rectangular control, squared off like
+                                  everything else drawn on this sheet */
+  border:1px solid var(--hairline);
+  border-radius:0;
+  background:none;
+  color:var(--ink);
+  font:inherit;
+  font-size:clamp(13px, .79vw, 17px);
+  font-weight:500;
+  line-height:1.2;
+  letter-spacing:0;
+  white-space:nowrap;
+  cursor:pointer;
+  transition:background-color .25s ease, border-color .25s ease, color .25s ease;
+}
+.pill:hover{
+  border-color:var(--green);
+  background:var(--green);
+  color:var(--paper);
+}
+.pill[aria-selected="true"]{
+  border-color:var(--green);
+  background:var(--green);
+  color:var(--paper);
+}
+
+/* The answers. Flat cells ruled off at the head, not boxes: the rule is the
+   card, in the same tone as everything else on the sheet. */
+.audiences__panels{
+  margin-top:var(--gap-block-media);
+}
+.cards{
+  display:grid;
+  grid-template-columns:repeat(4, 1fr);
+  gap:clamp(14px, 1.15vw, 24px);
+  margin:0;
+  padding:0;
+  list-style:none;
+}
+/* Each card is a surface of its own, as in the reference — but a flat panel
+   of paper on the tinted ground, squared off and outlined by a hairline
+   rather than lifted on a shadow. */
+.card{
+  position:relative;
+  display:flex;
+  flex-direction:column;
+  min-height:clamp(230px, 16vw, 305px);
+  padding:clamp(26px, 2.4vw, 50px) clamp(20px, 1.7vw, 36px) clamp(30px, 2.8vw, 58px);
+  background:var(--paper);
+  border:1px solid var(--rule);
+}
+.card__icon{
+  display:block;
+  width:clamp(26px, 2vw, 40px);
+  height:auto;
+}
+.card__title{
+  margin:clamp(18px, 1.8vw, 38px) 0 0;
+  font-size:clamp(16px, 1.05vw, 23px);
+  font-weight:600;
+  line-height:1.26;
+  letter-spacing:-.008em;
+}
+.card__text{
+  margin:var(--gap-label-title) 0 0;
+  max-width:none;
+  color:var(--ink-muted);
+  font-size:var(--lede-fs);
+  line-height:1.5;
+}
+
+/* the panel is swapped in place: it must not jump the page as it changes */
+.panel[hidden]{ display:none; }
+
+@media (max-width:1150px){
+  /* the running head returns to the flow: there is no longer a margin wide
+     enough to hold it beside the centred heading */
+  .audiences .section-label{ position:static; display:block; margin-bottom:var(--gap-label-title); }
+  .audiences__head{ margin-left:0; }
+  .cards{ grid-template-columns:repeat(2, 1fr); }
+}
+
+@media (max-width:640px){
+  .cards{ grid-template-columns:1fr; }
+}
+
+/* --- Ecosystem ------------------------------------------------------------
+   Six participants set out as a field; scrolling draws them in around the
+   centre, where Im Holz Nova takes its place between them. The end state is
+   the diagram the section is really about — a hub with six around it — and
+   the movement is how it is drawn, not decoration.
+   ----------------------------------------------------------------------- */
+
+.ecosystem{
+  position:relative;
+  --eco-foot:clamp(52px, 6.5vw, 132px);
+  padding-bottom:var(--eco-foot);
+}
+
+.ecosystem__intro{
+  display:grid;
+  grid-template-columns:1fr 2fr;
+  align-items:start;
+}
+.ecosystem__head{
+  padding-left:var(--rule-inset);
+}
+
+/* the travel is one viewport for the pinned field plus the distance the
+   movement itself needs — no spare scroll anywhere */
+.ecosystem__track{
+  position:relative;
+  margin-top:var(--gap-block-media);
+  --stage-h:calc(100vh - var(--header-h));
+  height:calc(var(--stage-h) + 168vh);
+}
+
+/* The heading keeps the sheet's ruling; the field below it does not — a
+   single rule draws the line between the two, and past it the diagram has
+   clear paper to move on. */
+.ecosystem__track::before{
+  content:"";
+  position:absolute;
+  z-index:0;
+  top:0;
+  bottom:calc(var(--eco-foot) * -1);   /* the clear field runs to the foot of
+                                          the section, not just to the track */
+  left:calc(var(--rule-inset) * -1 + 1px);
+  right:calc(var(--rule-inset) * -1 + 1px);
+  background:var(--paper);
+}
+.ecosystem__track::after{
+  content:"";
+  position:absolute;
+  z-index:1;
+  top:0;
+  left:calc(var(--rule-inset) * -1);
+  right:calc(var(--rule-inset) * -1);
+  height:1px;
+  background:var(--rule);
+}
+.ecosystem__stage{
+  --eco-pad:clamp(12px, 1.6vh, 26px);
+  --eco-colgap:clamp(14px, 1.2vw, 26px);
+  --eco-rowgap:clamp(14px, 1.2vw, 26px);
+  position:relative;
+  z-index:1;
+  position:sticky;
+  top:var(--header-h);
+  height:calc(100vh - var(--header-h));
+  padding-block:var(--eco-pad);
+}
+
+.ecosystem__spokes{
+  position:absolute;
+  inset:clamp(12px, 1.6vh, 26px) 0;
+  width:100%;
+  opacity:0;
+  pointer-events:none;
+}
+.ecosystem__spokes line{
+  stroke:var(--hairline);
+  stroke-width:1;
+  vector-effect:non-scaling-stroke;
+}
+
+/* The plates are cut to the same size and set to the same gaps as the
+   photographs in Project Types — one measure runs through the page. */
+.eco-grid{
+  position:absolute;
+  inset:var(--eco-pad) 0;
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  grid-template-rows:repeat(2, 1fr);
+  column-gap:var(--eco-colgap);
+  row-gap:var(--eco-rowgap);
+  margin:0;
+  padding:0;
+  list-style:none;
+}
+
+/* flat cells, ruled not boxed — the same grammar as the rest of the sheet */
+.eco-card{
+  position:relative;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-start;
+  padding:clamp(20px, 1.9vw, 40px) clamp(18px, 1.6vw, 34px);
+  border:1px solid var(--hairline-soft);
+  /* the same hatched ground the audience section stands on, so the plates
+     read as cut from that paper rather than as empty frames */
+  background:
+    repeating-linear-gradient(135deg,
+      rgba(18,18,18,.016) 0 1px,
+      transparent 1px 11px),
+    var(--paper-warm);
+  transform-origin:50% 50%;
+  will-change:transform;
+}
+/* the number is set in a ruled circle, as a plate number on a drawing */
+.eco-card__no{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:clamp(30px, 2.4vw, 46px);
+  height:clamp(30px, 2.4vw, 46px);
+  margin:0;
+  border:1px solid var(--hairline);
+  border-radius:50%;
+  color:var(--green);
+  font-size:clamp(10px, .6vw, 13px);
+  font-weight:600;
+  letter-spacing:.1em;
+}
+.eco-card__icon{
+  position:absolute;
+  top:clamp(20px, 1.9vw, 40px);
+  right:clamp(18px, 1.6vw, 34px);
+  width:clamp(30px, 2.3vw, 44px);
+  height:auto;
+  opacity:.85;
+}
+.eco-card__title{
+  margin:auto 0 0;             /* the name and its line sit together at the
+                                  foot of the plate, under the number */
+  max-width:14em;
+  font-size:clamp(17px, 1.15vw, 24px);
+  font-weight:600;
+  line-height:1.26;
+  letter-spacing:-.008em;
+}
+.eco-card__text{
+  margin:var(--gap-label-title) 0 0;
+  max-width:30em;
+  /* the description belongs to the field at rest; once the six close in, the
+     name alone is what the diagram needs */
+  opacity:calc(1 - var(--eco-p, 0) * 1.7);
+  color:var(--ink-muted);
+  font-size:var(--lede-fs);
+  line-height:1.5;
+}
+
+/* the centre: the one solid field on the page, and only here */
+.eco-hub{
+  position:absolute;
+  left:50%;
+  top:50%;
+  width:clamp(240px, 19vw, 340px);
+  padding:clamp(24px, 2.2vw, 46px) clamp(22px, 2vw, 42px);
+  background:var(--green);
+  color:var(--paper);
+  transform:translate(-50%, -50%) scale(.72);
+  opacity:0;
+  will-change:transform, opacity;
+}
+.eco-hub__label{
+  margin:0;
+  color:rgba(255,255,255,.62);
+  font-size:var(--label-fs);
+  font-weight:500;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+}
+.eco-hub__name{
+  margin:clamp(14px, 1.3vw, 26px) 0 0;
+  font-size:clamp(21px, 1.5vw, 32px);
+  font-weight:600;
+  letter-spacing:-.012em;
+}
+.eco-hub__role{
+  margin:var(--gap-label-title) 0 0;
+  color:rgba(255,255,255,.78);
+  font-size:var(--lede-fs);
+  line-height:1.45;
+}
+
+/* Where there is no room to pin — or where movement is unwelcome — the
+   section shows the end state at once: the centre first, the six beneath it. */
+@media (max-width:1150px), (prefers-reduced-motion:reduce){
+  .ecosystem__intro{ grid-template-columns:1fr; row-gap:18px; }
+  .ecosystem__head{ padding-left:0; }
+  .ecosystem__track{ height:auto; }
+  .ecosystem__track::before,
+  .ecosystem__track::after{ content:none; }
+  .ecosystem__stage{
+    position:static;
+    height:auto;
+    padding-block:0;
+    display:flex;
+    flex-direction:column;
+    gap:clamp(16px, 1.6vw, 30px);
+  }
+  .ecosystem__spokes{ display:none; }
+  .eco-grid{
+    position:static;
+    inset:auto;
+    grid-template-columns:repeat(2, 1fr);
+    grid-template-rows:auto;
+  }
+  .eco-card{ transform:none !important; }
+  .eco-hub{
+    position:static;
+    order:-1;
+    width:100%;
+    transform:none !important;
+    opacity:1 !important;
+  }
+}
+
+@media (max-width:620px){
+  .eco-grid{ grid-template-columns:1fr; }
+}
+
+/* --- Contact --------------------------------------------------------------
+   One offer and one door: no fields, no invented details. The section takes
+   the page's own frame — running head on the outer margin, the sentence set
+   to the first column rule — and the single action closes it at the foot,
+   on the right.
+   ----------------------------------------------------------------------- */
+
+.contact{
+  /* one measure governs the sentence and the row beneath it; it is stated in
+     the heading's own size so both stay in step whatever that size becomes */
+  --contact-measure:calc(20.6 * var(--sec-fs));
+  padding-block:clamp(66px, 7vw, 148px);
+  position:relative;
+  overflow:hidden;             /* the ground is a band, not a bleed */
+}
+/* the tinted band states the edge itself: a rule on top of it would double it */
+.contact::before{ content:none; }
+.contact__inner{
+  display:grid;
+  grid-template-columns:1fr 2fr;
+  align-items:start;
+}
+.contact .section-label{ margin:0; }
+
+.contact__body{
+  padding-left:var(--rule-inset);
+}
+
+/* The sentence is set at the rank of a section heading. Its measure is cut so
+   that the first clause fills the opening line and the dash starts the next —
+   the width does the breaking, never a hard return. */
+.contact__line{
+  margin:0;
+  max-width:var(--contact-measure);   /* cut so the opening clause fills the
+                                         first line, indent and all, and the
+                                         dash starts the next — the width
+                                         does the breaking, never a return */
+  text-indent:2.5em;
+  font-size:var(--sec-fs);
+  line-height:var(--sec-lh);
+  font-weight:500;
+  letter-spacing:-.018em;
+}
+.contact__clause{ white-space:nowrap; }
+
+/* the address on the left, the invitation on the right, both on the measure
+   the sentence above them is set to */
+.contact__act{
+  grid-column:2;
+  justify-self:stretch;
+  display:flex;
+  align-items:center;
+  gap:clamp(18px, 1.6vw, 34px);   /* the two stand side by side, not apart */
+  max-width:calc(var(--contact-measure) + var(--rule-inset));
+  padding-left:var(--rule-inset);
+  margin-top:var(--gap-text-link);
+}
+
+.contact__cta{
+  align-self:center;           /* set against the middle of the block beside it */
+  margin-top:0;
+  font-size:clamp(12px, .73vw, 16px);
+}
+
+@media (max-width:1150px){
+  .contact__inner{ grid-template-columns:1fr; row-gap:18px; }
+  .contact__body{ padding-left:0; }
+  .contact__line{ max-width:19em; text-indent:0; }
+  .contact__clause{ white-space:normal; }
+  .contact__act{ grid-column:1; padding-left:0; }
+}
+
+/* --- the address: a filled block in the ink of the page, not the green the
+   audience control uses for a chosen tab -------------------------------- */
+.mailbtn{
+  display:inline-flex;
+  align-items:center;
+  gap:.75em;
+  padding:.95em 1.5em;
+  border:1px solid var(--ink);
+  background:var(--ink);
+  color:var(--paper);
+  font-size:clamp(13px, .79vw, 17px);
+  font-weight:500;
+  line-height:1.2;
+  letter-spacing:.01em;
+  text-decoration:none;
+  transition:background-color .28s ease, color .28s ease;
+}
+/* solid at rest and outlined under the cursor — plainly seen, and it borrows
+   nothing from the green the audience tabs use */
+.mailbtn:hover,
+.mailbtn:focus-visible{
+  background:none;
+  color:var(--ink);
+}
+.mailbtn__icon{
+  display:block;
+  background:currentColor;
+  -webkit-mask:url("../images/icons/envelope.svg") center / contain no-repeat;
+  mask:url("../images/icons/envelope.svg") center / contain no-repeat;
+  width:1.25em;
+  height:1.25em;
+  flex:0 0 auto;
+}
+
+/* --- Footer -------------------------------------------------------------
+   The title block of the drawing: the page stays one sheet to the very foot.
+   Three cells on the sheet's own thirds, ruled apart, and the drawing running
+   the whole width beneath them in the tone of the ruling itself.
+   --------------------------------------------------------------------- */
+
+.site-footer{
+  position:relative;
+  z-index:1;
+  /* the one dark field that closes the page, hatched like the tinted ground
+     the audience section stands on */
+  background:
+    repeating-linear-gradient(135deg,
+      rgba(255,255,255,.028) 0 1px,
+      transparent 1px 11px),
+    var(--green);
+  color:var(--paper);
+  overflow:hidden;
+}
+
+/* the column rules and the two edges of the sheet, redrawn in white */
+.site-footer__rules{
+  position:absolute;
+  inset:0;
+  z-index:0;
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  padding-inline:var(--gutter);
+  pointer-events:none;
+}
+.site-footer__rules i + i{ border-left:1px solid rgba(255,255,255,.07); }
+.site-footer__rules::before,
+.site-footer__rules::after{
+  content:"";
+  position:absolute;
+  top:0;
+  bottom:0;
+}
+.site-footer__rules::before{
+  left:calc(var(--gutter) - var(--rule-inset));
+  border-left:1px solid rgba(255,255,255,.07);
+}
+.site-footer__rules::after{
+  right:calc(var(--gutter) - var(--rule-inset));
+  border-right:1px solid rgba(255,255,255,.07);
+}
+.site-footer .shell,
+.site-footer__art{
+  position:relative;
+  z-index:1;
+}
+
+.site-footer__grid{
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+}
+.foot-cell{
+  padding:clamp(34px, 3.4vw, 72px) var(--rule-inset) clamp(40px, 4vw, 84px);
+}
+.foot-cell + .foot-cell{
+  border-left:1px solid rgba(255,255,255,.07);
+}
+.foot-cell--brand{ padding-left:0; }
+
+.foot-brand__link{
+  display:inline-block;
+  line-height:0;
+  color:var(--paper);
+}
+.foot-logo{
+  height:clamp(34px, 2.4vw, 46px);
+}
+.foot-brand__role{
+  margin:clamp(16px, 1.5vw, 30px) 0 0;
+  max-width:16em;              /* a short column under the mark, not a line
+                                  run out across the cell */
+  color:rgba(255,255,255,.72);
+  font-size:var(--lede-fs);
+  line-height:1.45;
+}
+
+.foot-cell__head{
+  margin:0 0 clamp(16px, 1.5vw, 30px);
+  color:rgba(255,255,255,.55);
+  font-size:var(--label-fs);
+  font-weight:500;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+}
+.foot-cell__head--second{ margin-top:clamp(26px, 2.6vw, 52px); }
+
+.foot-list{
+  margin:0;
+  padding:0;
+  list-style:none;
+  display:grid;
+  row-gap:clamp(9px, .85vw, 16px);
+}
+.foot-list a{
+  position:relative;
+  color:rgba(255,255,255,.78);
+  font-size:var(--lede-fs);
+  line-height:1.4;
+  text-decoration:none;
+  transition:color .2s ease;
+}
+.foot-list a:hover,
+.foot-list a:focus-visible{ color:var(--paper); }
+
+/* the drawing: full width, closing the sheet. No rule above it — the drawing
+   is the close of the page, and a line across the top of it only fences the
+   foot in twice. It is pulled up into the block above so the two read as one
+   field rather than as a picture parked under the text. */
+.site-footer__art{
+  line-height:0;
+  margin-top:clamp(-72px, -3.4vw, -18px);
+}
+.foot-drawing{
+  display:block;
+  width:100%;          /* the full width of the sheet, edge to edge   */
+  height:auto;         /* the foot grows to whatever height that asks */
+  pointer-events:none;
+}
+
+
+@media (max-width:1150px){
+  .site-footer__grid{ grid-template-columns:1fr 1fr; }
+  .foot-cell--brand{ grid-column:1 / -1; padding-bottom:clamp(26px,2.6vw,52px);
+                     border-bottom:1px solid rgba(255,255,255,.07); }
+  .foot-cell + .foot-cell{ border-left:none; }
+  .foot-cell:nth-child(3){ border-left:1px solid rgba(255,255,255,.07); }
+}
+
+@media (max-width:620px){
+  .site-footer__grid{ grid-template-columns:1fr; }
+  .foot-cell{ padding-inline:0; }
+  .foot-cell:nth-child(3){ border-left:none; border-top:1px solid rgba(255,255,255,.07); }
+}
+
+@media (max-width:768px){
+  .site-footer__rules{ grid-template-columns:repeat(2, 1fr); }
+  .site-footer__rules i:nth-child(3){ display:none; }
+}
+
+/* =========================================================================
+   PHONES
+   One column, one measure, one size. Everything that is set as a pair or a
+   series on a wide sheet is restated here as a single run: the sheet's own
+   ruling has already halved itself at 768, and the blocks that stand on it
+   follow it down rather than keeping a three-column frame nothing else has.
+   ========================================================================= */
+
+@media (max-width:768px){
+  /* the tinted bands are ruled on the same halves the sheet is ruled on:
+     one line down the middle, not two */
+  .audiences__ground,
+  .contact__ground{ grid-template-columns:repeat(2, 1fr); }
+  .audiences__ground i:nth-child(3),
+  .contact__ground i:nth-child(3){ display:none; }
+}
+
+@media (max-width:640px){
+
+  /* --- The Shift: the drawing cannot be read at this width, and standing it
+         under the copy only pushes the next section down --------------- */
+  .shift__art{ display:none; }
+
+  /* --- Every photo caption on the page: plain text under the photograph,
+         not the dark overlay badge. The badge reads fine on a tablet or a
+         desktop frame, but at this width it sits on top of a photograph
+         that is already only a few hundred pixels tall and crowds it. This
+         covers the hero photograph, every project tile, and the two scenes
+         in Sustainable Solutions in one rule, since all three use the same
+         .disclosure--overlay class. --------------------------------- */
+  .disclosure.disclosure--overlay{
+    position:static;
+    max-width:none;
+    margin-top:10px;
+    background:none;
+    color:var(--ink-muted);
+    padding:0;
+  }
+
+  /* --- one proportion for every photograph on the page ----------------- */
+  .hero__image,
+  .solutions__image,
+  .project__image{
+    aspect-ratio:3 / 2;
+    height:auto;
+  }
+  /* --- Sustainable solutions: the notes under each photograph ----------
+     Three plates, each on the full measure, one under the other. Unpinned
+     they were laid into a hairline grid at a third of its width, which read
+     as three grey blocks with the copy crushed into the corner of them. */
+  .annots{
+    display:block;
+    gap:0;
+    margin-top:16px;
+    background:none;
+    border:0;
+  }
+  .annot,
+  .annot--left{
+    display:flex;
+    width:100%;
+    max-width:none;
+    transform:none;
+    background:var(--paper);
+    border:1px solid var(--rule);
+  }
+  .annot + .annot{ margin-top:clamp(10px, 2.6vw, 16px); }
+  .annot__mark,
+  .annot__leader{ display:none; }
+  /* the reveal is driven by the pinned scroll, which does not run here.
+     Padded on the same scale as the hub card in Ecosystem — a block sized
+     by what is in it, not forced to a height borrowed from a card of a
+     different kind. */
+  .annot__card{
+    flex:1 1 auto;
+    border:0;
+    opacity:1;
+    transform:none;
+    padding:clamp(24px, 2.2vw, 46px) clamp(22px, 2vw, 42px);
+  }
+  .annot__title{ font-size:17px; }
+  .annot__text{ font-size:14px; }
+
+  /* --- one card size for the two card grids on the page --------------- */
+  .card,
+  .eco-card{
+    min-height:clamp(210px, 58vw, 240px);
+    padding:clamp(26px, 2.4vw, 50px) clamp(20px, 1.7vw, 36px) clamp(30px, 2.8vw, 58px);
+  }
+
+  /* --- Project types: the name of the project leads, the photograph and
+         its caption follow — a reader meets "Schools & Universities"
+         before the picture that illustrates it, not after ------------- */
+  .project{ display:flex; flex-direction:column; }
+  .project__body{ order:-1; padding:0 0 clamp(8px, 2vw, 12px); }
+
+  /* --- Contact: the address stands on its own line, and the invitation
+         follows underneath it rather than beside it ------------------- */
+  .contact__act{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:16px;
+    max-width:none;
+  }
+  .mailbtn{ max-width:100%; }
+  .contact__cta{ align-self:flex-start; }
+
+  /* --- Footer: the two lists take the halves the sheet is ruled into, and
+         the horizontal rules go. They were drawn inside the shell, so they
+         stopped a gutter short of the edge on both sides and read as
+         floating lines rather than as the sheet's own ruling. --------- */
+  .site-footer__grid{
+    grid-template-columns:1fr 1fr;
+    column-gap:clamp(20px, 6vw, 34px);
+  }
+  .foot-cell{ padding-inline:0; }
+  .foot-cell--brand{
+    grid-column:1 / -1;
+    padding-bottom:clamp(26px, 6vw, 40px);
+    border-bottom:0;
+  }
+  .foot-cell + .foot-cell,
+  .foot-cell:nth-child(3){
+    border-left:0;
+    border-top:0;
+  }
+}
+
+/* =========================================================================
+   TABLET — roughly iPad portrait to iPad Pro (769–1150px)
+   The phone rules above go further than this range needs: the sheet still
+   holds three columns here, so the things built for a single narrow column
+   are scoped back out of it, and only what is actually wrong at this width
+   is corrected.
+   ========================================================================= */
+
+@media (min-width:769px) and (max-width:1150px){
+
+  /* --- The Shift: the sheet still has room for the drawing beside the
+         text at this width, so it keeps its place rather than disappearing
+         the way it does on a phone. Its own rule is absolute and unaffected
+         by the column count, so simply showing it again is enough. ----- */
+  .shift__art{ display:block; }
+
+  /* --- long headings stop short of the full measure. Projects lost its
+         cap outright at 1150; Contact's opening line did too — both ran
+         the width of the sheet, which reads as heavier than intended at
+         this width. Shift already keeps its own, narrower cap by default
+         and is left alone. ------------------------------------------- */
+  .projects .section-title{ max-width:26em; }
+
+  /* --- the ecosystem's grey cards matched to the audience cards' size —
+         same floor height, same padding, so the two grids read as one
+         scale rather than two different ones sitting near each other --- */
+  .eco-card{
+    min-height:clamp(230px, 16vw, 305px);
+    padding:clamp(26px, 2.4vw, 50px) clamp(20px, 1.7vw, 36px) clamp(30px, 2.8vw, 58px);
+  }
+
+  /* --- Footer: the sheet still has three columns at this width, so the
+         footer keeps its three cells side by side — brand, menu, contacts
+         — instead of the brand spanning the top with the other two
+         underneath. That stray arrangement is what put a rule across the
+         middle of the block with nothing on either side of it. -------- */
+  .site-footer__grid{ grid-template-columns:repeat(3, 1fr); }
+  .foot-cell--brand{
+    grid-column:auto;
+    padding-bottom:clamp(34px, 3.4vw, 72px);
+    border-bottom:0;
+  }
+  .foot-cell + .foot-cell{ border-left:1px solid rgba(255,255,255,.07); }
+  .foot-cell:nth-child(3){ border-left:1px solid rgba(255,255,255,.07); }
+}
+
+/* --- The hero headline, narrowed to iPad-Pro-sized screens only ---------
+   Forcing the dash clause onto its own line only reads well at a specific
+   container width: on the narrower tablets in the general range above (a
+   768 or 834px-wide screen, say), the first clause itself is already tight
+   enough to drop "happening" onto a second line by itself, and forcing the
+   dash down as well then strands it on a third. Those widths are better
+   left to wrap on their own, exactly as the general ≤1150 rule already has
+   them — so this fix is scoped tighter, to the one width where the room is
+   actually there for a clean two-line break. */
+@media (min-width:1000px) and (max-width:1150px){
+  .hero__title{ max-width:22em; }
+  .hero__title-clause{ white-space:nowrap; }
+}
+
+/* Annotation positions moved from HTML into the stylesheet. */
+.annot--position-01{ --x:20%; --y:38%; }
+.annot--position-02{ --x:72%; --y:29%; }
+.annot--position-03{ --x:80%; --y:82%; }
+.annot--position-04{ --x:20%; --y:24%; }
+.annot--position-05{ --x:88%; --y:33%; }
+.annot--position-06{ --x:30%; --y:62%; }

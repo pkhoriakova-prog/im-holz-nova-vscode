@@ -1,5 +1,10 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <svg viewBox="8 62 584 462" fill="none" preserveAspectRatio="xMinYMid meet" xmlns="http://www.w3.org/2000/svg" width="584" height="462">
+          <style>
+            .l { opacity: .25; stroke-width: 1.2; }
+            .w { opacity: .17; stroke-width: 1.2; }
+            .g { opacity: .13; }
+          </style>
           <path class="l" d="M40.0 132.0 L268.0 70.0 L560.0 120.0 L560.0 442.0 L268.0 500.0 L40.0 452.0 Z" stroke="#121212" stroke-width="1" opacity=".16"/>
           <path class="l" d="M268.0 70.0 L268.0 500.0" stroke="#121212" stroke-width="1" opacity=".16"/>
           <path class="l" d="M40.0 185.3 L268.0 141.7" stroke="#121212" stroke-width="1" opacity=".16"/>

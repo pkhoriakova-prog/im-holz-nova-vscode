@@ -1,5 +1,5 @@
 /* =========================================================================
-   Im Holz Nova — Institutional Drafting
+   IM HOLZ Nova — Institutional Drafting
    Step 1: header and hero, both after reference_01
 
    Measured off the references at 1920px wide, content box 1840px (40px
@@ -686,9 +686,6 @@ body > main{
 }
 .solutions__stage{ z-index:1; }
 
-/* This heading opens at the column edge, so it takes no first-line indent. */
-.solutions .section-title{ text-indent:0; }
-
 /* the same frame as The Shift: label in the first third, text set to the
    first rule with the standard inset */
 .solutions__intro{
@@ -886,8 +883,6 @@ body > main{
 .annot:nth-child(3)[data-shown="true"] .annot__leader{ transition-delay:.2s; }
 .annot:nth-child(3)[data-shown="true"] .annot__card{ transition-delay:.26s; }
 
-
-.solutions .section-title{ max-width:none; }
 
 /* the per-photograph captions duplicated onto each scene: shown only where
    the scenes are unstacked (tablet and phone) — see the shared query below.
@@ -1525,7 +1520,7 @@ body > main{
 
 /* --- Ecosystem ------------------------------------------------------------
    Six participants set out as a field; scrolling draws them in around the
-   centre, where Im Holz Nova takes its place between them. The end state is
+   centre, where IM HOLZ Nova takes its place between them. The end state is
    the diagram the section is really about — a hub with six around it — and
    the movement is how it is drawn, not decoration.
    ----------------------------------------------------------------------- */
@@ -1671,9 +1666,7 @@ body > main{
 .eco-card__text{
   margin:var(--gap-label-title) 0 0;
   max-width:30em;
-  /* the description belongs to the field at rest; once the six close in, the
-     name alone is what the diagram needs */
-  opacity:calc(1 - var(--eco-p, 0) * 1.7);
+  opacity:1;
   color:var(--ink-muted);
   font-size:var(--lede-fs);
   line-height:1.5;
@@ -1760,7 +1753,7 @@ body > main{
 .contact{
   /* one measure governs the sentence and the row beneath it; it is stated in
      the heading's own size so both stay in step whatever that size becomes */
-  --contact-measure:calc(20.6 * var(--sec-fs));
+  --contact-measure:calc(23 * var(--sec-fs));
   padding-block:clamp(66px, 7vw, 148px);
   position:relative;
   overflow:hidden;             /* the ground is a band, not a bleed */
@@ -1778,23 +1771,16 @@ body > main{
   padding-left:var(--rule-inset);
 }
 
-/* The sentence is set at the rank of a section heading. Its measure is cut so
-   that the first clause fills the opening line and the dash starts the next —
-   the width does the breaking, never a hard return. */
+/* Keep the heading in a narrower column so it wraps naturally. */
 .contact__line{
   margin:0;
-  max-width:var(--contact-measure);   /* cut so the opening clause fills the
-                                         first line, indent and all, and the
-                                         dash starts the next — the width
-                                         does the breaking, never a return */
+  max-width:var(--contact-measure);
   text-indent:2.5em;
   font-size:var(--sec-fs);
   line-height:var(--sec-lh);
   font-weight:500;
   letter-spacing:-.018em;
 }
-.contact__clause{ white-space:nowrap; }
-
 /* the address on the left, the invitation on the right, both on the measure
    the sentence above them is set to */
 .contact__act{
@@ -1817,8 +1803,7 @@ body > main{
 @media (max-width:1150px){
   .contact__inner{ grid-template-columns:1fr; row-gap:18px; }
   .contact__body{ padding-left:0; }
-  .contact__line{ max-width:19em; text-indent:0; }
-  .contact__clause{ white-space:normal; }
+  .contact__line{ max-width:18em; }
   .contact__act{ grid-column:1; padding-left:0; }
 }
 

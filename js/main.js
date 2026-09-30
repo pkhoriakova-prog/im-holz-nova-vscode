@@ -318,7 +318,7 @@
 })();
 
 /* The ecosystem draws itself: six participants at rest, then closing in around
-   the centre while Im Holz Nova takes its place between them. Scroll position
+   the centre while IM HOLZ Nova takes its place between them. Scroll position
    is the only clock, so the reader can run it forwards or back. */
 (function () {
   var track = document.querySelector('.ecosystem__track');

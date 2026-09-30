@@ -1,4 +1,4 @@
-# Im Holz Nova — проект для VS Code
+# IM HOLZ Nova — проект для VS Code
 
 Статический сайт из исходного HTML. HTML, CSS, JavaScript и изображения
 разделены на файлы. Сборка и npm не нужны.

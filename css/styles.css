@@ -596,6 +596,13 @@ body > main{
 .section-text + .section-text{
   margin-top:var(--gap-para);
 }
+@media (min-width:1151px){
+  /* Copy set against the first inner rule stops before the second one. */
+  .section-text{
+    max-width:min(var(--section-copy-width, calc(35 * var(--lede-fs))),
+      calc((100vw - var(--gutter) - var(--gutter)) / 3 - var(--rule-inset) - var(--rule-inset)));
+  }
+}
 
 /* --- The Shift: label on its own axis, text right --- */
 .shift__inner{
@@ -1541,16 +1548,11 @@ body > main{
 
 /* --- Vision & Mission -----------------------------------------------------
    Set out like The Shift: running head on the margin, heading and text on the
-   first rule, a drawing on the right. On desktop and tablets the section is held on
-   the screen, at the size of its own content rather than the full height,
-   while the page scrolls through it: the building is raised floor by floor
-   from the start, about halfway the vision gives way to the mission, and the
-   stages are drawn in. When it is complete the page moves on. Script sets
-   --v, --m and --f0..--f4; at rest they all read as finished, so the section
-   is complete without it.
+   first rule, a drawing on the right. On desktop and tablets the stage holds
+   while the building rises and the text changes with the scroll.
    ----------------------------------------------------------------------- */
 .vision{
-  --v:1; --m:1; --f0:1; --f1:1; --f2:1; --f3:1; --f4:1;
+  --v:1; --m:0; --f0:1; --f1:1; --f2:1; --f3:1; --f4:1;
 }
 .vision__inner{
   position:relative;
@@ -1584,6 +1586,8 @@ body > main{
 .vision__switch{ display:none; }
 .vslide{ grid-area:1 / 1; }
 .vslide__label{ display:none; }
+/* the heading breaks after the comma: two lines, the second opening on "beyond" */
+.vtitle-line{ display:block; }
 .vslide--vision{
   opacity:var(--v);
   transform:translateY(calc((1 - var(--v)) * -22px));
@@ -1646,27 +1650,39 @@ body > main{
   color:var(--green);
   pointer-events:none;
 }
+.vision__art--wide{ display:none; }
 .art-ghost{ stroke-dasharray:3 5; opacity:.35; }
 .art-win{ opacity:.55; }
-.vision__peek{ display:none; }
 .fl-0{ opacity:var(--f0); transform:translateY(calc((1 - var(--f0)) * 18px)); }
 .fl-1{ opacity:var(--f1); transform:translateY(calc((1 - var(--f1)) * 18px)); }
 .fl-2{ opacity:var(--f2); transform:translateY(calc((1 - var(--f2)) * 18px)); }
 .fl-3{ opacity:var(--f3); transform:translateY(calc((1 - var(--f3)) * 18px)); }
 .fl-4{ opacity:var(--f4); transform:translateY(calc((1 - var(--f4)) * 18px)); }
 
-/* The hold: a track as long as the movement needs, with the section pinned
-   in it at the size of its own content */
+/* The stage holds while the building and statements change. */
 @media (min-width:700px) and (prefers-reduced-motion:no-preference){
   .vision{ padding-block:0; }
-  .vision__track{ position:relative; height:calc(var(--vision-h, 700px) + 150vh); }
+  .vision__track{ position:relative; height:calc(var(--vision-h, 700px) + 170vh); }
   .vision__stage{
     position:sticky;
     top:var(--header-h);
+    /* exactly the breathing room every other section has */
     padding-block:clamp(52px, 6.5vw, 132px);
   }
-  /* what is left of the screen below the held stage shows the top of the next
-     section, which then arrives in exactly this place */
+  /* only on screens too short to hold the stage at that size */
+  @media (max-height:720px){
+    .vision__stage{ padding-block:clamp(32px, 6vh, 52px); }
+  }
+  /* The stage is as tall as its content, and the section's breathing room is
+     counted from the drawing, so the drawing keeps its full size (it is 352
+     wide to 416 tall) unless the screen is too short to hold it with that room
+     above and below. What is left below the stage shows the top of the next
+     section, which then arrives in exactly this place. */
+  .vision__art{
+    width:min(calc(100% - var(--rule-inset) * 2), 560px,
+              calc((100vh - var(--header-h) - 2 * clamp(52px, 6.5vw, 132px)) * 352 / 416));
+    max-height:none;
+  }
   .vision .vision__peek{
     display:block;
     position:absolute;
@@ -1677,8 +1693,10 @@ body > main{
     overflow:hidden;
     pointer-events:none;
   }
-  /* the drawing never taller than what is left of the screen */
-  .vision__art{ max-height:calc(100vh - var(--header-h) - clamp(104px, 13vw, 264px)); }
+}
+.vision__peek{ display:none; }
+@media (min-width:700px) and (prefers-reduced-motion:no-preference){
+  .vision.is-held + .pillars{ visibility:hidden; }
 }
 
 /* On tablets, keep both statements in the same place and give the drawing
@@ -1710,12 +1728,30 @@ body > main{
   .vision__switch-button[aria-pressed="true"]{ border-color:var(--green); color:var(--green); }
   .vision__inner{ grid-template-columns:1fr; row-gap:clamp(20px, 5vw, 32px); }
   .vision__labels{ display:none; }
-  .vision__text{ display:block; padding:0; }
+  .vision__text{ display:block; width:100%; padding:0; }
   .vslide{ opacity:1; transform:none; pointer-events:auto; }
-  .vslide:not(.is-current){ display:none; }
-  .vision__text .vslide.is-current{ margin-top:0; }
+  .vision__text .vslide{ margin-top:0; }
+  .vision__text .vslide:not(.is-current){ display:none; }
+  .vision__text .vslide.is-current{ opacity:1; visibility:visible; }
   .vision__text .vslide__label{ display:none; }
-  .vision__art{ grid-column:1; grid-row:auto; justify-self:end; width:min(48%, 180px); }
+  .vision__text .vslide--vision .section-title{ max-width:min(75%, 18ch); }
+  .vision__art{
+    grid-column:1;
+    grid-row:auto;
+    justify-self:end;
+    width:min(48%, 180px);
+    margin-top:clamp(16px, 4vw, 24px);
+  }
+  .vision[data-current="mission"] .vision__art{ display:none; }
+  /* the building lies down: wide, across the screen, in place of the tall one */
+  .vision__art--tall{ display:none; }
+  .vision__art.vision__art--wide{
+    display:block;
+    justify-self:stretch;
+    width:100%;
+    max-width:min(100%, 440px);
+    margin-top:clamp(24px, 7vw, 44px);
+  }
 }
 @media (prefers-reduced-motion:reduce){
   .vision__labels{ display:none; }
@@ -1728,6 +1764,11 @@ body > main{
   .vision__inner{ grid-template-columns:1fr; row-gap:clamp(36px, 7vw, 64px); }
   .vision__text{ padding-left:0; }
   .vision__art{ grid-column:1; grid-row:auto; justify-self:start; width:min(100%, 340px); }
+}
+@media (max-width:699px) and (prefers-reduced-motion:reduce){
+  .vision__text{ display:block; }
+  .vision__text .vslide{ margin-top:0; }
+  .vision__text .vslide__label{ display:none; }
 }
 
 /* --- Four Pillars ---------------------------------------------------------

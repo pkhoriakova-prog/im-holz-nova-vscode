@@ -178,10 +178,8 @@ infrastructure — resource-efficient, adaptable and designed to work with natur
 
 
   <!-- ============ VISION & MISSION ============ -->
-  <!-- Laid out like The Shift. On desktop and tablets it is held on the screen, at the
-       size of its content, until it has played through: the building on the
-       right is raised floor by floor from the start, and about halfway the
-       vision gives way to the mission in the same place (label included).
+  <!-- Laid out like The Shift. On desktop and tablets the stage is held while
+       the building rises floor by floor and the vision gives way to the mission.
        Phones show one statement at a time; reduced motion on larger screens
        shows both in sequence with the finished drawing. -->
   <section class="section vision" id="vision" aria-labelledby="vision-heading">
@@ -201,7 +199,7 @@ infrastructure — resource-efficient, adaptable and designed to work with natur
       <div class="vision__text">
         <div class="vslide vslide--vision is-current">
           <p class="section-label vslide__label">Our Vision</p>
-          <h2 class="section-title" id="vision-heading">Building with wood, beyond forest borders</h2>
+          <h2 class="section-title" id="vision-heading"><span class="vtitle-line">Building with wood,</span> <span class="vtitle-line">beyond forest borders</span></h2>
           <p class="section-text">
             Wood is becoming the defining building material of our century. We bring certified European
             timber and Austrian engineering to regions where timber construction has so far been out of
@@ -231,7 +229,7 @@ infrastructure — resource-efficient, adaptable and designed to work with natur
 
       <!-- the building: an outline of intent, then one floor raised for each
            stage of the mission -->
-      <svg class="vision__art" viewBox="24 92 352 416" fill="none" stroke="currentColor" stroke-width="1"
+      <svg class="vision__art vision__art--tall" viewBox="24 92 352 416" fill="none" stroke="currentColor" stroke-width="1"
            stroke-linecap="square" aria-hidden="true" focusable="false">
         <path class="art-ghost" d="M70 100h260v400H70zM58 100h284" vector-effect="non-scaling-stroke"/>
         <path d="M30 500h340" vector-effect="non-scaling-stroke"/>
@@ -242,13 +240,18 @@ infrastructure — resource-efficient, adaptable and designed to work with natur
         <g class="fl fl-4"><path d="M70 100h260v80H70zM135 100v80M200 100v80M265 100v80M70 106h260M58 100h284" vector-effect="non-scaling-stroke"/><path class="art-win" d="M84 122h37v36H84zM149 122h37v36h-37zM214 122h37v36h-37zM279 122h37v36h-37z" vector-effect="non-scaling-stroke"/></g>
       </svg>
 
+      <!-- phones: the drawing from The Shift, which is hidden on small screens
+           there, lies broad and low under the statement instead of the tall
+           building (no scroll movement on a phone, so it is drawn finished) -->
+      <img class="vision__art vision__art--wide" src="images/illustrations/shift-building.svg" alt="" width="584" height="462" aria-hidden="true">
+
     </div>
 
     <!-- The top of the next section, drawn under the held stage so the screen
-         is not left with a strip of empty paper while it plays. It is the
-         same markup as the section below, which arrives exactly where this
-         stands — so it is hidden from assistive software and out of the flow. -->
-    <div class="section pillars vision__peek" aria-hidden="true" inert>
+         is not left with a strip of empty paper while it plays. It is the same
+         markup as the section below, which arrives exactly where this stands,
+         so it is hidden from assistive software and kept out of the flow. -->
+    <div class="section pillars vision__peek" aria-hidden="true">
       <div class="pillars__ground"><i></i><i></i><i></i></div>
       <div class="shell">
         <div class="pillars__intro">

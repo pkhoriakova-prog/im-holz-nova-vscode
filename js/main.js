@@ -486,24 +486,14 @@
   });
 })();
 
-/* Vision & Mission. The section is a track with the section itself pinned in
-   it; how far the page is through the track is the only input. The building is
-   raised floor by floor from the very start, about halfway the vision gives
-   way to the mission, and the page moves on only once everything has played.
-   Everything is set as custom properties on the section, so the stylesheet
-   decides how it looks. Without the pin (phones, reduced motion)
-   the drawing rests complete. */
+/* Vision & Mission. The stage is held on desktop and tablets while the
+   building rises and the statements change. Phones use buttons. */
 (function () {
   var section = document.querySelector('.vision');
   if (!section) return;
   var track = section.querySelector('.vision__track');
   var stage = section.querySelector('.vision__stage');
   if (!track || !stage) return;
-
-  // The held section previews the real next section while its animation runs.
-  var preview = section.querySelector('.vision__peek .shell');
-  var pillarCards = document.querySelector('#pillars .pillars__cards');
-  if (preview && pillarCards) preview.appendChild(pillarCards.cloneNode(true));
 
   section.querySelectorAll('[data-vision-slide]').forEach(function (button) {
     button.addEventListener('click', function () {
@@ -513,6 +503,7 @@
       });
       section.querySelector('.vslide--vision').classList.toggle('is-current', selected === 'vision');
       section.querySelector('.vslide--mission').classList.toggle('is-current', selected === 'mission');
+      section.dataset.current = selected;
     });
   });
 
@@ -520,8 +511,8 @@
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
   var queued = false;
 
-  var TAIL = 0.06;                    // held finished for a moment at the end
   var BUILD0 = 0.04, BUILD1 = 0.94;   // five floors share this stretch
+  var TAIL = 0.12;
   var SWAP0 = 0.44, SWAP1 = 0.56;     // vision fades out before mission fades in
 
   function live() { return wide.matches && !reduce.matches; }
@@ -534,19 +525,21 @@
   function rest() {
     NAMES.forEach(function (n) { section.style.removeProperty(n); });
     section.style.removeProperty('--vision-h');
+    section.classList.remove('is-held');
   }
 
   function paint() {
     queued = false;
     if (!live()) { rest(); return; }
-    /* the track is as long as the stage plus the distance the movement needs */
     section.style.setProperty('--vision-h', stage.offsetHeight + 'px');
     var travel = track.offsetHeight - stage.offsetHeight;
     if (travel <= 0) { rest(); return; }
-
     var stick = parseFloat(window.getComputedStyle(stage).top) || 0;
     var raw = (stick - track.getBoundingClientRect().top) / travel;
     var q = span(raw, 0, 1 - TAIL);
+    // while the stage is held, the real next section waits: its top is already
+    // drawn under the stage, and it takes over on the very line it was drawn on
+    section.classList.toggle('is-held', raw < 0.999);
 
     set('--v', 1 - smooth(span(q, SWAP0, 0.50)));
     set('--m', smooth(span(q, 0.50, SWAP1)));
@@ -564,6 +557,8 @@
 
   window.addEventListener('scroll', onScroll, { passive: true });
   window.addEventListener('resize', onScroll);
+  // the stage changes height when fonts arrive or the drawing resizes
+  if ('ResizeObserver' in window) new ResizeObserver(onScroll).observe(stage);
   [wide, reduce].forEach(function (mq) {
     (mq.addEventListener ? mq.addEventListener.bind(mq, 'change')
                          : mq.addListener.bind(mq))(onScroll);

@@ -439,6 +439,7 @@ body > main{
 }
 
 .hero__image{
+  display:block;
   width:100%;
   height:auto;
   aspect-ratio:16 / 9;         /* 1360 x 765 in reference_01 */
@@ -1343,6 +1344,193 @@ body > main{
   .projects__grid{ grid-template-columns:1fr; }
 }
 
+/* --- Our Projects ---------------------------------------------------------
+   A deep green sheet. The frame is the one of Project Types (running head on
+   the margin, heading and note on the first rule); the two projects stand to
+   the right as outlined plates, each with a line drawing in its corner, and the
+   key figures close the section.
+   ----------------------------------------------------------------------- */
+.ourprj::before{ content:none; }
+.ourprj{
+  background:
+    repeating-linear-gradient(135deg,
+      rgba(255,255,255,.025) 0 1px,
+      transparent 1px 11px),
+    var(--green);
+  color:var(--paper);
+}
+.ourprj .section-title{ max-width:none; white-space:nowrap; }
+.ourprj .section-label{ color:rgba(255,255,255,.7); }
+.ourprj .section-text{ color:rgba(255,255,255,.78); }
+
+/* two projects side by side, each a card with its picture, name, tags and
+   text inside */
+.ourprj__works{
+  list-style:none;
+  margin:var(--gap-block-media) 0 0;
+  padding:0;
+  display:grid;
+  grid-template-columns:repeat(2, 1fr);
+  gap:clamp(14px, 1.2vw, 26px);
+  margin-left:calc(33.3333% + var(--rule-inset));   /* set to the right, as in Project Types */
+}
+.work{
+  position:relative;
+  overflow:hidden;
+  aspect-ratio:598 / 455;      /* the proportion of the photographs in Project Types */
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  --work-px:clamp(24px, 2.2vw, 46px);
+  --work-py:clamp(28px, 2.6vw, 54px);
+  padding:var(--work-py) var(--work-px);
+  background:var(--paper);
+  color:var(--ink);
+}
+.work__title{
+  margin:0;
+  max-width:13em;              /* the name does not run the width of the card */
+  text-wrap:balance;
+  color:var(--green);
+  font-size:clamp(20px, 1.5vw, 32px);
+  font-weight:600;
+  line-height:1.2;
+  letter-spacing:-.012em;
+}
+.work__text{
+  margin:var(--gap-label-title) 0 0;
+  max-width:21em;              /* the text does not run the width of the card either */
+  color:var(--ink-muted);
+  font-size:var(--lede-fs);
+  line-height:1.5;
+}
+/* where the project stands: a dot and one line */
+.work__status{
+  display:flex;
+  align-items:center;
+  gap:.7em;
+  margin:0 0 clamp(18px, 1.6vw, 32px);
+  color:var(--green);
+  font-size:clamp(10px, .62vw, 13px);
+  font-weight:600;
+  letter-spacing:.12em;
+  line-height:1;
+  text-transform:uppercase;
+}
+.work__status::before{
+  content:"";
+  width:.65em;
+  height:.65em;
+  border-radius:50%;
+  background:var(--green);
+  animation:status-pulse 2s ease-out infinite;
+}
+/* the dot breathes: a soft ring leaves it and fades, while the search goes on */
+@keyframes status-pulse{
+  0%   { box-shadow:0 0 0 0 rgba(1,67,53,.45); opacity:1; }
+  70%  { box-shadow:0 0 0 .6em rgba(1,67,53,0); opacity:.55; }
+  100% { box-shadow:0 0 0 0 rgba(1,67,53,0); opacity:1; }
+}
+@media (prefers-reduced-motion:reduce){
+  .work__status::before{ animation:none; }
+}
+.work .link-underline{ margin-top:auto; padding-top:var(--gap-text-link); color:var(--ink); }
+/* the building, trimmed to its own outline, stands in the right-hand lower
+   corner of the card; the text sits above it */
+.work__art{
+  position:absolute;
+  right:0;
+  bottom:0;
+  width:56%;
+  height:auto;
+  pointer-events:none;
+}
+.work > :not(.work__art){ position:relative; z-index:1; }
+
+@media (max-width:1150px){
+  .ourprj__works{ margin-left:0; }
+}
+@media (max-width:1150px){
+  .ourprj .section-title{ white-space:normal; }
+}
+/* small tablets and phones: the building no longer lies under the text but
+   stands beneath it in the corner of the card, whole. Two cards to a row on a
+   small tablet, one on a phone. */
+@media (max-width:900px){
+  .work{ aspect-ratio:auto; min-height:0; }
+  .work__art{
+    position:static;
+    order:9;
+    width:58%;
+    max-width:none;
+    margin:auto calc(-1 * var(--work-px)) calc(-1 * var(--work-py)) auto;   /* on the foot of the card, at its right edge */
+  }
+  .work__text,
+  .work .link-underline{ margin-bottom:var(--gap-text-link); }
+}
+@media (max-width:640px){
+  .ourprj__works{ grid-template-columns:1fr; row-gap:clamp(14px, 3vw, 24px); }
+}
+
+
+
+/* --- In Numbers -----------------------------------------------------------
+   Between The Shift and Vision: running head on the margin, a long statement
+   and its note on the first rule, and the three figures large beneath it,
+   opening on the first rule, in the middle of the second column and on the
+   second rule.
+   ----------------------------------------------------------------------- */
+.numbers::before{ content:none; }
+.numbers{ position:relative; overflow:hidden; }
+.numbers .shell{ position:relative; z-index:1; }
+.numbers__intro{ position:relative; }
+.numbers__intro .section-label{ position:absolute; left:0; top:0; }
+.numbers__head{ margin-left:calc(33.3333% + var(--rule-inset)); }
+.numbers .section-title{ max-width:min(19em, 100%); }
+.numbers__head .section-text{ max-width:30em; }
+/* the heading breaks before "and": two lines, each its own block */
+.numbers .title-line{ display:block; }
+.numbers__figures{
+  list-style:none;
+  margin:clamp(32px, 3.5vw, 72px) 0 0;
+  margin-left:33.3333%;
+  padding:0;
+  display:grid;
+  grid-template-columns:repeat(3, 25%);
+}
+.fact{ padding:0 var(--rule-inset); }
+.fact__value{
+  margin:0;
+  font-variant-numeric:tabular-nums;
+  color:var(--green);
+  font-size:clamp(32px, 3.3vw, 68px);
+  font-weight:500;
+  line-height:1;
+  letter-spacing:-.03em;
+}
+.fact__plus{ font-weight:400; }
+.fact__label{
+  margin:var(--gap-label-title) 0 0;
+  color:var(--ink-muted);
+  font-size:var(--lede-fs);
+  line-height:var(--lede-lh);
+}
+@media (max-width:1150px){
+  .numbers__intro .section-label{ position:static; display:block; margin-bottom:var(--gap-label-title); }
+  .numbers__head{ margin-left:0; }
+  .numbers__figures{ margin-left:0; grid-template-columns:repeat(3, 1fr); }
+  .fact{ padding:0 var(--rule-inset) 0 0; }
+}
+@media (max-width:640px){
+  /* the three figures stay in one row, each with its caption beneath in two lines */
+  .numbers__figures{ grid-template-columns:repeat(3, 1fr); column-gap:12px; }
+  .fact{ padding:0; }
+  .fact__value{ font-size:clamp(28px, 9vw, 40px); }
+  .fact__label{ font-size:12px; line-height:1.35; max-width:7.5em; }
+  /* on a phone the heading simply runs on */
+  .numbers .title-line{ display:inline; }
+}
+
 /* --- For Whom -------------------------------------------------------------
    The section's frame is the one the sections above it use: running head on
    the outer margin, heading and note set to the first column rule. The pills
@@ -1364,8 +1552,8 @@ body > main{
 .tower-art{
   position:absolute;
   left:calc(var(--gutter) - var(--rule-inset));   /* out on the edge rule */
-  bottom:0;                     /* its foot on the edge of the grey band */
-  width:min(22.8%, 425px);
+  bottom:-8px;                  /* trim the image's transparent lower edge */
+  width:min(52%, 1000px);
   z-index:0;                    /* over the section's paper, under its text */
   pointer-events:none;
 }
@@ -1373,6 +1561,7 @@ body > main{
   display:block;
   width:100%;
   height:auto;
+  opacity:.78;
 }
 .audiences__ground,
 .pillars__ground,
@@ -1588,13 +1777,16 @@ body > main{
 .vslide__label{ display:none; }
 /* the heading breaks after the comma: two lines, the second opening on "beyond" */
 .vtitle-line{ display:block; }
+/* each statement drifts a short way and softens as it leaves or arrives */
 .vslide--vision{
   opacity:var(--v);
-  transform:translateY(calc((1 - var(--v)) * -22px));
+  transform:translateY(calc((1 - var(--v)) * -14px));
+  will-change:opacity, transform;
 }
 .vslide--mission{
   opacity:var(--m);
-  transform:translateY(calc((1 - var(--m)) * 22px));
+  transform:translateY(calc((1 - var(--m)) * 14px));
+  will-change:opacity, transform;
 }
 
 /* the stages of the mission, each drawn in as its floor goes up */
@@ -1729,10 +1921,10 @@ body > main{
   .vision__inner{ grid-template-columns:1fr; row-gap:clamp(20px, 5vw, 32px); }
   .vision__labels{ display:none; }
   .vision__text{ display:block; width:100%; padding:0; }
-  .vslide{ opacity:1; transform:none; pointer-events:auto; }
+  .vslide{ opacity:1; transform:none; filter:none; will-change:auto; pointer-events:auto; }
   .vision__text .vslide{ margin-top:0; }
   .vision__text .vslide:not(.is-current){ display:none; }
-  .vision__text .vslide.is-current{ opacity:1; visibility:visible; }
+  .vision__text .vslide.is-current{ opacity:1; visibility:visible; animation:vslide-in .6s cubic-bezier(.22, 1, .36, 1) both; }
   .vision__text .vslide__label{ display:none; }
   .vision__text .vslide--vision .section-title{ max-width:min(75%, 18ch); }
   .vision__art{
@@ -1753,10 +1945,15 @@ body > main{
     margin-top:clamp(24px, 7vw, 44px);
   }
 }
+@keyframes vslide-in{
+  from{ opacity:0; transform:translateY(12px); }
+  to{ opacity:1; transform:none; }
+}
 @media (prefers-reduced-motion:reduce){
   .vision__labels{ display:none; }
   .vision__text{ display:block; }
-  .vslide{ opacity:1; transform:none; pointer-events:auto; }
+  .vslide{ opacity:1; transform:none; filter:none; will-change:auto; pointer-events:auto; }
+  .vision__text .vslide.is-current{ animation:none; }
   .vslide + .vslide{ margin-top:clamp(36px, 5vw, 64px); }
   .vslide__label{ display:block; margin-bottom:var(--gap-label-title); }
 }

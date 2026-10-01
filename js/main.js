@@ -513,11 +513,13 @@
 
   var BUILD0 = 0.04, BUILD1 = 0.94;   // five floors share this stretch
   var TAIL = 0.12;
-  var SWAP0 = 0.44, SWAP1 = 0.56;     // vision fades out before mission fades in
+  var OUT0 = 0.32, OUT1 = 0.54;       // vision lets go...
+  var IN0 = 0.46, IN1 = 0.68;       // ...as mission arrives, a slight overlap so it never goes empty
 
   function live() { return wide.matches && !reduce.matches; }
   function span(p, a, b) { return p <= a ? 0 : p >= b ? 1 : (p - a) / (b - a); }
   function smooth(t) { return t * t * (3 - 2 * t); }
+  function softer(t) { return t * t * t * (t * (t * 6 - 15) + 10); }
   function set(name, v) { section.style.setProperty(name, v.toFixed(3)); }
 
   var NAMES = ['--v', '--m', '--f0', '--f1', '--f2', '--f3', '--f4'];
@@ -541,8 +543,8 @@
     // drawn under the stage, and it takes over on the very line it was drawn on
     section.classList.toggle('is-held', raw < 0.999);
 
-    set('--v', 1 - smooth(span(q, SWAP0, 0.50)));
-    set('--m', smooth(span(q, 0.50, SWAP1)));
+    set('--v', 1 - softer(span(q, OUT0, OUT1)));
+    set('--m', softer(span(q, IN0, IN1)));
     var step = (BUILD1 - BUILD0) / 5;
     for (var i = 0; i < 5; i++) {
       set('--f' + i, smooth(span(q, BUILD0 + i * step, BUILD0 + (i + 1) * step)));
@@ -564,4 +566,35 @@
                          : mq.addListener.bind(mq))(onScroll);
   });
   paint();
+})();
+
+/* In Numbers: the figures count up the first time they come into view. */
+(function () {
+  var nodes = document.querySelectorAll('[data-count]');
+  if (!nodes.length || !('IntersectionObserver' in window)) return;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  function run(node) {
+    var target = parseInt(node.dataset.count, 10);
+    var start = null;
+    var DURATION = 1800;
+    function frame(now) {
+      if (start === null) start = now;
+      var t = Math.min((now - start) / DURATION, 1);
+      var eased = 1 - Math.pow(1 - t, 3);
+      node.textContent = Math.round(target * eased);
+      if (t < 1) window.requestAnimationFrame(frame);
+    }
+    node.textContent = '0';
+    window.requestAnimationFrame(frame);
+  }
+
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (!entry.isIntersecting) return;
+      io.unobserve(entry.target);
+      run(entry.target);
+    });
+  }, { threshold: 0.6 });
+  nodes.forEach(function (node) { io.observe(node); });
 })();

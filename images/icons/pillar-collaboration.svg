@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 40 40" fill="none" stroke="#014335" stroke-width="1" stroke-linecap="square" stroke-linejoin="miter" vector-effect="non-scaling-stroke" xmlns="http://www.w3.org/2000/svg" width="40" height="40">
+  <circle cx="15" cy="20" r="10"/>
+  <circle cx="25" cy="20" r="10"/>
+  <path d="M20 11.4v17.2"/>
+</svg>

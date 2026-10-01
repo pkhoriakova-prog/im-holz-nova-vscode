@@ -142,8 +142,8 @@ body > main{
   z-index:1;
 }
 
-@media (max-width:768px){
-  /* halves at this width: the two edges plus one rule down the middle */
+@media (max-width:1150px){
+  /* Tablet and phone: the two edges plus one rule down the middle. */
   .sheet-rules{ grid-template-columns:repeat(2, 1fr); }
   .sheet-rules i:nth-child(3){ display:none; }
 }
@@ -563,9 +563,7 @@ body > main{
 
 /* The Shift follows the hero closely rather than opening a full section gap */
 .shift{
-  position:relative;           /* the drawing anchors to the section, so it
-                                  lands in the corner of the section itself
-                                  rather than beside the text block */
+  position:relative;
   padding-top:clamp(26px, 2.6vw, 56px);
 }
 
@@ -599,10 +597,8 @@ body > main{
   margin-top:var(--gap-para);
 }
 
-/* --- The Shift: drawing on the left, label on its own axis, text right --- */
+/* --- The Shift: label on its own axis, text right --- */
 .shift__inner{
-  position:relative;           /* the drawing is placed against this box, so
-                                  its foot lands on the last line of the text */
   display:grid;
   /* one third for the label, the rest for the text: the block is set to the
      first rule — held off it by the same inset used everywhere — and the
@@ -611,22 +607,6 @@ body > main{
   align-items:start;
 }
 
-/* the drawing sits in the bottom-left corner, not behind the whole section */
-/* the drawing sits to the right of the text, its foot on the same line as
-   the last line of copy */
-.shift__art{
-  position:absolute;
-  right:calc(var(--gutter) + var(--rule-inset));   /* clear of the edge rule */
-  bottom:0;
-  z-index:1;
-  width:min(38%, 320px);
-  pointer-events:none;
-}
-.shift__drawing{
-  display:block;
-  width:100%;
-  height:auto;
-}
 .shift .section-label{
   position:relative;
   z-index:1;
@@ -646,7 +626,6 @@ body > main{
   .shift__inner{ grid-template-columns:1fr; }
   .shift .section-label{ grid-column:1; padding-top:0; }
   .shift__body{ grid-column:1; padding-left:0; }
-  .shift__art{ display:none; }
 }
 
 /* --- Sustainable solutions: notes drawn onto an illustrative photograph --- */
@@ -1074,14 +1053,25 @@ body > main{
   height:auto;
   object-fit:contain;
 }
-.viewer__caption{
+.viewer__details{
   width:100%;
   margin:12px 0 0;
+  text-align:left;
+}
+.viewer__title{
+  margin:0 0 5px;
+  color:#fff;
+  font-size:clamp(16px, 1.05vw, 22px);
+  font-weight:600;
+  line-height:1.25;
+}
+.viewer__title[hidden]{ display:none; }
+.viewer__caption{
+  margin:0;
   color:rgba(255,255,255,.82);
   font-size:clamp(12px, .68vw, 14px);
   line-height:1.45;
   letter-spacing:.01em;
-  text-align:left;
 }
 
 .viewer__close,
@@ -1157,10 +1147,10 @@ body > main{
    the text and the photograph swap sides from one row to the next.
    ----------------------------------------------------------------------- */
 
-/* the section follows the one above it closely, on the page's own ground */
+/* Give the heading the same opening space as other sections. */
 /* No rule closes this section off from the one above: the column rules simply
    stop where the section's own paper begins, under the photographs of the
-   strip, and the section follows on closely. */
+   strip. */
 .projects::before{ content:none; }
 
 .projects{
@@ -1168,7 +1158,7 @@ body > main{
   overflow:hidden;             /* the drawing is a background, not a bleed */
   /* this section stands on plain paper: the sheet's ruling stops at its edge
      so the plates and the drawing have the page to themselves */
-  padding-top:clamp(14px, 1.4vw, 30px);
+  padding-top:clamp(52px, 6.5vw, 132px);
 }
 
 /* the section's own paper, drawn between the two edge rules so that the
@@ -1362,9 +1352,8 @@ body > main{
   position:relative;
   overflow:hidden;             /* the ground is a band, not a bleed */
 }
-/* The tower: it stands on the line where this section ends and the grey band
-   below begins — footed on that edge, never over it.  Drawn at the hairline
-   weight the drawing in The Shift is drawn at, so the two read as one hand. */
+/* The tower stands on the line where this section ends and the grey band
+   below begins — footed on that edge, never over it. */
 .tower-art{
   position:absolute;
   left:calc(var(--gutter) - var(--rule-inset));   /* out on the edge rule */
@@ -1379,6 +1368,7 @@ body > main{
   height:auto;
 }
 .audiences__ground,
+.pillars__ground,
 .contact__ground{
   position:absolute;
   inset:0;
@@ -1396,10 +1386,13 @@ body > main{
   pointer-events:none;
 }
 .audiences__ground i + i,
+.pillars__ground i + i,
 .contact__ground i + i{ border-left:1px solid var(--rule); }
 /* the two edges of the sheet, redrawn at the same offsets */
 .audiences__ground::before,
 .audiences__ground::after,
+.pillars__ground::before,
+.pillars__ground::after,
 .contact__ground::before,
 .contact__ground::after{
   content:"";
@@ -1408,16 +1401,19 @@ body > main{
   bottom:0;
 }
 .audiences__ground::before,
+.pillars__ground::before,
 .contact__ground::before{
   left:calc(var(--gutter) - var(--rule-inset));
   border-left:1px solid var(--rule);
 }
 .audiences__ground::after,
+.pillars__ground::after,
 .contact__ground::after{
   right:calc(var(--gutter) - var(--rule-inset));
   border-right:1px solid var(--rule);
 }
 .audiences .shell,
+.pillars .shell,
 .contact .shell{
   position:relative;
   z-index:1;
@@ -1541,6 +1537,219 @@ body > main{
 
 @media (max-width:640px){
   .cards{ grid-template-columns:1fr; }
+}
+
+/* --- Vision & Mission -----------------------------------------------------
+   Set out like The Shift: running head on the margin, heading and text on the
+   first rule, a drawing on the right. On desktop and tablets the section is held on
+   the screen, at the size of its own content rather than the full height,
+   while the page scrolls through it: the building is raised floor by floor
+   from the start, about halfway the vision gives way to the mission, and the
+   stages are drawn in. When it is complete the page moves on. Script sets
+   --v, --m and --f0..--f4; at rest they all read as finished, so the section
+   is complete without it.
+   ----------------------------------------------------------------------- */
+.vision{
+  --v:1; --m:1; --f0:1; --f1:1; --f2:1; --f3:1; --f4:1;
+}
+.vision__inner{
+  position:relative;
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);   /* label, text, drawing: the sheet's thirds */
+  align-items:start;
+}
+
+/* the running head: one place, two names, one leaving as the other arrives */
+.vision__labels{
+  display:grid;
+  /* sits on the first line of the heading beside it, as in The Shift */
+  padding-top:calc((var(--sec-lh) - 1) / 2 * var(--sec-fs) + var(--cap-k) * var(--sec-fs)
+                 - (1.45 - 1) / 2 * var(--label-fs) - var(--cap-k) * var(--label-fs));
+}
+.vlabel{ grid-area:1 / 1; }
+.vlabel--vision{ opacity:var(--v); }
+.vlabel--mission{ opacity:var(--m); }
+
+.vision__text{
+  position:relative;
+  z-index:1;
+  display:grid;                /* both in one cell, one leaving as the other arrives */
+  align-items:start;
+  min-width:0;
+  padding-left:var(--rule-inset);
+  padding-right:var(--rule-inset);
+}
+.vision__text .section-title,
+.vision__text .section-text{ max-width:100%; }
+.vision__switch{ display:none; }
+.vslide{ grid-area:1 / 1; }
+.vslide__label{ display:none; }
+.vslide--vision{
+  opacity:var(--v);
+  transform:translateY(calc((1 - var(--v)) * -22px));
+}
+.vslide--mission{
+  opacity:var(--m);
+  transform:translateY(calc((1 - var(--m)) * 22px));
+}
+
+/* the stages of the mission, each drawn in as its floor goes up */
+.stages{
+  margin:var(--gap-block-media) 0 0;
+  padding:0;
+  list-style:none;
+  max-width:calc(26 * var(--lede-fs));
+}
+.stage{
+  position:relative;
+  display:flex;
+  gap:1.4em;
+  padding:.78em 0;
+  font-size:var(--lede-fs);
+  font-weight:500;
+  opacity:calc(.35 + .65 * var(--si, 1));
+}
+.stage__no{
+  color:var(--ink-muted);
+  font-size:var(--label-fs);
+  font-weight:500;
+  letter-spacing:.16em;
+}
+.stage::before,
+.stage::after{
+  content:"";
+  position:absolute;
+  left:0; right:0; top:0;
+  height:1px;
+}
+.stage::before{ background:var(--hairline-soft); }
+.stage::after{
+  background:var(--green);
+  transform:scaleX(var(--si, 1));
+  transform-origin:left center;
+}
+.stage:nth-child(1){ --si:var(--f0); }
+.stage:nth-child(2){ --si:var(--f1); }
+.stage:nth-child(3){ --si:var(--f2); }
+.stage:nth-child(4){ --si:var(--f3); }
+.stage:nth-child(5){ --si:var(--f4); }
+
+/* the building, in the right-hand third, its foot on the last line of the text */
+.vision__art{
+  grid-column:3;
+  grid-row:1;
+  align-self:end;
+  justify-self:end;
+  width:calc(100% - var(--rule-inset) * 2);
+  max-width:560px;
+  height:auto;
+  color:var(--green);
+  pointer-events:none;
+}
+.art-ghost{ stroke-dasharray:3 5; opacity:.35; }
+.art-win{ opacity:.55; }
+.vision__peek{ display:none; }
+.fl-0{ opacity:var(--f0); transform:translateY(calc((1 - var(--f0)) * 18px)); }
+.fl-1{ opacity:var(--f1); transform:translateY(calc((1 - var(--f1)) * 18px)); }
+.fl-2{ opacity:var(--f2); transform:translateY(calc((1 - var(--f2)) * 18px)); }
+.fl-3{ opacity:var(--f3); transform:translateY(calc((1 - var(--f3)) * 18px)); }
+.fl-4{ opacity:var(--f4); transform:translateY(calc((1 - var(--f4)) * 18px)); }
+
+/* The hold: a track as long as the movement needs, with the section pinned
+   in it at the size of its own content */
+@media (min-width:700px) and (prefers-reduced-motion:no-preference){
+  .vision{ padding-block:0; }
+  .vision__track{ position:relative; height:calc(var(--vision-h, 700px) + 150vh); }
+  .vision__stage{
+    position:sticky;
+    top:var(--header-h);
+    padding-block:clamp(52px, 6.5vw, 132px);
+  }
+  /* what is left of the screen below the held stage shows the top of the next
+     section, which then arrives in exactly this place */
+  .vision .vision__peek{
+    display:block;
+    position:absolute;
+    top:100%;
+    left:0;
+    right:0;
+    height:max(0px, calc(100vh - var(--header-h) - var(--vision-h, 700px)));
+    overflow:hidden;
+    pointer-events:none;
+  }
+  /* the drawing never taller than what is left of the screen */
+  .vision__art{ max-height:calc(100vh - var(--header-h) - clamp(104px, 13vw, 264px)); }
+}
+
+/* On tablets, keep both statements in the same place and give the drawing
+   its own narrower column. Scroll drives the same sequence as on desktop. */
+@media (min-width:700px) and (max-width:1150px) and (prefers-reduced-motion:no-preference){
+  .vision__inner{ grid-template-columns:minmax(0, 1.25fr) minmax(0, .75fr); gap:clamp(24px, 4vw, 56px); }
+  .vision__labels{ display:none; }
+  .vision__text{ grid-column:1; grid-row:1; padding-left:0; padding-right:0; }
+  .vslide__label{ display:block; margin-bottom:var(--gap-label-title); }
+  .vision__art{ grid-column:2; grid-row:1; justify-self:end; width:min(100%, 300px); }
+}
+
+/* On phones, one statement is shown at a time. */
+@media (max-width:699px){
+  .vision__switch{ display:flex; gap:clamp(20px, 6vw, 36px); padding-inline:var(--gutter); margin-bottom:var(--gap-block-media); }
+  .vision__switch-button{
+    padding:0 0 8px;
+    border:0;
+    border-bottom:1px solid var(--hairline);
+    background:none;
+    color:var(--ink-muted);
+    font:inherit;
+    font-size:var(--label-fs);
+    font-weight:500;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    cursor:pointer;
+  }
+  .vision__switch-button[aria-pressed="true"]{ border-color:var(--green); color:var(--green); }
+  .vision__inner{ grid-template-columns:1fr; row-gap:clamp(20px, 5vw, 32px); }
+  .vision__labels{ display:none; }
+  .vision__text{ display:block; padding:0; }
+  .vslide{ opacity:1; transform:none; pointer-events:auto; }
+  .vslide:not(.is-current){ display:none; }
+  .vision__text .vslide.is-current{ margin-top:0; }
+  .vision__text .vslide__label{ display:none; }
+  .vision__art{ grid-column:1; grid-row:auto; justify-self:end; width:min(48%, 180px); }
+}
+@media (prefers-reduced-motion:reduce){
+  .vision__labels{ display:none; }
+  .vision__text{ display:block; }
+  .vslide{ opacity:1; transform:none; pointer-events:auto; }
+  .vslide + .vslide{ margin-top:clamp(36px, 5vw, 64px); }
+  .vslide__label{ display:block; margin-bottom:var(--gap-label-title); }
+}
+@media (min-width:700px) and (max-width:1150px) and (prefers-reduced-motion:reduce){
+  .vision__inner{ grid-template-columns:1fr; row-gap:clamp(36px, 7vw, 64px); }
+  .vision__text{ padding-left:0; }
+  .vision__art{ grid-column:1; grid-row:auto; justify-self:start; width:min(100%, 340px); }
+}
+
+/* --- Four Pillars ---------------------------------------------------------
+   The cards are the For Whom cards, on the same tinted ground; the intro uses
+   the same frame as For Whom (head on the margin, heading on the first rule).
+   ----------------------------------------------------------------------- */
+.pillars::before{ content:none; }
+.pillars{ position:relative; overflow:hidden; }
+.pillars__intro{ position:relative; }
+.pillars__intro .section-label{ position:absolute; left:0; top:0; }
+.pillars__head{ margin-left:calc(33.3333% + var(--rule-inset)); }
+.pillars__cards{ margin-top:var(--gap-block-media); }
+.pillars__cards .card{
+  min-height:clamp(320px, 22vw, 420px);
+}
+.pillars__cards .card__title-line{ display:block; }
+.pillars__cards .card__text{ margin-bottom:var(--gap-text-link); }
+.pillars__cards .link-underline{ margin-top:auto; }
+@media (max-width:1150px){
+  .pillars__intro .section-label{ position:static; display:block; margin-bottom:var(--gap-label-title); }
+  .pillars__head{ margin-left:0; }
+  .pillars__cards .card{ min-height:0; }
 }
 
 /* --- Ecosystem ------------------------------------------------------------
@@ -2019,24 +2228,22 @@ body > main{
    PHONES
    One column, one measure, one size. Everything that is set as a pair or a
    series on a wide sheet is restated here as a single run: the sheet's own
-   ruling has already halved itself at 768, and the blocks that stand on it
+   ruling has already halved itself at 1150, and the blocks that stand on it
    follow it down rather than keeping a three-column frame nothing else has.
    ========================================================================= */
 
-@media (max-width:768px){
+@media (max-width:1150px){
   /* the tinted bands are ruled on the same halves the sheet is ruled on:
      one line down the middle, not two */
   .audiences__ground,
+  .pillars__ground,
   .contact__ground{ grid-template-columns:repeat(2, 1fr); }
   .audiences__ground i:nth-child(3),
+  .pillars__ground i:nth-child(3),
   .contact__ground i:nth-child(3){ display:none; }
 }
 
 @media (max-width:640px){
-
-  /* --- The Shift: the drawing cannot be read at this width, and standing it
-         under the copy only pushes the next section down --------------- */
-  .shift__art{ display:none; }
 
   /* --- Every photo caption on the page: plain text under the photograph,
          not the dark overlay badge. The badge reads fine on a tablet or a
@@ -2148,12 +2355,6 @@ body > main{
    ========================================================================= */
 
 @media (min-width:769px) and (max-width:1150px){
-
-  /* --- The Shift: the sheet still has room for the drawing beside the
-         text at this width, so it keeps its place rather than disappearing
-         the way it does on a phone. Its own rule is absolute and unaffected
-         by the column count, so simply showing it again is enough. ----- */
-  .shift__art{ display:block; }
 
   /* --- the ecosystem's grey cards matched to the audience cards' size —
          same floor height, same padding, so the two grids read as one

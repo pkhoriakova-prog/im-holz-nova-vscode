@@ -197,6 +197,7 @@
   if (!viewer || !sets.length) return;
 
   var image = viewer.querySelector('.viewer__image');
+  var title = viewer.querySelector('.viewer__title');
   var caption = viewer.querySelector('.viewer__caption');
   var count = viewer.querySelector('.viewer__count');
   var closeBtn = viewer.querySelector('.viewer__close');
@@ -217,9 +218,11 @@
         var img = b.querySelector('img');
         var figure = b.closest('figure');
         var note = figure && figure.querySelector('figcaption');
+        var projectTitle = b.closest('.project') && b.closest('.project').querySelector('.project__title');
         return {
           src: img.getAttribute('src'),
           alt: img.alt,
+          title: projectTitle ? projectTitle.textContent.trim() : '',
           caption: note ? note.textContent.trim().replace(/\s+/g, ' ') : ''
         };
       });
@@ -233,6 +236,8 @@
     current = Math.max(0, Math.min(i, sources.length - 1));
     image.src = sources[current].src;
     image.alt = sources[current].alt || 'Photograph ' + (current + 1) + ' of ' + sources.length;
+    title.textContent = sources[current].title;
+    title.hidden = !sources[current].title;
     caption.textContent = sources[current].caption;
     count.textContent = (current + 1) + ' / ' + sources.length;
     prevBtn.disabled = current === 0;
@@ -252,6 +257,8 @@
     viewer.hidden = true;
     document.body.style.overflow = '';
     image.src = '';
+    title.textContent = '';
+    title.hidden = true;
     caption.textContent = '';
     if (opener) opener.focus();
     opener = null;
@@ -263,7 +270,12 @@
       if (!btn || !container.contains(btn)) return;
       var list = read(container);
       if (!list.length) return;
-      open(list, parseInt(btn.dataset.photo, 10), btn);
+      var selected = parseInt(btn.dataset.photo, 10);
+      if (container.classList.contains('filmstrip__row')) {
+        list = list.slice(selected).concat(list.slice(0, selected));
+        selected = 0;
+      }
+      open(list, selected, btn);
     });
   });
 
@@ -472,4 +484,89 @@
       roll.appendChild(cell);
     });
   });
+})();
+
+/* Vision & Mission. The section is a track with the section itself pinned in
+   it; how far the page is through the track is the only input. The building is
+   raised floor by floor from the very start, about halfway the vision gives
+   way to the mission, and the page moves on only once everything has played.
+   Everything is set as custom properties on the section, so the stylesheet
+   decides how it looks. Without the pin (phones, reduced motion)
+   the drawing rests complete. */
+(function () {
+  var section = document.querySelector('.vision');
+  if (!section) return;
+  var track = section.querySelector('.vision__track');
+  var stage = section.querySelector('.vision__stage');
+  if (!track || !stage) return;
+
+  // The held section previews the real next section while its animation runs.
+  var preview = section.querySelector('.vision__peek .shell');
+  var pillarCards = document.querySelector('#pillars .pillars__cards');
+  if (preview && pillarCards) preview.appendChild(pillarCards.cloneNode(true));
+
+  section.querySelectorAll('[data-vision-slide]').forEach(function (button) {
+    button.addEventListener('click', function () {
+      var selected = button.dataset.visionSlide;
+      section.querySelectorAll('[data-vision-slide]').forEach(function (item) {
+        item.setAttribute('aria-pressed', String(item === button));
+      });
+      section.querySelector('.vslide--vision').classList.toggle('is-current', selected === 'vision');
+      section.querySelector('.vslide--mission').classList.toggle('is-current', selected === 'mission');
+    });
+  });
+
+  var wide = window.matchMedia('(min-width: 700px)');
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
+  var queued = false;
+
+  var TAIL = 0.06;                    // held finished for a moment at the end
+  var BUILD0 = 0.04, BUILD1 = 0.94;   // five floors share this stretch
+  var SWAP0 = 0.44, SWAP1 = 0.56;     // vision fades out before mission fades in
+
+  function live() { return wide.matches && !reduce.matches; }
+  function span(p, a, b) { return p <= a ? 0 : p >= b ? 1 : (p - a) / (b - a); }
+  function smooth(t) { return t * t * (3 - 2 * t); }
+  function set(name, v) { section.style.setProperty(name, v.toFixed(3)); }
+
+  var NAMES = ['--v', '--m', '--f0', '--f1', '--f2', '--f3', '--f4'];
+
+  function rest() {
+    NAMES.forEach(function (n) { section.style.removeProperty(n); });
+    section.style.removeProperty('--vision-h');
+  }
+
+  function paint() {
+    queued = false;
+    if (!live()) { rest(); return; }
+    /* the track is as long as the stage plus the distance the movement needs */
+    section.style.setProperty('--vision-h', stage.offsetHeight + 'px');
+    var travel = track.offsetHeight - stage.offsetHeight;
+    if (travel <= 0) { rest(); return; }
+
+    var stick = parseFloat(window.getComputedStyle(stage).top) || 0;
+    var raw = (stick - track.getBoundingClientRect().top) / travel;
+    var q = span(raw, 0, 1 - TAIL);
+
+    set('--v', 1 - smooth(span(q, SWAP0, 0.50)));
+    set('--m', smooth(span(q, 0.50, SWAP1)));
+    var step = (BUILD1 - BUILD0) / 5;
+    for (var i = 0; i < 5; i++) {
+      set('--f' + i, smooth(span(q, BUILD0 + i * step, BUILD0 + (i + 1) * step)));
+    }
+  }
+
+  function onScroll() {
+    if (queued) return;
+    queued = true;
+    window.requestAnimationFrame(paint);
+  }
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', onScroll);
+  [wide, reduce].forEach(function (mq) {
+    (mq.addEventListener ? mq.addEventListener.bind(mq, 'change')
+                         : mq.addListener.bind(mq))(onScroll);
+  });
+  paint();
 })();

@@ -2641,3 +2641,68 @@ body > main{
 .annot--position-04{ --x:20%; --y:24%; }
 .annot--position-05{ --x:88%; --y:33%; }
 .annot--position-06{ --x:30%; --y:62%; }
+
+/* =========================================================================
+   LEGAL NOTICE (impressum.html)
+   Built like The Shift: the label on the first third, the heading and copy on
+   the rest. Each row repeats the split: term on the first rule, value on the
+   second.
+   ========================================================================= */
+
+.legal{ padding-top:clamp(26px, 2.6vw, 56px); }
+.legal + .legal{ padding-top:clamp(52px, 6.5vw, 132px); }
+.legal:first-of-type::before{ content:none; }
+
+.legal__inner{
+  display:grid;
+  grid-template-columns:1fr 2fr;
+  align-items:start;
+}
+.legal .section-label{
+  position:relative;
+  z-index:1;
+  padding-top:calc((var(--sec-lh) - 1) / 2 * var(--sec-fs) + var(--cap-k) * var(--sec-fs)
+                 - (1.45 - 1) / 2 * var(--label-fs) - var(--cap-k) * var(--label-fs));
+}
+.legal__body{
+  position:relative;
+  z-index:1;
+  padding-left:var(--rule-inset);
+}
+.legal .section-title{ max-width:calc(35 * var(--lede-fs)); }
+
+.legal__list{ margin:var(--gap-title-text) 0 0; }
+.legal__list > div{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  column-gap:var(--rule-inset);
+  padding-block:var(--gap-para);
+  border-top:1px solid var(--hairline-soft);
+}
+.legal__list > div:last-child{ border-bottom:1px solid var(--hairline-soft); }
+.legal__list dt{
+  padding-right:var(--rule-inset);
+  color:var(--ink-muted);
+  font-size:var(--label-fs);
+  font-weight:500;
+  line-height:1.45;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+}
+.legal__list dd{
+  margin:0;
+  color:var(--ink);
+  font-size:var(--lede-fs);
+  line-height:var(--lede-lh);
+}
+.legal__list a{ color:var(--green); text-underline-offset:3px; }
+
+@media (max-width:1150px){
+  .legal__inner{ grid-template-columns:1fr; row-gap:18px; }
+  .legal .section-label{ padding-top:0; }
+  .legal__body{ padding-left:0; }
+}
+@media (max-width:700px){
+  .legal__list > div{ grid-template-columns:1fr; row-gap:6px; }
+  .legal__list dt{ padding-right:0; }
+}

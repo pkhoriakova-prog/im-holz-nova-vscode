@@ -1,5 +1,4 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <svg viewBox="0 0 40 40" fill="none" stroke="#014335" stroke-width="1" stroke-linecap="square" stroke-linejoin="miter" vector-effect="non-scaling-stroke" xmlns="http://www.w3.org/2000/svg" width="40" height="40">
-                <circle cx="17" cy="17" r="11"/>
-                <path d="M25 25l11 11M12 17h10M17 12v10"/>
-              </svg>
+  <path d="M4 12V4h8M28 4h8v8M36 28v8h-8M12 36H4v-8"/><path d="M12 28V19l8-7 8 7v9zM18 28v-6h4v6"/>
+</svg>

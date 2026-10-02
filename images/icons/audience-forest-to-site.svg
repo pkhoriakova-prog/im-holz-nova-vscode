@@ -1,4 +1,4 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <svg viewBox="0 0 40 40" fill="none" stroke="#014335" stroke-width="1" stroke-linecap="square" stroke-linejoin="miter" vector-effect="non-scaling-stroke" xmlns="http://www.w3.org/2000/svg" width="40" height="40">
-                <path d="M4 34h32M9 34V18h22v16M9 18l11-9 11 9M17 34v-9h6v9"/>
-              </svg>
+  <path d="M23.400 28H4V6h32v22h-3.400M10 13h20M10 19h12"/><circle cx="28" cy="26" r="5"/><path d="M25 30l-2 7 5-3 5 3-2-7"/>
+</svg>

@@ -1,4 +1,4 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <svg viewBox="0 0 40 40" fill="none" stroke="#014335" stroke-width="1" stroke-linecap="square" stroke-linejoin="miter" vector-effect="non-scaling-stroke" xmlns="http://www.w3.org/2000/svg" width="40" height="40">
-                <path d="M4 34h32M8 34V16m8 18V16m8 18V16m8 18V16M20 4l16 8H4l16-8z"/>
-              </svg>
+  <ellipse cx="20" cy="10" rx="11" ry="4"/><path d="M9 10v7c0 2.200 4.900 4 11 4s11-1.800 11-4v-7M9 17v7c0 2.200 4.900 4 11 4s11-1.800 11-4v-7M9 24v6c0 2.200 4.900 4 11 4s11-1.800 11-4v-6"/>
+</svg>

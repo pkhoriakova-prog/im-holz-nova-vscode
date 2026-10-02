@@ -12,8 +12,6 @@
 </head>
 <body>
 
-<a class="skip-link" href="#main">Skip to content</a>
-
 <!-- The sheet the page is drawn on: column rules running the full height,
      behind everything: two rules dividing it into three equal parts, plus the
      two edges of the sheet, each standing off the content by the same inset a
@@ -76,9 +74,9 @@ and opportunities.
       <figure class="hero__figure">
         <img
           class="hero__image"
-          src="images/photos/hero-grieskirchen.jpg"
-          alt="The central waste collection centre in Grieskirchen at dusk: a long timber-clad volume with a slatted upper band, lit from within"
-          width="2400" height="1333" fetchpriority="high">
+          src="images/illustrations/Вечерний атриум из дерева и стекла.png"
+          alt="Illustration of a modern timber campus with glass façades and terraced gardens"
+          width="1683" height="935" fetchpriority="high">
       </figure>
     </div>
   </section>
@@ -280,7 +278,7 @@ infrastructure — resource-efficient, adaptable and designed to work with natur
       <!-- phones: the drawing from The Shift, which is hidden on small screens
            there, lies broad and low under the statement instead of the tall
            building (no scroll movement on a phone, so it is drawn finished) -->
-      <img class="vision__art vision__art--wide" src="images/illustrations/shift-building.svg" alt="" width="584" height="462" aria-hidden="true">
+      <img class="vision__art vision__art--wide" src="images/illustrations/modern-school-campus-v6.png" alt="" width="1681" height="936" aria-hidden="true">
 
     </div>
 
@@ -542,7 +540,11 @@ infrastructure — resource-efficient, adaptable and designed to work with natur
         <p class="section-label">For Whom</p>
 
         <div class="audiences__head">
-          <h2 class="section-title" id="audiences-heading">A ministry, an investor and a producer arrive at the same table with different questions</h2>
+          <h2 class="section-title audiences__title" id="audiences-heading">
+            <span class="audiences__line" id="lead-gov">Adopting a new way of building is a risk. We make it a decision you can defend.</span>
+            <span class="audiences__line" id="lead-inv" hidden>New markets and new materials carry risk. We take out the parts that make them hard to invest in.</span>
+            <span class="audiences__line" id="lead-dev" hidden>We take your systems to markets you would not enter alone — on open terms, with no single preferred supplier.</span>
+          </h2>
 
           <div class="pills" role="tablist" aria-label="Audience groups">
             <button class="pill" type="button" role="tab" id="tab-gov"
@@ -555,7 +557,7 @@ infrastructure — resource-efficient, adaptable and designed to work with natur
             </button>
             <button class="pill" type="button" role="tab" id="tab-dev"
                     aria-controls="panel-dev" aria-selected="false" tabindex="-1">
-              Developers &amp; Architects
+              Manufacturers
             </button>
           </div>
         </div>
@@ -567,36 +569,31 @@ infrastructure — resource-efficient, adaptable and designed to work with natur
         <div class="panel" id="panel-gov" role="tabpanel" aria-labelledby="tab-gov">
           <ul class="cards">
             <li class="card">
-              <img class="card__icon" src="images/icons/audience-national-targets.svg" alt="" width="40" height="40" aria-hidden="true">
-              <h3 class="card__title">National targets</h3>
+              <img class="card__icon" src="images/icons/audience-place-to-look-first.svg" alt="" width="40" height="40" aria-hidden="true">
+              <h3 class="card__title">See it before you decide</h3>
               <p class="card__text">
-                Meet national sustainability targets with construction standards
-                that are already proven in practice rather than still pending.
+                Our demonstration centre in Vienna (in development) will let delegations see Austrian timber construction working alongside energy and water solutions — and take home a concrete reference for their own programmes.
+              </p>
+            </li>
+            <li class="card">
+              <img class="card__icon" src="images/icons/audience-national-targets.svg" alt="" width="40" height="40" aria-hidden="true">
+              <h3 class="card__title">Proven systems, local skills</h3>
+              <p class="card__text">
+                Engineered timber has been standard in Austrian schools and public buildings for more than two decades. Programmes build on that track record, and local teams are trained in assembly and maintenance, so the expertise stays in the country.
               </p>
             </li>
             <li class="card">
               <img class="card__icon" src="images/icons/audience-international-financing.svg" alt="" width="40" height="40" aria-hidden="true">
-              <h3 class="card__title">International financing</h3>
+              <h3 class="card__title">Prepared for financing</h3>
               <p class="card__text">
-                Unlock access to international climate and infrastructure
-                financing, with the technical case documented from the start.
-              </p>
-            </li>
-            <li class="card">
-              <img class="card__icon" src="images/icons/audience-place-to-look-first.svg" alt="" width="40" height="40" aria-hidden="true">
-              <h3 class="card__title">A place to look first</h3>
-              <p class="card__text">
-                Delegations and ministries can explore leading Austrian solutions
-                without specialist knowledge, and leave with something applicable
-                at home.
+                Projects are documented the way international lenders assess them: life-cycle carbon data (EN 15978), EU Taxonomy screening and green-building certification. The technical case is ready before the financing conversation starts.
               </p>
             </li>
             <li class="card">
               <img class="card__icon" src="images/icons/audience-traceable-procurement.svg" alt="" width="40" height="40" aria-hidden="true">
-              <h3 class="card__title">Traceable procurement</h3>
+              <h3 class="card__title">Traceable from forest to site</h3>
               <p class="card__text">
-                Documented supply chains, so that when the funding is public
-                every component can be traced back to its source.
+                Certified timber (FSC/PEFC) and CE-marked components with documented origin, so publicly funded projects meet procurement and audit requirements.
               </p>
             </li>
           </ul>
@@ -607,35 +604,30 @@ infrastructure — resource-efficient, adaptable and designed to work with natur
           <ul class="cards">
             <li class="card">
               <img class="card__icon" src="images/icons/audience-durable-assets.svg" alt="" width="40" height="40" aria-hidden="true">
-              <h3 class="card__title">Durable assets</h3>
+              <h3 class="card__title">Assets that hold their value</h3>
               <p class="card__text">
-                Sustainable assets built to standards the market is only
-                beginning to require, on a material with a long service life.
+                Designed for the same 50-year service life as any building under Eurocode, and documented to EU Taxonomy criteria, so the asset can qualify for green bonds and sustainability-linked finance.
               </p>
             </li>
             <li class="card">
               <img class="card__icon" src="images/icons/audience-emerging-standards.svg" alt="" width="40" height="40" aria-hidden="true">
-              <h3 class="card__title">Emerging standards</h3>
+              <h3 class="card__title">Ahead of regulation</h3>
               <p class="card__text">
-                Requirements that are voluntary today become mandatory on a
-                schedule; building to them now is the cheaper order of events.
+                Whole-life carbon disclosure becomes mandatory for new buildings in the EU from 2028/2030. Projects built to that standard today avoid costly retrofits and reporting gaps later.
               </p>
             </li>
             <li class="card">
               <img class="card__icon" src="images/icons/audience-one-conversation.svg" alt="" width="40" height="40" aria-hidden="true">
-              <h3 class="card__title">One conversation</h3>
+              <h3 class="card__title">One point of coordination</h3>
               <p class="card__text">
-                Technology providers, engineering, finance and public partners
-                are reached through a single point rather than assembled one by
-                one.
+                Technology providers, engineering, financing and public partners are brought together through IM Holz — one counterpart instead of a dozen separate negotiations, in a format designed to be repeated across a wider programme.
               </p>
             </li>
             <li class="card">
               <img class="card__icon" src="images/icons/audience-supply-base.svg" alt="" width="40" height="40" aria-hidden="true">
-              <h3 class="card__title">A supply base already built</h3>
+              <h3 class="card__title">Supply already in place</h3>
               <p class="card__text">
-                More than twenty years of partnerships across international
-                timber markets stand behind the delivery side.
+                IM Holz Group has traded timber internationally for more than twenty years, with supplier relationships in Europe, China and North America. Project sourcing builds on that track record.
               </p>
             </li>
           </ul>
@@ -645,40 +637,35 @@ infrastructure — resource-efficient, adaptable and designed to work with natur
         <div class="panel" id="panel-dev" role="tabpanel" aria-labelledby="tab-dev" hidden>
           <ul class="cards">
             <li class="card">
-              <img class="card__icon" src="images/icons/audience-market-access.svg" alt="" width="40" height="40" aria-hidden="true">
-              <h3 class="card__title">Market access</h3>
+              <img class="card__icon" src="images/icons/audience-open-showcase.svg" alt="" width="40" height="40" aria-hidden="true">
+              <h3 class="card__title">Open to every manufacturer</h3>
               <p class="card__text">
-                Enter new markets through partners who already work inside their
-                regulatory and procurement systems.
+                We are not tied to a single supplier. Each project is matched with the systems that fit it best, so any qualified European manufacturer of CLT, glulam or timber building systems can take part. Terms are agreed project by project. We do not manufacture — we don't compete with you.
+              </p>
+            </li>
+            <li class="card">
+              <img class="card__icon" src="images/icons/audience-market-access.svg" alt="" width="40" height="40" aria-hidden="true">
+              <h3 class="card__title">New markets, without a local office</h3>
+              <p class="card__text">
+                We do the groundwork in emerging markets — regulatory approval, public procurement and IFI tender requirements — so manufacturers can supply projects there without building a local presence first.
               </p>
             </li>
             <li class="card">
               <img class="card__icon" src="images/icons/audience-partner-sourcing.svg" alt="" width="40" height="40" aria-hidden="true">
-              <h3 class="card__title">Partner sourcing</h3>
+              <h3 class="card__title">Prepared projects, not cold leads</h3>
               <p class="card__text">
-                Support finding the right technology and delivery partners for a
-                given brief, rather than a catalogue to search alone.
-              </p>
-            </li>
-            <li class="card">
-              <img class="card__icon" src="images/icons/audience-open-showcase.svg" alt="" width="40" height="40" aria-hidden="true">
-              <h3 class="card__title">An open showcase</h3>
-              <p class="card__text">
-                The partnership model is open at this stage — not tied to a
-                single vendor — so a broad range of Austrian producers is
-                represented.
+                Projects reach you with a defined brief, a financing route and local partners identified — so you quote on real opportunities, not early enquiries.
               </p>
             </li>
             <li class="card">
               <img class="card__icon" src="images/icons/audience-stage-in-vienna.svg" alt="" width="40" height="40" aria-hidden="true">
-              <h3 class="card__title">A stage in Vienna</h3>
+              <h3 class="card__title">Visibility with decision-makers</h3>
               <p class="card__text">
-                The Hub is conceived as a venue where solutions are shown to
-                visiting delegations, ministries and investors.
+                Our planned demonstration center in Vienna will present manufacturers' systems directly to visiting delegations, ministries and investors.
               </p>
             </li>
           </ul>
-          <a class="mailbtn audiences__cta" href="mailto:austria@imholz-group.com?subject=Find%20a%20technology%20partner"><span class="mailbtn__icon" aria-hidden="true"></span><span>Find a technology partner</span></a>
+          <a class="mailbtn audiences__cta" href="mailto:austria@imholz-group.com?subject=Discuss%20a%20partnership"><span class="mailbtn__icon" aria-hidden="true"></span><span>Discuss a partnership</span></a>
         </div>
 
       </div>

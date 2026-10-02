@@ -66,7 +66,18 @@
 
 *,*::before,*::after{ box-sizing:border-box; }
 
-html{ -webkit-text-size-adjust:100%; }
+html{
+  -webkit-text-size-adjust:100%;
+  scroll-padding-top:var(--header-h);   /* the sticky header never covers a target */
+  scroll-behavior:smooth;
+}
+@media (prefers-reduced-motion:reduce){ html{ scroll-behavior:auto; } }
+
+/* A link to a section lands with its content a fixed distance under the
+   header, whatever padding the section itself carries. */
+.section{ --anchor-gap:clamp(28px, 2.6vw, 48px); }
+.section[id]{ scroll-margin-top:calc(var(--anchor-gap) - clamp(52px, 6.5vw, 132px)); }
+.shift[id]{ scroll-margin-top:calc(var(--anchor-gap) - clamp(26px, 2.6vw, 56px)); }
 
 body{
   margin:0;
@@ -89,14 +100,6 @@ img{ display:block; max-width:100%; }
   outline:2px solid var(--green);
   outline-offset:3px;
 }
-
-.skip-link{
-  position:absolute; left:-9999px; top:0; z-index:100;
-  background:var(--green); color:var(--paper);
-  padding:.75rem 1.25rem; font-size:.875rem; font-weight:700;
-  text-decoration:none;
-}
-.skip-link:focus{ left:var(--gutter); top:12px; }
 
 /* =========================================================================
    THE SHEET — column rules behind the page

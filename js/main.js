@@ -320,6 +320,8 @@
       t.tabIndex = on ? 0 : -1;
       var panel = panelOf(t);
       if (panel) panel.hidden = !on;
+      var lead = document.getElementById(t.id.replace('tab-', 'lead-'));
+      if (lead) lead.hidden = !on;
     });
     if (focus) tab.focus();
   }

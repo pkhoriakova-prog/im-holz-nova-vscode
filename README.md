@@ -26,28 +26,28 @@ SVG-маски стрелок и иконки письма.
 | `index.html` | Тексты, структура страницы и ссылки на изображения |
 | `css/styles.css` | Цвета, размеры, адаптивная верстка, CSS-анимации и позиции подписей |
 | `js/main.js` | Мобильное меню, галерея, вкладки и анимации при прокрутке |
-| `images/photos/` | Фотографии JPG в исходном качестве |
+| `images/photos/` | Фотографии AVIF |
 | `images/logos/` | Зеленый и белый SVG-логотипы |
-| `images/illustrations/` | Рисунки зданий SVG и рисунок подвала WebP |
+| `images/illustrations/` | Иллюстрации AVIF и SVG |
 | `images/icons/` | SVG-иконки карточек, стрелки и письма |
 | `.vscode/extensions.json` | Рекомендация расширения Live Server |
 
 ## Как заменить картинку
 
 Положите новый файл в `images/photos/` и поменяйте `src` нужного тега `<img>`
-в `index.html`. Например: `src="images/photos/my-photo.jpg"`.
+в `index.html`. Например: `src="images/photos/my-photo.avif"`.
 Либо замените существующую картинку файлом с тем же именем.
 При другой пропорции фотографии обновите ее атрибуты `width` и `height`.
 Пути в HTML считаются от `index.html`, а пути `url(...)` в CSS — от папки `css/`.
 
 Основные фотографии:
 
-- `hero-grieskirchen.jpg` — большое изображение первого экрана.
-- `gallery-01.jpg` … `gallery-06.jpg` — бегущая фотогалерея.
-- `maggies-centre-exterior.jpg`, `maggies-centre-interior.jpg` — две сцены
+- `hero-grieskirchen.avif` — большое изображение первого экрана.
+- `gallery-01.avif` … `gallery-06.avif` — бегущая фотогалерея.
+- `maggies-centre-exterior.avif`, `maggies-centre-interior.avif` — две сцены
   анимации в разделе Sustainability.
-- `kindergarten-hallwang.jpg`, `healthcare-madeleine-bres.jpg`,
-  `housing-schildacker.jpg`, `hospitality-quartier.jpg` — карточки проектов.
+- `kindergarten-hallwang.avif`, `healthcare-madeleine-bres.avif`,
+  `housing-schildacker.avif`, `hospitality-quartier.avif` — карточки проектов.
 
 Все статичные SVG вынесены в файлы. В HTML оставлен только пустой элемент SVG
 для соединительных линий экосистемы: JavaScript рисует и изменяет их при

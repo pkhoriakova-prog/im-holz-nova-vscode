@@ -1181,11 +1181,7 @@ body > main{
 .projects{
   position:relative;
   overflow:hidden;             /* the drawing is a background, not a bleed */
-  background:
-    repeating-linear-gradient(135deg,
-      rgba(18,18,18,.016) 0 1px,
-      transparent 1px 11px),
-    var(--paper-warm);
+  background:var(--paper);
   /* this section stands on tinted paper: the sheet's ruling stops at its edge
      so the plates and the drawing have the page to themselves */
   padding-top:clamp(52px, 6.5vw, 132px);
@@ -1199,11 +1195,7 @@ body > main{
   bottom:0;
   left:calc(var(--gutter) - var(--rule-inset) + 1px);
   right:calc(var(--gutter) - var(--rule-inset) + 1px);
-  background:
-    repeating-linear-gradient(135deg,
-      rgba(18,18,18,.016) 0 1px,
-      transparent 1px 11px),
-    var(--paper-warm);
+  background:var(--paper);
   z-index:0;
   pointer-events:none;
 }
@@ -1371,19 +1363,24 @@ body > main{
 }
 
 /* --- Our Projects ---------------------------------------------------------
-   A white sheet. The frame is the one of Project Types (running head on
+   A green sheet. The frame is the one of Project Types (running head on
    the margin, heading and note on the first rule); the two projects stand to
    the right as outlined plates, each with a line drawing in its corner, and the
    key figures close the section.
    ----------------------------------------------------------------------- */
 .ourprj::before{ content:none; }
 .ourprj{
-  background:var(--paper);
-  color:var(--ink);
+  background:
+    repeating-linear-gradient(135deg,
+      rgba(255,255,255,.06) 0 1px,
+      transparent 1px 11px),
+    var(--green);
+  color:var(--paper);
 }
+.ourprj .work{ background:var(--paper); border:0; }
 .ourprj .section-title{ max-width:none; white-space:nowrap; }
-.ourprj .section-label{ color:var(--ink-muted); }
-.ourprj .section-text{ color:var(--ink-muted); }
+.ourprj .section-label{ color:rgba(255,255,255,.7); }
+.ourprj .section-text{ color:rgba(255,255,255,.78); }
 
 /* two projects side by side, each a card with its picture, name, tags and
    text inside */

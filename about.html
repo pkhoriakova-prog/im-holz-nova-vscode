@@ -3,8 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Vision, Mission & Four Pillars — IM HOLZ Nova</title>
-<base href="../">
+<title>About — IM HOLZ Nova</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -12,8 +11,45 @@
 <script src="js/main.js" defer></script>
 </head>
 <body>
+
+<!-- The sheet the page is drawn on: column rules running the full height,
+     behind everything: two rules dividing it into three equal parts, plus the
+     two edges of the sheet, each standing off the content by the same inset a
+     text block keeps from a rule. -->
 <div class="sheet-rules" aria-hidden="true"><i></i><i></i><i></i><b class="sheet-edge sheet-edge--l"></b><b class="sheet-edge sheet-edge--r"></b></div>
-<main>
+
+<!-- ============ HEADER — layout after reference_01 ============ -->
+<header class="site-header">
+  <div class="shell site-header__inner">
+
+    <a class="site-header__logo" href="index.html" aria-label="IM HOLZ Nova — home">
+      <img class="logo-mark" src="images/logos/logo-green.svg" alt="IM HOLZ Nova">
+    </a>
+
+    <nav class="site-nav" id="primary-nav" aria-label="Primary">
+      <a href="index.html#ecosystem">The IM HOLZ Model</a>
+      <a href="sustainability.html">Sustainability</a>
+      <a href="about.html">About</a>
+      <a href="index.html#the-shift">Insights</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+
+    <p class="site-lang">
+      <span class="site-lang__current" aria-current="true">EN</span>
+      <span class="site-lang__sep">/</span>
+      <span class="site-lang__other">DE</span>
+    </p>
+
+    <button class="nav-toggle" type="button"
+            aria-expanded="false" aria-controls="primary-nav">
+      <span class="nav-toggle__bars" aria-hidden="true"><i></i><i></i></span>
+      <span class="nav-toggle__label">Menu</span>
+    </button>
+
+  </div>
+</header>
+
+<main id="main">
   <!-- ============ VISION & MISSION ============ -->
   <!-- The building rises as the vision gives way to the mission. -->
   <section class="section vision" id="vision" aria-labelledby="vision-heading">
@@ -165,6 +201,7 @@
             projects are designed to align with recognised frameworks such as EN 15978, the EU Taxonomy and the
             UN SDGs.
           </p>
+          <!-- placeholder: the dedicated sustainability page does not exist yet; point href at it when it does -->
           <a class="link-underline" href="sustainability.html"><span class="link-underline__label"><span class="link-underline__roll" data-text="Our approach">Our approach</span></span><span class="link-underline__mark" aria-hidden="true"></span></a>
         </li>
       </ul>
@@ -172,5 +209,80 @@
     </div>
   </section>
 </main>
+<!-- ============ FOOTER ============ -->
+<!-- After reference_01: a solid field carrying the four columns, and the
+     drawing running the full width beneath them. -->
+<footer class="site-footer">
+
+  <!-- the sheet's own ruling, carried onto the dark ground -->
+  <div class="site-footer__rules" aria-hidden="true"><i></i><i></i><i></i></div>
+
+  <div class="shell">
+    <div class="site-footer__grid">
+
+      <div class="foot-cell foot-cell--brand">
+        <a class="foot-brand__link" href="index.html" aria-label="IM HOLZ Nova — top of the page">
+          <img class="logo-mark foot-logo" src="images/logos/logo-white.svg" alt="IM HOLZ Nova">
+        </a>
+        <p class="foot-brand__role">Sustainable Infrastructure Solutions Integrator</p>
+      </div>
+
+      <div class="foot-cell">
+        <h2 class="foot-cell__head">Menu</h2>
+        <ul class="foot-list">
+          <li><a href="index.html#ecosystem">The IM HOLZ Model</a></li>
+          <li><a href="sustainability.html">Sustainability</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="index.html#the-shift">Insights</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="foot-cell">
+        <h2 class="foot-cell__head">Contacts</h2>
+        <ul class="foot-list">
+          <li><a href="mailto:austria@imholz-group.com">austria@imholz-group.com</a></li>
+          <li><a href="tel:+436763655362">+43 676 365 5362</a></li>
+          <li><a class="foot-social" href="https://www.linkedin.com/company/imholz-nova/" target="_blank" rel="noopener noreferrer" aria-label="IM HOLZ Nova on LinkedIn"><svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12Zm1.78 13.02H3.56V9h3.56v11.45ZM22.23 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.23 0Z"/></svg></a></li>
+        </ul>
+
+        <h2 class="foot-cell__head foot-cell__head--second">Documents</h2>
+        <ul class="foot-list">
+          <li><a href="impressum.html">Legal Notice</a></li>
+          <!-- inert until a policy page exists -->
+          <li><a href="#" data-placeholder="true">Privacy Policy</a></li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="site-footer__art" aria-hidden="true">
+      <img class="foot-drawing"
+           src="images/illustrations/footer-drawing.avif"
+           alt="" width="2324" height="806" decoding="async">
+  </div>
+</footer>
+
+<!-- Photograph viewer: opened from the strip, closed by Escape, the backdrop
+     or the close button. Focus is moved into it and handed back on close. -->
+<div class="viewer" id="photo-viewer" role="dialog" aria-modal="true"
+     aria-label="Photograph" hidden>
+  <button class="viewer__backdrop" type="button" tabindex="-1" aria-hidden="true"></button>
+  <figure class="viewer__frame">
+    <img class="viewer__image" src="" alt="">
+    <figcaption class="viewer__details" aria-live="polite">
+      <h2 class="viewer__title" hidden></h2>
+      <p class="viewer__caption"></p>
+    </figcaption>
+  </figure>
+  <button class="viewer__close" type="button" aria-label="Close">Close</button>
+  <button class="viewer__nav viewer__nav--prev" type="button" aria-label="Previous photograph">&#8592;</button>
+  <button class="viewer__nav viewer__nav--next" type="button" aria-label="Next photograph">&#8594;</button>
+  <p class="viewer__count" aria-live="polite"></p>
+</div>
+
+
+
 </body>
 </html>

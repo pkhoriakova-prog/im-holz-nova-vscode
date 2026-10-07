@@ -219,11 +219,13 @@
         var figure = b.closest('figure');
         var note = figure && figure.querySelector('figcaption');
         var projectTitle = b.closest('.project') && b.closest('.project').querySelector('.project__title');
+        var stripEvent = note && note.querySelector('.strip__caption-event');
+        var stripPlace = note && note.querySelector('.strip__caption-place');
         return {
           src: img.getAttribute('src'),
           alt: img.alt,
-          title: projectTitle ? projectTitle.textContent.trim() : '',
-          caption: note ? note.textContent.trim().replace(/\s+/g, ' ') : ''
+          title: projectTitle ? projectTitle.textContent.trim() : stripEvent ? stripEvent.textContent.trim() : '',
+          caption: stripPlace ? stripPlace.textContent.trim() : note ? note.textContent.trim().replace(/\s+/g, ' ') : ''
         };
       });
   }
@@ -351,6 +353,7 @@
 (function () {
   var track = document.querySelector('.ecosystem__track');
   var stage = document.querySelector('.ecosystem__stage');
+  if (!track || !stage) return;
   var cards = Array.prototype.slice.call(stage.querySelectorAll('.eco-card'));
   var hub = document.querySelector('.eco-hub');
   var spokes = document.querySelector('.ecosystem__spokes');

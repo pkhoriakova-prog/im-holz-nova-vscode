@@ -970,7 +970,7 @@ body > main{
   margin:0;
   padding:0 clamp(30px, 6vw, 118px) 0 0;
   list-style:none;
-  animation:strip-run 64s linear infinite;
+  animation:strip-run 140s linear infinite;
 }
 .filmstrip:hover .filmstrip__row{ animation-play-state:paused; }
 
@@ -998,8 +998,16 @@ body > main{
   margin:0;
 }
 .strip__figure .disclosure--overlay{
+  display:block;
   max-width:calc(100% - 28px);
   pointer-events:none;
+}
+.strip__caption-event,
+.strip__caption-place{
+  display:block;
+  overflow:hidden;
+  white-space:nowrap;
+  text-overflow:ellipsis;
 }
 
 .strip__image{
@@ -1506,7 +1514,7 @@ body > main{
 .numbers__intro{ position:relative; }
 .numbers__intro .section-label{ position:absolute; left:0; top:0; }
 .numbers__head{ margin-left:calc(33.3333% + var(--rule-inset)); }
-.numbers .section-title{ max-width:min(19em, 100%); }
+.numbers .section-title{ max-width:min(16.5em, 100%); }
 .numbers__head .section-text{ max-width:30em; }
 /* the heading breaks before "and": two lines, each its own block */
 .numbers .title-line{ display:block; }
@@ -1547,9 +1555,10 @@ body > main{
   .fact{ padding:0; }
   .fact__value{ font-size:clamp(28px, 9vw, 40px); }
   .fact__label{ font-size:12px; line-height:1.35; max-width:7.5em; }
-  /* on a phone the heading simply runs on */
-  .numbers .title-line{ display:inline; }
 }
+
+/* The animated Vision and Mission stage follows the grey In Numbers band. */
+.vision--home{ background:var(--paper); }
 
 /* --- For Whom -------------------------------------------------------------
    The section's frame is the one the sections above it use: running head on

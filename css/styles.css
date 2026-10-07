@@ -298,7 +298,7 @@ body > main{
 .hero__title{
   margin:0;
   clip-path:inset(-.3em -.08em 0 -.08em);
-  max-width:21em;
+  max-width:15em;
   text-wrap:pretty;
   font-size:var(--h1-fs);
   line-height:var(--h1-lh);
@@ -314,6 +314,7 @@ body > main{
   will-change:transform;
   animation:rise-in 1.05s cubic-bezier(.2,.7,.25,1) both;
 }
+.hero__title-line{ display:block; }
 @keyframes rise-in{
   from{ transform:translateY(108%); }
   to  { transform:translateY(0); }
@@ -523,6 +524,7 @@ body > main{
   :root{ --header-h:72px; }
 
   .hero__title{ max-width:16em; font-size:clamp(28px, 7.4vw, 46px); }
+  .hero__title-line{ display:inline; }
   .hero__head{ grid-template-columns:1fr; row-gap:26px; }
   .hero__title,
   .hero__aside{ grid-column:1 / -1; }
@@ -533,6 +535,11 @@ body > main{
 
   .hero__image{ aspect-ratio:3 / 2; }
   .disclosure{ font-size:12px; }
+}
+
+@media (min-width:700px) and (max-width:1150px){
+  .hero__title{ max-width:none; font-size:clamp(38px, 5.8vw, 46px); }
+  .hero__title-line{ display:block; }
 }
 
 @media (prefers-reduced-motion:reduce){
@@ -1160,19 +1167,23 @@ body > main{
 
 /* Give the heading the same opening space as other sections. */
 /* No rule closes this section off from the one above: the column rules simply
-   stop where the section's own paper begins, under the photographs of the
-   strip. */
+   stop where the section's own tinted paper begins. */
 .projects::before{ content:none; }
 
 .projects{
   position:relative;
   overflow:hidden;             /* the drawing is a background, not a bleed */
-  /* this section stands on plain paper: the sheet's ruling stops at its edge
+  background:
+    repeating-linear-gradient(135deg,
+      rgba(18,18,18,.016) 0 1px,
+      transparent 1px 11px),
+    var(--paper-warm);
+  /* this section stands on tinted paper: the sheet's ruling stops at its edge
      so the plates and the drawing have the page to themselves */
   padding-top:clamp(52px, 6.5vw, 132px);
 }
 
-/* the section's own paper, drawn between the two edge rules so that the
+/* the section's own tinted paper, drawn between the two edge rules so that the
    column rules stop at its top edge while the edges of the sheet run on */
 .projects__ground{
   position:absolute;
@@ -1180,7 +1191,11 @@ body > main{
   bottom:0;
   left:calc(var(--gutter) - var(--rule-inset) + 1px);
   right:calc(var(--gutter) - var(--rule-inset) + 1px);
-  background:var(--paper);
+  background:
+    repeating-linear-gradient(135deg,
+      rgba(18,18,18,.016) 0 1px,
+      transparent 1px 11px),
+    var(--paper-warm);
   z-index:0;
   pointer-events:none;
 }
@@ -1202,8 +1217,8 @@ body > main{
   padding-left:var(--rule-inset);
 }
 .projects .section-title{
-  max-width:none;
-  white-space:nowrap;
+  max-width:30ch;
+  text-wrap:balance;
   font-size:var(--sec-fs);     /* the rank the sections above it are set in */
 }
 .projects__lede{
@@ -1348,23 +1363,19 @@ body > main{
 }
 
 /* --- Our Projects ---------------------------------------------------------
-   A deep green sheet. The frame is the one of Project Types (running head on
+   A white sheet. The frame is the one of Project Types (running head on
    the margin, heading and note on the first rule); the two projects stand to
    the right as outlined plates, each with a line drawing in its corner, and the
    key figures close the section.
    ----------------------------------------------------------------------- */
 .ourprj::before{ content:none; }
 .ourprj{
-  background:
-    repeating-linear-gradient(135deg,
-      rgba(255,255,255,.025) 0 1px,
-      transparent 1px 11px),
-    var(--green);
-  color:var(--paper);
+  background:var(--paper);
+  color:var(--ink);
 }
 .ourprj .section-title{ max-width:none; white-space:nowrap; }
-.ourprj .section-label{ color:rgba(255,255,255,.7); }
-.ourprj .section-text{ color:rgba(255,255,255,.78); }
+.ourprj .section-label{ color:var(--ink-muted); }
+.ourprj .section-text{ color:var(--ink-muted); }
 
 /* two projects side by side, each a card with its picture, name, tags and
    text inside */
@@ -1387,7 +1398,12 @@ body > main{
   --work-px:clamp(24px, 2.2vw, 46px);
   --work-py:clamp(28px, 2.6vw, 54px);
   padding:var(--work-py) var(--work-px);
-  background:var(--paper);
+  background:
+    repeating-linear-gradient(135deg,
+      rgba(18,18,18,.016) 0 1px,
+      transparent 1px 11px),
+    var(--paper-warm);
+  border:1px solid var(--hairline-soft);
   color:var(--ink);
 }
 .work__title{
@@ -1470,6 +1486,7 @@ body > main{
   }
   .work__text,
   .work .link-underline{ margin-bottom:var(--gap-text-link); }
+  .work .link-underline{ margin-top:0; padding-top:0; }
 }
 @media (max-width:640px){
   .ourprj__works{ grid-template-columns:1fr; row-gap:clamp(14px, 3vw, 24px); }
@@ -1525,7 +1542,7 @@ body > main{
   .fact{ padding:0 var(--rule-inset) 0 0; }
 }
 @media (max-width:640px){
-  /* the three figures stay in one row, each with its caption beneath in two lines */
+  /* The three figures stay in one row, each with its caption beneath. */
   .numbers__figures{ grid-template-columns:repeat(3, 1fr); column-gap:12px; }
   .fact{ padding:0; }
   .fact__value{ font-size:clamp(28px, 9vw, 40px); }
@@ -1773,8 +1790,7 @@ body > main{
   padding-left:var(--rule-inset);
   padding-right:var(--rule-inset);
 }
-.vision__text .section-title,
-.vision__text .section-text{ max-width:100%; }
+.vision__text .section-title{ max-width:100%; }
 .vision__switch{ display:none; }
 .vslide{ grid-area:1 / 1; }
 .vslide__label{ display:none; }
@@ -1987,6 +2003,20 @@ body > main{
 .pillars__cards .card__title-line{ display:block; }
 .pillars__cards .card__text{ margin-bottom:var(--gap-text-link); }
 .pillars__cards .link-underline{ margin-top:auto; }
+.pillars--summary::before{
+  content:"";
+  z-index:1;
+  background:var(--hairline);
+}
+.pillars--summary{ background:var(--paper); }
+.pillars--summary .pillars__ground{ background:none; }
+.pillars--summary .shell{ position:relative; z-index:1; }
+.pillars__vision-link{
+  display:inline-flex;
+}
+@media (min-width:1151px){
+  .pillars--summary .eco-card{ min-height:clamp(230px, 16vw, 305px); }
+}
 @media (max-width:1150px){
   .pillars__intro .section-label{ position:static; display:block; margin-bottom:var(--gap-label-title); }
   .pillars__head{ margin-left:0; }

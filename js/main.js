@@ -351,7 +351,7 @@
 (function () {
   var track = document.querySelector('.ecosystem__track');
   var stage = document.querySelector('.ecosystem__stage');
-  var cards = Array.prototype.slice.call(document.querySelectorAll('.eco-card'));
+  var cards = Array.prototype.slice.call(stage.querySelectorAll('.eco-card'));
   var hub = document.querySelector('.eco-hub');
   var spokes = document.querySelector('.ecosystem__spokes');
   if (!track || !stage || !cards.length || !hub) return;

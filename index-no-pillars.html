@@ -17,17 +17,17 @@
      behind everything: two rules dividing it into three equal parts, plus the
      two edges of the sheet, each standing off the content by the same inset a
      text block keeps from a rule. -->
-<div class="sheet-rules" aria-hidden="true"><i></i><i></i><i></i><b class="sheet-edge sheet-edge--l"></b><b class="sheet-edge sheet-edge--r"></b></div>
+<div class="bb-sheet-rules" aria-hidden="true"><i></i><i></i><i></i><b class="bb-sheet-edge bb-sheet-edge--l"></b><b class="bb-sheet-edge bb-sheet-edge--r"></b></div>
 
 <!-- ============ HEADER — layout after reference_01 ============ -->
-<header class="site-header">
-  <div class="shell site-header__inner">
+<header class="bb-site-header">
+  <div class="bb-shell bb-site-header__inner">
 
-    <a class="site-header__logo" href="#top" aria-label="IM HOLZ Nova — home">
-      <img class="logo-mark" src="images/logos/logo-green.svg" alt="IM HOLZ Nova">
+    <a class="bb-site-header__logo" href="#top" aria-label="IM HOLZ Nova — home">
+      <img class="bb-logo-mark" src="images/logos/logo-green.svg" alt="IM HOLZ Nova">
     </a>
 
-    <nav class="site-nav" id="primary-nav" aria-label="Primary">
+    <nav class="bb-site-nav" id="primary-nav" aria-label="Primary">
       <a href="#ecosystem">The IM HOLZ Model</a>
       <a href="sustainability.html">Sustainability</a>
       <a href="about.html">About</a>
@@ -35,16 +35,16 @@
       <a href="#contact">Contact</a>
     </nav>
 
-    <p class="site-lang">
-      <span class="site-lang__current" aria-current="true">EN</span>
-      <span class="site-lang__sep">/</span>
-      <span class="site-lang__other">DE</span>
+    <p class="bb-site-lang">
+      <span class="bb-site-lang__current" aria-current="true">EN</span>
+      <span class="bb-site-lang__sep">/</span>
+      <span class="bb-site-lang__other">DE</span>
     </p>
 
-    <button class="nav-toggle" type="button"
+    <button class="bb-nav-toggle" type="button"
             aria-expanded="false" aria-controls="primary-nav">
-      <span class="nav-toggle__bars" aria-hidden="true"><i></i><i></i></span>
-      <span class="nav-toggle__label">Menu</span>
+      <span class="bb-nav-toggle__bars" aria-hidden="true"><i></i><i></i></span>
+      <span class="bb-nav-toggle__label">Menu</span>
     </button>
 
   </div>
@@ -53,45 +53,45 @@
 <main id="main">
 
   <!-- ============ HERO — layout after reference_02 ============ -->
-  <section class="hero" id="top" aria-labelledby="hero-heading">
-    <div class="shell">
+  <section class="bb-hero" id="top" aria-labelledby="hero-heading">
+    <div class="bb-shell">
 
-      <div class="hero__head">
+      <div class="bb-hero__head">
 
-        <h1 class="hero__title" id="hero-heading"><span class="hero__title-rise"><span class="hero__title-line">European timber technologies</span> <span class="hero__title-line">for sustainable buildings</span></span></h1>
+        <h1 class="bb-hero__title" id="hero-heading"><span class="bb-hero__title-rise"><span class="bb-hero__title-line">European timber technologies</span> <span class="bb-hero__title-line">for sustainable buildings</span></span></h1>
 
-        <div class="hero__aside">
-          <p class="hero__lede">
+        <div class="bb-hero__aside">
+          <p class="bb-hero__lede">
             Two decades in the global timber trade, now focused on schools, healthcare and public buildings. We bring together international partners, proven Austrian technologies, local expertise and institutions in one system — from material to finished building.
           </p>
-          <a class="link-underline" href="#ecosystem"><span class="link-underline__label"><span class="link-underline__roll" data-text="About the IM HOLZ Model">About the IM HOLZ Model</span></span><span class="link-underline__mark" aria-hidden="true"></span></a>
+          <a class="bb-link-underline" href="#ecosystem"><span class="bb-link-underline__label"><span class="bb-link-underline__roll" data-text="About the IM HOLZ Model">About the IM HOLZ Model</span></span><span class="bb-link-underline__mark" aria-hidden="true"></span></a>
         </div>
 
       </div>
 
-      <figure class="hero__figure">
+      <figure class="bb-hero__figure">
         <img
-          class="hero__image"
+          class="bb-hero__image"
           src="images/illustrations/Вечерний атриум из дерева и стекла.avif"
           alt="Illustration of a modern timber campus with glass façades and terraced gardens"
           width="1683" height="935" fetchpriority="high">
-        <figcaption class="disclosure disclosure--overlay">Concept visualisation</figcaption>
+        <figcaption class="bb-disclosure bb-disclosure--overlay">Concept visualisation</figcaption>
       </figure>
     </div>
   </section>
 
 
   <!-- ============ THE SHIFT ============ -->
-  <section class="section shift" id="the-shift" aria-labelledby="shift-heading">
+  <section class="bb-section bb-shift" id="the-shift" aria-labelledby="shift-heading">
 
-    <div class="shell shift__inner">
+    <div class="bb-shell bb-shift__inner">
 
-      <p class="section-label">The Shift</p>
+      <h3 class="bb-section__label">The Shift</h3>
 
 
-      <div class="shift__body">
-        <h2 class="section-title" id="shift-heading">From timber trade to integrated timber infrastructure</h2>
-        <p class="section-text">
+      <div class="bb-shift__body">
+        <h4 class="bb-section__title" id="shift-heading">From timber trade to integrated timber infrastructure</h4>
+        <p class="bb-section__text">
           Wood has always been at the core of what we do — a renewable material that connects the built environment with nature. After two decades of trading timber across international markets, we have moved beyond supplying material to understanding what it can enable: better infrastructure that is resource-efficient, adaptable and designed to work with nature.
         </p>
       </div>
@@ -100,110 +100,110 @@
 
       <!-- A running strip of our own work and people. The set is duplicated
            at runtime so the loop is seamless without doubling the file. -->
-      <div class="filmstrip" id="insights">
-        <ul class="filmstrip__row">
-          <li class="strip__cell">
-            <figure class="strip__figure">
-              <button class="strip__open" type="button" data-photo="0" aria-label="Open photograph 1 of 13">
-                <img class="strip__image" src="images/photos/Build%27n%20Green%202026.avif" alt="BUILD&#x27;N GREEN 2026 — Circularity in Action — Vienna, Austria · 2026" loading="lazy">
+      <div class="bb-filmstrip" id="insights">
+        <ul class="bb-filmstrip__row">
+          <li class="bb-filmstrip__cell">
+            <figure class="bb-filmstrip__figure">
+              <button class="bb-filmstrip__open" type="button" data-photo="0" aria-label="Open photograph 1 of 13">
+                <img class="bb-filmstrip__image" src="images/photos/Build%27n%20Green%202026.avif" alt="BUILD&#x27;N GREEN 2026 — Circularity in Action — Vienna, Austria · 2026" loading="lazy">
               </button>
-              <figcaption class="disclosure disclosure--overlay"><span class="strip__caption-event">BUILD&#x27;N GREEN 2026 — Circularity in Action</span><span class="strip__caption-place">Vienna, Austria · 2026</span></figcaption>
+              <figcaption class="bb-disclosure bb-disclosure--overlay"><span class="bb-filmstrip__caption-event">BUILD&#x27;N GREEN 2026 — Circularity in Action</span><span class="bb-filmstrip__caption-place">Vienna, Austria · 2026</span></figcaption>
             </figure>
           </li>
-          <li class="strip__cell">
-            <figure class="strip__figure">
-              <button class="strip__open" type="button" data-photo="1" aria-label="Open photograph 2 of 13">
-                <img class="strip__image" src="images/photos/CEE%20Sustainable%20Finance%20Summit%20in%20Prague%202026.avif" alt="CEE Sustainable Finance Summit — Prague, Czech Republic · 2026" loading="lazy">
+          <li class="bb-filmstrip__cell">
+            <figure class="bb-filmstrip__figure">
+              <button class="bb-filmstrip__open" type="button" data-photo="1" aria-label="Open photograph 2 of 13">
+                <img class="bb-filmstrip__image" src="images/photos/CEE%20Sustainable%20Finance%20Summit%20in%20Prague%202026.avif" alt="CEE Sustainable Finance Summit — Prague, Czech Republic · 2026" loading="lazy">
               </button>
-              <figcaption class="disclosure disclosure--overlay"><span class="strip__caption-event">CEE Sustainable Finance Summit</span><span class="strip__caption-place">Prague, Czech Republic · 2026</span></figcaption>
+              <figcaption class="bb-disclosure bb-disclosure--overlay"><span class="bb-filmstrip__caption-event">CEE Sustainable Finance Summit</span><span class="bb-filmstrip__caption-place">Prague, Czech Republic · 2026</span></figcaption>
             </figure>
           </li>
-          <li class="strip__cell">
-            <figure class="strip__figure">
-              <button class="strip__open" type="button" data-photo="2" aria-label="Open photograph 3 of 13">
-                <img class="strip__image" src="images/photos/CEE%20Sustainable%20Finance%20Summit%20in%20Prague2.avif" alt="CEE Sustainable Finance Summit — Prague, Czech Republic · 2026" loading="lazy">
+          <li class="bb-filmstrip__cell">
+            <figure class="bb-filmstrip__figure">
+              <button class="bb-filmstrip__open" type="button" data-photo="2" aria-label="Open photograph 3 of 13">
+                <img class="bb-filmstrip__image" src="images/photos/CEE%20Sustainable%20Finance%20Summit%20in%20Prague2.avif" alt="CEE Sustainable Finance Summit — Prague, Czech Republic · 2026" loading="lazy">
               </button>
-              <figcaption class="disclosure disclosure--overlay"><span class="strip__caption-event">CEE Sustainable Finance Summit</span><span class="strip__caption-place">Prague, Czech Republic · 2026</span></figcaption>
+              <figcaption class="bb-disclosure bb-disclosure--overlay"><span class="bb-filmstrip__caption-event">CEE Sustainable Finance Summit</span><span class="bb-filmstrip__caption-place">Prague, Czech Republic · 2026</span></figcaption>
             </figure>
           </li>
-          <li class="strip__cell">
-            <figure class="strip__figure">
-              <button class="strip__open" type="button" data-photo="3" aria-label="Open photograph 4 of 13">
-                <img class="strip__image" src="images/photos/Eighth%20GEF%20Assembly%20Samarkand%202026%20%281%29%20%281%29.avif" alt="Eighth GEF Assembly — Samarkand, Uzbekistan · 2026" loading="lazy">
+          <li class="bb-filmstrip__cell">
+            <figure class="bb-filmstrip__figure">
+              <button class="bb-filmstrip__open" type="button" data-photo="3" aria-label="Open photograph 4 of 13">
+                <img class="bb-filmstrip__image" src="images/photos/Eighth%20GEF%20Assembly%20Samarkand%202026%20%281%29%20%281%29.avif" alt="Eighth GEF Assembly — Samarkand, Uzbekistan · 2026" loading="lazy">
               </button>
-              <figcaption class="disclosure disclosure--overlay"><span class="strip__caption-event">Eighth GEF Assembly</span><span class="strip__caption-place">Samarkand, Uzbekistan · 2026</span></figcaption>
+              <figcaption class="bb-disclosure bb-disclosure--overlay"><span class="bb-filmstrip__caption-event">Eighth GEF Assembly</span><span class="bb-filmstrip__caption-place">Samarkand, Uzbekistan · 2026</span></figcaption>
             </figure>
           </li>
-          <li class="strip__cell">
-            <figure class="strip__figure">
-              <button class="strip__open" type="button" data-photo="4" aria-label="Open photograph 5 of 13">
-                <img class="strip__image" src="images/photos/Exporttag%202026%20-%20Austrian%20Federal%20Economic%20Chamber%20%28WKO%29%2C%20Vienna.avif" alt="Exporttag — Vienna, Austria · 2026" loading="lazy">
+          <li class="bb-filmstrip__cell">
+            <figure class="bb-filmstrip__figure">
+              <button class="bb-filmstrip__open" type="button" data-photo="4" aria-label="Open photograph 5 of 13">
+                <img class="bb-filmstrip__image" src="images/photos/Exporttag%202026%20-%20Austrian%20Federal%20Economic%20Chamber%20%28WKO%29%2C%20Vienna.avif" alt="Exporttag — Vienna, Austria · 2026" loading="lazy">
               </button>
-              <figcaption class="disclosure disclosure--overlay"><span class="strip__caption-event">Exporttag</span><span class="strip__caption-place">Vienna, Austria · 2026</span></figcaption>
+              <figcaption class="bb-disclosure bb-disclosure--overlay"><span class="bb-filmstrip__caption-event">Exporttag</span><span class="bb-filmstrip__caption-place">Vienna, Austria · 2026</span></figcaption>
             </figure>
           </li>
-          <li class="strip__cell">
-            <figure class="strip__figure">
-              <button class="strip__open" type="button" data-photo="5" aria-label="Open photograph 6 of 13">
-                <img class="strip__image" src="images/photos/Exporttag%202026%20-%20Austrian%20Federal%20Economic%20Chamber%20%28WKO%29%2C%20Vienna2.avif" alt="Exporttag — Vienna, Austria · 2026" loading="lazy">
+          <li class="bb-filmstrip__cell">
+            <figure class="bb-filmstrip__figure">
+              <button class="bb-filmstrip__open" type="button" data-photo="5" aria-label="Open photograph 6 of 13">
+                <img class="bb-filmstrip__image" src="images/photos/Exporttag%202026%20-%20Austrian%20Federal%20Economic%20Chamber%20%28WKO%29%2C%20Vienna2.avif" alt="Exporttag — Vienna, Austria · 2026" loading="lazy">
               </button>
-              <figcaption class="disclosure disclosure--overlay"><span class="strip__caption-event">Exporttag</span><span class="strip__caption-place">Vienna, Austria · 2026</span></figcaption>
+              <figcaption class="bb-disclosure bb-disclosure--overlay"><span class="bb-filmstrip__caption-event">Exporttag</span><span class="bb-filmstrip__caption-place">Vienna, Austria · 2026</span></figcaption>
             </figure>
           </li>
-          <li class="strip__cell">
-            <figure class="strip__figure">
-              <button class="strip__open" type="button" data-photo="6" aria-label="Open photograph 7 of 13">
-                <img class="strip__image" src="images/photos/Monaco%20Smart%20%26%20Sustainable%20Marina%20Rendezvous_2026.avif" alt="Monaco Smart and Sustainable Marina Rendezvous — Monaco · 2026" loading="lazy">
+          <li class="bb-filmstrip__cell">
+            <figure class="bb-filmstrip__figure">
+              <button class="bb-filmstrip__open" type="button" data-photo="6" aria-label="Open photograph 7 of 13">
+                <img class="bb-filmstrip__image" src="images/photos/Monaco%20Smart%20%26%20Sustainable%20Marina%20Rendezvous_2026.avif" alt="Monaco Smart and Sustainable Marina Rendezvous — Monaco · 2026" loading="lazy">
               </button>
-              <figcaption class="disclosure disclosure--overlay"><span class="strip__caption-event">Monaco Smart and Sustainable Marina Rendezvous</span><span class="strip__caption-place">Monaco · 2026</span></figcaption>
+              <figcaption class="bb-disclosure bb-disclosure--overlay"><span class="bb-filmstrip__caption-event">Monaco Smart and Sustainable Marina Rendezvous</span><span class="bb-filmstrip__caption-place">Monaco · 2026</span></figcaption>
             </figure>
           </li>
-          <li class="strip__cell">
-            <figure class="strip__figure">
-              <button class="strip__open" type="button" data-photo="7" aria-label="Open photograph 8 of 13">
-                <img class="strip__image" src="images/photos/Qingdao%20Port%20Tour%202026%2C%20China.avif" alt="Qingdao Port Tour — Qingdao, China · 2026" loading="lazy">
+          <li class="bb-filmstrip__cell">
+            <figure class="bb-filmstrip__figure">
+              <button class="bb-filmstrip__open" type="button" data-photo="7" aria-label="Open photograph 8 of 13">
+                <img class="bb-filmstrip__image" src="images/photos/Qingdao%20Port%20Tour%202026%2C%20China.avif" alt="Qingdao Port Tour — Qingdao, China · 2026" loading="lazy">
               </button>
-              <figcaption class="disclosure disclosure--overlay"><span class="strip__caption-event">Qingdao Port Tour</span><span class="strip__caption-place">Qingdao, China · 2026</span></figcaption>
+              <figcaption class="bb-disclosure bb-disclosure--overlay"><span class="bb-filmstrip__caption-event">Qingdao Port Tour</span><span class="bb-filmstrip__caption-place">Qingdao, China · 2026</span></figcaption>
             </figure>
           </li>
-          <li class="strip__cell">
-            <figure class="strip__figure">
-              <button class="strip__open" type="button" data-photo="8" aria-label="Open photograph 9 of 13">
-                <img class="strip__image" src="images/photos/Working%20session%20with%20Prof.%20Wolfgang%20Winter%2C%20TU%20Wien%20%E2%80%94%20Vienna%2C%202026.avif" alt="Working meeting with Prof. Wolfgang Winter (TU Wien) — Vienna, Austria · 2026" loading="lazy">
+          <li class="bb-filmstrip__cell">
+            <figure class="bb-filmstrip__figure">
+              <button class="bb-filmstrip__open" type="button" data-photo="8" aria-label="Open photograph 9 of 13">
+                <img class="bb-filmstrip__image" src="images/photos/Working%20session%20with%20Prof.%20Wolfgang%20Winter%2C%20TU%20Wien%20%E2%80%94%20Vienna%2C%202026.avif" alt="Working meeting with Prof. Wolfgang Winter (TU Wien) — Vienna, Austria · 2026" loading="lazy">
               </button>
-              <figcaption class="disclosure disclosure--overlay"><span class="strip__caption-event">Working meeting with Prof. Wolfgang Winter (TU Wien)</span><span class="strip__caption-place">Vienna, Austria · 2026</span></figcaption>
+              <figcaption class="bb-disclosure bb-disclosure--overlay"><span class="bb-filmstrip__caption-event">Working meeting with Prof. Wolfgang Winter (TU Wien)</span><span class="bb-filmstrip__caption-place">Vienna, Austria · 2026</span></figcaption>
             </figure>
           </li>
-          <li class="strip__cell">
-            <figure class="strip__figure">
-              <button class="strip__open" type="button" data-photo="9" aria-label="Open photograph 10 of 13">
-                <img class="strip__image" src="images/photos/Dubai.avif" alt="Dubai Wood Show — Dubai, UAE · 2025" loading="lazy">
+          <li class="bb-filmstrip__cell">
+            <figure class="bb-filmstrip__figure">
+              <button class="bb-filmstrip__open" type="button" data-photo="9" aria-label="Open photograph 10 of 13">
+                <img class="bb-filmstrip__image" src="images/photos/Dubai.avif" alt="Dubai Wood Show — Dubai, UAE · 2025" loading="lazy">
               </button>
-              <figcaption class="disclosure disclosure--overlay"><span class="strip__caption-event">Dubai Wood Show</span><span class="strip__caption-place">Dubai, UAE · 2025</span></figcaption>
+              <figcaption class="bb-disclosure bb-disclosure--overlay"><span class="bb-filmstrip__caption-event">Dubai Wood Show</span><span class="bb-filmstrip__caption-place">Dubai, UAE · 2025</span></figcaption>
             </figure>
           </li>
-          <li class="strip__cell">
-            <figure class="strip__figure">
-              <button class="strip__open" type="button" data-photo="10" aria-label="Open photograph 11 of 13">
-                <img class="strip__image" src="images/photos/Dubai_2.avif" alt="Dubai Wood Show — Dubai, UAE · 2025" loading="lazy">
+          <li class="bb-filmstrip__cell">
+            <figure class="bb-filmstrip__figure">
+              <button class="bb-filmstrip__open" type="button" data-photo="10" aria-label="Open photograph 11 of 13">
+                <img class="bb-filmstrip__image" src="images/photos/Dubai_2.avif" alt="Dubai Wood Show — Dubai, UAE · 2025" loading="lazy">
               </button>
-              <figcaption class="disclosure disclosure--overlay"><span class="strip__caption-event">Dubai Wood Show</span><span class="strip__caption-place">Dubai, UAE · 2025</span></figcaption>
+              <figcaption class="bb-disclosure bb-disclosure--overlay"><span class="bb-filmstrip__caption-event">Dubai Wood Show</span><span class="bb-filmstrip__caption-place">Dubai, UAE · 2025</span></figcaption>
             </figure>
           </li>
-          <li class="strip__cell">
-            <figure class="strip__figure">
-              <button class="strip__open" type="button" data-photo="11" aria-label="Open photograph 12 of 13">
-                <img class="strip__image" src="images/photos/Vietnam.avif" alt="Vietnam Wood — Ho Chi Minh City, Vietnam · 2025" loading="lazy">
+          <li class="bb-filmstrip__cell">
+            <figure class="bb-filmstrip__figure">
+              <button class="bb-filmstrip__open" type="button" data-photo="11" aria-label="Open photograph 12 of 13">
+                <img class="bb-filmstrip__image" src="images/photos/Vietnam.avif" alt="Vietnam Wood — Ho Chi Minh City, Vietnam · 2025" loading="lazy">
               </button>
-              <figcaption class="disclosure disclosure--overlay"><span class="strip__caption-event">Vietnam Wood</span><span class="strip__caption-place">Ho Chi Minh City, Vietnam · 2025</span></figcaption>
+              <figcaption class="bb-disclosure bb-disclosure--overlay"><span class="bb-filmstrip__caption-event">Vietnam Wood</span><span class="bb-filmstrip__caption-place">Ho Chi Minh City, Vietnam · 2025</span></figcaption>
             </figure>
           </li>
-          <li class="strip__cell">
-            <figure class="strip__figure">
-              <button class="strip__open" type="button" data-photo="12" aria-label="Open photograph 13 of 13">
-                <img class="strip__image" src="images/photos/Uzbekistan.avif" alt="Photo from Uzbekistan — Uzbekistan · 2025" loading="lazy">
+          <li class="bb-filmstrip__cell">
+            <figure class="bb-filmstrip__figure">
+              <button class="bb-filmstrip__open" type="button" data-photo="12" aria-label="Open photograph 13 of 13">
+                <img class="bb-filmstrip__image" src="images/photos/Uzbekistan.avif" alt="Photo from Uzbekistan — Uzbekistan · 2025" loading="lazy">
               </button>
-              <figcaption class="disclosure disclosure--overlay"><span class="strip__caption-event">Photo from Uzbekistan</span><span class="strip__caption-place">Uzbekistan · 2025</span></figcaption>
+              <figcaption class="bb-disclosure bb-disclosure--overlay"><span class="bb-filmstrip__caption-event">Photo from Uzbekistan</span><span class="bb-filmstrip__caption-place">Uzbekistan · 2025</span></figcaption>
             </figure>
           </li>
         </ul>
@@ -212,34 +212,34 @@
 
 
   <!-- ============ IN NUMBERS ============ -->
-  <section class="section numbers" id="numbers" aria-labelledby="numbers-heading">
+  <section class="bb-section bb-numbers" id="numbers" aria-labelledby="numbers-heading">
 
-    <div class="pillars__ground" aria-hidden="true"><i></i><i></i><i></i></div>
+    <div class="bb-pillars__ground" aria-hidden="true"><i></i><i></i><i></i></div>
 
-    <div class="shell">
+    <div class="bb-shell">
 
-      <div class="numbers__intro">
-        <p class="section-label">In Numbers</p>
-        <div class="numbers__head">
-          <h2 class="section-title" id="numbers-heading"><span class="title-line">Two decades of timber expertise</span> <span class="title-line">and a global network of partners</span></h2>
-          <p class="section-text">
+      <div class="bb-numbers__intro">
+        <h3 class="bb-section__label">In Numbers</h3>
+        <div class="bb-numbers__head">
+          <h4 class="bb-section__title" id="numbers-heading"><span class="bb-section__title-line">Two decades of timber expertise</span> <span class="bb-section__title-line">and a global network of partners</span></h4>
+          <p class="bb-section__text">
             We work with FSC/PEFC-certified timber and CE-marked products from European suppliers.
           </p>
         </div>
       </div>
 
-      <ul class="numbers__figures">
-        <li class="fact">
-          <p class="fact__value"><span data-count="20">20</span><span class="fact__plus">+</span></p>
-          <p class="fact__label">years in the timber trade</p>
+      <ul class="bb-numbers__figures">
+        <li class="bb-fact">
+          <p class="bb-fact__value"><span data-count="20">20</span><span class="bb-fact__plus">+</span></p>
+          <p class="bb-fact__label">years in the timber trade</p>
         </li>
-        <li class="fact">
-          <p class="fact__value"><span data-count="40">40</span><span class="fact__plus">+</span></p>
-          <p class="fact__label">countries where we work</p>
+        <li class="bb-fact">
+          <p class="bb-fact__value"><span data-count="40">40</span><span class="bb-fact__plus">+</span></p>
+          <p class="bb-fact__label">countries where we work</p>
         </li>
-        <li class="fact">
-          <p class="fact__value"><span data-count="150">150</span><span class="fact__plus">+</span></p>
-          <p class="fact__label">partners worldwide</p>
+        <li class="bb-fact">
+          <p class="bb-fact__value"><span data-count="150">150</span><span class="bb-fact__plus">+</span></p>
+          <p class="bb-fact__label">partners worldwide</p>
         </li>
       </ul>
 
@@ -247,21 +247,21 @@
   </section>
 
   <!-- ============ PROJECT TYPES ============ -->
-  <section class="section projects" id="projects" aria-labelledby="projects-heading">
+  <section class="bb-section bb-projects" id="projects" aria-labelledby="projects-heading">
 
     <!-- plain paper between the two edge rules: the column rules stop here,
          the edges of the sheet do not -->
-    <div class="projects__ground" aria-hidden="true"></div>
+    <div class="bb-projects__ground" aria-hidden="true"></div>
 
-    <div class="shell">
+    <div class="bb-shell">
 
-      <div class="projects__intro">
+      <div class="bb-projects__intro">
 
-        <p class="section-label">Project Types</p>
+        <h3 class="bb-section__label">Project Types</h3>
 
-        <div class="projects__head">
-          <h2 class="section-title" id="projects-heading">From schools to airports, infrastructure serves very different purposes</h2>
-          <p class="section-text projects__lede">
+        <div class="bb-projects__head">
+          <h4 class="bb-section__title" id="projects-heading">From schools to airports, infrastructure serves very different purposes</h4>
+          <p class="bb-section__text bb-projects__lede">
             We bring together materials, engineering and proven technologies for educational environments, healthcare facilities, transport hubs, airports, public spaces and private buildings — adapting their combination to the needs of each project.
           </p>
         </div>
@@ -271,69 +271,69 @@
       <!-- Checkerboard: every other cell leads with its caption instead of its
            photograph, and sits a step lower, so the grid reads as an
            alternating order rather than a table of four identical tiles. -->
-      <ol class="projects__grid">
-        <li class="project">
-          <figure class="project__figure">
-            <button class="project__open" type="button" data-photo="0"
+      <ol class="bb-projects__grid">
+        <li class="bb-project">
+          <figure class="bb-project__figure">
+            <button class="bb-project__open" type="button" data-photo="0"
                     aria-label="Open photograph 1 of 4">
-              <img class="project__image" src="images/photos/kindergarten-hallwang.avif"
+              <img class="bb-project__image" src="images/photos/kindergarten-hallwang.avif"
                    width="1280" height="711" alt="Timber kindergarten in Hallwang with a slatted facade and covered walkway" loading="lazy">
             </button>
-            <figcaption class="disclosure disclosure--overlay">
+            <figcaption class="bb-disclosure bb-disclosure--overlay">
               <span>Kindergarten Hallwang, Salzburg (2022)</span>
               <span>LP architektur (Photo: © A. I. Schnabel)</span>
             </figcaption>
           </figure>
-          <div class="project__body">
-            <h3 class="project__title">Schools &amp; Universities</h3>
+          <div class="bb-project__body">
+            <h5 class="bb-project__title">Schools &amp; Universities</h5>
           </div>
         </li>
-        <li class="project">
-          <figure class="project__figure">
-            <button class="project__open" type="button" data-photo="1"
+        <li class="bb-project">
+          <figure class="bb-project__figure">
+            <button class="bb-project__open" type="button" data-photo="1"
                     aria-label="Open photograph 2 of 4">
-              <img class="project__image" src="images/photos/healthcare-madeleine-bres.avif"
+              <img class="bb-project__image" src="images/photos/healthcare-madeleine-bres.avif"
                    width="1280" height="711" alt="Glazed courtyard of the Madeleine Br&egrave;s health centre with exposed timber framing" loading="lazy">
             </button>
-            <figcaption class="disclosure disclosure--overlay">
+            <figcaption class="bb-disclosure bb-disclosure--overlay">
               <span>Centre de santé Madeleine Brès, Taverny (2020)</span>
               <span>MAAJ Architectes (Photo: © F.-X. Da Cunha Leal)</span>
             </figcaption>
           </figure>
-          <div class="project__body">
-            <h3 class="project__title">Healthcare</h3>
+          <div class="bb-project__body">
+            <h5 class="bb-project__title">Healthcare</h5>
           </div>
         </li>
-        <li class="project">
-          <figure class="project__figure">
-            <button class="project__open" type="button" data-photo="2"
+        <li class="bb-project">
+          <figure class="bb-project__figure">
+            <button class="bb-project__open" type="button" data-photo="2"
                     aria-label="Open photograph 3 of 4">
-              <img class="project__image" src="images/photos/housing-schildacker.avif"
+              <img class="bb-project__image" src="images/photos/housing-schildacker.avif"
                    width="1280" height="711" alt="Schildacker housing blocks with timber facades and recessed terracotta balconies" loading="lazy">
             </button>
-            <figcaption class="disclosure disclosure--overlay">
+            <figcaption class="bb-disclosure bb-disclosure--overlay">
               <span>Wohnquartier Schildacker, Freiburg (2021)</span>
               <span>JK&amp;P / Weissenrieder (Photo: © G. Gazmuri)</span>
             </figcaption>
           </figure>
-          <div class="project__body">
-            <h3 class="project__title">Civic &amp; Public Buildings</h3>
+          <div class="bb-project__body">
+            <h5 class="bb-project__title">Civic &amp; Public Buildings</h5>
           </div>
         </li>
-        <li class="project">
-          <figure class="project__figure">
-            <button class="project__open" type="button" data-photo="3"
+        <li class="bb-project">
+          <figure class="bb-project__figure">
+            <button class="bb-project__open" type="button" data-photo="3"
                     aria-label="Open photograph 4 of 4">
-              <img class="project__image" src="images/photos/hospitality-quartier.avif"
+              <img class="bb-project__image" src="images/photos/hospitality-quartier.avif"
                    width="1280" height="711" alt="Gabled timber buildings of Aparthotel Quartier beneath the Wetterstein mountains" loading="lazy">
             </button>
-            <figcaption class="disclosure disclosure--overlay">
+            <figcaption class="bb-disclosure bb-disclosure--overlay">
               <span>Aparthotel Quartier, Garmisch (2017)</span>
               <span>Beer Bembé Dellinger (Photo: © S. Müller-Naumann)</span>
             </figcaption>
           </figure>
-          <div class="project__body">
-            <h3 class="project__title">Hospitality</h3>
+          <div class="bb-project__body">
+            <h5 class="bb-project__title">Hospitality</h5>
           </div>
         </li>
       </ol>
@@ -344,36 +344,36 @@
 
   <!-- ============ OUR PROJECTS ============ -->
   <!-- Two project concepts on grey plates within a white section. -->
-  <section class="section ourprj" id="our-projects" aria-labelledby="ourprj-heading">
-    <div class="shell">
+  <section class="bb-section bb-ourprj" id="our-projects" aria-labelledby="our-projects-label">
+    <div class="bb-shell">
 
-      <div class="projects__intro">
-          <p class="section-label">Our Projects</p>
-          <div class="projects__head">
-            <h2 class="section-title" id="ourprj-heading">One philosophy, different projects</h2>
-            <p class="section-text projects__lede">
+      <div class="bb-projects__intro">
+          <h2 class="bb-section__label" id="our-projects-label">Our Projects</h2>
+          <div class="bb-projects__head">
+            <h3 class="bb-section__title" id="ourprj-heading">One philosophy, different projects</h3>
+            <p class="bb-section__text bb-projects__lede">
               Behind very different project types, from showcase centres to schools, stands one and the same
               philosophy. Both projects are at the concept stage and looking for financing.
             </p>
           </div>
         </div>
 
-      <ul class="ourprj__works">
-        <li class="work">
-          <img class="work__art" src="images/illustrations/project-house-vienna.avif" alt="" width="849" height="631" aria-hidden="true">
-          <p class="work__status">Concept stage</p>
-          <h3 class="work__title">A House of Austrian Technologies for Vienna</h3>
-          <p class="work__text">
+      <ul class="bb-ourprj__works">
+        <li class="bb-work">
+          <img class="bb-work__art" src="images/illustrations/project-house-vienna.avif" alt="" width="849" height="631" aria-hidden="true">
+          <p class="bb-work__status">Concept stage</p>
+          <h4 class="bb-work__title">A House of Austrian Technologies for Vienna</h4>
+          <p class="bb-work__text">
             Not a classic showroom but a place where people work, meet and receive delegations, and where
             Austrian technologies can be experienced first-hand in everyday use.
           </p>
-          <a class="link-underline" href="sustainability.html"><span class="link-underline__label"><span class="link-underline__roll" data-text="Read more">Read more</span></span><span class="link-underline__mark" aria-hidden="true"></span></a>
+          <a class="bb-link-underline" href="sustainability.html"><span class="bb-link-underline__label"><span class="bb-link-underline__roll" data-text="Read more">Read more</span></span><span class="bb-link-underline__mark" aria-hidden="true"></span></a>
         </li>
-        <li class="work">
-          <img class="work__art" src="images/illustrations/project-school-wood.avif" alt="" width="854" height="640" aria-hidden="true">
-          <p class="work__status">Concept stage</p>
-          <h3 class="work__title">Schools made of wood</h3>
-          <p class="work__text">
+        <li class="bb-work">
+          <img class="bb-work__art" src="images/illustrations/project-school-wood.avif" alt="" width="854" height="640" aria-hidden="true">
+          <p class="bb-work__status">Concept stage</p>
+          <h4 class="bb-work__title">Schools made of wood</h4>
+          <p class="bb-work__text">
             Schools built from certified engineered timber and adapted to local climate and requirements.
             We are preparing the first pilot projects in Central Asia, where fast-growing markets need
             healthy, low-carbon places to learn.
@@ -389,36 +389,36 @@
   <!-- One question per audience. The pills change which set of answers is on
        the sheet; the section itself does not move, so the reader compares
        three readings of the same page rather than three screens. -->
-  <section class="section audiences" id="for-whom" aria-labelledby="audiences-heading">
+  <section class="bb-section bb-audiences" id="for-whom" aria-labelledby="audiences-heading">
 
     <!-- The section stands on a tinted ground so the cards can be surfaces of
          their own. The sheet's ruling is redrawn on top of it, on exactly the
          same columns, so the guides run through the band unbroken. -->
-    <div class="audiences__ground" aria-hidden="true"><i></i><i></i><i></i></div>
+    <div class="bb-audiences__ground" aria-hidden="true"><i></i><i></i><i></i></div>
 
-    <div class="shell">
+    <div class="bb-shell">
 
-      <div class="audiences__intro">
+      <div class="bb-audiences__intro">
 
-        <p class="section-label">For Whom</p>
+        <h3 class="bb-section__label">For Whom</h3>
 
-        <div class="audiences__head">
-          <h2 class="section-title audiences__title" id="audiences-heading">
-            <span class="audiences__line" id="lead-gov">Adopting a new way of building is a risk. We make it a decision you can defend.</span>
-            <span class="audiences__line" id="lead-inv" hidden>New markets and new materials carry risk. We take out the parts that make them hard to invest in.</span>
-            <span class="audiences__line" id="lead-dev" hidden>We take your systems to markets you would not enter alone — on open terms, with no single preferred supplier.</span>
-          </h2>
+        <div class="bb-audiences__head">
+          <h4 class="bb-section__title bb-audiences__title" id="audiences-heading">
+            <span class="bb-audiences__line" id="lead-gov">Adopting a new way of building is a risk. We make it a decision you can defend.</span>
+            <span class="bb-audiences__line" id="lead-inv" hidden>New markets and new materials carry risk. We take out the parts that make them hard to invest in.</span>
+            <span class="bb-audiences__line" id="lead-dev" hidden>We take your systems to markets you would not enter alone — on open terms, with no single preferred supplier.</span>
+          </h4>
 
-          <div class="pills" role="tablist" aria-label="Audience groups">
-            <button class="pill" type="button" role="tab" id="tab-gov"
+          <div class="bb-pills" role="tablist" aria-label="Audience groups">
+            <button class="bb-pill" type="button" role="tab" id="tab-gov"
                     aria-controls="panel-gov" aria-selected="true" tabindex="0">
               Governments &amp; IFIs
             </button>
-            <button class="pill" type="button" role="tab" id="tab-inv"
+            <button class="bb-pill" type="button" role="tab" id="tab-inv"
                     aria-controls="panel-inv" aria-selected="false" tabindex="-1">
               Investors
             </button>
-            <button class="pill" type="button" role="tab" id="tab-dev"
+            <button class="bb-pill" type="button" role="tab" id="tab-dev"
                     aria-controls="panel-dev" aria-selected="false" tabindex="-1">
               Manufacturers
             </button>
@@ -427,108 +427,108 @@
 
       </div>
 
-      <div class="audiences__panels">
+      <div class="bb-audiences__panels">
 
-        <div class="panel" id="panel-gov" role="tabpanel" aria-labelledby="tab-gov">
-          <ul class="cards">
-            <li class="card">
-              <img class="card__icon" src="images/icons/audience-see-first.svg" alt="" width="40" height="40" aria-hidden="true">
-              <h3 class="card__title">See it before you decide</h3>
-              <p class="card__text">
+        <div class="bb-panel" id="panel-gov" role="tabpanel" aria-labelledby="tab-gov">
+          <ul class="bb-cards">
+            <li class="bb-card">
+              <img class="bb-card__icon" src="images/icons/audience-see-first.svg" alt="" width="40" height="40" aria-hidden="true">
+              <h5 class="bb-card__title">See it before you decide</h5>
+              <p class="bb-card__text">
                 Our demonstration centre in Vienna (in development) will let delegations see Austrian timber construction working alongside energy and water solutions — and take home a concrete reference for their own programmes.
               </p>
             </li>
-            <li class="card">
-              <img class="card__icon" src="images/icons/audience-local-skills.svg" alt="" width="40" height="40" aria-hidden="true">
-              <h3 class="card__title">Proven systems, local skills</h3>
-              <p class="card__text">
+            <li class="bb-card">
+              <img class="bb-card__icon" src="images/icons/audience-local-skills.svg" alt="" width="40" height="40" aria-hidden="true">
+              <h5 class="bb-card__title">Proven systems, local skills</h5>
+              <p class="bb-card__text">
                 Engineered timber has been standard in Austrian schools and public buildings for more than two decades. Programmes build on that track record, and local teams are trained in assembly and maintenance, so the expertise stays in the country.
               </p>
             </li>
-            <li class="card">
-              <img class="card__icon" src="images/icons/audience-financing-ready.svg" alt="" width="40" height="40" aria-hidden="true">
-              <h3 class="card__title">Prepared for financing</h3>
-              <p class="card__text">
+            <li class="bb-card">
+              <img class="bb-card__icon" src="images/icons/audience-financing-ready.svg" alt="" width="40" height="40" aria-hidden="true">
+              <h5 class="bb-card__title">Prepared for financing</h5>
+              <p class="bb-card__text">
                 We prepare projects the way international lenders assess them: life-cycle carbon data (EN 15978), EU Taxonomy screening and green-building certification — so the technical case is in place before the financing conversation starts.
               </p>
             </li>
-            <li class="card">
-              <img class="card__icon" src="images/icons/audience-forest-to-site.svg" alt="" width="40" height="40" aria-hidden="true">
-              <h3 class="card__title">Traceable from forest to site</h3>
-              <p class="card__text">
+            <li class="bb-card">
+              <img class="bb-card__icon" src="images/icons/audience-forest-to-site.svg" alt="" width="40" height="40" aria-hidden="true">
+              <h5 class="bb-card__title">Traceable from forest to site</h5>
+              <p class="bb-card__text">
                 Certified timber (FSC/PEFC) and CE-marked components with documented origin, so publicly funded projects meet procurement and audit requirements.
               </p>
             </li>
           </ul>
-          <a class="mailbtn audiences__cta" href="mailto:austria@imholz-group.com?subject=Request%20a%20project%20brief"><span class="mailbtn__icon" aria-hidden="true"></span><span>Request a project brief</span></a>
+          <a class="bb-mailbtn bb-audiences__cta" href="mailto:austria@imholz-group.com?subject=Request%20a%20project%20brief"><span class="bb-mailbtn__icon" aria-hidden="true"></span><span>Request a project brief</span></a>
         </div>
 
-        <div class="panel" id="panel-inv" role="tabpanel" aria-labelledby="tab-inv" hidden>
-          <ul class="cards">
-            <li class="card">
-              <img class="card__icon" src="images/icons/audience-durable-assets.svg" alt="" width="40" height="40" aria-hidden="true">
-              <h3 class="card__title">Assets that hold their value</h3>
-              <p class="card__text">
+        <div class="bb-panel" id="panel-inv" role="tabpanel" aria-labelledby="tab-inv" hidden>
+          <ul class="bb-cards">
+            <li class="bb-card">
+              <img class="bb-card__icon" src="images/icons/audience-durable-assets.svg" alt="" width="40" height="40" aria-hidden="true">
+              <h5 class="bb-card__title">Assets that hold their value</h5>
+              <p class="bb-card__text">
                 Designed for the same 50-year service life as any building under Eurocode, and documented to EU Taxonomy criteria, so the asset can qualify for green bonds and sustainability-linked finance.
               </p>
             </li>
-            <li class="card">
-              <img class="card__icon" src="images/icons/audience-emerging-standards.svg" alt="" width="40" height="40" aria-hidden="true">
-              <h3 class="card__title">Ahead of regulation</h3>
-              <p class="card__text">
+            <li class="bb-card">
+              <img class="bb-card__icon" src="images/icons/audience-emerging-standards.svg" alt="" width="40" height="40" aria-hidden="true">
+              <h5 class="bb-card__title">Ahead of regulation</h5>
+              <p class="bb-card__text">
                 Whole-life carbon disclosure becomes mandatory for new buildings in the EU from 2028/2030. Projects built to that standard today avoid costly retrofits and reporting gaps later.
               </p>
             </li>
-            <li class="card">
-              <img class="card__icon" src="images/icons/audience-one-conversation.svg" alt="" width="40" height="40" aria-hidden="true">
-              <h3 class="card__title">One point of coordination</h3>
-              <p class="card__text">
+            <li class="bb-card">
+              <img class="bb-card__icon" src="images/icons/audience-one-conversation.svg" alt="" width="40" height="40" aria-hidden="true">
+              <h5 class="bb-card__title">One point of coordination</h5>
+              <p class="bb-card__text">
                 Technology providers, engineering, financing and public partners are brought together through IM HOLZ Nova — one counterpart instead of a dozen separate negotiations, in a format designed to be repeated across a wider programme.
               </p>
             </li>
-            <li class="card">
-              <img class="card__icon" src="images/icons/audience-supply-base.svg" alt="" width="40" height="40" aria-hidden="true">
-              <h3 class="card__title">Supply already in place</h3>
-              <p class="card__text">
+            <li class="bb-card">
+              <img class="bb-card__icon" src="images/icons/audience-supply-base.svg" alt="" width="40" height="40" aria-hidden="true">
+              <h5 class="bb-card__title">Supply already in place</h5>
+              <p class="bb-card__text">
                 IM HOLZ Group has traded timber internationally for more than twenty years, with a European supplier base. Project sourcing builds on that track record.
               </p>
             </li>
           </ul>
-          <a class="mailbtn audiences__cta" href="mailto:austria@imholz-group.com?subject=Discuss%20co-investment"><span class="mailbtn__icon" aria-hidden="true"></span><span>Discuss co-investment</span></a>
+          <a class="bb-mailbtn bb-audiences__cta" href="mailto:austria@imholz-group.com?subject=Discuss%20co-investment"><span class="bb-mailbtn__icon" aria-hidden="true"></span><span>Discuss co-investment</span></a>
         </div>
 
-        <div class="panel" id="panel-dev" role="tabpanel" aria-labelledby="tab-dev" hidden>
-          <ul class="cards">
-            <li class="card">
-              <img class="card__icon" src="images/icons/audience-open-showcase.svg" alt="" width="40" height="40" aria-hidden="true">
-              <h3 class="card__title">Open to every manufacturer</h3>
-              <p class="card__text">
+        <div class="bb-panel" id="panel-dev" role="tabpanel" aria-labelledby="tab-dev" hidden>
+          <ul class="bb-cards">
+            <li class="bb-card">
+              <img class="bb-card__icon" src="images/icons/audience-open-showcase.svg" alt="" width="40" height="40" aria-hidden="true">
+              <h5 class="bb-card__title">Open to every manufacturer</h5>
+              <p class="bb-card__text">
                 We are not tied to a single supplier. Each project is matched with the systems that fit it best, so any qualified European manufacturer of CLT, glulam or timber building systems can take part. Terms are agreed project by project. We do not manufacture — we don't compete with you.
               </p>
             </li>
-            <li class="card">
-              <img class="card__icon" src="images/icons/audience-market-access.svg" alt="" width="40" height="40" aria-hidden="true">
-              <h3 class="card__title">New markets, without a local office</h3>
-              <p class="card__text">
+            <li class="bb-card">
+              <img class="bb-card__icon" src="images/icons/audience-market-access.svg" alt="" width="40" height="40" aria-hidden="true">
+              <h5 class="bb-card__title">New markets, without a local office</h5>
+              <p class="bb-card__text">
                 We help with the groundwork in emerging markets — regulatory approval, public procurement and IFI tender requirements — so manufacturers can supply projects there without building a local presence first.
               </p>
             </li>
-            <li class="card">
-              <img class="card__icon" src="images/icons/audience-ready-projects.svg" alt="" width="40" height="40" aria-hidden="true">
-              <h3 class="card__title">Prepared projects, not cold leads</h3>
-              <p class="card__text">
+            <li class="bb-card">
+              <img class="bb-card__icon" src="images/icons/audience-ready-projects.svg" alt="" width="40" height="40" aria-hidden="true">
+              <h5 class="bb-card__title">Prepared projects, not cold leads</h5>
+              <p class="bb-card__text">
                 Our aim is that projects reach you with a defined brief, a financing route and local partners identified — so you quote on real opportunities, not early enquiries.
               </p>
             </li>
-            <li class="card">
-              <img class="card__icon" src="images/icons/audience-decision-makers.svg" alt="" width="40" height="40" aria-hidden="true">
-              <h3 class="card__title">Visibility with decision-makers</h3>
-              <p class="card__text">
+            <li class="bb-card">
+              <img class="bb-card__icon" src="images/icons/audience-decision-makers.svg" alt="" width="40" height="40" aria-hidden="true">
+              <h5 class="bb-card__title">Visibility with decision-makers</h5>
+              <p class="bb-card__text">
                 Our planned demonstration centre in Vienna will present manufacturers' systems directly to visiting delegations, ministries and investors.
               </p>
             </li>
           </ul>
-          <a class="mailbtn audiences__cta" href="mailto:austria@imholz-group.com?subject=Discuss%20a%20partnership"><span class="mailbtn__icon" aria-hidden="true"></span><span>Discuss a partnership</span></a>
+          <a class="bb-mailbtn bb-audiences__cta" href="mailto:austria@imholz-group.com?subject=Discuss%20a%20partnership"><span class="bb-mailbtn__icon" aria-hidden="true"></span><span>Discuss a partnership</span></a>
         </div>
 
       </div>
@@ -541,17 +541,17 @@
   <!-- Six participants at rest; as the section is scrolled they draw in around
        the centre and IM HOLZ Nova takes its place between them. The travel is
        exactly as long as the movement needs — the page never waits. -->
-  <section class="section ecosystem" id="ecosystem" aria-labelledby="ecosystem-heading">
+  <section class="bb-section bb-ecosystem" id="ecosystem" aria-labelledby="ecosystem-label">
 
-    <div class="shell">
+    <div class="bb-shell">
 
-      <div class="ecosystem__intro">
+      <div class="bb-ecosystem__intro">
 
-        <p class="section-label">Ecosystem</p>
+        <h2 class="bb-section__label" id="ecosystem-label">Ecosystem</h2>
 
-        <div class="ecosystem__head">
-          <h2 class="section-title" id="ecosystem-heading">Where the ecosystem comes together</h2>
-          <p class="section-text">
+        <div class="bb-ecosystem__head">
+          <h3 class="bb-section__title" id="ecosystem-heading">Where the ecosystem comes together</h3>
+          <p class="bb-section__text">
             Sustainable infrastructure is not created by one player alone. It emerges when institutions,
 technology, industry, finance, local expertise and end users work towards the same goal.
 IM HOLZ Nova acts as a bridge between them — bringing different perspectives into one
@@ -561,55 +561,55 @@ process and helping turn shared ambition into projects that can be implemented.
 
       </div>
 
-      <div class="ecosystem__track">
-        <div class="ecosystem__stage">
+      <div class="bb-ecosystem__track">
+        <div class="bb-ecosystem__stage">
 
           <!-- Animated connector lines are generated here by js/main.js. -->
-          <svg class="ecosystem__spokes" aria-hidden="true" focusable="false" preserveAspectRatio="none"></svg>
+          <svg class="bb-ecosystem__spokes" aria-hidden="true" focusable="false" preserveAspectRatio="none"></svg>
 
-          <ul class="eco-grid">
-          <li class="eco-card">
-            <p class="eco-card__no">01</p>
-            <img class="eco-card__icon" src="images/icons/ecosystem-governments.svg" alt="" width="40" height="40" aria-hidden="true">
-            <h3 class="eco-card__title">Government &amp; Municipalities</h3>
-            <p class="eco-card__text">Policy alignment, permitting support, and national mandates.</p>
+          <ul class="bb-eco-grid">
+          <li class="bb-eco-card">
+            <p class="bb-eco-card__no">01</p>
+            <img class="bb-eco-card__icon" src="images/icons/ecosystem-governments.svg" alt="" width="40" height="40" aria-hidden="true">
+            <h4 class="bb-eco-card__title">Government &amp; Municipalities</h4>
+            <p class="bb-eco-card__text">Policy alignment, permitting support, and national mandates.</p>
           </li>
-          <li class="eco-card">
-            <p class="eco-card__no">02</p>
-            <img class="eco-card__icon" src="images/icons/ecosystem-technology-providers.svg" alt="" width="40" height="40" aria-hidden="true">
-            <h3 class="eco-card__title">Technology Providers</h3>
-            <p class="eco-card__text">Advanced timber systems and hybrid construction solutions.</p>
+          <li class="bb-eco-card">
+            <p class="bb-eco-card__no">02</p>
+            <img class="bb-eco-card__icon" src="images/icons/ecosystem-technology-providers.svg" alt="" width="40" height="40" aria-hidden="true">
+            <h4 class="bb-eco-card__title">Technology Providers</h4>
+            <p class="bb-eco-card__text">Advanced timber systems and hybrid construction solutions.</p>
           </li>
-          <li class="eco-card">
-            <p class="eco-card__no">03</p>
-            <img class="eco-card__icon" src="images/icons/ecosystem-international-organizations.svg" alt="" width="40" height="40" aria-hidden="true">
-            <h3 class="eco-card__title">International Organizations</h3>
-            <p class="eco-card__text">Global ESG standards, transparency, and climate frameworks.</p>
+          <li class="bb-eco-card">
+            <p class="bb-eco-card__no">03</p>
+            <img class="bb-eco-card__icon" src="images/icons/ecosystem-international-organizations.svg" alt="" width="40" height="40" aria-hidden="true">
+            <h4 class="bb-eco-card__title">International Organizations</h4>
+            <p class="bb-eco-card__text">Global ESG standards, transparency, and climate frameworks.</p>
           </li>
-          <li class="eco-card">
-            <p class="eco-card__no">04</p>
-            <img class="eco-card__icon" src="images/icons/ecosystem-engineering.svg" alt="" width="40" height="40" aria-hidden="true">
-            <h3 class="eco-card__title">Engineering &amp; Design</h3>
-            <p class="eco-card__text">Master planning, architecture, and technical supervision.</p>
+          <li class="bb-eco-card">
+            <p class="bb-eco-card__no">04</p>
+            <img class="bb-eco-card__icon" src="images/icons/ecosystem-engineering.svg" alt="" width="40" height="40" aria-hidden="true">
+            <h4 class="bb-eco-card__title">Engineering &amp; Design</h4>
+            <p class="bb-eco-card__text">Master planning, architecture, and technical supervision.</p>
           </li>
-          <li class="eco-card">
-            <p class="eco-card__no">05</p>
-            <img class="eco-card__icon" src="images/icons/ecosystem-finance.svg" alt="" width="40" height="40" aria-hidden="true">
-            <h3 class="eco-card__title">Finance Institutions</h3>
-            <p class="eco-card__text">Secure green funding and risk mitigation.</p>
+          <li class="bb-eco-card">
+            <p class="bb-eco-card__no">05</p>
+            <img class="bb-eco-card__icon" src="images/icons/ecosystem-finance.svg" alt="" width="40" height="40" aria-hidden="true">
+            <h4 class="bb-eco-card__title">Finance Institutions</h4>
+            <p class="bb-eco-card__text">Secure green funding and risk mitigation.</p>
           </li>
-          <li class="eco-card">
-            <p class="eco-card__no">06</p>
-            <img class="eco-card__icon" src="images/icons/ecosystem-end-users.svg" alt="" width="40" height="40" aria-hidden="true">
-            <h3 class="eco-card__title">Communities &amp; End Users</h3>
-            <p class="eco-card__text">Resilient, healthy, sustainable living spaces.</p>
+          <li class="bb-eco-card">
+            <p class="bb-eco-card__no">06</p>
+            <img class="bb-eco-card__icon" src="images/icons/ecosystem-end-users.svg" alt="" width="40" height="40" aria-hidden="true">
+            <h4 class="bb-eco-card__title">Communities &amp; End Users</h4>
+            <p class="bb-eco-card__text">Resilient, healthy, sustainable living spaces.</p>
           </li>
           </ul>
 
-          <div class="eco-hub">
-            <p class="eco-hub__label">The connective centre</p>
-            <p class="eco-hub__name">IM HOLZ Nova</p>
-            <p class="eco-hub__role">Sustainable Infrastructure Solutions Integrator</p>
+          <div class="bb-eco-hub">
+            <p class="bb-eco-hub__label">The connective centre</p>
+            <p class="bb-eco-hub__name">IM HOLZ Nova</p>
+            <p class="bb-eco-hub__role">Sustainable Infrastructure Solutions Integrator</p>
           </div>
 
         </div>
@@ -623,31 +623,31 @@ process and helping turn shared ambition into projects that can be implemented.
   <!-- No form and no invented details: the section exists to make one offer
        and give it a single door. The button's destination is still open —
        it waits for a real address. -->
-  <section class="section contact" id="contact" aria-labelledby="contact-heading">
+  <section class="bb-section bb-contact" id="contact" aria-labelledby="contact-heading">
 
     <!-- the same tinted, hatched ground the audiences band stands on, ruled
          on the same three columns so the guides run through unbroken -->
-    <div class="contact__ground" aria-hidden="true"><i></i><i></i><i></i></div>
+    <div class="bb-contact__ground" aria-hidden="true"><i></i><i></i><i></i></div>
 
-    <div class="shell">
+    <div class="bb-shell">
 
-      <div class="contact__inner">
+      <div class="bb-contact__inner">
 
-        <p class="section-label">Contact</p>
+        <h3 class="bb-section__label">Contact</h3>
 
-        <div class="contact__body">
-          <p class="contact__line"><span>Tell us about your project &mdash; we’ll come back</span> <span>with the right partners and a first outline</span></p>
+        <div class="bb-contact__body">
+          <h4 class="bb-contact__line" id="contact-heading"><span>Tell us about your project &mdash; we’ll come back</span> <span>with the right partners and a first outline</span></h4>
         </div>
 
-        <div class="contact__act">
+        <div class="bb-contact__act">
 
-          <a class="mailbtn" href="mailto:austria@imholz-group.com">
-            <span class="mailbtn__icon" aria-hidden="true"></span>
-            <span class="mailbtn__label">austria@imholz-group.com</span>
+          <a class="bb-mailbtn" href="mailto:austria@imholz-group.com">
+            <span class="bb-mailbtn__icon" aria-hidden="true"></span>
+            <span class="bb-mailbtn__label">austria@imholz-group.com</span>
           </a>
 
           <!-- the destination is still open: it waits for a real page -->
-          <a class="link-underline contact__cta" href="#" data-placeholder="true"><span class="link-underline__label"><span class="link-underline__roll" data-text="Get in touch">Get in touch</span></span><span class="link-underline__mark" aria-hidden="true"></span></a>
+          <a class="bb-link-underline bb-contact__cta" href="#" data-placeholder="true"><span class="bb-link-underline__label"><span class="bb-link-underline__roll" data-text="Get in touch">Get in touch</span></span><span class="bb-link-underline__mark" aria-hidden="true"></span></a>
 
         </div>
 
@@ -662,24 +662,24 @@ process and helping turn shared ambition into projects that can be implemented.
 <!-- ============ FOOTER ============ -->
 <!-- After reference_01: a solid field carrying the four columns, and the
      drawing running the full width beneath them. -->
-<footer class="site-footer">
+<footer class="bb-site-footer">
 
   <!-- the sheet's own ruling, carried onto the dark ground -->
-  <div class="site-footer__rules" aria-hidden="true"><i></i><i></i><i></i></div>
+  <div class="bb-site-footer__rules" aria-hidden="true"><i></i><i></i><i></i></div>
 
-  <div class="shell">
-    <div class="site-footer__grid">
+  <div class="bb-shell">
+    <div class="bb-site-footer__grid">
 
-      <div class="foot-cell foot-cell--brand">
-        <a class="foot-brand__link" href="#top" aria-label="IM HOLZ Nova — top of the page">
-          <img class="logo-mark foot-logo" src="images/logos/logo-white.svg" alt="IM HOLZ Nova">
+      <div class="bb-foot-cell bb-foot-cell--brand">
+        <a class="bb-site-footer__brand-link" href="#top" aria-label="IM HOLZ Nova — top of the page">
+          <img class="bb-logo-mark bb-site-footer__logo" src="images/logos/logo-white.svg" alt="IM HOLZ Nova">
         </a>
-        <p class="foot-brand__role">Sustainable Infrastructure Solutions Integrator</p>
+        <p class="bb-site-footer__brand-role">Sustainable Infrastructure Solutions Integrator</p>
       </div>
 
-      <div class="foot-cell">
-        <h2 class="foot-cell__head">Menu</h2>
-        <ul class="foot-list">
+      <div class="bb-foot-cell">
+        <p class="bb-foot-cell__head">Menu</p>
+        <ul class="bb-foot-list">
           <li><a href="#ecosystem">The IM HOLZ Model</a></li>
           <li><a href="sustainability.html">Sustainability</a></li>
           <li><a href="about.html">About</a></li>
@@ -688,16 +688,16 @@ process and helping turn shared ambition into projects that can be implemented.
         </ul>
       </div>
 
-      <div class="foot-cell">
-        <h2 class="foot-cell__head">Contacts</h2>
-        <ul class="foot-list">
+      <div class="bb-foot-cell">
+        <p class="bb-foot-cell__head">Contacts</p>
+        <ul class="bb-foot-list">
           <li><a href="mailto:austria@imholz-group.com">austria@imholz-group.com</a></li>
           <li><a href="tel:+436763655362">+43 676 365 5362</a></li>
-          <li><a class="foot-social" href="https://www.linkedin.com/company/imholz-nova/" target="_blank" rel="noopener noreferrer" aria-label="IM HOLZ Nova on LinkedIn"><svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12Zm1.78 13.02H3.56V9h3.56v11.45ZM22.23 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.23 0Z"/></svg></a></li>
+          <li><a class="bb-site-footer__social" href="https://www.linkedin.com/company/imholz-nova/" target="_blank" rel="noopener noreferrer" aria-label="IM HOLZ Nova on LinkedIn"><svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12Zm1.78 13.02H3.56V9h3.56v11.45ZM22.23 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.23 0Z"/></svg></a></li>
         </ul>
 
-        <h2 class="foot-cell__head foot-cell__head--second">Documents</h2>
-        <ul class="foot-list">
+        <p class="bb-foot-cell__head bb-foot-cell__head--second">Documents</p>
+        <ul class="bb-foot-list">
           <li><a href="impressum.html">Legal Notice</a></li>
           <!-- inert until a policy page exists -->
           <li><a href="#" data-placeholder="true">Privacy Policy</a></li>
@@ -707,8 +707,8 @@ process and helping turn shared ambition into projects that can be implemented.
     </div>
   </div>
 
-  <div class="site-footer__art" aria-hidden="true">
-      <img class="foot-drawing"
+  <div class="bb-site-footer__art" aria-hidden="true">
+      <img class="bb-site-footer__drawing"
            src="images/illustrations/footer-drawing.avif"
            alt="" width="2324" height="806" decoding="async">
   </div>
@@ -716,20 +716,20 @@ process and helping turn shared ambition into projects that can be implemented.
 
 <!-- Photograph viewer: opened from the strip, closed by Escape, the backdrop
      or the close button. Focus is moved into it and handed back on close. -->
-<div class="viewer" id="photo-viewer" role="dialog" aria-modal="true"
+<div class="bb-viewer" id="photo-viewer" role="dialog" aria-modal="true"
      aria-label="Photograph" hidden>
-  <button class="viewer__backdrop" type="button" tabindex="-1" aria-hidden="true"></button>
-  <figure class="viewer__frame">
-    <img class="viewer__image" src="" alt="">
-    <figcaption class="viewer__details" aria-live="polite">
-      <h2 class="viewer__title" hidden></h2>
-      <p class="viewer__caption"></p>
+  <button class="bb-viewer__backdrop" type="button" tabindex="-1" aria-hidden="true"></button>
+  <figure class="bb-viewer__frame">
+    <img class="bb-viewer__image" src="" alt="">
+    <figcaption class="bb-viewer__details" aria-live="polite">
+      <p class="bb-viewer__title" hidden></p>
+      <p class="bb-viewer__caption"></p>
     </figcaption>
   </figure>
-  <button class="viewer__close" type="button" aria-label="Close">Close</button>
-  <button class="viewer__nav viewer__nav--prev" type="button" aria-label="Previous photograph">&#8592;</button>
-  <button class="viewer__nav viewer__nav--next" type="button" aria-label="Next photograph">&#8594;</button>
-  <p class="viewer__count" aria-live="polite"></p>
+  <button class="bb-viewer__close" type="button" aria-label="Close">Close</button>
+  <button class="bb-viewer__nav bb-viewer__nav--prev" type="button" aria-label="Previous photograph">&#8592;</button>
+  <button class="bb-viewer__nav bb-viewer__nav--next" type="button" aria-label="Next photograph">&#8594;</button>
+  <p class="bb-viewer__count" aria-live="polite"></p>
 </div>
 
 

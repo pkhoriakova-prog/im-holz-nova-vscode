@@ -75,9 +75,9 @@ html{
 
 /* A link to a section lands with its content a fixed distance under the
    header, whatever padding the section itself carries. */
-.section{ --anchor-gap:clamp(28px, 2.6vw, 48px); }
-.section[id]{ scroll-margin-top:calc(var(--anchor-gap) - clamp(52px, 6.5vw, 132px)); }
-.shift[id]{ scroll-margin-top:calc(var(--anchor-gap) - clamp(26px, 2.6vw, 56px)); }
+.bb-section{ --anchor-gap:clamp(28px, 2.6vw, 48px); }
+.bb-section[id]{ scroll-margin-top:calc(var(--anchor-gap) - clamp(52px, 6.5vw, 132px)); }
+.bb-shift[id]{ scroll-margin-top:calc(var(--anchor-gap) - clamp(26px, 2.6vw, 56px)); }
 
 body{
   margin:0;
@@ -110,7 +110,7 @@ img{ display:block; max-width:100%; }
    that scrolls past.
    ========================================================================= */
 
-.sheet-rules{
+.bb-sheet-rules{
   position:fixed;
   inset:0;
   z-index:0;
@@ -120,21 +120,21 @@ img{ display:block; max-width:100%; }
   pointer-events:none;
 }
 /* the two divisions, on the thirds of the content box */
-.sheet-rules i + i{ border-left:1px solid var(--rule); }
+.bb-sheet-rules i + i{ border-left:1px solid var(--rule); }
 
 /* the edges of the sheet: pushed out beyond the gutter by the same inset the
    content keeps from any other rule, so nothing sits flush against them */
-.sheet-edge{
+.bb-sheet-edge{
   position:absolute;
   top:0;
   bottom:0;
   width:0;
 }
-.sheet-edge--l{
+.bb-sheet-edge--l{
   left:calc(var(--gutter) - var(--rule-inset));
   border-left:1px solid var(--rule);
 }
-.sheet-edge--r{
+.bb-sheet-edge--r{
   right:calc(var(--gutter) - var(--rule-inset));
   border-right:1px solid var(--rule);
 }
@@ -147,12 +147,12 @@ body > main{
 
 @media (max-width:1150px){
   /* Tablet and phone: the two edges plus one rule down the middle. */
-  .sheet-rules{ grid-template-columns:repeat(2, 1fr); }
-  .sheet-rules i:nth-child(3){ display:none; }
+  .bb-sheet-rules{ grid-template-columns:repeat(2, 1fr); }
+  .bb-sheet-rules i:nth-child(3){ display:none; }
 }
 
 /* full-bleed shell with a fixed 40px gutter, exactly as both references */
-.shell{
+.bb-shell{
   width:100%;
   padding-inline:var(--gutter);
 }
@@ -164,7 +164,7 @@ body > main{
 
 /* Pinned to the top and closed off by a rule of the same weight as the
    column rules, so the header reads as the head of the sheet. */
-.site-header{
+.bb-site-header{
   position:sticky;
   top:0;
   z-index:10;
@@ -172,7 +172,7 @@ body > main{
   border-bottom:1px solid var(--rule);
 }
 
-.site-header__inner{
+.bb-site-header__inner{
   height:var(--header-h);
   display:grid;
   grid-template-columns:1fr auto 1fr;
@@ -180,20 +180,20 @@ body > main{
   column-gap:24px;
 }
 
-.site-header__logo{
+.bb-site-header__logo{
   justify-self:start;
   display:block;
   line-height:0;
   color:var(--green);
 }
-.logo-mark{
+.bb-logo-mark{
   aspect-ratio:116.25 / 51.28;
   display:block;
   width:auto;
   height:var(--logo-h);       /* 86 x 38 in reference_01 */
 }
 
-.site-nav{
+.bb-site-nav{
   justify-self:center;
   display:flex;
   align-items:center;
@@ -201,7 +201,7 @@ body > main{
   white-space:nowrap;
 }
 
-.site-nav a{
+.bb-site-nav a{
   position:relative;
   color:var(--ink);
   font-size:15px;
@@ -210,7 +210,7 @@ body > main{
   text-decoration:none;
   padding-block:4px;
 }
-.site-nav a::after{
+.bb-site-nav a::after{
   content:"";
   position:absolute;
   left:0; right:0; bottom:0;
@@ -220,10 +220,10 @@ body > main{
   transform-origin:left center;
   transition:transform .22s ease;
 }
-.site-nav a:hover{ color:var(--green); }
-.site-nav a:hover::after{ transform:scaleX(1); }
+.bb-site-nav a:hover{ color:var(--green); }
+.bb-site-nav a:hover::after{ transform:scaleX(1); }
 
-.site-lang{
+.bb-site-lang{
   justify-self:end;
   margin:0;
   font-size:15px;
@@ -231,15 +231,15 @@ body > main{
   letter-spacing:.01em;
   color:var(--ink);
 }
-.site-lang__current{
+.bb-site-lang__current{
   border-bottom:1px solid var(--ink);
   padding-bottom:1px;
 }
-.site-lang__sep{ color:var(--ink-muted); margin-inline:2px; }
-.site-lang__other{ color:var(--ink-muted); }
+.bb-site-lang__sep{ color:var(--ink-muted); margin-inline:2px; }
+.bb-site-lang__other{ color:var(--ink-muted); }
 
 /* --- menu button: only present once the inline nav no longer fits --- */
-.nav-toggle{
+.bb-nav-toggle{
   display:none;
   align-items:center;
   gap:10px;
@@ -255,24 +255,24 @@ body > main{
   text-transform:uppercase;
   cursor:pointer;
 }
-.nav-toggle__bars{
+.bb-nav-toggle__bars{
   display:flex;
   flex-direction:column;
   justify-content:space-between;
   width:22px;
   height:9px;
 }
-.nav-toggle__bars i{
+.bb-nav-toggle__bars i{
   display:block;
   height:1px;
   background:currentColor;
   transition:transform .22s ease, opacity .22s ease;
 }
-.nav-toggle[aria-expanded="true"]{ color:var(--green); }
-.nav-toggle[aria-expanded="true"] .nav-toggle__bars i:first-child{
+.bb-nav-toggle[aria-expanded="true"]{ color:var(--green); }
+.bb-nav-toggle[aria-expanded="true"] .bb-nav-toggle__bars i:first-child{
   transform:translateY(4px) rotate(45deg);
 }
-.nav-toggle[aria-expanded="true"] .nav-toggle__bars i:last-child{
+.bb-nav-toggle[aria-expanded="true"] .bb-nav-toggle__bars i:last-child{
   transform:translateY(-4px) rotate(-45deg);
 }
 
@@ -280,7 +280,7 @@ body > main{
    HERO — reference_02 arrangement, reference_01 image
    ========================================================================= */
 
-.hero{
+.bb-hero{
   padding-top:var(--hero-top);
   padding-bottom:clamp(26px, 2.6vw, 56px);
 }
@@ -289,13 +289,13 @@ body > main{
    Both columns stretch to the same height, so the link lands on the
    headline's last line. The note takes the last third, so it is set against
    the second rule — held off it by a small inset rather than butted to it. */
-.hero__head{
+.bb-hero__head{
   display:grid;
   grid-template-columns:2fr 1fr;
   align-items:stretch;
 }
 
-.hero__title{
+.bb-hero__title{
   margin:0;
   clip-path:inset(-.3em -.08em 0 -.08em);
   max-width:15em;
@@ -309,18 +309,18 @@ body > main{
 /* The headline rises into view from behind its own clipping window.
    clip-path masks without adding to the line box, so the block stays exactly
    as tall as its lines; the negative insets spare the sides and ascenders. */
-.hero__title-rise{
+.bb-hero__title-rise{
   display:block;
   will-change:transform;
   animation:rise-in 1.05s cubic-bezier(.2,.7,.25,1) both;
 }
-.hero__title-line{ display:block; }
+.bb-hero__title-line{ display:block; }
 @keyframes rise-in{
   from{ transform:translateY(108%); }
   to  { transform:translateY(0); }
 }
 
-.hero__aside{
+.bb-hero__aside{
   display:flex;
   flex-direction:column;
   align-items:flex-start;      /* the link follows the note directly rather
@@ -338,7 +338,7 @@ body > main{
 
 /* Supporting note, set small and quiet. Its size is deliberately independent
    of the H1 — the headline can grow without dragging this paragraph with it. */
-.hero__lede{
+.bb-hero__lede{
   margin:0;
   max-width:36em;
   color:var(--ink-muted);
@@ -351,7 +351,7 @@ body > main{
    upright beside them, and a rule under both. Under the cursor the arrow
    turns to point the way it will go, and the rule is drawn again in green
    from left to right. */
-.link-underline{
+.bb-link-underline{
   position:relative;
   align-self:flex-start;
   display:inline-flex;
@@ -368,7 +368,7 @@ body > main{
   transition:color .25s ease;
 }
 /* the rule under the words, drawn solid */
-.link-underline::before{
+.bb-link-underline::before{
   content:"";
   position:absolute;
   left:0; right:0; bottom:0;
@@ -378,35 +378,35 @@ body > main{
 /* The rule under the words stays put — there is already a line here, and it
    does not need to perform. The words do: on hover the label rolls up out of
    sight and its own copy rolls in from below. */
-.link-underline__label{
+.bb-link-underline__label{
   display:block;
   overflow:hidden;             /* the window the words roll through */
 }
-.link-underline__roll{
+.bb-link-underline__roll{
   display:block;
   white-space:nowrap;
 }
 /* one window per letter, so the words turn over letter by letter rather than
    all at once — the delay is set on each as the label is split */
-.ch{
+.bb-link-underline__char{
   position:relative;
   display:inline-block;
   overflow:hidden;
   vertical-align:top;
 }
-.ch__a,
-.ch__b{
+.bb-link-underline__char-front,
+.bb-link-underline__char-back{
   display:block;
   transition:transform .34s cubic-bezier(.3,.75,.25,1);
   transition-delay:inherit;
 }
-.ch__b{
+.bb-link-underline__char-back{
   position:absolute;
   left:0;
   top:100%;
   width:100%;
 }
-.link-underline__mark{
+.bb-link-underline__mark{
   display:block;
   width:1em;
   height:1em;
@@ -421,28 +421,28 @@ body > main{
 :root{
   --arrow:url("../images/icons/arrow.svg");
 }
-.link-underline:hover,
-.link-underline:focus-visible{ color:var(--green); }
-.link-underline:hover .ch__a,
-.link-underline:hover .ch__b,
-.link-underline:focus-visible .ch__a,
-.link-underline:focus-visible .ch__b{ transform:translateY(-100%); }
+.bb-link-underline:hover,
+.bb-link-underline:focus-visible{ color:var(--green); }
+.bb-link-underline:hover .bb-link-underline__char-front,
+.bb-link-underline:hover .bb-link-underline__char-back,
+.bb-link-underline:focus-visible .bb-link-underline__char-front,
+.bb-link-underline:focus-visible .bb-link-underline__char-back{ transform:translateY(-100%); }
 
 @media (prefers-reduced-motion:reduce){
-  .ch__a,
-  .ch__b{ transition:none; }
+  .bb-link-underline__char-front,
+  .bb-link-underline__char-back{ transition:none; }
 }
-.link-underline:hover .link-underline__mark,
-.link-underline:focus-visible .link-underline__mark{ transform:rotate(0deg); }
+.bb-link-underline:hover .bb-link-underline__mark,
+.bb-link-underline:focus-visible .bb-link-underline__mark{ transform:rotate(0deg); }
 
 /* --- the photograph: full content width, 16:9, as in reference_01 --- */
-.hero__figure{
+.bb-hero__figure{
   position:relative;
   margin:clamp(16px, 1.74vw, 34px) 0 0;
   width:100%;
 }
 
-.hero__image{
+.bb-hero__image{
   display:block;
   width:100%;
   height:auto;
@@ -454,7 +454,7 @@ body > main{
 /* The disclosure sits on the photograph itself, bottom left: it belongs to
    the image, not to the page under it. A flat panel carries it over any
    frame — no rounding, no shadow. */
-.disclosure.disclosure--overlay{
+.bb-disclosure.bb-disclosure--overlay{
   position:absolute;
   left:clamp(14px, 1.15vw, 24px);
   bottom:clamp(12px, 1vw, 20px);
@@ -468,7 +468,7 @@ body > main{
 }
 
 /* mandatory illustrative-imagery disclosure */
-.disclosure{
+.bb-disclosure{
   margin:12px 0 0;
   max-width:56ch;
   color:var(--ink-muted);
@@ -482,14 +482,14 @@ body > main{
    ========================================================================= */
 
 @media (max-width:1080px){
-  .site-header__inner{
+  .bb-site-header__inner{
     grid-template-columns:1fr auto auto;
     column-gap:22px;
   }
-  .nav-toggle{ display:flex; }
+  .bb-nav-toggle{ display:flex; }
 
   /* the nav becomes a panel dropped from the header's bottom hairline */
-  .site-nav{
+  .bb-site-nav{
     position:absolute;
     top:100%;
     left:0;
@@ -506,16 +506,16 @@ body > main{
     border-top:1px solid var(--hairline);
     border-bottom:1px solid var(--hairline);
   }
-  .site-nav[data-open="true"]{ display:flex; }
+  .bb-site-nav[data-open="true"]{ display:flex; }
 
-  .site-nav a{
+  .bb-site-nav a{
     width:100%;
     padding:15px 0;
     font-size:17px;
     border-bottom:1px solid var(--hairline-soft);
   }
-  .site-nav a:last-child{ border-bottom:0; }
-  .site-nav a::after{ display:none; }
+  .bb-site-nav a:last-child{ border-bottom:0; }
+  .bb-site-nav a::after{ display:none; }
 }
 
 /* Below this width the two-column head can no longer hold the paragraph at a
@@ -523,36 +523,36 @@ body > main{
 @media (max-width:1150px){
   :root{ --header-h:72px; }
 
-  .hero__title{ max-width:16em; font-size:clamp(28px, 7.4vw, 46px); }
-  .hero__title-line{ display:inline; }
-  .hero__head{ grid-template-columns:1fr; row-gap:26px; }
-  .hero__title,
-  .hero__aside{ grid-column:1 / -1; }
-  .hero__aside{ padding-left:0; }
-  .hero__aside{ display:block; padding-top:0; max-width:48ch; }
-  .hero__lede{ font-size:15px; line-height:1.5; }
-  .link-underline{ font-size:12px; }
+  .bb-hero__title{ max-width:16em; font-size:clamp(28px, 7.4vw, 46px); }
+  .bb-hero__title-line{ display:inline; }
+  .bb-hero__head{ grid-template-columns:1fr; row-gap:26px; }
+  .bb-hero__title,
+  .bb-hero__aside{ grid-column:1 / -1; }
+  .bb-hero__aside{ padding-left:0; }
+  .bb-hero__aside{ display:block; padding-top:0; max-width:48ch; }
+  .bb-hero__lede{ font-size:15px; line-height:1.5; }
+  .bb-link-underline{ font-size:12px; }
 
-  .hero__image{ aspect-ratio:3 / 2; }
-  .disclosure{ font-size:12px; }
+  .bb-hero__image{ aspect-ratio:3 / 2; }
+  .bb-disclosure{ font-size:12px; }
 }
 
 @media (min-width:700px) and (max-width:1150px){
-  .hero__title{ max-width:none; font-size:clamp(38px, 5.8vw, 46px); }
-  .hero__title-line{ display:block; }
+  .bb-hero__title{ max-width:none; font-size:clamp(38px, 5.8vw, 46px); }
+  .bb-hero__title-line{ display:block; }
 }
 
 @media (prefers-reduced-motion:reduce){
   *{ transition-duration:.01ms !important; animation-duration:.01ms !important; }
   /* the headline lands in place immediately rather than not arriving at all */
-  .hero__title-rise{ transform:none; animation:none; }
+  .bb-hero__title-rise{ transform:none; animation:none; }
 }
 
 /* =========================================================================
    SECTIONS
    ========================================================================= */
 
-.section{
+.bb-section{
   position:relative;
   padding-block:clamp(52px, 6.5vw, 132px);
 }
@@ -560,7 +560,7 @@ body > main{
 /* a hairline closes one section off from the next, drawn between the two
    edge rules so the sheet reads as one ruled field. The first section needs
    none: the hero above it is already closed by the header. */
-.section::before{
+.bb-section::before{
   content:"";
   position:absolute;
   top:0;
@@ -570,16 +570,16 @@ body > main{
   background:var(--rule);
 }
 /* the first section needs none: the hero above it is closed by the header */
-.shift::before{ content:none; }
+.bb-shift::before{ content:none; }
 
 /* The Shift follows the hero closely rather than opening a full section gap */
-.shift{
+.bb-shift{
   position:relative;
   padding-top:clamp(26px, 2.6vw, 56px);
 }
 
 /* the running head: plain tracked capitals on the outer margin, no bullet */
-.section-label{
+.bb-section__label{
   margin:0;
   color:var(--ink-muted);
   font-size:var(--label-fs);
@@ -588,7 +588,12 @@ body > main{
   text-transform:uppercase;
 }
 
-.section-title{
+/* Heading level expresses document structure; classes control appearance. */
+.bb-page-intro{
+  padding-top:var(--hero-top);
+}
+
+.bb-section__title{
   margin:0;
   max-width:var(--section-copy-width, calc(35 * var(--lede-fs)));
   font-size:var(--sec-fs);
@@ -597,26 +602,26 @@ body > main{
   letter-spacing:-.018em;
 }
 
-.section-text{
+.bb-section__text{
   margin:var(--gap-title-text) 0 0;
   max-width:var(--section-copy-width, calc(35 * var(--lede-fs)));
   color:var(--ink-muted);
   font-size:var(--lede-fs);
   line-height:var(--lede-lh);
 }
-.section-text + .section-text{
+.bb-section__text + .bb-section__text{
   margin-top:var(--gap-para);
 }
 @media (min-width:1151px){
   /* Copy set against the first inner rule stops before the second one. */
-  .section-text{
+  .bb-section__text{
     max-width:min(var(--section-copy-width, calc(35 * var(--lede-fs))),
       calc((100vw - var(--gutter) - var(--gutter)) / 3 - var(--rule-inset) - var(--rule-inset)));
   }
 }
 
 /* --- The Shift: label on its own axis, text right --- */
-.shift__inner{
+.bb-shift__inner{
   display:grid;
   /* one third for the label, the rest for the text: the block is set to the
      first rule — held off it by the same inset used everywhere — and the
@@ -625,7 +630,7 @@ body > main{
   align-items:start;
 }
 
-.shift .section-label{
+.bb-shift .bb-section__label{
   position:relative;
   z-index:1;
   /* sits on the first line of the heading beside it */
@@ -633,22 +638,22 @@ body > main{
                  - (1.45 - 1) / 2 * var(--label-fs) - var(--cap-k) * var(--label-fs));
 }
 
-.shift__body{
+.bb-shift__body{
   position:relative;
   z-index:1;
   padding-left:var(--rule-inset);
 }
 
 @media (max-width:1150px){
-  .shift__inner{ grid-template-columns:1fr; row-gap:18px; }
-  .shift__inner{ grid-template-columns:1fr; }
-  .shift .section-label{ grid-column:1; padding-top:0; }
-  .shift__body{ grid-column:1; padding-left:0; }
+  .bb-shift__inner{ grid-template-columns:1fr; row-gap:18px; }
+  .bb-shift__inner{ grid-template-columns:1fr; }
+  .bb-shift .bb-section__label{ grid-column:1; padding-top:0; }
+  .bb-shift__body{ grid-column:1; padding-left:0; }
 }
 
 /* --- Sustainable solutions: notes drawn onto an illustrative photograph --- */
 
-.solutions{
+.bb-solutions{
   --sol-foot:clamp(30px, 3vw, 64px);
   padding-bottom:var(--sol-foot);
 }
@@ -656,7 +661,7 @@ body > main{
 /* The column rules run all the way down to the photograph — the frame itself
    is what cuts them off — and below it they do not return: the foot of the
    section is plain paper, drawn between the two edge rules so those carry on. */
-.solutions__track::after{
+.bb-solutions__track::after{
   content:"";
   position:absolute;
   left:calc(var(--rule-inset) * -1 + 1px);
@@ -666,16 +671,16 @@ body > main{
   background:var(--paper);
   z-index:0;
 }
-.solutions__stage{ z-index:1; }
+.bb-solutions__stage{ z-index:1; }
 
 /* the same frame as The Shift: label in the first third, text set to the
    first rule with the standard inset */
-.solutions__intro{
+.bb-solutions__intro{
   display:grid;
   grid-template-columns:1fr 2fr;
   align-items:start;
 }
-.solutions__head{
+.bb-solutions__head{
   padding-left:var(--rule-inset);
 }
 
@@ -683,7 +688,7 @@ body > main{
    for the pinned frame, then the run outside, the move through the opening,
    and the run inside. No spare distance anywhere: every added screen of
    track is a screen of movement. */
-.solutions__track{
+.bb-solutions__track{
   position:relative;
   margin-top:var(--gap-block-media);
   --stage-h:calc(100vh - var(--header-h));
@@ -695,7 +700,7 @@ body > main{
      scrolling is a note nobody reads. */
   height:calc(var(--stage-h) + 24vh + 70vh + 88vh + 44vh + 70vh);
 }
-.solutions__stage{
+.bb-solutions__stage{
   position:sticky;
   top:var(--header-h);
   height:calc(100vh - var(--header-h));
@@ -704,14 +709,14 @@ body > main{
 
 /* the figure fills the pinned viewport, so the photograph is as large as the
    screen allows and no band of empty page is left above or below it */
-.solutions__figure{
+.bb-solutions__figure{
   margin:0;
   height:100%;
   display:flex;
   flex-direction:column;
 }
 
-.solutions__frame{
+.bb-solutions__frame{
   position:relative;
   flex:1 1 auto;
   min-height:0;
@@ -727,27 +732,27 @@ body > main{
 
    The movement is carried by the view, not by the scene, so the notes are not
    dragged along with the picture: a card should stay the size it is set at. */
-.scene{
+.bb-scene{
   position:absolute;
   inset:0;
 }
-.scene__view{
+.bb-scene__view{
   position:absolute;
   inset:0;
   transform:scale(var(--view-scale, 1));
   transform-origin:var(--door-x, 60%) var(--door-y, 66%);
   will-change:transform;
 }
-.scene--in{
+.bb-scene--in{
   opacity:var(--in-on, 0);
   will-change:opacity;
 }
-.scene--in .scene__view{
+.bb-scene--in .bb-scene__view{
   --view-scale:.94;
   transform-origin:50% 56%;    /* straight ahead, not back towards the door */
 }
 
-.solutions__image{
+.bb-solutions__image{
   display:block;
   width:100%;
   height:100%;
@@ -755,7 +760,7 @@ body > main{
   background:var(--hairline-soft);
 }
 
-.annots{
+.bb-annots{
   position:absolute;
   inset:0;
   margin:0;
@@ -766,7 +771,7 @@ body > main{
 /* One note = a mark on the photograph, a leader line, and a plain card.
    Flat surfaces and hairlines only — it should read as an annotated drawing,
    not as a tooltip. */
-.annot{
+.bb-annot{
   position:absolute;
   left:var(--x);
   top:var(--y);
@@ -774,7 +779,7 @@ body > main{
   align-items:center;
   max-width:min(300px, 30%);
 }
-.annot--left{
+.bb-annot--left{
   flex-direction:row-reverse;
   /* the transform runs after layout, so a note set near the right edge would
      otherwise be laid out inside the sliver of space left of that edge and
@@ -783,7 +788,7 @@ body > main{
   transform:translateX(-100%);
 }
 
-.annot__mark{
+.bb-annot__mark{
   position:relative;
   flex:0 0 auto;
   width:9px;
@@ -791,16 +796,16 @@ body > main{
   border:1px solid var(--green);
   background:var(--paper);
 }
-.annot__mark::before,
-.annot__mark::after{
+.bb-annot__mark::before,
+.bb-annot__mark::after{
   content:"";
   position:absolute;
   background:var(--green);
 }
-.annot__mark::before{ left:3px; right:3px; top:-4px; bottom:-4px; }
-.annot__mark::after { top:3px; bottom:3px; left:-4px; right:-4px; }
+.bb-annot__mark::before{ left:3px; right:3px; top:-4px; bottom:-4px; }
+.bb-annot__mark::after { top:3px; bottom:3px; left:-4px; right:-4px; }
 
-.annot__leader{
+.bb-annot__leader{
   flex:0 0 auto;
   width:clamp(18px, 2vw, 42px);
   height:1px;
@@ -809,9 +814,9 @@ body > main{
   transform-origin:left center;
   transition:transform .5s cubic-bezier(.2,.7,.25,1);
 }
-.annot--left .annot__leader{ transform-origin:right center; }
+.bb-annot--left .bb-annot__leader{ transform-origin:right center; }
 
-.annot__card{
+.bb-annot__card{
   flex:1 1 auto;
   min-width:0;
   padding:12px 14px 14px;
@@ -819,21 +824,21 @@ body > main{
   border:1px solid var(--hairline);
 }
 
-.annot__no{
+.bb-annot__no{
   margin:0 0 6px;
   color:var(--green);
   font-size:11px;
   font-weight:600;
   letter-spacing:.14em;
 }
-.annot__title{
+.bb-annot__title{
   margin:0;
   font-size:clamp(13px, .78vw, 17px);
   font-weight:600;
   line-height:1.25;
   letter-spacing:-.005em;
 }
-.annot__text{
+.bb-annot__text{
   margin:5px 0 0;
   color:var(--ink-muted);
   font-size:clamp(11.5px, .677vw, 15px);
@@ -842,53 +847,53 @@ body > main{
 
 /* the reveal: driven by scroll progress across the track above — each note
    arrives in turn and stays, so the finished drawing is complete at the end */
-.annot__mark,
-.annot__card{
+.bb-annot__mark,
+.bb-annot__card{
   opacity:0;
   transform:translateY(10px);
   transition:opacity .42s ease, transform .42s cubic-bezier(.2,.7,.25,1);
 }
-.annot[data-shown="true"] .annot__mark,
-.annot[data-shown="true"] .annot__card{
+.bb-annot[data-shown="true"] .bb-annot__mark,
+.bb-annot[data-shown="true"] .bb-annot__card{
   opacity:1;
   transform:none;
 }
-.annot[data-shown="true"] .annot__leader{ transform:scaleX(1); }
-.annot[data-shown="true"] .annot__card{ transition-delay:.12s; }
-.annot[data-shown="true"] .annot__leader{ transition-delay:.06s; }
+.bb-annot[data-shown="true"] .bb-annot__leader{ transform:scaleX(1); }
+.bb-annot[data-shown="true"] .bb-annot__card{ transition-delay:.12s; }
+.bb-annot[data-shown="true"] .bb-annot__leader{ transition-delay:.06s; }
 /* the three arrive as one move, a breath apart so it reads as drawn rather
    than switched on */
-.annot:nth-child(2)[data-shown="true"] .annot__mark{ transition-delay:.07s; }
-.annot:nth-child(2)[data-shown="true"] .annot__leader{ transition-delay:.13s; }
-.annot:nth-child(2)[data-shown="true"] .annot__card{ transition-delay:.19s; }
-.annot:nth-child(3)[data-shown="true"] .annot__mark{ transition-delay:.14s; }
-.annot:nth-child(3)[data-shown="true"] .annot__leader{ transition-delay:.2s; }
-.annot:nth-child(3)[data-shown="true"] .annot__card{ transition-delay:.26s; }
+.bb-annot:nth-child(2)[data-shown="true"] .bb-annot__mark{ transition-delay:.07s; }
+.bb-annot:nth-child(2)[data-shown="true"] .bb-annot__leader{ transition-delay:.13s; }
+.bb-annot:nth-child(2)[data-shown="true"] .bb-annot__card{ transition-delay:.19s; }
+.bb-annot:nth-child(3)[data-shown="true"] .bb-annot__mark{ transition-delay:.14s; }
+.bb-annot:nth-child(3)[data-shown="true"] .bb-annot__leader{ transition-delay:.2s; }
+.bb-annot:nth-child(3)[data-shown="true"] .bb-annot__card{ transition-delay:.26s; }
 
 
 /* the per-photograph captions duplicated onto each scene: shown only where
    the scenes are unstacked (tablet and phone) — see the shared query below.
    On the pinned, wide view the one caption at the foot of the frame already
    covers both, and showing both sets would say the same thing twice. */
-.disclosure--scene{ display:none; }
+.bb-disclosure--scene{ display:none; }
 
-.solutions__link{
+.bb-solutions__link{
   margin-top:var(--gap-text-link);
 }
 
 @media (max-width:1150px){
   /* no pinning on small screens: the photograph scrolls normally and the
      notes stack underneath, where they stay readable */
-  .solutions__intro{ grid-template-columns:1fr; row-gap:18px; }
-  .solutions__head{ padding-left:0; }
-  .solutions .section-label{ padding-top:0; }
-  .solutions__track{ height:auto; }
-  .solutions__stage{ position:static; height:auto; padding-block:0; }
-  .solutions__figure{ height:auto; display:block; }
-  .solutions__image{ height:auto; aspect-ratio:16 / 9; }
+  .bb-solutions__intro{ grid-template-columns:1fr; row-gap:18px; }
+  .bb-solutions__head{ padding-left:0; }
+  .bb-solutions .bb-section__label{ padding-top:0; }
+  .bb-solutions__track{ height:auto; }
+  .bb-solutions__stage{ position:static; height:auto; padding-block:0; }
+  .bb-solutions__figure{ height:auto; display:block; }
+  .bb-solutions__image{ height:auto; aspect-ratio:16 / 9; }
 
   /* stacked under the photograph, where they stay readable */
-  .annots{
+  .bb-annots{
     position:static;
     display:grid;
     grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));
@@ -898,8 +903,8 @@ body > main{
     border:1px solid var(--hairline);
     border-top:0;
   }
-  .annots{ margin-top:20px; border-top:1px solid var(--hairline); }
-  .annot{
+  .bb-annots{ margin-top:20px; border-top:1px solid var(--hairline); }
+  .bb-annot{
     position:static;
     display:block;
     max-width:none;
@@ -909,50 +914,50 @@ body > main{
   /* the narrow measure is given outright to a note set against the right of
      the photograph; unpinned it has to be released, or the note comes out at
      a third of its cell and the ground shows through beside it */
-  .annot--left{ transform:none; width:auto; }
-  .annot__mark,
-  .annot__leader{ display:none; }
-  .annot__card{ border:0; padding:16px; }
+  .bb-annot--left{ transform:none; width:auto; }
+  .bb-annot__mark,
+  .bb-annot__leader{ display:none; }
+  .bb-annot__card{ border:0; padding:16px; }
 
   /* both scenes come out of the frame and read one after the other: outside
      with its notes, then inside with its own */
-  .solutions__frame{ overflow:visible; }
-  .scene{ position:static; inset:auto; opacity:1 !important; }
+  .bb-solutions__frame{ overflow:visible; }
+  .bb-scene{ position:static; inset:auto; opacity:1 !important; }
   /* the caption moves with its own photograph: each scene keeps its own
      positioning context so its overlay sits on that photograph, not on
      whichever scene happens to be legible when both are stacked in flow */
-  .scene__view{ position:relative; inset:auto; transform:none !important; }
-  .scene--in{ margin-top:var(--gap-block-media); }
+  .bb-scene__view{ position:relative; inset:auto; transform:none !important; }
+  .bb-scene--in{ margin-top:var(--gap-block-media); }
 
   /* the caption shared across both scenes belongs to the pinned, wide view;
      unstacked, each scene shows its own instead, in the ordinary overlay
      style the rest of the page uses */
-  .solutions__frame > .disclosure.disclosure--overlay{ display:none; }
-  .disclosure--scene{ display:block; }
+  .bb-solutions__frame > .bb-disclosure.bb-disclosure--overlay{ display:none; }
+  .bb-disclosure--scene{ display:block; }
 }
 
 @media (prefers-reduced-motion:reduce){
-  .solutions__track{ height:auto; }
-  .solutions__stage{ position:static; height:auto; padding-block:0; }
-  .solutions__figure{ height:auto; display:block; }
-  .solutions__image{ height:auto; aspect-ratio:16 / 9; }
-  .annot__mark,
-  .annot__card{ opacity:1; transform:none; }
-  .annot__leader{ transform:scaleX(1); }
+  .bb-solutions__track{ height:auto; }
+  .bb-solutions__stage{ position:static; height:auto; padding-block:0; }
+  .bb-solutions__figure{ height:auto; display:block; }
+  .bb-solutions__image{ height:auto; aspect-ratio:16 / 9; }
+  .bb-annot__mark,
+  .bb-annot__card{ opacity:1; transform:none; }
+  .bb-annot__leader{ transform:scaleX(1); }
 
   /* both scenes come out of the frame and read one after the other: outside
      with its notes, then inside with its own */
-  .solutions__frame{ overflow:visible; }
-  .scene{ position:static; inset:auto; opacity:1 !important; }
-  .scene__view{ position:relative; inset:auto; transform:none !important; }
-  .scene--in{ margin-top:var(--gap-block-media); }
-  .solutions__frame > .disclosure.disclosure--overlay{ display:none; }
-  .disclosure--scene{ display:block; }
+  .bb-solutions__frame{ overflow:visible; }
+  .bb-scene{ position:static; inset:auto; opacity:1 !important; }
+  .bb-scene__view{ position:relative; inset:auto; transform:none !important; }
+  .bb-scene--in{ margin-top:var(--gap-block-media); }
+  .bb-solutions__frame > .bb-disclosure.bb-disclosure--overlay{ display:none; }
+  .bb-disclosure--scene{ display:block; }
 }
 
 /* --- the running strip: what the ecosystem builds with ------------------- */
 
-.filmstrip{
+.bb-filmstrip{
   position:relative;
   z-index:1;
   margin-top:clamp(34px, 3.4vw, 72px);
@@ -961,7 +966,7 @@ body > main{
   overflow:hidden;
 }
 
-.filmstrip__row{
+.bb-filmstrip__row{
   display:flex;
   align-items:center;            /* frames of two heights, centred on one line */
   gap:clamp(30px, 6vw, 118px);   /* generous air between frames, as measured
@@ -972,7 +977,7 @@ body > main{
   list-style:none;
   animation:strip-run 140s linear infinite;
 }
-.filmstrip:hover .filmstrip__row{ animation-play-state:paused; }
+.bb-filmstrip:hover .bb-filmstrip__row{ animation-play-state:paused; }
 
 /* the row holds two identical sets, so a shift of exactly half its width
    lands back on the starting frame and the loop has no seam */
@@ -981,7 +986,7 @@ body > main{
   to  { transform:translateX(calc(-50% - clamp(15px, 3vw, 59px))); }
 }
 
-.strip__cell{
+.bb-filmstrip__cell{
   flex:0 0 auto;
   display:block;
   width:clamp(200px, 20vw, 385px);
@@ -990,40 +995,40 @@ body > main{
 }
 /* every other frame is a touch shorter — enough for a rhythm, not enough to
    read as two different sizes */
-.strip__cell:nth-child(even){ aspect-ratio:9 / 10; }
-.strip__figure{
+.bb-filmstrip__cell:nth-child(even){ aspect-ratio:9 / 10; }
+.bb-filmstrip__figure{
   position:relative;
   width:100%;
   height:100%;
   margin:0;
 }
-.strip__figure .disclosure--overlay{
+.bb-filmstrip__figure .bb-disclosure--overlay{
   display:block;
   max-width:calc(100% - 28px);
   pointer-events:none;
 }
-.strip__caption-event,
-.strip__caption-place{
+.bb-filmstrip__caption-event,
+.bb-filmstrip__caption-place{
   display:block;
   overflow:hidden;
   white-space:nowrap;
   text-overflow:ellipsis;
 }
 
-.strip__image{
+.bb-filmstrip__image{
   width:100%;
   height:100%;
   object-fit:cover;
 }
 
 @media (prefers-reduced-motion:reduce){
-  .filmstrip{ overflow-x:auto; }
-  .filmstrip__row{ animation:none; }
+  .bb-filmstrip{ overflow-x:auto; }
+  .bb-filmstrip__row{ animation:none; }
 }
 
 /* --- opening a photograph ------------------------------------------------ */
 
-.strip__open{
+.bb-filmstrip__open{
   display:block;
   width:100%;
   height:100%;
@@ -1034,15 +1039,15 @@ body > main{
   cursor:zoom-in;
   overflow:hidden;
 }
-.strip__open .strip__image{
+.bb-filmstrip__open .bb-filmstrip__image{
   transition:transform .5s cubic-bezier(.2,.7,.25,1);
 }
-.strip__open:hover .strip__image,
-.strip__open:focus-visible .strip__image{
+.bb-filmstrip__open:hover .bb-filmstrip__image,
+.bb-filmstrip__open:focus-visible .bb-filmstrip__image{
   transform:scale(1.04);
 }
 
-.viewer{
+.bb-viewer{
   position:fixed;
   inset:0;
   z-index:60;
@@ -1052,9 +1057,9 @@ body > main{
   padding:clamp(16px, 3vw, 56px);
   background:rgba(18,18,18,.94);
 }
-.viewer[hidden]{ display:none; }
+.bb-viewer[hidden]{ display:none; }
 
-.viewer__backdrop{
+.bb-viewer__backdrop{
   position:absolute;
   inset:0;
   border:0;
@@ -1063,7 +1068,7 @@ body > main{
   cursor:zoom-out;
 }
 
-.viewer__frame{
+.bb-viewer__frame{
   position:relative;
   margin:0;
   max-width:100%;
@@ -1072,27 +1077,27 @@ body > main{
   flex-direction:column;
   align-items:flex-start;
 }
-.viewer__image{
+.bb-viewer__image{
   max-width:100%;
   max-height:calc(100vh - clamp(120px, 12vw, 180px));
   width:auto;
   height:auto;
   object-fit:contain;
 }
-.viewer__details{
+.bb-viewer__details{
   width:100%;
   margin:12px 0 0;
   text-align:left;
 }
-.viewer__title{
+.bb-viewer__title{
   margin:0 0 5px;
   color:#fff;
   font-size:clamp(16px, 1.05vw, 22px);
   font-weight:600;
   line-height:1.25;
 }
-.viewer__title[hidden]{ display:none; }
-.viewer__caption{
+.bb-viewer__title[hidden]{ display:none; }
+.bb-viewer__caption{
   margin:0;
   color:rgba(255,255,255,.82);
   font-size:clamp(12px, .68vw, 14px);
@@ -1100,8 +1105,8 @@ body > main{
   letter-spacing:.01em;
 }
 
-.viewer__close,
-.viewer__nav{
+.bb-viewer__close,
+.bb-viewer__nav{
   position:absolute;
   z-index:1;
   border:1px solid rgba(255,255,255,.4);
@@ -1115,27 +1120,27 @@ body > main{
   cursor:pointer;
   transition:background-color .2s ease, border-color .2s ease;
 }
-.viewer__close:hover,
-.viewer__nav:hover,
-.viewer__close:focus-visible,
-.viewer__nav:focus-visible{
+.bb-viewer__close:hover,
+.bb-viewer__nav:hover,
+.bb-viewer__close:focus-visible,
+.bb-viewer__nav:focus-visible{
   background:rgba(255,255,255,.14);
   border-color:#fff;
 }
-.viewer__nav:disabled,
-.viewer__nav:disabled:hover{
+.bb-viewer__nav:disabled,
+.bb-viewer__nav:disabled:hover{
   opacity:.3;
   background:none;
   border-color:rgba(255,255,255,.4);
   cursor:default;
 }
 
-.viewer__close{
+.bb-viewer__close{
   top:clamp(16px, 3vw, 56px);
   right:clamp(16px, 3vw, 56px);
   padding:10px 18px;
 }
-.viewer__nav{
+.bb-viewer__nav{
   top:50%;
   transform:translateY(-50%);
   width:46px;
@@ -1143,10 +1148,10 @@ body > main{
   font-size:17px;
   letter-spacing:0;
 }
-.viewer__nav--prev{ left:clamp(12px, 2vw, 40px); }
-.viewer__nav--next{ right:clamp(12px, 2vw, 40px); }
+.bb-viewer__nav--prev{ left:clamp(12px, 2vw, 40px); }
+.bb-viewer__nav--next{ right:clamp(12px, 2vw, 40px); }
 
-.viewer__count{
+.bb-viewer__count{
   position:absolute;
   bottom:clamp(14px, 2.4vw, 40px);
   left:50%;
@@ -1158,14 +1163,14 @@ body > main{
 }
 
 @media (max-width:640px){
-  .viewer__nav{ top:auto; bottom:clamp(14px, 2.4vw, 40px); transform:none; }
-  .viewer__nav--prev{ left:clamp(12px, 2vw, 40px); }
-  .viewer__nav--next{ right:clamp(12px, 2vw, 40px); }
-  .viewer__count{ bottom:calc(clamp(14px, 2.4vw, 40px) + 58px); }
+  .bb-viewer__nav{ top:auto; bottom:clamp(14px, 2.4vw, 40px); transform:none; }
+  .bb-viewer__nav--prev{ left:clamp(12px, 2vw, 40px); }
+  .bb-viewer__nav--next{ right:clamp(12px, 2vw, 40px); }
+  .bb-viewer__count{ bottom:calc(clamp(14px, 2.4vw, 40px) + 58px); }
 }
 
 @media (prefers-reduced-motion:reduce){
-  .strip__open:hover .strip__image{ transform:none; }
+  .bb-filmstrip__open:hover .bb-filmstrip__image{ transform:none; }
 }
 
 /* --- Project types ------------------------------------------------------
@@ -1176,9 +1181,9 @@ body > main{
 /* Give the heading the same opening space as other sections. */
 /* No rule closes this section off from the one above: the column rules simply
    stop where the section's own tinted paper begins. */
-.projects::before{ content:none; }
+.bb-projects::before{ content:none; }
 
-.projects{
+.bb-projects{
   position:relative;
   overflow:hidden;             /* the drawing is a background, not a bleed */
   background:var(--paper);
@@ -1189,7 +1194,7 @@ body > main{
 
 /* the section's own tinted paper, drawn between the two edge rules so that the
    column rules stop at its top edge while the edges of the sheet run on */
-.projects__ground{
+.bb-projects__ground{
   position:absolute;
   top:0;
   bottom:0;
@@ -1200,7 +1205,7 @@ body > main{
   pointer-events:none;
 }
 
-.projects .shell{
+.bb-projects .bb-shell{
   position:relative;
   z-index:1;
 }
@@ -1208,20 +1213,20 @@ body > main{
 /* the same frame as The Shift and Sustainable Solutions: the running head
    stays on the outer margin, the heading and its note are set to the first
    column rule, held off it by the standard inset */
-.projects__intro{
+.bb-projects__intro{
   display:grid;
   grid-template-columns:1fr 2fr;
   align-items:start;
 }
-.projects__head{
+.bb-projects__head{
   padding-left:var(--rule-inset);
 }
-.projects .section-title{
+.bb-projects .bb-section__title{
   max-width:30ch;
   text-wrap:balance;
   font-size:var(--sec-fs);     /* the rank the sections above it are set in */
 }
-.projects__lede{
+.bb-projects__lede{
   margin:var(--gap-title-text) 0 0;
 }
 
@@ -1231,7 +1236,7 @@ body > main{
    the pairs sit a little off one another rather than ruling a table. It is a
    small difference on purpose: enough to give the block a rhythm, not enough
    to read as two different formats. */
-.projects__grid{
+.bb-projects__grid{
   /* The plates are pinned to the right of the sheet, and every edge keeps the
      page's standoff from the rule beside it: the set opens one inset past the
      first rule, the pair parts either side of the second, and it closes one
@@ -1253,28 +1258,28 @@ body > main{
 }
 
 /* every plate is cut to one size: the set is a series, not an arrangement */
-.project{
+.bb-project{
   display:flex;
   flex-direction:column;
 }
 
-.project__figure{
+.bb-project__figure{
   position:relative;
   margin:0;
 }
 
-.project__figure .disclosure--overlay{
+.bb-project__figure .bb-disclosure--overlay{
   max-width:calc(100% - 28px);
   font-size:clamp(9px, .52vw, 11px);
 }
-.project__figure .disclosure--overlay span{ display:block; }
+.bb-project__figure .bb-disclosure--overlay span{ display:block; }
 @media (min-width:1151px){
-  .project__figure .disclosure--overlay{ white-space:nowrap; }
+  .bb-project__figure .bb-disclosure--overlay{ white-space:nowrap; }
 }
 
 /* the photograph is a button, on the same terms as the frames in the running
    strip: it lifts a little under the cursor and opens in the viewer */
-.project__open{
+.bb-project__open{
   display:block;
   width:100%;
   margin:0;
@@ -1285,7 +1290,7 @@ body > main{
   overflow:hidden;             /* the enlargement is cropped by the frame, so
                                   the tile itself never grows */
 }
-.project__image{
+.bb-project__image{
   display:block;
   width:100%;
   height:100%;
@@ -1297,26 +1302,26 @@ body > main{
   transition:transform .5s cubic-bezier(.2,.7,.25,1);
 }
 
-.project__open:hover .project__image,
-.project__open:focus-visible .project__image{
+.bb-project__open:hover .bb-project__image,
+.bb-project__open:focus-visible .bb-project__image{
   transform:scale(1.04);
 }
 
 /* category label below each photograph */
-.project__body{
+.bb-project__body{
   display:flex;
   flex-direction:column;
   padding:clamp(10px, .85vw, 18px) 0 0;
 }
 
-.project__no{
+.bb-project__no{
   margin:0 0 14px;
   color:var(--green);
   font-size:clamp(11px, .677vw, 15px);
   font-weight:600;
   letter-spacing:.14em;
 }
-.project__title{
+.bb-project__title{
   margin:0;
   max-width:20em;
   font-size:clamp(18px, 1.25vw, 26px);
@@ -1324,7 +1329,7 @@ body > main{
   line-height:1.26;
   letter-spacing:-.01em;
 }
-.project__text{
+.bb-project__text{
   margin:calc(var(--gap-label-title) * .7) 0 0;
   max-width:40ch;
   color:var(--ink-muted);
@@ -1334,14 +1339,14 @@ body > main{
 }
 
 @media (max-width:1150px){
-  .projects__intro{ grid-template-columns:1fr; row-gap:18px; }
-  .projects__head{ padding-left:0; }
-  .projects .section-title{ white-space:normal; }
+  .bb-projects__intro{ grid-template-columns:1fr; row-gap:18px; }
+  .bb-projects__head{ padding-left:0; }
+  .bb-projects .bb-section__title{ white-space:normal; }
 }
 
 /* the pair of labels that closes each row, set as plain words on a rule —
    not chips */
-.project__tags{
+.bb-project__tags{
   display:flex;
   flex-wrap:wrap;
   gap:6px clamp(16px, 1.5vw, 32px);
@@ -1354,12 +1359,12 @@ body > main{
 @media (max-width:1150px){
   /* the sheet has no outer margin left to stand the drawing in, and the set
      takes the full measure */
-  .tower-art{ display:none; }
-  .projects__grid{ margin-left:0; }
+  .bb-tower-art{ display:none; }
+  .bb-projects__grid{ margin-left:0; }
 }
 
 @media (max-width:640px){
-  .projects__grid{ grid-template-columns:1fr; }
+  .bb-projects__grid{ grid-template-columns:1fr; }
 }
 
 /* --- Our Projects ---------------------------------------------------------
@@ -1368,8 +1373,8 @@ body > main{
    the right as outlined plates, each with a line drawing in its corner, and the
    key figures close the section.
    ----------------------------------------------------------------------- */
-.ourprj::before{ content:none; }
-.ourprj{
+.bb-ourprj::before{ content:none; }
+.bb-ourprj{
   background:
     repeating-linear-gradient(135deg,
       rgba(255,255,255,.06) 0 1px,
@@ -1377,14 +1382,14 @@ body > main{
     var(--green);
   color:var(--paper);
 }
-.ourprj .work{ background:var(--paper); border:0; }
-.ourprj .section-title{ max-width:none; white-space:nowrap; }
-.ourprj .section-label{ color:rgba(255,255,255,.7); }
-.ourprj .section-text{ color:rgba(255,255,255,.78); }
+.bb-ourprj .bb-work{ background:var(--paper); border:0; }
+.bb-ourprj .bb-section__title{ max-width:none; white-space:nowrap; }
+.bb-ourprj .bb-section__label{ color:rgba(255,255,255,.7); }
+.bb-ourprj .bb-section__text{ color:rgba(255,255,255,.78); }
 
 /* two projects side by side, each a card with its picture, name, tags and
    text inside */
-.ourprj__works{
+.bb-ourprj__works{
   list-style:none;
   margin:var(--gap-block-media) 0 0;
   padding:0;
@@ -1393,7 +1398,7 @@ body > main{
   gap:clamp(14px, 1.2vw, 26px);
   margin-left:calc(33.3333% + var(--rule-inset));   /* set to the right, as in Project Types */
 }
-.work{
+.bb-work{
   position:relative;
   overflow:hidden;
   aspect-ratio:598 / 455;      /* the proportion of the photographs in Project Types */
@@ -1411,7 +1416,7 @@ body > main{
   border:1px solid var(--hairline-soft);
   color:var(--ink);
 }
-.work__title{
+.bb-work__title{
   margin:0;
   max-width:13em;              /* the name does not run the width of the card */
   text-wrap:balance;
@@ -1421,7 +1426,7 @@ body > main{
   line-height:1.2;
   letter-spacing:-.012em;
 }
-.work__text{
+.bb-work__text{
   margin:var(--gap-label-title) 0 0;
   max-width:21em;              /* the text does not run the width of the card either */
   color:var(--ink-muted);
@@ -1429,7 +1434,7 @@ body > main{
   line-height:1.5;
 }
 /* where the project stands: a dot and one line */
-.work__status{
+.bb-work__status{
   display:flex;
   align-items:center;
   gap:.7em;
@@ -1441,7 +1446,7 @@ body > main{
   line-height:1;
   text-transform:uppercase;
 }
-.work__status::before{
+.bb-work__status::before{
   content:"";
   width:.65em;
   height:.65em;
@@ -1456,12 +1461,12 @@ body > main{
   100% { box-shadow:0 0 0 0 rgba(1,67,53,0); opacity:1; }
 }
 @media (prefers-reduced-motion:reduce){
-  .work__status::before{ animation:none; }
+  .bb-work__status::before{ animation:none; }
 }
-.work .link-underline{ margin-top:auto; padding-top:var(--gap-text-link); color:var(--ink); }
+.bb-work .bb-link-underline{ margin-top:auto; padding-top:var(--gap-text-link); color:var(--ink); }
 /* the building, trimmed to its own outline, stands in the right-hand lower
    corner of the card; the text sits above it */
-.work__art{
+.bb-work__art{
   position:absolute;
   right:0;
   bottom:0;
@@ -1469,32 +1474,32 @@ body > main{
   height:auto;
   pointer-events:none;
 }
-.work > :not(.work__art){ position:relative; z-index:1; }
+.bb-work > :not(.bb-work__art){ position:relative; z-index:1; }
 
 @media (max-width:1150px){
-  .ourprj__works{ margin-left:0; }
+  .bb-ourprj__works{ margin-left:0; }
 }
 @media (max-width:1150px){
-  .ourprj .section-title{ white-space:normal; }
+  .bb-ourprj .bb-section__title{ white-space:normal; }
 }
 /* small tablets and phones: the building no longer lies under the text but
    stands beneath it in the corner of the card, whole. Two cards to a row on a
    small tablet, one on a phone. */
 @media (max-width:900px){
-  .work{ aspect-ratio:auto; min-height:0; }
-  .work__art{
+  .bb-work{ aspect-ratio:auto; min-height:0; }
+  .bb-work__art{
     position:static;
     order:9;
     width:58%;
     max-width:none;
     margin:auto calc(-1 * var(--work-px)) calc(-1 * var(--work-py)) auto;   /* on the foot of the card, at its right edge */
   }
-  .work__text,
-  .work .link-underline{ margin-bottom:var(--gap-text-link); }
-  .work .link-underline{ margin-top:0; padding-top:0; }
+  .bb-work__text,
+  .bb-work .bb-link-underline{ margin-bottom:var(--gap-text-link); }
+  .bb-work .bb-link-underline{ margin-top:0; padding-top:0; }
 }
 @media (max-width:640px){
-  .ourprj__works{ grid-template-columns:1fr; row-gap:clamp(14px, 3vw, 24px); }
+  .bb-ourprj__works{ grid-template-columns:1fr; row-gap:clamp(14px, 3vw, 24px); }
 }
 
 
@@ -1505,17 +1510,17 @@ body > main{
    opening on the first rule, in the middle of the second column and on the
    second rule.
    ----------------------------------------------------------------------- */
-.numbers::before{ content:none; }
-.numbers{ position:relative; overflow:hidden; }
-.numbers .shell{ position:relative; z-index:1; }
-.numbers__intro{ position:relative; }
-.numbers__intro .section-label{ position:absolute; left:0; top:0; }
-.numbers__head{ margin-left:calc(33.3333% + var(--rule-inset)); }
-.numbers .section-title{ max-width:min(16.5em, 100%); }
-.numbers__head .section-text{ max-width:30em; }
+.bb-numbers::before{ content:none; }
+.bb-numbers{ position:relative; overflow:hidden; }
+.bb-numbers .bb-shell{ position:relative; z-index:1; }
+.bb-numbers__intro{ position:relative; }
+.bb-numbers__intro .bb-section__label{ position:absolute; left:0; top:0; }
+.bb-numbers__head{ margin-left:calc(33.3333% + var(--rule-inset)); }
+.bb-numbers .bb-section__title{ max-width:min(16.5em, 100%); }
+.bb-numbers__head .bb-section__text{ max-width:30em; }
 /* the heading breaks before "and": two lines, each its own block */
-.numbers .title-line{ display:block; }
-.numbers__figures{
+.bb-numbers .bb-section__title-line{ display:block; }
+.bb-numbers__figures{
   list-style:none;
   margin:clamp(32px, 3.5vw, 72px) 0 0;
   margin-left:33.3333%;
@@ -1523,8 +1528,8 @@ body > main{
   display:grid;
   grid-template-columns:repeat(3, 25%);
 }
-.fact{ padding:0 var(--rule-inset); }
-.fact__value{
+.bb-fact{ padding:0 var(--rule-inset); }
+.bb-fact__value{
   margin:0;
   font-variant-numeric:tabular-nums;
   color:var(--green);
@@ -1533,29 +1538,29 @@ body > main{
   line-height:1;
   letter-spacing:-.03em;
 }
-.fact__plus{ font-weight:400; }
-.fact__label{
+.bb-fact__plus{ font-weight:400; }
+.bb-fact__label{
   margin:var(--gap-label-title) 0 0;
   color:var(--ink-muted);
   font-size:var(--lede-fs);
   line-height:var(--lede-lh);
 }
 @media (max-width:1150px){
-  .numbers__intro .section-label{ position:static; display:block; margin-bottom:var(--gap-label-title); }
-  .numbers__head{ margin-left:0; }
-  .numbers__figures{ margin-left:0; grid-template-columns:repeat(3, 1fr); }
-  .fact{ padding:0 var(--rule-inset) 0 0; }
+  .bb-numbers__intro .bb-section__label{ position:static; display:block; margin-bottom:var(--gap-label-title); }
+  .bb-numbers__head{ margin-left:0; }
+  .bb-numbers__figures{ margin-left:0; grid-template-columns:repeat(3, 1fr); }
+  .bb-fact{ padding:0 var(--rule-inset) 0 0; }
 }
 @media (max-width:640px){
   /* The three figures stay in one row, each with its caption beneath. */
-  .numbers__figures{ grid-template-columns:repeat(3, 1fr); column-gap:12px; }
-  .fact{ padding:0; }
-  .fact__value{ font-size:clamp(28px, 9vw, 40px); }
-  .fact__label{ font-size:12px; line-height:1.35; max-width:7.5em; }
+  .bb-numbers__figures{ grid-template-columns:repeat(3, 1fr); column-gap:12px; }
+  .bb-fact{ padding:0; }
+  .bb-fact__value{ font-size:clamp(28px, 9vw, 40px); }
+  .bb-fact__label{ font-size:12px; line-height:1.35; max-width:7.5em; }
 }
 
 /* The animated Vision and Mission stage follows the grey In Numbers band. */
-.vision--home{ background:var(--paper); }
+.bb-vision--home{ background:var(--paper); }
 
 /* --- For Whom -------------------------------------------------------------
    The section's frame is the one the sections above it use: running head on
@@ -1567,15 +1572,15 @@ body > main{
 /* This section opens without a rule across the top: the checkerboard above it
    already closes itself at the foot, and a second line straight after reads
    as a double rule. */
-.audiences::before{ content:none; }
+.bb-audiences::before{ content:none; }
 
-.audiences{
+.bb-audiences{
   position:relative;
   overflow:hidden;             /* the ground is a band, not a bleed */
 }
 /* The tower stands on the line where this section ends and the grey band
    below begins — footed on that edge, never over it. */
-.tower-art{
+.bb-tower-art{
   position:absolute;
   left:calc(var(--gutter) - var(--rule-inset));   /* out on the edge rule */
   bottom:-8px;                  /* trim the image's transparent lower edge */
@@ -1583,15 +1588,15 @@ body > main{
   z-index:0;                    /* over the section's paper, under its text */
   pointer-events:none;
 }
-.tower-art__drawing{
+.bb-tower-art__drawing{
   display:block;
   width:100%;
   height:auto;
   opacity:.78;
 }
-.audiences__ground,
-.pillars__ground,
-.contact__ground{
+.bb-audiences__ground,
+.bb-pillars__ground,
+.bb-contact__ground{
   position:absolute;
   inset:0;
   z-index:0;
@@ -1607,36 +1612,36 @@ body > main{
     var(--paper-warm);
   pointer-events:none;
 }
-.audiences__ground i + i,
-.pillars__ground i + i,
-.contact__ground i + i{ border-left:1px solid var(--rule); }
+.bb-audiences__ground i + i,
+.bb-pillars__ground i + i,
+.bb-contact__ground i + i{ border-left:1px solid var(--rule); }
 /* the two edges of the sheet, redrawn at the same offsets */
-.audiences__ground::before,
-.audiences__ground::after,
-.pillars__ground::before,
-.pillars__ground::after,
-.contact__ground::before,
-.contact__ground::after{
+.bb-audiences__ground::before,
+.bb-audiences__ground::after,
+.bb-pillars__ground::before,
+.bb-pillars__ground::after,
+.bb-contact__ground::before,
+.bb-contact__ground::after{
   content:"";
   position:absolute;
   top:0;
   bottom:0;
 }
-.audiences__ground::before,
-.pillars__ground::before,
-.contact__ground::before{
+.bb-audiences__ground::before,
+.bb-pillars__ground::before,
+.bb-contact__ground::before{
   left:calc(var(--gutter) - var(--rule-inset));
   border-left:1px solid var(--rule);
 }
-.audiences__ground::after,
-.pillars__ground::after,
-.contact__ground::after{
+.bb-audiences__ground::after,
+.bb-pillars__ground::after,
+.bb-contact__ground::after{
   right:calc(var(--gutter) - var(--rule-inset));
   border-right:1px solid var(--rule);
 }
-.audiences .shell,
-.pillars .shell,
-.contact .shell{
+.bb-audiences .bb-shell,
+.bb-pillars .bb-shell,
+.bb-contact .bb-shell{
   position:relative;
   z-index:1;
 }
@@ -1644,30 +1649,30 @@ body > main{
 /* After reference_01: the running head keeps the outer margin, and the
    heading opens on the first column rule — held off it by the same standoff
    every other block keeps — then sets centred across the rest of the sheet. */
-.audiences__intro{
+.bb-audiences__intro{
   position:relative;
 }
-.audiences .section-label{
+.bb-audiences .bb-section__label{
   position:absolute;
   left:0;
   top:0;
 }
-.audiences__head{
+.bb-audiences__head{
   margin-left:calc(33.3333% + var(--rule-inset));
 }
-.audiences .section-title{ max-width:19em; }
+.bb-audiences .bb-section__title{ max-width:19em; }
 /* the heading uses the same measure and rank as The Shift */
 
 /* The control, squared off like everything else drawn on this sheet: it reads as a
    control, which is exactly what it is. Hairline outline at rest, solid
    green once chosen. */
-.pills{
+.bb-pills{
   display:flex;
   flex-wrap:wrap;
   gap:clamp(10px, .95vw, 18px);
   margin-top:var(--gap-text-link);
 }
-.pill{
+.bb-pill{
   margin:0;
   padding:.95em 1.6em;         /* a plain rectangular control, squared off like
                                   everything else drawn on this sheet */
@@ -1684,12 +1689,12 @@ body > main{
   cursor:pointer;
   transition:background-color .25s ease, border-color .25s ease, color .25s ease;
 }
-.pill:hover{
+.bb-pill:hover{
   border-color:var(--green);
   background:var(--green);
   color:var(--paper);
 }
-.pill[aria-selected="true"]{
+.bb-pill[aria-selected="true"]{
   border-color:var(--green);
   background:var(--green);
   color:var(--paper);
@@ -1697,16 +1702,16 @@ body > main{
 
 /* The answers. Flat cells ruled off at the head, not boxes: the rule is the
    card, in the same tone as everything else on the sheet. */
-.audiences__panels{
+.bb-audiences__panels{
   margin-top:var(--gap-block-media);
 }
-.audiences__cta{
+.bb-audiences__cta{
   margin-top:var(--gap-text-link);
 }
 @media (min-width:1151px){
-  .mailbtn.audiences__cta{ display:none; }
+  .bb-mailbtn.bb-audiences__cta{ display:none; }
 }
-.cards{
+.bb-cards{
   display:grid;
   grid-template-columns:repeat(4, 1fr);
   gap:clamp(14px, 1.15vw, 24px);
@@ -1717,7 +1722,7 @@ body > main{
 /* Each card is a surface of its own, as in the reference — but a flat panel
    of paper on the tinted ground, squared off and outlined by a hairline
    rather than lifted on a shadow. */
-.card{
+.bb-card{
   position:relative;
   display:flex;
   flex-direction:column;
@@ -1726,19 +1731,19 @@ body > main{
   background:var(--paper);
   border:1px solid var(--rule);
 }
-.card__icon{
+.bb-card__icon{
   display:block;
   width:clamp(26px, 2vw, 40px);
   height:auto;
 }
-.card__title{
+.bb-card__title{
   margin:clamp(18px, 1.8vw, 38px) 0 0;
   font-size:clamp(16px, 1.05vw, 23px);
   font-weight:600;
   line-height:1.26;
   letter-spacing:-.008em;
 }
-.card__text{
+.bb-card__text{
   margin:var(--gap-label-title) 0 0;
   max-width:none;
   color:var(--ink-muted);
@@ -1747,18 +1752,18 @@ body > main{
 }
 
 /* the panel is swapped in place: it must not jump the page as it changes */
-.panel[hidden]{ display:none; }
+.bb-panel[hidden]{ display:none; }
 
 @media (max-width:1150px){
   /* the running head returns to the flow: there is no longer a margin wide
      enough to hold it beside the centred heading */
-  .audiences .section-label{ position:static; display:block; margin-bottom:var(--gap-label-title); }
-  .audiences__head{ margin-left:0; }
-  .cards{ grid-template-columns:repeat(2, 1fr); }
+  .bb-audiences .bb-section__label{ position:static; display:block; margin-bottom:var(--gap-label-title); }
+  .bb-audiences__head{ margin-left:0; }
+  .bb-cards{ grid-template-columns:repeat(2, 1fr); }
 }
 
 @media (max-width:640px){
-  .cards{ grid-template-columns:1fr; }
+  .bb-cards{ grid-template-columns:1fr; }
 }
 
 /* --- Vision & Mission -----------------------------------------------------
@@ -1766,10 +1771,10 @@ body > main{
    first rule, a drawing on the right. On desktop and tablets the stage holds
    while the building rises and the text changes with the scroll.
    ----------------------------------------------------------------------- */
-.vision{
+.bb-vision{
   --v:1; --m:0; --f0:1; --f1:1; --f2:1; --f3:1; --f4:1;
 }
-.vision__inner{
+.bb-vision__inner{
   position:relative;
   display:grid;
   grid-template-columns:repeat(3, 1fr);   /* label, text, drawing: the sheet's thirds */
@@ -1777,17 +1782,17 @@ body > main{
 }
 
 /* the running head: one place, two names, one leaving as the other arrives */
-.vision__labels{
+.bb-vision__labels{
   display:grid;
   /* sits on the first line of the heading beside it, as in The Shift */
   padding-top:calc((var(--sec-lh) - 1) / 2 * var(--sec-fs) + var(--cap-k) * var(--sec-fs)
                  - (1.45 - 1) / 2 * var(--label-fs) - var(--cap-k) * var(--label-fs));
 }
-.vlabel{ grid-area:1 / 1; }
-.vlabel--vision{ opacity:var(--v); }
-.vlabel--mission{ opacity:var(--m); }
+.bb-vlabel{ grid-area:1 / 1; }
+.bb-vlabel--vision{ opacity:var(--v); }
+.bb-vlabel--mission{ opacity:var(--m); }
 
-.vision__text{
+.bb-vision__text{
   position:relative;
   z-index:1;
   display:grid;                /* both in one cell, one leaving as the other arrives */
@@ -1796,32 +1801,32 @@ body > main{
   padding-left:var(--rule-inset);
   padding-right:var(--rule-inset);
 }
-.vision__text .section-title{ max-width:100%; }
-.vision__switch{ display:none; }
-.vslide{ grid-area:1 / 1; }
-.vslide__label{ display:none; }
+.bb-vision__text .bb-section__title{ max-width:100%; }
+.bb-vision__switch{ display:none; }
+.bb-vslide{ grid-area:1 / 1; }
+.bb-vslide__label{ display:none; }
 /* the heading breaks after the comma: two lines, the second opening on "beyond" */
-.vtitle-line{ display:block; }
+.bb-vslide__title-line{ display:block; }
 /* each statement drifts a short way and softens as it leaves or arrives */
-.vslide--vision{
+.bb-vslide--vision{
   opacity:var(--v);
   transform:translateY(calc((1 - var(--v)) * -14px));
   will-change:opacity, transform;
 }
-.vslide--mission{
+.bb-vslide--mission{
   opacity:var(--m);
   transform:translateY(calc((1 - var(--m)) * 14px));
   will-change:opacity, transform;
 }
 
 /* the stages of the mission, each drawn in as its floor goes up */
-.stages{
+.bb-stages{
   margin:var(--gap-block-media) 0 0;
   padding:0;
   list-style:none;
   max-width:calc(26 * var(--lede-fs));
 }
-.stage{
+.bb-stage{
   position:relative;
   display:flex;
   gap:1.4em;
@@ -1830,33 +1835,33 @@ body > main{
   font-weight:500;
   opacity:calc(.35 + .65 * var(--si, 1));
 }
-.stage__no{
+.bb-stage__no{
   color:var(--ink-muted);
   font-size:var(--label-fs);
   font-weight:500;
   letter-spacing:.16em;
 }
-.stage::before,
-.stage::after{
+.bb-stage::before,
+.bb-stage::after{
   content:"";
   position:absolute;
   left:0; right:0; top:0;
   height:1px;
 }
-.stage::before{ background:var(--hairline-soft); }
-.stage::after{
+.bb-stage::before{ background:var(--hairline-soft); }
+.bb-stage::after{
   background:var(--green);
   transform:scaleX(var(--si, 1));
   transform-origin:left center;
 }
-.stage:nth-child(1){ --si:var(--f0); }
-.stage:nth-child(2){ --si:var(--f1); }
-.stage:nth-child(3){ --si:var(--f2); }
-.stage:nth-child(4){ --si:var(--f3); }
-.stage:nth-child(5){ --si:var(--f4); }
+.bb-stage:nth-child(1){ --si:var(--f0); }
+.bb-stage:nth-child(2){ --si:var(--f1); }
+.bb-stage:nth-child(3){ --si:var(--f2); }
+.bb-stage:nth-child(4){ --si:var(--f3); }
+.bb-stage:nth-child(5){ --si:var(--f4); }
 
 /* the building, in the right-hand third, its foot on the last line of the text */
-.vision__art{
+.bb-vision__art{
   grid-column:3;
   grid-row:1;
   align-self:end;
@@ -1867,20 +1872,20 @@ body > main{
   color:var(--green);
   pointer-events:none;
 }
-.vision__art--wide{ display:none; }
-.art-ghost{ stroke-dasharray:3 5; opacity:.35; }
-.art-win{ opacity:.55; }
-.fl-0{ opacity:var(--f0); transform:translateY(calc((1 - var(--f0)) * 18px)); }
-.fl-1{ opacity:var(--f1); transform:translateY(calc((1 - var(--f1)) * 18px)); }
-.fl-2{ opacity:var(--f2); transform:translateY(calc((1 - var(--f2)) * 18px)); }
-.fl-3{ opacity:var(--f3); transform:translateY(calc((1 - var(--f3)) * 18px)); }
-.fl-4{ opacity:var(--f4); transform:translateY(calc((1 - var(--f4)) * 18px)); }
+.bb-vision__art--wide{ display:none; }
+.bb-tower-art__ghost{ stroke-dasharray:3 5; opacity:.35; }
+.bb-tower-art__window{ opacity:.55; }
+.bb-tower-art__floor--0{ opacity:var(--f0); transform:translateY(calc((1 - var(--f0)) * 18px)); }
+.bb-tower-art__floor--1{ opacity:var(--f1); transform:translateY(calc((1 - var(--f1)) * 18px)); }
+.bb-tower-art__floor--2{ opacity:var(--f2); transform:translateY(calc((1 - var(--f2)) * 18px)); }
+.bb-tower-art__floor--3{ opacity:var(--f3); transform:translateY(calc((1 - var(--f3)) * 18px)); }
+.bb-tower-art__floor--4{ opacity:var(--f4); transform:translateY(calc((1 - var(--f4)) * 18px)); }
 
 /* The stage holds while the building and statements change. */
 @media (min-width:700px) and (prefers-reduced-motion:no-preference){
-  .vision{ padding-block:0; }
-  .vision__track{ position:relative; height:calc(var(--vision-h, 700px) + 170vh); }
-  .vision__stage{
+  .bb-vision{ padding-block:0; }
+  .bb-vision__track{ position:relative; height:calc(var(--vision-h, 700px) + 170vh); }
+  .bb-vision__stage{
     position:sticky;
     top:var(--header-h);
     /* exactly the breathing room every other section has */
@@ -1888,19 +1893,19 @@ body > main{
   }
   /* only on screens too short to hold the stage at that size */
   @media (max-height:720px){
-    .vision__stage{ padding-block:clamp(32px, 6vh, 52px); }
+    .bb-vision__stage{ padding-block:clamp(32px, 6vh, 52px); }
   }
   /* The stage is as tall as its content, and the section's breathing room is
      counted from the drawing, so the drawing keeps its full size (it is 352
      wide to 416 tall) unless the screen is too short to hold it with that room
      above and below. What is left below the stage shows the top of the next
      section, which then arrives in exactly this place. */
-  .vision__art{
+  .bb-vision__art{
     width:min(calc(100% - var(--rule-inset) * 2), 560px,
               calc((100vh - var(--header-h) - 2 * clamp(52px, 6.5vw, 132px)) * 352 / 416));
     max-height:none;
   }
-  .vision .vision__peek{
+  .bb-vision .bb-vision__peek{
     display:block;
     position:absolute;
     top:100%;
@@ -1911,25 +1916,25 @@ body > main{
     pointer-events:none;
   }
 }
-.vision__peek{ display:none; }
+.bb-vision__peek{ display:none; }
 @media (min-width:700px) and (prefers-reduced-motion:no-preference){
-  .vision.is-held + .pillars{ visibility:hidden; }
+  .bb-vision.bb-vision--held + .bb-pillars{ visibility:hidden; }
 }
 
 /* On tablets, keep both statements in the same place and give the drawing
    its own narrower column. Scroll drives the same sequence as on desktop. */
 @media (min-width:700px) and (max-width:1150px) and (prefers-reduced-motion:no-preference){
-  .vision__inner{ grid-template-columns:minmax(0, 1.25fr) minmax(0, .75fr); gap:clamp(24px, 4vw, 56px); }
-  .vision__labels{ display:none; }
-  .vision__text{ grid-column:1; grid-row:1; padding-left:0; padding-right:0; }
-  .vslide__label{ display:block; margin-bottom:var(--gap-label-title); }
-  .vision__art{ grid-column:2; grid-row:1; justify-self:end; width:min(100%, 300px); }
+  .bb-vision__inner{ grid-template-columns:minmax(0, 1.25fr) minmax(0, .75fr); gap:clamp(24px, 4vw, 56px); }
+  .bb-vision__labels{ display:none; }
+  .bb-vision__text{ grid-column:1; grid-row:1; padding-left:0; padding-right:0; }
+  .bb-vslide__label{ display:block; margin-bottom:var(--gap-label-title); }
+  .bb-vision__art{ grid-column:2; grid-row:1; justify-self:end; width:min(100%, 300px); }
 }
 
 /* On phones, one statement is shown at a time. */
 @media (max-width:699px){
-  .vision__switch{ display:flex; gap:clamp(20px, 6vw, 36px); padding-inline:var(--gutter); margin-bottom:var(--gap-block-media); }
-  .vision__switch-button{
+  .bb-vision__switch{ display:flex; gap:clamp(20px, 6vw, 36px); padding-inline:var(--gutter); margin-bottom:var(--gap-block-media); }
+  .bb-vision__switch-button{
     padding:0 0 8px;
     border:0;
     border-bottom:1px solid var(--hairline);
@@ -1942,27 +1947,27 @@ body > main{
     text-transform:uppercase;
     cursor:pointer;
   }
-  .vision__switch-button[aria-pressed="true"]{ border-color:var(--green); color:var(--green); }
-  .vision__inner{ grid-template-columns:1fr; row-gap:clamp(20px, 5vw, 32px); }
-  .vision__labels{ display:none; }
-  .vision__text{ display:block; width:100%; padding:0; }
-  .vslide{ opacity:1; transform:none; filter:none; will-change:auto; pointer-events:auto; }
-  .vision__text .vslide{ margin-top:0; }
-  .vision__text .vslide:not(.is-current){ display:none; }
-  .vision__text .vslide.is-current{ opacity:1; visibility:visible; animation:vslide-in .6s cubic-bezier(.22, 1, .36, 1) both; }
-  .vision__text .vslide__label{ display:none; }
-  .vision__text .vslide--vision .section-title{ max-width:min(75%, 18ch); }
-  .vision__art{
+  .bb-vision__switch-button[aria-pressed="true"]{ border-color:var(--green); color:var(--green); }
+  .bb-vision__inner{ grid-template-columns:1fr; row-gap:clamp(20px, 5vw, 32px); }
+  .bb-vision__labels{ display:none; }
+  .bb-vision__text{ display:block; width:100%; padding:0; }
+  .bb-vslide{ opacity:1; transform:none; filter:none; will-change:auto; pointer-events:auto; }
+  .bb-vision__text .bb-vslide{ margin-top:0; }
+  .bb-vision__text .bb-vslide:not(.bb-vslide--current){ display:none; }
+  .bb-vision__text .bb-vslide.bb-vslide--current{ opacity:1; visibility:visible; animation:vslide-in .6s cubic-bezier(.22, 1, .36, 1) both; }
+  .bb-vision__text .bb-vslide__label{ display:none; }
+  .bb-vision__text .bb-vslide--vision .bb-section__title{ max-width:min(75%, 18ch); }
+  .bb-vision__art{
     grid-column:1;
     grid-row:auto;
     justify-self:end;
     width:min(48%, 180px);
     margin-top:clamp(16px, 4vw, 24px);
   }
-  .vision[data-current="mission"] .vision__art{ display:none; }
+  .bb-vision[data-current="mission"] .bb-vision__art{ display:none; }
   /* the building lies down: wide, across the screen, in place of the tall one */
-  .vision__art--tall{ display:none; }
-  .vision__art.vision__art--wide{
+  .bb-vision__art--tall{ display:none; }
+  .bb-vision__art.bb-vision__art--wide{
     display:block;
     justify-self:stretch;
     width:100%;
@@ -1975,58 +1980,58 @@ body > main{
   to{ opacity:1; transform:none; }
 }
 @media (prefers-reduced-motion:reduce){
-  .vision__labels{ display:none; }
-  .vision__text{ display:block; }
-  .vslide{ opacity:1; transform:none; filter:none; will-change:auto; pointer-events:auto; }
-  .vision__text .vslide.is-current{ animation:none; }
-  .vslide + .vslide{ margin-top:clamp(36px, 5vw, 64px); }
-  .vslide__label{ display:block; margin-bottom:var(--gap-label-title); }
+  .bb-vision__labels{ display:none; }
+  .bb-vision__text{ display:block; }
+  .bb-vslide{ opacity:1; transform:none; filter:none; will-change:auto; pointer-events:auto; }
+  .bb-vision__text .bb-vslide.bb-vslide--current{ animation:none; }
+  .bb-vslide + .bb-vslide{ margin-top:clamp(36px, 5vw, 64px); }
+  .bb-vslide__label{ display:block; margin-bottom:var(--gap-label-title); }
 }
 @media (min-width:700px) and (max-width:1150px) and (prefers-reduced-motion:reduce){
-  .vision__inner{ grid-template-columns:1fr; row-gap:clamp(36px, 7vw, 64px); }
-  .vision__text{ padding-left:0; }
-  .vision__art{ grid-column:1; grid-row:auto; justify-self:start; width:min(100%, 340px); }
+  .bb-vision__inner{ grid-template-columns:1fr; row-gap:clamp(36px, 7vw, 64px); }
+  .bb-vision__text{ padding-left:0; }
+  .bb-vision__art{ grid-column:1; grid-row:auto; justify-self:start; width:min(100%, 340px); }
 }
 @media (max-width:699px) and (prefers-reduced-motion:reduce){
-  .vision__text{ display:block; }
-  .vision__text .vslide{ margin-top:0; }
-  .vision__text .vslide__label{ display:none; }
+  .bb-vision__text{ display:block; }
+  .bb-vision__text .bb-vslide{ margin-top:0; }
+  .bb-vision__text .bb-vslide__label{ display:none; }
 }
 
 /* --- Four Pillars ---------------------------------------------------------
    The cards are the For Whom cards, on the same tinted ground; the intro uses
    the same frame as For Whom (head on the margin, heading on the first rule).
    ----------------------------------------------------------------------- */
-.pillars::before{ content:none; }
-.pillars{ position:relative; overflow:hidden; }
-.pillars__intro{ position:relative; }
-.pillars__intro .section-label{ position:absolute; left:0; top:0; }
-.pillars__head{ margin-left:calc(33.3333% + var(--rule-inset)); }
-.pillars__cards{ margin-top:var(--gap-block-media); }
-.pillars__cards .card{
+.bb-pillars::before{ content:none; }
+.bb-pillars{ position:relative; overflow:hidden; }
+.bb-pillars__intro{ position:relative; }
+.bb-pillars__intro .bb-section__label{ position:absolute; left:0; top:0; }
+.bb-pillars__head{ margin-left:calc(33.3333% + var(--rule-inset)); }
+.bb-pillars__cards{ margin-top:var(--gap-block-media); }
+.bb-pillars__cards .bb-card{
   min-height:clamp(320px, 22vw, 420px);
 }
-.pillars__cards .card__title-line{ display:block; }
-.pillars__cards .card__text{ margin-bottom:var(--gap-text-link); }
-.pillars__cards .link-underline{ margin-top:auto; }
-.pillars--summary::before{
+.bb-pillars__cards .bb-card__title-line{ display:block; }
+.bb-pillars__cards .bb-card__text{ margin-bottom:var(--gap-text-link); }
+.bb-pillars__cards .bb-link-underline{ margin-top:auto; }
+.bb-pillars--summary::before{
   content:"";
   z-index:1;
   background:var(--hairline);
 }
-.pillars--summary{ background:var(--paper); }
-.pillars--summary .pillars__ground{ background:none; }
-.pillars--summary .shell{ position:relative; z-index:1; }
-.pillars__vision-link{
+.bb-pillars--summary{ background:var(--paper); }
+.bb-pillars--summary .bb-pillars__ground{ background:none; }
+.bb-pillars--summary .bb-shell{ position:relative; z-index:1; }
+.bb-pillars__vision-link{
   display:inline-flex;
 }
 @media (min-width:1151px){
-  .pillars--summary .eco-card{ min-height:clamp(230px, 16vw, 305px); }
+  .bb-pillars--summary .bb-eco-card{ min-height:clamp(230px, 16vw, 305px); }
 }
 @media (max-width:1150px){
-  .pillars__intro .section-label{ position:static; display:block; margin-bottom:var(--gap-label-title); }
-  .pillars__head{ margin-left:0; }
-  .pillars__cards .card{ min-height:0; }
+  .bb-pillars__intro .bb-section__label{ position:static; display:block; margin-bottom:var(--gap-label-title); }
+  .bb-pillars__head{ margin-left:0; }
+  .bb-pillars__cards .bb-card{ min-height:0; }
 }
 
 /* --- Ecosystem ------------------------------------------------------------
@@ -2036,25 +2041,25 @@ body > main{
    the movement is how it is drawn, not decoration.
    ----------------------------------------------------------------------- */
 
-.ecosystem{
+.bb-ecosystem{
   position:relative;
   --eco-foot:clamp(52px, 6.5vw, 132px);
   padding-bottom:var(--eco-foot);
 }
 
-.ecosystem__intro{
+.bb-ecosystem__intro{
   display:grid;
   grid-template-columns:1fr 2fr;
   align-items:start;
 }
-.ecosystem__head{
+.bb-ecosystem__head{
   padding-left:var(--rule-inset);
 }
-.ecosystem .section-title{ max-width:calc(28 * var(--lede-fs)); }
+.bb-ecosystem .bb-section__title{ max-width:calc(28 * var(--lede-fs)); }
 
 /* the travel is one viewport for the pinned field plus the distance the
    movement itself needs — no spare scroll anywhere */
-.ecosystem__track{
+.bb-ecosystem__track{
   position:relative;
   margin-top:var(--gap-block-media);
   --stage-h:calc(100vh - var(--header-h));
@@ -2064,7 +2069,7 @@ body > main{
 /* The heading keeps the sheet's ruling; the field below it does not — a
    single rule draws the line between the two, and past it the diagram has
    clear paper to move on. */
-.ecosystem__track::before{
+.bb-ecosystem__track::before{
   content:"";
   position:absolute;
   z-index:0;
@@ -2075,7 +2080,7 @@ body > main{
   right:calc(var(--rule-inset) * -1 + 1px);
   background:var(--paper);
 }
-.ecosystem__track::after{
+.bb-ecosystem__track::after{
   content:"";
   position:absolute;
   z-index:1;
@@ -2085,7 +2090,7 @@ body > main{
   height:1px;
   background:var(--rule);
 }
-.ecosystem__stage{
+.bb-ecosystem__stage{
   --eco-pad:clamp(12px, 1.6vh, 26px);
   --eco-colgap:clamp(14px, 1.2vw, 26px);
   --eco-rowgap:clamp(14px, 1.2vw, 26px);
@@ -2097,14 +2102,14 @@ body > main{
   padding-block:var(--eco-pad);
 }
 
-.ecosystem__spokes{
+.bb-ecosystem__spokes{
   position:absolute;
   inset:clamp(12px, 1.6vh, 26px) 0;
   width:100%;
   opacity:0;
   pointer-events:none;
 }
-.ecosystem__spokes line{
+.bb-ecosystem__spokes line{
   stroke:var(--hairline);
   stroke-width:1;
   vector-effect:non-scaling-stroke;
@@ -2112,7 +2117,7 @@ body > main{
 
 /* The plates are cut to the same size and set to the same gaps as the
    photographs in Project Types — one measure runs through the page. */
-.eco-grid{
+.bb-eco-grid{
   position:absolute;
   inset:var(--eco-pad) 0;
   display:grid;
@@ -2126,7 +2131,7 @@ body > main{
 }
 
 /* flat cells, ruled not boxed — the same grammar as the rest of the sheet */
-.eco-card{
+.bb-eco-card{
   position:relative;
   display:flex;
   flex-direction:column;
@@ -2144,7 +2149,7 @@ body > main{
   will-change:transform;
 }
 /* the number is set in a ruled circle, as a plate number on a drawing */
-.eco-card__no{
+.bb-eco-card__no{
   display:flex;
   align-items:center;
   justify-content:center;
@@ -2158,7 +2163,7 @@ body > main{
   font-weight:600;
   letter-spacing:.1em;
 }
-.eco-card__icon{
+.bb-eco-card__icon{
   position:absolute;
   top:clamp(20px, 1.9vw, 40px);
   right:clamp(18px, 1.6vw, 34px);
@@ -2166,7 +2171,7 @@ body > main{
   height:auto;
   opacity:.85;
 }
-.eco-card__title{
+.bb-eco-card__title{
   margin:auto 0 0;             /* the name and its line sit together at the
                                   foot of the plate, under the number */
   max-width:14em;
@@ -2175,7 +2180,7 @@ body > main{
   line-height:1.26;
   letter-spacing:-.008em;
 }
-.eco-card__text{
+.bb-eco-card__text{
   margin:var(--gap-label-title) 0 0;
   max-width:30em;
   opacity:1;
@@ -2185,7 +2190,7 @@ body > main{
 }
 
 /* the centre: the one solid field on the page, and only here */
-.eco-hub{
+.bb-eco-hub{
   position:absolute;
   left:50%;
   top:50%;
@@ -2197,7 +2202,7 @@ body > main{
   opacity:0;
   will-change:transform, opacity;
 }
-.eco-hub__label{
+.bb-eco-hub__label{
   margin:0;
   color:rgba(255,255,255,.62);
   font-size:var(--label-fs);
@@ -2205,13 +2210,13 @@ body > main{
   letter-spacing:.16em;
   text-transform:uppercase;
 }
-.eco-hub__name{
+.bb-eco-hub__name{
   margin:clamp(14px, 1.3vw, 26px) 0 0;
   font-size:clamp(21px, 1.5vw, 32px);
   font-weight:600;
   letter-spacing:-.012em;
 }
-.eco-hub__role{
+.bb-eco-hub__role{
   margin:var(--gap-label-title) 0 0;
   color:rgba(255,255,255,.78);
   font-size:var(--lede-fs);
@@ -2221,12 +2226,12 @@ body > main{
 /* Where there is no room to pin — or where movement is unwelcome — the
    section shows the end state at once: the centre first, the six beneath it. */
 @media (max-width:1150px), (prefers-reduced-motion:reduce){
-  .ecosystem__intro{ grid-template-columns:1fr; row-gap:18px; }
-  .ecosystem__head{ padding-left:0; }
-  .ecosystem__track{ height:auto; }
-  .ecosystem__track::before,
-  .ecosystem__track::after{ content:none; }
-  .ecosystem__stage{
+  .bb-ecosystem__intro{ grid-template-columns:1fr; row-gap:18px; }
+  .bb-ecosystem__head{ padding-left:0; }
+  .bb-ecosystem__track{ height:auto; }
+  .bb-ecosystem__track::before,
+  .bb-ecosystem__track::after{ content:none; }
+  .bb-ecosystem__stage{
     position:static;
     height:auto;
     padding-block:0;
@@ -2234,15 +2239,15 @@ body > main{
     flex-direction:column;
     gap:clamp(16px, 1.6vw, 30px);
   }
-  .ecosystem__spokes{ display:none; }
-  .eco-grid{
+  .bb-ecosystem__spokes{ display:none; }
+  .bb-eco-grid{
     position:static;
     inset:auto;
     grid-template-columns:repeat(2, 1fr);
     grid-template-rows:auto;
   }
-  .eco-card{ transform:none !important; }
-  .eco-hub{
+  .bb-eco-card{ transform:none !important; }
+  .bb-eco-hub{
     position:static;
     order:-1;
     width:100%;
@@ -2252,7 +2257,7 @@ body > main{
 }
 
 @media (max-width:620px){
-  .eco-grid{ grid-template-columns:1fr; }
+  .bb-eco-grid{ grid-template-columns:1fr; }
 }
 
 /* --- Contact --------------------------------------------------------------
@@ -2262,7 +2267,7 @@ body > main{
    on the right.
    ----------------------------------------------------------------------- */
 
-.contact{
+.bb-contact{
   /* one measure governs the sentence and the row beneath it; it is stated in
      the heading's own size so both stay in step whatever that size becomes */
   --contact-measure:calc(23 * var(--sec-fs));
@@ -2271,20 +2276,20 @@ body > main{
   overflow:hidden;             /* the ground is a band, not a bleed */
 }
 /* the tinted band states the edge itself: a rule on top of it would double it */
-.contact::before{ content:none; }
-.contact__inner{
+.bb-contact::before{ content:none; }
+.bb-contact__inner{
   display:grid;
   grid-template-columns:1fr 2fr;
   align-items:start;
 }
-.contact .section-label{ margin:0; }
+.bb-contact .bb-section__label{ margin:0; }
 
-.contact__body{
+.bb-contact__body{
   padding-left:var(--rule-inset);
 }
 
 /* Keep the heading in a narrower column so it wraps naturally. */
-.contact__line{
+.bb-contact__line{
   margin:0;
   max-width:none;
   font-size:var(--sec-fs);
@@ -2293,11 +2298,11 @@ body > main{
   letter-spacing:-.018em;
 }
 @media (min-width:1151px){
-  .contact__line span{ display:block; white-space:nowrap; }
+  .bb-contact__line span{ display:block; white-space:nowrap; }
 }
 /* the address on the left, the invitation on the right, both on the measure
    the sentence above them is set to */
-.contact__act{
+.bb-contact__act{
   grid-column:2;
   justify-self:stretch;
   display:flex;
@@ -2308,22 +2313,22 @@ body > main{
   margin-top:var(--gap-text-link);
 }
 
-.contact__cta{
+.bb-contact__cta{
   align-self:center;           /* set against the middle of the block beside it */
   margin-top:0;
   font-size:clamp(12px, .73vw, 16px);
 }
 
 @media (max-width:1150px){
-  .contact__inner{ grid-template-columns:1fr; row-gap:18px; }
-  .contact__body{ padding-left:0; }
-  .contact__line{ max-width:18em; }
-  .contact__act{ grid-column:1; padding-left:0; }
+  .bb-contact__inner{ grid-template-columns:1fr; row-gap:18px; }
+  .bb-contact__body{ padding-left:0; }
+  .bb-contact__line{ max-width:18em; }
+  .bb-contact__act{ grid-column:1; padding-left:0; }
 }
 
 /* --- the address: a filled block in the ink of the page, not the green the
    audience control uses for a chosen tab -------------------------------- */
-.mailbtn{
+.bb-mailbtn{
   display:inline-flex;
   align-items:center;
   gap:.75em;
@@ -2340,12 +2345,12 @@ body > main{
 }
 /* solid at rest and outlined under the cursor — plainly seen, and it borrows
    nothing from the green the audience tabs use */
-.mailbtn:hover,
-.mailbtn:focus-visible{
+.bb-mailbtn:hover,
+.bb-mailbtn:focus-visible{
   background:none;
   color:var(--ink);
 }
-.mailbtn__icon{
+.bb-mailbtn__icon{
   display:block;
   background:currentColor;
   -webkit-mask:url("../images/icons/envelope.svg") center / contain no-repeat;
@@ -2361,7 +2366,7 @@ body > main{
    the whole width beneath them in the tone of the ruling itself.
    --------------------------------------------------------------------- */
 
-.site-footer{
+.bb-site-footer{
   position:relative;
   z-index:1;
   /* the one dark field that closes the page, hatched like the tinted ground
@@ -2376,7 +2381,7 @@ body > main{
 }
 
 /* the column rules and the two edges of the sheet, redrawn in white */
-.site-footer__rules{
+.bb-site-footer__rules{
   position:absolute;
   inset:0;
   z-index:0;
@@ -2385,49 +2390,49 @@ body > main{
   padding-inline:var(--gutter);
   pointer-events:none;
 }
-.site-footer__rules i + i{ border-left:1px solid rgba(255,255,255,.07); }
-.site-footer__rules::before,
-.site-footer__rules::after{
+.bb-site-footer__rules i + i{ border-left:1px solid rgba(255,255,255,.07); }
+.bb-site-footer__rules::before,
+.bb-site-footer__rules::after{
   content:"";
   position:absolute;
   top:0;
   bottom:0;
 }
-.site-footer__rules::before{
+.bb-site-footer__rules::before{
   left:calc(var(--gutter) - var(--rule-inset));
   border-left:1px solid rgba(255,255,255,.07);
 }
-.site-footer__rules::after{
+.bb-site-footer__rules::after{
   right:calc(var(--gutter) - var(--rule-inset));
   border-right:1px solid rgba(255,255,255,.07);
 }
-.site-footer .shell,
-.site-footer__art{
+.bb-site-footer .bb-shell,
+.bb-site-footer__art{
   position:relative;
   z-index:1;
 }
 
-.site-footer__grid{
+.bb-site-footer__grid{
   display:grid;
   grid-template-columns:repeat(3, 1fr);
 }
-.foot-cell{
+.bb-foot-cell{
   padding:clamp(34px, 3.4vw, 72px) var(--rule-inset) clamp(40px, 4vw, 84px);
 }
-.foot-cell + .foot-cell{
+.bb-foot-cell + .bb-foot-cell{
   border-left:1px solid rgba(255,255,255,.07);
 }
-.foot-cell--brand{ padding-left:0; }
+.bb-foot-cell--brand{ padding-left:0; }
 
-.foot-brand__link{
+.bb-site-footer__brand-link{
   display:inline-block;
   line-height:0;
   color:var(--paper);
 }
-.foot-logo{
+.bb-site-footer__logo{
   height:var(--logo-h);
 }
-.foot-brand__role{
+.bb-site-footer__brand-role{
   margin:clamp(16px, 1.5vw, 30px) 0 0;
   max-width:16em;              /* a short column under the mark, not a line
                                   run out across the cell */
@@ -2436,7 +2441,7 @@ body > main{
   line-height:1.45;
 }
 
-.foot-cell__head{
+.bb-foot-cell__head{
   margin:0 0 clamp(16px, 1.5vw, 30px);
   color:rgba(255,255,255,.55);
   font-size:var(--label-fs);
@@ -2444,16 +2449,16 @@ body > main{
   letter-spacing:.16em;
   text-transform:uppercase;
 }
-.foot-cell__head--second{ margin-top:clamp(26px, 2.6vw, 52px); }
+.bb-foot-cell__head--second{ margin-top:clamp(26px, 2.6vw, 52px); }
 
-.foot-list{
+.bb-foot-list{
   margin:0;
   padding:0;
   list-style:none;
   display:grid;
   row-gap:clamp(9px, .85vw, 16px);
 }
-.foot-list a{
+.bb-foot-list a{
   position:relative;
   color:rgba(255,255,255,.78);
   font-size:var(--lede-fs);
@@ -2461,20 +2466,20 @@ body > main{
   text-decoration:none;
   transition:color .2s ease;
 }
-.foot-list a:hover,
-.foot-list a:focus-visible{ color:var(--paper); }
-.foot-list .foot-social{ display:inline-flex; align-items:center; }
-.foot-social svg{ display:block; width:21px; height:21px; }
+.bb-foot-list a:hover,
+.bb-foot-list a:focus-visible{ color:var(--paper); }
+.bb-foot-list .bb-site-footer__social{ display:inline-flex; align-items:center; }
+.bb-site-footer__social svg{ display:block; width:21px; height:21px; }
 
 /* the drawing: full width, closing the sheet. No rule above it — the drawing
    is the close of the page, and a line across the top of it only fences the
    foot in twice. It is pulled up into the block above so the two read as one
    field rather than as a picture parked under the text. */
-.site-footer__art{
+.bb-site-footer__art{
   line-height:0;
   margin-top:clamp(-72px, -3.4vw, -18px);
 }
-.foot-drawing{
+.bb-site-footer__drawing{
   display:block;
   width:100%;          /* the full width of the sheet, edge to edge   */
   height:auto;         /* the foot grows to whatever height that asks */
@@ -2483,22 +2488,22 @@ body > main{
 
 
 @media (max-width:1150px){
-  .site-footer__grid{ grid-template-columns:1fr 1fr; }
-  .foot-cell--brand{ grid-column:1 / -1; padding-bottom:clamp(26px,2.6vw,52px);
+  .bb-site-footer__grid{ grid-template-columns:1fr 1fr; }
+  .bb-foot-cell--brand{ grid-column:1 / -1; padding-bottom:clamp(26px,2.6vw,52px);
                      border-bottom:1px solid rgba(255,255,255,.07); }
-  .foot-cell + .foot-cell{ border-left:none; }
-  .foot-cell:nth-child(3){ border-left:1px solid rgba(255,255,255,.07); }
+  .bb-foot-cell + .bb-foot-cell{ border-left:none; }
+  .bb-foot-cell:nth-child(3){ border-left:1px solid rgba(255,255,255,.07); }
 }
 
 @media (max-width:620px){
-  .site-footer__grid{ grid-template-columns:1fr; }
-  .foot-cell{ padding-inline:0; }
-  .foot-cell:nth-child(3){ border-left:none; border-top:1px solid rgba(255,255,255,.07); }
+  .bb-site-footer__grid{ grid-template-columns:1fr; }
+  .bb-foot-cell{ padding-inline:0; }
+  .bb-foot-cell:nth-child(3){ border-left:none; border-top:1px solid rgba(255,255,255,.07); }
 }
 
 @media (max-width:768px){
-  .site-footer__rules{ grid-template-columns:repeat(2, 1fr); }
-  .site-footer__rules i:nth-child(3){ display:none; }
+  .bb-site-footer__rules{ grid-template-columns:repeat(2, 1fr); }
+  .bb-site-footer__rules i:nth-child(3){ display:none; }
 }
 
 /* =========================================================================
@@ -2512,12 +2517,12 @@ body > main{
 @media (max-width:1150px){
   /* the tinted bands are ruled on the same halves the sheet is ruled on:
      one line down the middle, not two */
-  .audiences__ground,
-  .pillars__ground,
-  .contact__ground{ grid-template-columns:repeat(2, 1fr); }
-  .audiences__ground i:nth-child(3),
-  .pillars__ground i:nth-child(3),
-  .contact__ground i:nth-child(3){ display:none; }
+  .bb-audiences__ground,
+  .bb-pillars__ground,
+  .bb-contact__ground{ grid-template-columns:repeat(2, 1fr); }
+  .bb-audiences__ground i:nth-child(3),
+  .bb-pillars__ground i:nth-child(3),
+  .bb-contact__ground i:nth-child(3){ display:none; }
 }
 
 @media (max-width:640px){
@@ -2528,8 +2533,8 @@ body > main{
          that is already only a few hundred pixels tall and crowds it. This
          covers the hero photograph, every project tile, and the two scenes
          in Sustainable Solutions in one rule, since all three use the same
-         .disclosure--overlay class. --------------------------------- */
-  .disclosure.disclosure--overlay{
+         .bb-disclosure--overlay class. --------------------------------- */
+  .bb-disclosure.bb-disclosure--overlay{
     position:static;
     max-width:none;
     margin-top:10px;
@@ -2539,9 +2544,9 @@ body > main{
   }
 
   /* --- one proportion for every photograph on the page ----------------- */
-  .hero__image,
-  .solutions__image,
-  .project__image{
+  .bb-hero__image,
+  .bb-solutions__image,
+  .bb-project__image{
     aspect-ratio:3 / 2;
     height:auto;
   }
@@ -2549,15 +2554,15 @@ body > main{
      Three plates, each on the full measure, one under the other. Unpinned
      they were laid into a hairline grid at a third of its width, which read
      as three grey blocks with the copy crushed into the corner of them. */
-  .annots{
+  .bb-annots{
     display:block;
     gap:0;
     margin-top:16px;
     background:none;
     border:0;
   }
-  .annot,
-  .annot--left{
+  .bb-annot,
+  .bb-annot--left{
     display:flex;
     width:100%;
     max-width:none;
@@ -2565,59 +2570,59 @@ body > main{
     background:var(--paper);
     border:1px solid var(--rule);
   }
-  .annot + .annot{ margin-top:clamp(10px, 2.6vw, 16px); }
-  .annot__mark,
-  .annot__leader{ display:none; }
+  .bb-annot + .bb-annot{ margin-top:clamp(10px, 2.6vw, 16px); }
+  .bb-annot__mark,
+  .bb-annot__leader{ display:none; }
   /* the reveal is driven by the pinned scroll, which does not run here.
      Padded on the same scale as the hub card in Ecosystem — a block sized
      by what is in it, not forced to a height borrowed from a card of a
      different kind. */
-  .annot__card{
+  .bb-annot__card{
     flex:1 1 auto;
     border:0;
     opacity:1;
     transform:none;
     padding:clamp(24px, 2.2vw, 46px) clamp(22px, 2vw, 42px);
   }
-  .annot__title{ font-size:17px; }
-  .annot__text{ font-size:14px; }
+  .bb-annot__title{ font-size:17px; }
+  .bb-annot__text{ font-size:14px; }
 
   /* --- one card size for the two card grids on the page --------------- */
-  .card,
-  .eco-card{
+  .bb-card,
+  .bb-eco-card{
     min-height:clamp(210px, 58vw, 240px);
     padding:clamp(26px, 2.4vw, 50px) clamp(20px, 1.7vw, 36px) clamp(30px, 2.8vw, 58px);
   }
 
-  .project__body{ order:-1; padding:0 0 clamp(8px, 2vw, 12px); }
+  .bb-project__body{ order:-1; padding:0 0 clamp(8px, 2vw, 12px); }
 
   /* --- Contact: the address stands on its own line, and the invitation
          follows underneath it rather than beside it ------------------- */
-  .contact__act{
+  .bb-contact__act{
     flex-direction:column;
     align-items:flex-start;
     gap:16px;
     max-width:none;
   }
-  .mailbtn{ max-width:100%; }
-  .contact__cta{ align-self:flex-start; }
+  .bb-mailbtn{ max-width:100%; }
+  .bb-contact__cta{ align-self:flex-start; }
 
   /* --- Footer: the two lists take the halves the sheet is ruled into, and
          the horizontal rules go. They were drawn inside the shell, so they
          stopped a gutter short of the edge on both sides and read as
          floating lines rather than as the sheet's own ruling. --------- */
-  .site-footer__grid{
+  .bb-site-footer__grid{
     grid-template-columns:1fr 1fr;
     column-gap:clamp(20px, 6vw, 34px);
   }
-  .foot-cell{ padding-inline:0; }
-  .foot-cell--brand{
+  .bb-foot-cell{ padding-inline:0; }
+  .bb-foot-cell--brand{
     grid-column:1 / -1;
     padding-bottom:clamp(26px, 6vw, 40px);
     border-bottom:0;
   }
-  .foot-cell + .foot-cell,
-  .foot-cell:nth-child(3){
+  .bb-foot-cell + .bb-foot-cell,
+  .bb-foot-cell:nth-child(3){
     border-left:0;
     border-top:0;
   }
@@ -2636,7 +2641,7 @@ body > main{
   /* --- the ecosystem's grey cards matched to the audience cards' size —
          same floor height, same padding, so the two grids read as one
          scale rather than two different ones sitting near each other --- */
-  .eco-card{
+  .bb-eco-card{
     min-height:clamp(230px, 16vw, 305px);
     padding:clamp(26px, 2.4vw, 50px) clamp(20px, 1.7vw, 36px) clamp(30px, 2.8vw, 58px);
   }
@@ -2646,24 +2651,24 @@ body > main{
          — instead of the brand spanning the top with the other two
          underneath. That stray arrangement is what put a rule across the
          middle of the block with nothing on either side of it. -------- */
-  .site-footer__grid{ grid-template-columns:repeat(3, 1fr); }
-  .foot-cell--brand{
+  .bb-site-footer__grid{ grid-template-columns:repeat(3, 1fr); }
+  .bb-foot-cell--brand{
     grid-column:auto;
     padding-bottom:clamp(34px, 3.4vw, 72px);
     border-bottom:0;
   }
-  .foot-cell + .foot-cell{ border-left:1px solid rgba(255,255,255,.07); }
-  .foot-cell:nth-child(3){ border-left:1px solid rgba(255,255,255,.07); }
+  .bb-foot-cell + .bb-foot-cell{ border-left:1px solid rgba(255,255,255,.07); }
+  .bb-foot-cell:nth-child(3){ border-left:1px solid rgba(255,255,255,.07); }
 }
 
 /* Keep the entire supplied illustration visible across both iPad Pro sizes,
    including the 13-inch model in landscape orientation. */
 @media (min-width:769px) and (max-width:1400px){
-  .site-footer__art{
+  .bb-site-footer__art{
     width:100%;
     margin-top:0;
   }
-  .foot-drawing{
+  .bb-site-footer__drawing{
     width:100%;
     height:auto;
     aspect-ratio:2324 / 806;
@@ -2671,12 +2676,12 @@ body > main{
 }
 
 /* Annotation positions moved from HTML into the stylesheet. */
-.annot--position-01{ --x:20%; --y:38%; }
-.annot--position-02{ --x:72%; --y:29%; }
-.annot--position-03{ --x:80%; --y:82%; }
-.annot--position-04{ --x:20%; --y:24%; }
-.annot--position-05{ --x:88%; --y:33%; }
-.annot--position-06{ --x:30%; --y:62%; }
+.bb-annot--position-01{ --x:20%; --y:38%; }
+.bb-annot--position-02{ --x:72%; --y:29%; }
+.bb-annot--position-03{ --x:80%; --y:82%; }
+.bb-annot--position-04{ --x:20%; --y:24%; }
+.bb-annot--position-05{ --x:88%; --y:33%; }
+.bb-annot--position-06{ --x:30%; --y:62%; }
 
 /* =========================================================================
    LEGAL NOTICE (impressum.html)
@@ -2685,38 +2690,38 @@ body > main{
    second.
    ========================================================================= */
 
-.legal{ padding-top:clamp(26px, 2.6vw, 56px); }
-.legal + .legal{ padding-top:clamp(52px, 6.5vw, 132px); }
-.legal:first-of-type::before{ content:none; }
+.bb-legal{ padding-top:clamp(26px, 2.6vw, 56px); }
+.bb-legal + .bb-legal{ padding-top:clamp(52px, 6.5vw, 132px); }
+.bb-legal:first-of-type::before{ content:none; }
 
-.legal__inner{
+.bb-legal__inner{
   display:grid;
   grid-template-columns:1fr 2fr;
   align-items:start;
 }
-.legal .section-label{
+.bb-legal .bb-section__label{
   position:relative;
   z-index:1;
   padding-top:calc((var(--sec-lh) - 1) / 2 * var(--sec-fs) + var(--cap-k) * var(--sec-fs)
                  - (1.45 - 1) / 2 * var(--label-fs) - var(--cap-k) * var(--label-fs));
 }
-.legal__body{
+.bb-legal__body{
   position:relative;
   z-index:1;
   padding-left:var(--rule-inset);
 }
-.legal .section-title{ max-width:calc(35 * var(--lede-fs)); }
+.bb-legal .bb-section__title{ max-width:calc(35 * var(--lede-fs)); }
 
-.legal__list{ margin:var(--gap-title-text) 0 0; }
-.legal__list > div{
+.bb-legal__list{ margin:var(--gap-title-text) 0 0; }
+.bb-legal__list > div{
   display:grid;
   grid-template-columns:1fr 1fr;
   column-gap:var(--rule-inset);
   padding-block:var(--gap-para);
   border-top:1px solid var(--hairline-soft);
 }
-.legal__list > div:last-child{ border-bottom:1px solid var(--hairline-soft); }
-.legal__list dt{
+.bb-legal__list > div:last-child{ border-bottom:1px solid var(--hairline-soft); }
+.bb-legal__list dt{
   padding-right:var(--rule-inset);
   color:var(--ink-muted);
   font-size:var(--label-fs);
@@ -2725,20 +2730,20 @@ body > main{
   letter-spacing:.16em;
   text-transform:uppercase;
 }
-.legal__list dd{
+.bb-legal__list dd{
   margin:0;
   color:var(--ink);
   font-size:var(--lede-fs);
   line-height:var(--lede-lh);
 }
-.legal__list a{ color:var(--green); text-underline-offset:3px; }
+.bb-legal__list a{ color:var(--green); text-underline-offset:3px; }
 
 @media (max-width:1150px){
-  .legal__inner{ grid-template-columns:1fr; row-gap:18px; }
-  .legal .section-label{ padding-top:0; }
-  .legal__body{ padding-left:0; }
+  .bb-legal__inner{ grid-template-columns:1fr; row-gap:18px; }
+  .bb-legal .bb-section__label{ padding-top:0; }
+  .bb-legal__body{ padding-left:0; }
 }
 @media (max-width:700px){
-  .legal__list > div{ grid-template-columns:1fr; row-gap:6px; }
-  .legal__list dt{ padding-right:0; }
+  .bb-legal__list > div{ grid-template-columns:1fr; row-gap:6px; }
+  .bb-legal__list dt{ padding-right:0; }
 }

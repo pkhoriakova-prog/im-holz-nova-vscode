@@ -1,6 +1,6 @@
 /* Header menu — only active while the inline navigation is collapsed. */
 (function () {
-  var toggle = document.querySelector('.nav-toggle');
+  var toggle = document.querySelector('.bb-nav-toggle');
   var nav = document.getElementById('primary-nav');
   if (!toggle || !nav) return;
 
@@ -54,18 +54,18 @@
    depends on the frame's proportion; the cover mapping is worked out here and
    written back as --door-x / --door-y, which is what the push aims at. */
 (function () {
-  var track = document.querySelector('.solutions__track');
-  var stage = document.querySelector('.solutions__stage');
-  var frame = document.querySelector('.solutions__frame');
-  var out = document.querySelector('.scene--out');
-  var inn = document.querySelector('.scene--in');
+  var track = document.querySelector('.bb-solutions__track');
+  var stage = document.querySelector('.bb-solutions__stage');
+  var frame = document.querySelector('.bb-solutions__frame');
+  var out = document.querySelector('.bb-scene--out');
+  var inn = document.querySelector('.bb-scene--in');
   if (!track || !stage || !frame || !out || !inn) return;
 
-  var outView = out.querySelector('.scene__view');
-  var inView = inn.querySelector('.scene__view');
-  var outImg = out.querySelector('.scene__image');
-  var notesOut = Array.prototype.slice.call(out.querySelectorAll('.annot'));
-  var notesIn = Array.prototype.slice.call(inn.querySelectorAll('.annot'));
+  var outView = out.querySelector('.bb-scene__view');
+  var inView = inn.querySelector('.bb-scene__view');
+  var outImg = out.querySelector('.bb-scene__image');
+  var notesOut = Array.prototype.slice.call(out.querySelectorAll('.bb-annot'));
+  var notesIn = Array.prototype.slice.call(inn.querySelectorAll('.bb-annot'));
 
   var pinned = window.matchMedia('(min-width: 1151px)');
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
@@ -178,7 +178,7 @@
    needs two copies. The second set is cloned at runtime; both sets reference
    the same image files in images/photos/. */
 (function () {
-  var row = document.querySelector('.filmstrip__row');
+  var row = document.querySelector('.bb-filmstrip__row');
   if (!row || row.dataset.looped) return;
   var set = Array.prototype.slice.call(row.children);
   set.forEach(function (node) { row.appendChild(node.cloneNode(true)); });
@@ -193,17 +193,17 @@
 (function () {
   var viewer = document.getElementById('photo-viewer');
   var sets = Array.prototype.slice.call(
-    document.querySelectorAll('.filmstrip__row, .projects__grid'));
+    document.querySelectorAll('.bb-filmstrip__row, .bb-projects__grid'));
   if (!viewer || !sets.length) return;
 
-  var image = viewer.querySelector('.viewer__image');
-  var title = viewer.querySelector('.viewer__title');
-  var caption = viewer.querySelector('.viewer__caption');
-  var count = viewer.querySelector('.viewer__count');
-  var closeBtn = viewer.querySelector('.viewer__close');
-  var prevBtn = viewer.querySelector('.viewer__nav--prev');
-  var nextBtn = viewer.querySelector('.viewer__nav--next');
-  var backdrop = viewer.querySelector('.viewer__backdrop');
+  var image = viewer.querySelector('.bb-viewer__image');
+  var title = viewer.querySelector('.bb-viewer__title');
+  var caption = viewer.querySelector('.bb-viewer__caption');
+  var count = viewer.querySelector('.bb-viewer__count');
+  var closeBtn = viewer.querySelector('.bb-viewer__close');
+  var prevBtn = viewer.querySelector('.bb-viewer__nav--prev');
+  var nextBtn = viewer.querySelector('.bb-viewer__nav--next');
+  var backdrop = viewer.querySelector('.bb-viewer__backdrop');
 
   // one entry per photograph in a set; the strip is cloned for its loop, so
   // the duplicates are dropped and the originals kept in order
@@ -218,9 +218,9 @@
         var img = b.querySelector('img');
         var figure = b.closest('figure');
         var note = figure && figure.querySelector('figcaption');
-        var projectTitle = b.closest('.project') && b.closest('.project').querySelector('.project__title');
-        var stripEvent = note && note.querySelector('.strip__caption-event');
-        var stripPlace = note && note.querySelector('.strip__caption-place');
+        var projectTitle = b.closest('.bb-project') && b.closest('.bb-project').querySelector('.bb-project__title');
+        var stripEvent = note && note.querySelector('.bb-filmstrip__caption-event');
+        var stripPlace = note && note.querySelector('.bb-filmstrip__caption-place');
         return {
           src: img.getAttribute('src'),
           alt: img.alt,
@@ -273,7 +273,7 @@
       var list = read(container);
       if (!list.length) return;
       var selected = parseInt(btn.dataset.photo, 10);
-      if (container.classList.contains('filmstrip__row')) {
+      if (container.classList.contains('bb-filmstrip__row')) {
         list = list.slice(selected).concat(list.slice(0, selected));
         selected = 0;
       }
@@ -305,7 +305,7 @@
    rather than being moved between screens. Arrow keys walk the set, as a
    tab list should. */
 (function () {
-  var list = document.querySelector('.pills');
+  var list = document.querySelector('.bb-pills');
   if (!list) return;
 
   var tabs = Array.prototype.slice.call(list.querySelectorAll('[role="tab"]'));
@@ -351,12 +351,12 @@
    the centre while IM HOLZ Nova takes its place between them. Scroll position
    is the only clock, so the reader can run it forwards or back. */
 (function () {
-  var track = document.querySelector('.ecosystem__track');
-  var stage = document.querySelector('.ecosystem__stage');
+  var track = document.querySelector('.bb-ecosystem__track');
+  var stage = document.querySelector('.bb-ecosystem__stage');
   if (!track || !stage) return;
-  var cards = Array.prototype.slice.call(stage.querySelectorAll('.eco-card'));
-  var hub = document.querySelector('.eco-hub');
-  var spokes = document.querySelector('.ecosystem__spokes');
+  var cards = Array.prototype.slice.call(stage.querySelectorAll('.bb-eco-card'));
+  var hub = document.querySelector('.bb-eco-hub');
+  var spokes = document.querySelector('.bb-ecosystem__spokes');
   if (!track || !stage || !cards.length || !hub) return;
 
   var wide = window.matchMedia('(min-width: 1151px)');
@@ -467,7 +467,7 @@
    fractionally after the next. The split content is hidden from assistive
    software, which reads the label off the link itself. */
 (function () {
-  var rolls = Array.prototype.slice.call(document.querySelectorAll('.link-underline__roll'));
+  var rolls = Array.prototype.slice.call(document.querySelectorAll('.bb-link-underline__roll'));
   rolls.forEach(function (roll) {
     var text = roll.getAttribute('data-text') || roll.textContent;
     var link = roll.closest('a');
@@ -476,13 +476,13 @@
     roll.textContent = '';
     text.split('').forEach(function (ch, i) {
       var cell = document.createElement('span');
-      cell.className = 'ch';
+      cell.className = 'bb-link-underline__char';
       cell.style.transitionDelay = (i * 16) + 'ms';
       var a = document.createElement('span');
-      a.className = 'ch__a';
+      a.className = 'bb-link-underline__char-front';
       a.textContent = ch === ' ' ? ' ' : ch;
       var b = document.createElement('span');
-      b.className = 'ch__b';
+      b.className = 'bb-link-underline__char-back';
       b.textContent = a.textContent;
       cell.appendChild(a);
       cell.appendChild(b);
@@ -494,10 +494,10 @@
 /* Vision & Mission. The stage is held on desktop and tablets while the
    building rises and the statements change. Phones use buttons. */
 (function () {
-  var section = document.querySelector('.vision');
+  var section = document.querySelector('.bb-vision');
   if (!section) return;
-  var track = section.querySelector('.vision__track');
-  var stage = section.querySelector('.vision__stage');
+  var track = section.querySelector('.bb-vision__track');
+  var stage = section.querySelector('.bb-vision__stage');
   if (!track || !stage) return;
 
   section.querySelectorAll('[data-vision-slide]').forEach(function (button) {
@@ -506,8 +506,8 @@
       section.querySelectorAll('[data-vision-slide]').forEach(function (item) {
         item.setAttribute('aria-pressed', String(item === button));
       });
-      section.querySelector('.vslide--vision').classList.toggle('is-current', selected === 'vision');
-      section.querySelector('.vslide--mission').classList.toggle('is-current', selected === 'mission');
+      section.querySelector('.bb-vslide--vision').classList.toggle('bb-vslide--current', selected === 'vision');
+      section.querySelector('.bb-vslide--mission').classList.toggle('bb-vslide--current', selected === 'mission');
       section.dataset.current = selected;
     });
   });
@@ -532,7 +532,7 @@
   function rest() {
     NAMES.forEach(function (n) { section.style.removeProperty(n); });
     section.style.removeProperty('--vision-h');
-    section.classList.remove('is-held');
+    section.classList.remove('bb-vision--held');
   }
 
   function paint() {
@@ -546,7 +546,7 @@
     var q = span(raw, 0, 1 - TAIL);
     // while the stage is held, the real next section waits: its top is already
     // drawn under the stage, and it takes over on the very line it was drawn on
-    section.classList.toggle('is-held', raw < 0.999);
+    section.classList.toggle('bb-vision--held', raw < 0.999);
 
     set('--v', 1 - softer(span(q, OUT0, OUT1)));
     set('--m', softer(span(q, IN0, IN1)));

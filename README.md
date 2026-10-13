@@ -57,3 +57,22 @@ SVG-файлов, чтобы они отображались как самост
 Шрифт Manrope, как в исходнике, подключен через Google Fonts и требует
 интернета. Без сети браузер использует системный запасной шрифт.
 Ссылки-заглушки и языковые кнопки сохранены в исходном виде.
+
+## CSS class naming
+
+All HTML, SVG, CSS and JavaScript class names use BEM with the bb- prefix:
+
+- Block: bb-viewer
+- Element: bb-viewer__image
+- Modifier: bb-viewer__nav--prev (alongside bb-viewer__nav)
+- State: bb-vslide--current or bb-vision--held (alongside the base class)
+
+Update markup, CSS selectors and JavaScript class references together. IDs, data attributes and CSS custom properties keep their existing names.
+
+## Heading hierarchy
+
+Each complete page has one visible h1 describing its main topic. Heading levels and visual styling are independent; BEM classes control appearance.
+
+On index.html and index-no-pillars.html, the agreed structure uses exactly two h2 headings: the left-hand labels Our Projects and Ecosystem. Their large headings on the right use h3, and their card headings use h4. Other left-hand section labels (The Shift, In Numbers, Project Types, For Whom and Contact) use h3, their large headings on the right use h4, and their card headings use h5. This intentionally allows h3 headings before the first h2; the two-h2 limit is a project preference.
+
+Other pages retain h2 for section headings and h3 for their cards. Footer column labels and photo captions are paragraphs. Files in fragments/ are standalone previews with their own h1; omit the preview header when embedding their sections in another page. Keep aria-labelledby references pointing to existing headings.

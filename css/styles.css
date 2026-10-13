@@ -197,14 +197,14 @@ body > main{
   justify-self:center;
   display:flex;
   align-items:center;
-  gap:26px;                    /* measured gap in reference_01 */
+  gap:clamp(26px, 1.875vw, 40px);
   white-space:nowrap;
 }
 
 .bb-site-nav a{
   position:relative;
   color:var(--ink);
-  font-size:15px;
+  font-size:clamp(13px, .78125vw, 18px);
   font-weight:500;
   letter-spacing:.002em;
   text-decoration:none;
@@ -213,15 +213,14 @@ body > main{
 .bb-site-nav a::after{
   content:"";
   position:absolute;
-  left:0; right:0; bottom:0;
-  height:1px;
+  left:0; bottom:0;
+  width:0;
+  height:.8px;
   background:var(--green);
-  transform:scaleX(0);
-  transform-origin:left center;
-  transition:transform .22s ease;
+  transition:width .22s ease;
 }
 .bb-site-nav a:hover{ color:var(--green); }
-.bb-site-nav a:hover::after{ transform:scaleX(1); }
+.bb-site-nav a:hover::after{ width:100%; }
 
 .bb-site-lang{
   justify-self:end;
@@ -232,8 +231,15 @@ body > main{
   color:var(--ink);
 }
 .bb-site-lang__current{
-  border-bottom:1px solid var(--ink);
+  position:relative;
   padding-bottom:1px;
+}
+.bb-site-lang__current::after{
+  content:"";
+  position:absolute;
+  left:0; right:0; bottom:0;
+  height:1px;
+  background:var(--ink);
 }
 .bb-site-lang__sep{ color:var(--ink-muted); margin-inline:2px; }
 .bb-site-lang__other{ color:var(--ink-muted); }
@@ -295,7 +301,30 @@ body > main{
   align-items:stretch;
 }
 
-.bb-hero__title{
+/* Shared card structure; variants retain their original surfaces and spacing. */
+.bb-card{
+  position:relative;
+  display:flex;
+  flex-direction:column;
+}
+
+/* Common body-copy typography; variants define context and spacing. */
+.bb-copy{
+  color:var(--ink-muted);
+  font-size:var(--lede-fs);
+  line-height:1.5;
+}
+
+.bb-section__title{
+  margin:0;
+  max-width:var(--section-copy-width, calc(35 * var(--lede-fs)));
+  font-size:var(--sec-fs);
+  line-height:var(--sec-lh);
+  font-weight:500;
+  letter-spacing:-.018em;
+}
+
+.bb-section__title--hero{
   margin:0;
   clip-path:inset(-.3em -.08em 0 -.08em);
   max-width:15em;
@@ -338,7 +367,7 @@ body > main{
 
 /* Supporting note, set small and quiet. Its size is deliberately independent
    of the H1 — the headline can grow without dragging this paragraph with it. */
-.bb-hero__lede{
+.bb-copy--hero{
   margin:0;
   max-width:36em;
   color:var(--ink-muted);
@@ -511,7 +540,7 @@ body > main{
   .bb-site-nav a{
     width:100%;
     padding:15px 0;
-    font-size:17px;
+    font-size:clamp(16px, 2vw, 18px);
     border-bottom:1px solid var(--hairline-soft);
   }
   .bb-site-nav a:last-child{ border-bottom:0; }
@@ -523,14 +552,14 @@ body > main{
 @media (max-width:1150px){
   :root{ --header-h:72px; }
 
-  .bb-hero__title{ max-width:16em; font-size:clamp(28px, 7.4vw, 46px); }
+  .bb-section__title--hero{ max-width:16em; font-size:clamp(28px, 7.4vw, 46px); }
   .bb-hero__title-line{ display:inline; }
   .bb-hero__head{ grid-template-columns:1fr; row-gap:26px; }
-  .bb-hero__title,
+  .bb-section__title--hero,
   .bb-hero__aside{ grid-column:1 / -1; }
   .bb-hero__aside{ padding-left:0; }
   .bb-hero__aside{ display:block; padding-top:0; max-width:48ch; }
-  .bb-hero__lede{ font-size:15px; line-height:1.5; }
+  .bb-copy--hero{ font-size:15px; line-height:1.5; }
   .bb-link-underline{ font-size:12px; }
 
   .bb-hero__image{ aspect-ratio:3 / 2; }
@@ -538,7 +567,7 @@ body > main{
 }
 
 @media (min-width:700px) and (max-width:1150px){
-  .bb-hero__title{ max-width:none; font-size:clamp(38px, 5.8vw, 46px); }
+  .bb-section__title--hero{ max-width:none; font-size:clamp(38px, 5.8vw, 46px); }
   .bb-hero__title-line{ display:block; }
 }
 
@@ -593,28 +622,21 @@ body > main{
   padding-top:var(--hero-top);
 }
 
-.bb-section__title{
-  margin:0;
-  max-width:var(--section-copy-width, calc(35 * var(--lede-fs)));
-  font-size:var(--sec-fs);
-  line-height:var(--sec-lh);
-  font-weight:500;
-  letter-spacing:-.018em;
-}
 
-.bb-section__text{
+
+.bb-copy--section{
   margin:var(--gap-title-text) 0 0;
   max-width:var(--section-copy-width, calc(35 * var(--lede-fs)));
   color:var(--ink-muted);
   font-size:var(--lede-fs);
   line-height:var(--lede-lh);
 }
-.bb-section__text + .bb-section__text{
+.bb-copy--section + .bb-copy--section{
   margin-top:var(--gap-para);
 }
 @media (min-width:1151px){
   /* Copy set against the first inner rule stops before the second one. */
-  .bb-section__text{
+  .bb-copy--section{
     max-width:min(var(--section-copy-width, calc(35 * var(--lede-fs))),
       calc((100vw - var(--gutter) - var(--gutter)) / 3 - var(--rule-inset) - var(--rule-inset)));
   }
@@ -831,14 +853,15 @@ body > main{
   font-weight:600;
   letter-spacing:.14em;
 }
-.bb-annot__title{
+.bb-section__title--annotation{
+  max-width:none;
   margin:0;
   font-size:clamp(13px, .78vw, 17px);
   font-weight:600;
   line-height:1.25;
   letter-spacing:-.005em;
 }
-.bb-annot__text{
+.bb-copy--annotation{
   margin:5px 0 0;
   color:var(--ink-muted);
   font-size:clamp(11.5px, .677vw, 15px);
@@ -1221,7 +1244,7 @@ body > main{
 .bb-projects__head{
   padding-left:var(--rule-inset);
 }
-.bb-projects .bb-section__title{
+.bb-section__title--projects{
   max-width:30ch;
   text-wrap:balance;
   font-size:var(--sec-fs);     /* the rank the sections above it are set in */
@@ -1321,7 +1344,7 @@ body > main{
   font-weight:600;
   letter-spacing:.14em;
 }
-.bb-project__title{
+.bb-section__title--project{
   margin:0;
   max-width:20em;
   font-size:clamp(18px, 1.25vw, 26px);
@@ -1329,7 +1352,7 @@ body > main{
   line-height:1.26;
   letter-spacing:-.01em;
 }
-.bb-project__text{
+.bb-copy--project{
   margin:calc(var(--gap-label-title) * .7) 0 0;
   max-width:40ch;
   color:var(--ink-muted);
@@ -1341,7 +1364,7 @@ body > main{
 @media (max-width:1150px){
   .bb-projects__intro{ grid-template-columns:1fr; row-gap:18px; }
   .bb-projects__head{ padding-left:0; }
-  .bb-projects .bb-section__title{ white-space:normal; }
+  .bb-section__title--projects{ white-space:normal; }
 }
 
 /* the pair of labels that closes each row, set as plain words on a rule —
@@ -1382,10 +1405,10 @@ body > main{
     var(--green);
   color:var(--paper);
 }
-.bb-ourprj .bb-work{ background:var(--paper); border:0; }
-.bb-ourprj .bb-section__title{ max-width:none; white-space:nowrap; }
+.bb-ourprj .bb-card--work{ background:var(--paper); border:0; }
+.bb-section__title--our-projects{ max-width:none; white-space:nowrap; }
 .bb-ourprj .bb-section__label{ color:rgba(255,255,255,.7); }
-.bb-ourprj .bb-section__text{ color:rgba(255,255,255,.78); }
+.bb-ourprj .bb-copy--section{ color:rgba(255,255,255,.78); }
 
 /* two projects side by side, each a card with its picture, name, tags and
    text inside */
@@ -1398,12 +1421,9 @@ body > main{
   gap:clamp(14px, 1.2vw, 26px);
   margin-left:calc(33.3333% + var(--rule-inset));   /* set to the right, as in Project Types */
 }
-.bb-work{
-  position:relative;
+.bb-card--work{
   overflow:hidden;
   aspect-ratio:598 / 455;      /* the proportion of the photographs in Project Types */
-  display:flex;
-  flex-direction:column;
   align-items:flex-start;
   --work-px:clamp(24px, 2.2vw, 46px);
   --work-py:clamp(28px, 2.6vw, 54px);
@@ -1416,7 +1436,7 @@ body > main{
   border:1px solid var(--hairline-soft);
   color:var(--ink);
 }
-.bb-work__title{
+.bb-section__title--work{
   margin:0;
   max-width:13em;              /* the name does not run the width of the card */
   text-wrap:balance;
@@ -1426,7 +1446,7 @@ body > main{
   line-height:1.2;
   letter-spacing:-.012em;
 }
-.bb-work__text{
+.bb-copy--work{
   margin:var(--gap-label-title) 0 0;
   max-width:21em;              /* the text does not run the width of the card either */
   color:var(--ink-muted);
@@ -1463,7 +1483,7 @@ body > main{
 @media (prefers-reduced-motion:reduce){
   .bb-work__status::before{ animation:none; }
 }
-.bb-work .bb-link-underline{ margin-top:auto; padding-top:var(--gap-text-link); color:var(--ink); }
+.bb-card--work .bb-link-underline{ margin-top:auto; padding-top:var(--gap-text-link); color:var(--ink); }
 /* the building, trimmed to its own outline, stands in the right-hand lower
    corner of the card; the text sits above it */
 .bb-work__art{
@@ -1474,19 +1494,19 @@ body > main{
   height:auto;
   pointer-events:none;
 }
-.bb-work > :not(.bb-work__art){ position:relative; z-index:1; }
+.bb-card--work > :not(.bb-work__art){ position:relative; z-index:1; }
 
 @media (max-width:1150px){
   .bb-ourprj__works{ margin-left:0; }
 }
 @media (max-width:1150px){
-  .bb-ourprj .bb-section__title{ white-space:normal; }
+  .bb-section__title--our-projects{ white-space:normal; }
 }
 /* small tablets and phones: the building no longer lies under the text but
    stands beneath it in the corner of the card, whole. Two cards to a row on a
    small tablet, one on a phone. */
 @media (max-width:900px){
-  .bb-work{ aspect-ratio:auto; min-height:0; }
+  .bb-card--work{ aspect-ratio:auto; min-height:0; }
   .bb-work__art{
     position:static;
     order:9;
@@ -1494,9 +1514,9 @@ body > main{
     max-width:none;
     margin:auto calc(-1 * var(--work-px)) calc(-1 * var(--work-py)) auto;   /* on the foot of the card, at its right edge */
   }
-  .bb-work__text,
-  .bb-work .bb-link-underline{ margin-bottom:var(--gap-text-link); }
-  .bb-work .bb-link-underline{ margin-top:0; padding-top:0; }
+  .bb-copy--work,
+  .bb-card--work .bb-link-underline{ margin-bottom:var(--gap-text-link); }
+  .bb-card--work .bb-link-underline{ margin-top:0; padding-top:0; }
 }
 @media (max-width:640px){
   .bb-ourprj__works{ grid-template-columns:1fr; row-gap:clamp(14px, 3vw, 24px); }
@@ -1516,8 +1536,8 @@ body > main{
 .bb-numbers__intro{ position:relative; }
 .bb-numbers__intro .bb-section__label{ position:absolute; left:0; top:0; }
 .bb-numbers__head{ margin-left:calc(33.3333% + var(--rule-inset)); }
-.bb-numbers .bb-section__title{ max-width:min(16.5em, 100%); }
-.bb-numbers__head .bb-section__text{ max-width:30em; }
+.bb-section__title--numbers{ max-width:min(16.5em, 100%); }
+.bb-numbers__head .bb-copy--section{ max-width:30em; }
 /* the heading breaks before "and": two lines, each its own block */
 .bb-numbers .bb-section__title-line{ display:block; }
 .bb-numbers__figures{
@@ -1660,7 +1680,7 @@ body > main{
 .bb-audiences__head{
   margin-left:calc(33.3333% + var(--rule-inset));
 }
-.bb-audiences .bb-section__title{ max-width:19em; }
+.bb-section__title--audiences{ max-width:19em; }
 /* the heading uses the same measure and rank as The Shift */
 
 /* The control, squared off like everything else drawn on this sheet: it reads as a
@@ -1722,10 +1742,7 @@ body > main{
 /* Each card is a surface of its own, as in the reference — but a flat panel
    of paper on the tinted ground, squared off and outlined by a hairline
    rather than lifted on a shadow. */
-.bb-card{
-  position:relative;
-  display:flex;
-  flex-direction:column;
+.bb-card--audience{
   min-height:clamp(230px, 16vw, 305px);
   padding:clamp(26px, 2.4vw, 50px) clamp(20px, 1.7vw, 36px) clamp(30px, 2.8vw, 58px);
   background:var(--paper);
@@ -1736,14 +1753,15 @@ body > main{
   width:clamp(26px, 2vw, 40px);
   height:auto;
 }
-.bb-card__title{
+.bb-section__title--card{
+  max-width:none;
   margin:clamp(18px, 1.8vw, 38px) 0 0;
   font-size:clamp(16px, 1.05vw, 23px);
   font-weight:600;
   line-height:1.26;
   letter-spacing:-.008em;
 }
-.bb-card__text{
+.bb-copy--card{
   margin:var(--gap-label-title) 0 0;
   max-width:none;
   color:var(--ink-muted);
@@ -1801,7 +1819,7 @@ body > main{
   padding-left:var(--rule-inset);
   padding-right:var(--rule-inset);
 }
-.bb-vision__text .bb-section__title{ max-width:100%; }
+.bb-section__title--vision{ max-width:100%; }
 .bb-vision__switch{ display:none; }
 .bb-vslide{ grid-area:1 / 1; }
 .bb-vslide__label{ display:none; }
@@ -1956,7 +1974,7 @@ body > main{
   .bb-vision__text .bb-vslide:not(.bb-vslide--current){ display:none; }
   .bb-vision__text .bb-vslide.bb-vslide--current{ opacity:1; visibility:visible; animation:vslide-in .6s cubic-bezier(.22, 1, .36, 1) both; }
   .bb-vision__text .bb-vslide__label{ display:none; }
-  .bb-vision__text .bb-vslide--vision .bb-section__title{ max-width:min(75%, 18ch); }
+  .bb-vslide--vision .bb-section__title--vision{ max-width:min(75%, 18ch); }
   .bb-vision__art{
     grid-column:1;
     grid-row:auto;
@@ -2008,11 +2026,11 @@ body > main{
 .bb-pillars__intro .bb-section__label{ position:absolute; left:0; top:0; }
 .bb-pillars__head{ margin-left:calc(33.3333% + var(--rule-inset)); }
 .bb-pillars__cards{ margin-top:var(--gap-block-media); }
-.bb-pillars__cards .bb-card{
+.bb-pillars__cards .bb-card--audience{
   min-height:clamp(320px, 22vw, 420px);
 }
 .bb-pillars__cards .bb-card__title-line{ display:block; }
-.bb-pillars__cards .bb-card__text{ margin-bottom:var(--gap-text-link); }
+.bb-pillars__cards .bb-copy--card{ margin-bottom:var(--gap-text-link); }
 .bb-pillars__cards .bb-link-underline{ margin-top:auto; }
 .bb-pillars--summary::before{
   content:"";
@@ -2026,12 +2044,12 @@ body > main{
   display:inline-flex;
 }
 @media (min-width:1151px){
-  .bb-pillars--summary .bb-eco-card{ min-height:clamp(230px, 16vw, 305px); }
+  .bb-pillars--summary .bb-card--ecosystem{ min-height:clamp(230px, 16vw, 305px); }
 }
 @media (max-width:1150px){
   .bb-pillars__intro .bb-section__label{ position:static; display:block; margin-bottom:var(--gap-label-title); }
   .bb-pillars__head{ margin-left:0; }
-  .bb-pillars__cards .bb-card{ min-height:0; }
+  .bb-pillars__cards .bb-card--audience{ min-height:0; }
 }
 
 /* --- Ecosystem ------------------------------------------------------------
@@ -2055,7 +2073,7 @@ body > main{
 .bb-ecosystem__head{
   padding-left:var(--rule-inset);
 }
-.bb-ecosystem .bb-section__title{ max-width:calc(28 * var(--lede-fs)); }
+.bb-section__title--ecosystem{ max-width:calc(28 * var(--lede-fs)); }
 
 /* the travel is one viewport for the pinned field plus the distance the
    movement itself needs — no spare scroll anywhere */
@@ -2131,10 +2149,7 @@ body > main{
 }
 
 /* flat cells, ruled not boxed — the same grammar as the rest of the sheet */
-.bb-eco-card{
-  position:relative;
-  display:flex;
-  flex-direction:column;
+.bb-card--ecosystem{
   justify-content:flex-start;
   padding:clamp(20px, 1.9vw, 40px) clamp(18px, 1.6vw, 34px);
   border:1px solid var(--hairline-soft);
@@ -2163,7 +2178,7 @@ body > main{
   font-weight:600;
   letter-spacing:.1em;
 }
-.bb-eco-card__icon{
+.bb-card__icon--ecosystem{
   position:absolute;
   top:clamp(20px, 1.9vw, 40px);
   right:clamp(18px, 1.6vw, 34px);
@@ -2171,7 +2186,7 @@ body > main{
   height:auto;
   opacity:.85;
 }
-.bb-eco-card__title{
+.bb-section__title--eco-card{
   margin:auto 0 0;             /* the name and its line sit together at the
                                   foot of the plate, under the number */
   max-width:14em;
@@ -2180,7 +2195,7 @@ body > main{
   line-height:1.26;
   letter-spacing:-.008em;
 }
-.bb-eco-card__text{
+.bb-copy--ecosystem{
   margin:var(--gap-label-title) 0 0;
   max-width:30em;
   opacity:1;
@@ -2216,7 +2231,7 @@ body > main{
   font-weight:600;
   letter-spacing:-.012em;
 }
-.bb-eco-hub__role{
+.bb-copy--hub{
   margin:var(--gap-label-title) 0 0;
   color:rgba(255,255,255,.78);
   font-size:var(--lede-fs);
@@ -2246,7 +2261,7 @@ body > main{
     grid-template-columns:repeat(2, 1fr);
     grid-template-rows:auto;
   }
-  .bb-eco-card{ transform:none !important; }
+  .bb-card--ecosystem{ transform:none !important; }
   .bb-eco-hub{
     position:static;
     order:-1;
@@ -2289,7 +2304,7 @@ body > main{
 }
 
 /* Keep the heading in a narrower column so it wraps naturally. */
-.bb-contact__line{
+.bb-section__title--contact{
   margin:0;
   max-width:none;
   font-size:var(--sec-fs);
@@ -2298,7 +2313,7 @@ body > main{
   letter-spacing:-.018em;
 }
 @media (min-width:1151px){
-  .bb-contact__line span{ display:block; white-space:nowrap; }
+  .bb-section__title--contact span{ display:block; white-space:nowrap; }
 }
 /* the address on the left, the invitation on the right, both on the measure
    the sentence above them is set to */
@@ -2322,7 +2337,7 @@ body > main{
 @media (max-width:1150px){
   .bb-contact__inner{ grid-template-columns:1fr; row-gap:18px; }
   .bb-contact__body{ padding-left:0; }
-  .bb-contact__line{ max-width:18em; }
+  .bb-section__title--contact{ max-width:18em; }
   .bb-contact__act{ grid-column:1; padding-left:0; }
 }
 
@@ -2432,7 +2447,7 @@ body > main{
 .bb-site-footer__logo{
   height:var(--logo-h);
 }
-.bb-site-footer__brand-role{
+.bb-copy--footer-brand{
   margin:clamp(16px, 1.5vw, 30px) 0 0;
   max-width:16em;              /* a short column under the mark, not a line
                                   run out across the cell */
@@ -2441,7 +2456,7 @@ body > main{
   line-height:1.45;
 }
 
-.bb-foot-cell__head{
+.bb-section__label--footer{
   margin:0 0 clamp(16px, 1.5vw, 30px);
   color:rgba(255,255,255,.55);
   font-size:var(--label-fs);
@@ -2449,7 +2464,7 @@ body > main{
   letter-spacing:.16em;
   text-transform:uppercase;
 }
-.bb-foot-cell__head--second{ margin-top:clamp(26px, 2.6vw, 52px); }
+.bb-section__label--footer-second{ margin-top:clamp(26px, 2.6vw, 52px); }
 
 .bb-foot-list{
   margin:0;
@@ -2584,12 +2599,12 @@ body > main{
     transform:none;
     padding:clamp(24px, 2.2vw, 46px) clamp(22px, 2vw, 42px);
   }
-  .bb-annot__title{ font-size:17px; }
-  .bb-annot__text{ font-size:14px; }
+  .bb-section__title--annotation{ font-size:17px; }
+  .bb-copy--annotation{ font-size:14px; }
 
   /* --- one card size for the two card grids on the page --------------- */
-  .bb-card,
-  .bb-eco-card{
+  .bb-card--audience,
+  .bb-card--ecosystem{
     min-height:clamp(210px, 58vw, 240px);
     padding:clamp(26px, 2.4vw, 50px) clamp(20px, 1.7vw, 36px) clamp(30px, 2.8vw, 58px);
   }
@@ -2641,7 +2656,7 @@ body > main{
   /* --- the ecosystem's grey cards matched to the audience cards' size —
          same floor height, same padding, so the two grids read as one
          scale rather than two different ones sitting near each other --- */
-  .bb-eco-card{
+  .bb-card--ecosystem{
     min-height:clamp(230px, 16vw, 305px);
     padding:clamp(26px, 2.4vw, 50px) clamp(20px, 1.7vw, 36px) clamp(30px, 2.8vw, 58px);
   }
@@ -2710,7 +2725,7 @@ body > main{
   z-index:1;
   padding-left:var(--rule-inset);
 }
-.bb-legal .bb-section__title{ max-width:calc(35 * var(--lede-fs)); }
+.bb-section__title--legal{ max-width:calc(35 * var(--lede-fs)); }
 
 .bb-legal__list{ margin:var(--gap-title-text) 0 0; }
 .bb-legal__list > div{

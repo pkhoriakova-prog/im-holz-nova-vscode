@@ -218,7 +218,7 @@
         var img = b.querySelector('img');
         var figure = b.closest('figure');
         var note = figure && figure.querySelector('figcaption');
-        var projectTitle = b.closest('.bb-project') && b.closest('.bb-project').querySelector('.bb-project__title');
+        var projectTitle = b.closest('.bb-project') && b.closest('.bb-project').querySelector('.bb-section__title--project');
         var stripEvent = note && note.querySelector('.bb-filmstrip__caption-event');
         var stripPlace = note && note.querySelector('.bb-filmstrip__caption-place');
         return {
@@ -354,7 +354,7 @@
   var track = document.querySelector('.bb-ecosystem__track');
   var stage = document.querySelector('.bb-ecosystem__stage');
   if (!track || !stage) return;
-  var cards = Array.prototype.slice.call(stage.querySelectorAll('.bb-eco-card'));
+  var cards = Array.prototype.slice.call(stage.querySelectorAll('.bb-card--ecosystem'));
   var hub = document.querySelector('.bb-eco-hub');
   var spokes = document.querySelector('.bb-ecosystem__spokes');
   if (!track || !stage || !cards.length || !hub) return;

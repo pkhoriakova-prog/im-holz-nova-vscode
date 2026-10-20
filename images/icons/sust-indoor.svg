@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 40 40" fill="none" stroke="#014335" stroke-width="1" stroke-linecap="square" stroke-linejoin="miter" vector-effect="non-scaling-stroke" xmlns="http://www.w3.org/2000/svg" width="40" height="40">
+  <path d="M5 18h16a4 4 0 10-4-4"/>
+  <path d="M5 24h24a4 4 0 11-4 4"/>
+  <path d="M5 31h10"/>
+  <path d="M35 5c-5 0-7 3-7 6 5 0 7-3 7-6z"/>
+  <path d="M35 5l-6 6"/>
+</svg>

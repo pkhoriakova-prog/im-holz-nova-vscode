@@ -720,7 +720,7 @@ body > main{
      glazing, the walk further in, the notes inside are read.  The two reading
      legs are the long ones: a note that is on screen for less than a screen of
      scrolling is a note nobody reads. */
-  height:calc(var(--stage-h) + 24vh + 70vh + 88vh + 44vh + 70vh);
+  height:calc(var(--stage-h) + 15vh + 45vh + 56vh + 28vh + 46vh);
 }
 .bb-solutions__stage{
   position:sticky;
@@ -2761,4 +2761,127 @@ body > main{
 @media (max-width:700px){
   .bb-legal__list > div{ grid-template-columns:1fr; row-gap:6px; }
   .bb-legal__list dt{ padding-right:0; }
+}
+
+
+
+/* =========================================================================
+   SUSTAINABILITY PAGE
+   Built from the sheet's own parts: the hero of the home page, the running
+   head on the margin with text and lists set in the two right-hand columns,
+   one tinted band for the nine solutions and the green band of Our Projects
+   for the closing section.
+   ========================================================================= */
+
+/* the hero drawing is line art on a transparent ground: it needs paper */
+.bb-hero__figure--drawing .bb-hero__image{
+  background:
+    repeating-linear-gradient(135deg,
+      rgba(18,18,18,.016) 0 1px,
+      transparent 1px 11px),
+    var(--paper-warm);
+}
+
+/* --- the frame shared by the sections below: running head on the margin,
+       heading on the first rule, everything else in the two right columns --- */
+.bb-sust__intro{ position:relative; }
+.bb-sust__intro .bb-section__label{ position:absolute; left:0; top:0; }
+.bb-sust__head,
+.bb-sust__list{ margin-left:calc(33.3333% + var(--rule-inset)); }
+.bb-section__title--sust{ max-width:19em; }
+/* "to" opens the second line: the width is set so the first line ends before it */
+.bb-section__title--expertise{ max-width:14.2em; }
+.bb-section__title--sdg{ max-width:11.8em; }
+.bb-sust__list{
+  list-style:none;
+  padding:0;
+  margin-top:var(--gap-block-media);
+}
+@media (max-width:1150px){
+  .bb-sust__intro .bb-section__label{ position:static; display:block; margin-bottom:var(--gap-label-title); }
+  .bb-sust__head,
+  .bb-sust__list{ margin-left:0; }
+}
+
+/* --- Our Approach: four cards across the full width under the heading ------ */
+.bb-principles{
+  list-style:none;
+  margin:var(--gap-block-media) 0 0;
+  padding:0;
+  display:grid;
+  grid-template-columns:repeat(4, 1fr);
+  gap:clamp(14px, 1.2vw, 26px);
+}
+.bb-approach{ position:relative; }
+.bb-approach::before{ content:none; }
+.bb-approach .bb-shell{ position:relative; z-index:1; }
+.bb-principles .bb-card--audience{ min-height:clamp(270px, 18vw, 350px); }
+.bb-principles .bb-section__title--card{ margin-top:clamp(28px, 3vw, 64px); }
+@media (max-width:1150px){
+  .bb-principles{ grid-template-columns:repeat(2, 1fr); }
+  .bb-principles .bb-card--audience{ min-height:0; }
+  .bb-principles .bb-section__title--card{ margin-top:clamp(28px, 4vw, 48px); }
+}
+@media (max-width:640px){
+  .bb-principles{ grid-template-columns:1fr; }
+}
+
+/* --- Eco Solutions: the running head is held on the margin while the heading
+       and the nine cards scroll past in the two right columns ------------- */
+.bb-ecosol{ position:relative; }
+.bb-ecosol::before{ content:none; }
+.bb-ecosol .bb-shell{ position:relative; z-index:1; }
+.bb-ecosol__layout{
+  display:grid;
+  grid-template-columns:1fr 2fr;
+  align-items:start;
+}
+.bb-ecosol__label{
+  position:sticky;
+  top:calc(var(--header-h) + var(--anchor-gap));
+}
+.bb-ecosol__body{ padding-left:var(--rule-inset); }
+.bb-ecosol__grid{
+  margin:var(--gap-block-media) 0 0;
+  grid-template-columns:repeat(2, 1fr);
+}
+.bb-ecosol .bb-card--audience{ min-height:clamp(300px, 21vw, 400px); }
+.bb-ecosol .bb-section__title--card{ margin-top:clamp(28px, 3vw, 64px); }
+.bb-ecosol .bb-copy--card{ margin-bottom:0; max-width:26em; }
+.bb-ecosol .bb-link-underline{ margin-top:var(--gap-text-link); }
+@media (max-width:1150px){
+  .bb-ecosol__layout{ grid-template-columns:1fr; row-gap:var(--gap-label-title); }
+  .bb-ecosol__label{ position:static; }
+  .bb-ecosol__body{ padding-left:0; }
+  .bb-ecosol .bb-card--audience{ min-height:0; }
+  .bb-ecosol .bb-section__title--card{ margin-top:clamp(28px, 4vw, 48px); }
+}
+@media (max-width:640px){
+  .bb-ecosol__grid{ grid-template-columns:1fr; }
+}
+
+/* --- Austrian Expertise & Certifications: ruled rows on the tinted band ---- */
+.bb-expertise{ position:relative; overflow:hidden; }
+.bb-expertise::before{ content:none; }
+.bb-expertise .bb-shell{ position:relative; z-index:1; }
+.bb-expertise__row{
+  display:grid;
+  grid-template-columns:clamp(110px, 11vw, 230px) 1fr;
+  column-gap:clamp(18px, 2vw, 44px);
+  padding:clamp(18px, 1.6vw, 34px) 0;
+  border-top:1px solid var(--hairline);
+}
+.bb-expertise__code{
+  margin:0;
+  color:var(--green);
+  font-size:clamp(10px, .62vw, 13px);
+  font-weight:600;
+  letter-spacing:.12em;
+  line-height:1.6;
+  text-transform:uppercase;
+}
+.bb-expertise__row .bb-section__title--card{ margin:0; }
+.bb-expertise__row .bb-copy--card{ max-width:34em; }
+@media (max-width:640px){
+  .bb-expertise__row{ grid-template-columns:1fr; row-gap:10px; }
 }

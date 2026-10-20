@@ -77,13 +77,13 @@
   var DOOR_U = 0.600, DOOR_V = 0.630;
 
   var OUT_SETTLE = 0.055;   // the frame comes in a touch large and settles
-  var SETTLED = 0.06;
-  var NOTES_OUT = 0.081;    // the notes outside arrive, and are read until GO
-  var GO = 0.318;           // the drive at the glazing begins
-  var DISS0 = 0.502;        // the inside starts coming up
-  var DISS1 = 0.615;        // and has taken the frame
-  var DEEP = 0.764;         // the walk further in ends here
-  var NOTES_IN = 0.775;     // the notes inside arrive, and are read to the end
+  var SETTLED = 0.052;
+  var NOTES_OUT = 0.045;    // the notes outside arrive, and are read until GO
+  var GO = 0.409;           // the drive at the glazing begins
+  var DISS0 = 0.570;        // the inside starts coming up
+  var DISS1 = 0.668;        // and has taken the frame
+  var DEEP = 0.795;         // the walk further in ends here
+  var NOTES_IN = 0.805;     // the notes inside arrive, and are read to the end
   var PUSH = 2.05;          // how far into the glazing the outside is driven
   var IN_FROM = 0.94;       // the inside comes up a little wide
   var IN_TO = 1.10;         // and carries on past its true size, still going in
@@ -602,4 +602,59 @@
     });
   }, { threshold: 0.6 });
   nodes.forEach(function (node) { io.observe(node); });
+})();
+
+/* Eco Solutions: one of the nine is open at a time. On a wide screen it is read
+   in the panel beside the list; on a narrow one it opens under its row. */
+(function () {
+  var root = document.querySelector('.bb-sols');
+  if (!root) return;
+  var rows = Array.prototype.slice.call(root.querySelectorAll('.bb-sol'));
+  var panel = root.querySelector('.bb-sols__panel');
+  if (!rows.length || !panel) return;
+  var pIcon = panel.querySelector('.bb-sols__panel-icon');
+  var pTitle = panel.querySelector('.bb-sols__panel-title');
+  var pText = panel.querySelector('.bb-sols__panel-text');
+  var wide = window.matchMedia('(min-width: 1151px)');
+  var current = null;
+
+  function fillPanel(row) {
+    pIcon.src = 'images/icons/' + row.getAttribute('data-icon') + '.svg';
+    pTitle.textContent = row.querySelector('.bb-sol__name').textContent;
+    pText.innerHTML = row.querySelector('.bb-sol__detail').innerHTML;
+  }
+
+  function select(row, swap) {
+    if (row === current) return;
+    current = row;
+    rows.forEach(function (r) {
+      var on = r === row;
+      r.classList.toggle('is-active', on);
+      r.querySelector('.bb-sol__btn').setAttribute('aria-expanded', String(on));
+    });
+    if (swap && wide.matches) {
+      panel.classList.add('is-swapping');
+      window.setTimeout(function () { fillPanel(row); panel.classList.remove('is-swapping'); }, 180);
+    } else {
+      fillPanel(row);
+    }
+  }
+
+  rows.forEach(function (row) {
+    var btn = row.querySelector('.bb-sol__btn');
+    btn.addEventListener('click', function () {
+      if (!wide.matches && row === current) {   // a narrow screen can close its row
+        row.classList.remove('is-active');
+        btn.setAttribute('aria-expanded', 'false');
+        current = null;
+        return;
+      }
+      select(row, true);
+    });
+    btn.addEventListener('mouseenter', function () { if (wide.matches) select(row, true); });
+  });
+
+  panel.hidden = false;
+  root.classList.add('bb-sols--live');
+  select(rows[0], false);
 })();

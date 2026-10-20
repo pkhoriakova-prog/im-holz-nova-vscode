@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 40 40" fill="none" stroke="#014335" stroke-width="1" stroke-linecap="square" stroke-linejoin="miter" vector-effect="non-scaling-stroke" xmlns="http://www.w3.org/2000/svg" width="40" height="40">
+  <g transform="translate(20 20) scale(.86) translate(-20 -20)">
+  <path d="M6 6h28v28H6z"/>
+  <path d="M6 17h28M6 28h28M16 6v11M26 17v11M16 28v6"/>
+  </g>
+</svg>

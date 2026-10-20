@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 40 40" fill="none" stroke="#014335" stroke-width="1" stroke-linecap="square" stroke-linejoin="miter" vector-effect="non-scaling-stroke" xmlns="http://www.w3.org/2000/svg" width="40" height="40">
+  <path d="M5 24h30"/>
+  <path d="M8 24v11h24V24"/>
+  <path d="M12 24v-10M12 19l-4-4M12 17l4-4M20 24v-13M20 18l-4-4M20 16l4-4M28 24v-10M28 19l-4-4M28 17l4-4"/>
+</svg>

@@ -720,7 +720,7 @@ body > main{
      glazing, the walk further in, the notes inside are read.  The two reading
      legs are the long ones: a note that is on screen for less than a screen of
      scrolling is a note nobody reads. */
-  height:calc(var(--stage-h) + 15vh + 45vh + 56vh + 28vh + 46vh);
+  height:calc(var(--stage-h) + 15vh + 75vh + 56vh + 28vh + 46vh);
 }
 .bb-solutions__stage{
   position:sticky;
@@ -2195,6 +2195,8 @@ body > main{
   line-height:1.26;
   letter-spacing:-.008em;
 }
+/* "and" always opens a new line in a goal name — set by the markup, not by where the width happens to fall */
+.bb-eco-card__and{ display:block; }
 .bb-copy--ecosystem{
   margin:var(--gap-label-title) 0 0;
   max-width:30em;
@@ -2841,33 +2843,138 @@ body > main{
   top:calc(var(--header-h) + var(--anchor-gap));
 }
 .bb-ecosol__body{ padding-left:var(--rule-inset); }
-.bb-ecosol__grid{
-  margin:var(--gap-block-media) 0 0;
-  grid-template-columns:repeat(2, 1fr);
+.bb-sols{
+  --sol-no:clamp(30px, 2.4vw, 46px);
+  display:grid;
+  grid-template-columns:minmax(0, 1fr) minmax(0, 1fr);
+  column-gap:clamp(24px, 3vw, 64px);
+  align-items:start;
+  margin-top:var(--gap-block-media);
 }
-.bb-ecosol .bb-card--audience{ min-height:clamp(300px, 21vw, 400px); }
-.bb-ecosol .bb-section__title--card{ margin-top:clamp(28px, 3vw, 64px); }
-.bb-ecosol .bb-copy--card{ margin-bottom:0; max-width:26em; }
-.bb-ecosol .bb-link-underline{ margin-top:var(--gap-text-link); }
+.bb-sols__list{
+  margin:0;
+  padding:0;
+  list-style:none;
+  border-top:1px solid var(--hairline);
+}
+.bb-sol{ border-bottom:1px solid var(--hairline-soft); }
+.bb-sol__title{ margin:0; font:inherit; }
+.bb-sol__btn{
+  display:grid;
+  grid-template-columns:var(--sol-no) 1fr auto;
+  align-items:center;
+  column-gap:clamp(14px, 1.4vw, 28px);
+  width:100%;
+  padding:clamp(16px, 1.45vw, 30px) 0;
+  border:0;
+  background:none;
+  color:var(--ink);
+  font:inherit;
+  font-size:clamp(17px, 1.15vw, 24px);
+  font-weight:600;
+  letter-spacing:-.008em;
+  text-align:left;
+  cursor:default;
+}
+.bb-sol__no{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:var(--sol-no);
+  height:var(--sol-no);
+  border:1px solid var(--hairline);
+  border-radius:50%;
+  color:var(--green);
+  font-size:clamp(10px, .6vw, 13px);
+  font-weight:600;
+  letter-spacing:.1em;
+}
+.bb-sol__arrow{
+  width:9px;
+  height:9px;
+  border-top:1.5px solid var(--green);
+  border-right:1.5px solid var(--green);
+  transform:rotate(45deg);
+  opacity:0;
+  transition:opacity .3s ease, transform .3s ease;
+}
+.bb-sol__detail{ padding:0 0 clamp(20px, 2vw, 40px) calc(var(--sol-no) + clamp(14px, 1.4vw, 28px)); }
+.bb-sol__detail .bb-copy--card{ margin:0; max-width:30em; }
+.bb-sol__detail .bb-link-underline{ margin-top:var(--gap-text-link); }
+
+.bb-sols__panel{
+  display:none;
+}
+
+/* script on: the list becomes a chooser */
+.bb-sols--live .bb-sol__btn{ cursor:pointer; }
+.bb-sols--live .bb-sol__detail{ display:none; }
+.bb-sols--live .bb-sol__no,
+.bb-sols--live .bb-sol__name{ transition:background-color .3s ease, border-color .3s ease, color .3s ease; }
+.bb-sols--live .bb-sol:not(.is-active) .bb-sol__btn{ color:var(--ink-muted); }
+.bb-sols--live .bb-sol__btn:hover .bb-sol__arrow,
+.bb-sols--live .bb-sol__btn:focus-visible .bb-sol__arrow{ opacity:.6; }
+.bb-sols--live .bb-sol.is-active .bb-sol__no{
+  background:var(--green);
+  border-color:var(--green);
+  color:var(--paper);
+}
+.bb-sols--live .bb-sol.is-active .bb-sol__arrow{ opacity:1; }
+
+/* wide: the choice is read in the green panel, the one solid field */
+@media (min-width:1151px){
+  .bb-sols--live .bb-sols__panel{
+    display:block;
+    position:sticky;
+    top:calc(var(--header-h) + var(--rule-inset));
+    min-height:clamp(300px, 22vw, 440px);
+    padding:clamp(28px, 2.6vw, 56px) clamp(24px, 2.2vw, 48px);
+    background:var(--green);
+    color:var(--paper);
+    transition:opacity .25s ease;
+  }
+  .bb-sols__panel.is-swapping{ opacity:0; }
+  .bb-sols__panel-icon{
+    display:block;
+    width:clamp(44px, 3.4vw, 64px);
+    height:auto;
+    filter:brightness(0) invert(1);   /* the line icons are green; here drawn in white */
+  }
+  .bb-sols__panel-title{
+    margin:clamp(40px, 5vw, 110px) 0 0;
+    font-size:clamp(21px, 1.5vw, 32px);
+    font-weight:600;
+    letter-spacing:-.012em;
+  }
+  .bb-sols__panel-text .bb-copy{
+    margin:var(--gap-label-title) 0 0;
+    color:rgba(255,255,255,.8);
+    max-width:28em;
+  }
+  .bb-sols__panel-text .bb-link-underline{ margin-top:var(--gap-text-link); color:var(--paper); }
+}
+
+/* narrower: one column, the chosen row opens in place */
 @media (max-width:1150px){
   .bb-ecosol__layout{ grid-template-columns:1fr; row-gap:var(--gap-label-title); }
   .bb-ecosol__label{ position:static; }
   .bb-ecosol__body{ padding-left:0; }
-  .bb-ecosol .bb-card--audience{ min-height:0; }
-  .bb-ecosol .bb-section__title--card{ margin-top:clamp(28px, 4vw, 48px); }
-}
-@media (max-width:640px){
-  .bb-ecosol__grid{ grid-template-columns:1fr; }
+  .bb-sols{ grid-template-columns:1fr; }
+  .bb-sols--live .bb-sol.is-active .bb-sol__detail{ display:block; }
+  .bb-sols--live .bb-sol.is-active .bb-sol__arrow{ transform:rotate(135deg); }
+  .bb-sols--live .bb-sol__arrow{ opacity:.6; }
 }
 
 /* --- Austrian Expertise & Certifications: ruled rows on the tinted band ---- */
 .bb-expertise{ position:relative; overflow:hidden; }
 .bb-expertise::before{ content:none; }
 .bb-expertise .bb-shell{ position:relative; z-index:1; }
+/* Standards: ruled rows in the two right columns, the name of each framework as a small running label. */
 .bb-expertise__row{
   display:grid;
-  grid-template-columns:clamp(110px, 11vw, 230px) 1fr;
-  column-gap:clamp(18px, 2vw, 44px);
+  /* the titles start where the second figure of In Numbers above starts, so the two
+     sections share one line: a quarter of the list plus its inset is a sixth of the sheet */
+  grid-template-columns:calc((100% + var(--rule-inset)) / 4) 1fr;
   padding:clamp(18px, 1.6vw, 34px) 0;
   border-top:1px solid var(--hairline);
 }
@@ -2882,6 +2989,34 @@ body > main{
 }
 .bb-expertise__row .bb-section__title--card{ margin:0; }
 .bb-expertise__row .bb-copy--card{ max-width:34em; }
+@media (max-width:1150px){
+  .bb-expertise__row{ grid-template-columns:33.3333% 1fr; }
+}
 @media (max-width:640px){
   .bb-expertise__row{ grid-template-columns:1fr; row-gap:10px; }
+}
+/* the figures stand in one row: equal captions, the source pinned to the foot of each */
+.bb-numbers__figures .bb-fact{ display:flex; flex-direction:column; }
+.bb-numbers__figures .bb-fact__source{ margin-top:auto; padding-top:clamp(8px, .8vw, 16px); align-self:flex-start; }
+/* --- In Numbers with published figures: the source sits under each caption ---- */
+.bb-fact__source{
+  display:inline-block;
+  margin-top:clamp(8px, .8vw, 16px);
+  color:var(--ink-muted);
+  font-size:clamp(11px, .65vw, 14px);
+  line-height:1.4;
+  text-decoration:underline;
+  text-decoration-color:var(--hairline);
+  text-underline-offset:3px;
+}
+.bb-fact__pre{
+  margin-right:.45em;
+  color:var(--ink-muted);
+  font-size:.3em;
+  font-weight:400;
+  letter-spacing:0;
+}
+.bb-fact__source:hover{ color:var(--green); text-decoration-color:var(--green); }
+@media (max-width:640px){
+  .bb-fact__source{ font-size:11px; }
 }

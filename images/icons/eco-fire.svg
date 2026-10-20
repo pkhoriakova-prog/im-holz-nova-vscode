@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 40 40" fill="none" stroke="#014335" stroke-width="1" stroke-linecap="square" stroke-linejoin="miter" vector-effect="non-scaling-stroke" xmlns="http://www.w3.org/2000/svg" width="40" height="40">
+  <g transform="translate(20 20) scale(1.1) translate(-20 -19)">
+  <path d="M20 5c1 6 9 9 9 19a9 9 0 01-18 0c0-4 2-6 4-8 0 3 1 4 3 4 0-6-2-9 2-15z"/>
+  <path d="M16 29a4 4 0 008 0c0-3-4-4-4-8-2 2-4 4-4 8z"/>
+  </g>
+</svg>

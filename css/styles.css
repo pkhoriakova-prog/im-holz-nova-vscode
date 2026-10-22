@@ -396,14 +396,18 @@ body > main{
   text-decoration:none;
   transition:color .25s ease;
 }
-/* the rule under the words, drawn solid */
+/* Shared underline; the project variant compensates for its card placement. */
 .bb-link-underline::before{
   content:"";
   position:absolute;
-  left:0; right:0; bottom:0;
+  left:0;
+  right:0;
+  bottom:0;
   height:1px;
   background:currentColor;
 }
+.bb-link-underline--project::before{ height:1.5px; }
+
 /* The rule under the words stays put — there is already a line here, and it
    does not need to perform. The words do: on hover the label rolls up out of
    sight and its own copy rolls in from below. */
@@ -1936,7 +1940,8 @@ body > main{
 }
 .bb-vision__peek{ display:none; }
 @media (min-width:700px) and (prefers-reduced-motion:no-preference){
-  .bb-vision.bb-vision--held + .bb-pillars{ visibility:hidden; }
+  .bb-vision.bb-vision--held + .bb-pillars,
+  .bb-vision.bb-vision--held + .bb-projects{ visibility:hidden; }
 }
 
 /* On tablets, keep both statements in the same place and give the drawing
@@ -2786,6 +2791,11 @@ body > main{
 
 /* --- the frame shared by the sections below: running head on the margin,
        heading on the first rule, everything else in the two right columns --- */
+.bb-solutions--announcement > .bb-shell,
+.bb-sust > .bb-shell,
+.bb-ecosol > .bb-shell{ position:relative; z-index:1; }
+.bb-solutions--announcement .bb-solutions__track::after{ background:transparent; }
+
 .bb-sust__intro{ position:relative; }
 .bb-sust__intro .bb-section__label{ position:absolute; left:0; top:0; }
 .bb-sust__head,
@@ -2829,7 +2839,7 @@ body > main{
 }
 
 /* --- Eco Solutions: the running head is held on the margin while the heading
-       and the nine cards scroll past in the two right columns ------------- */
+       and the solution rows scroll past in the two right columns ------------- */
 .bb-ecosol{ position:relative; }
 .bb-ecosol::before{ content:none; }
 .bb-ecosol .bb-shell{ position:relative; z-index:1; }
@@ -2911,15 +2921,15 @@ body > main{
 .bb-sols--live .bb-sol__detail{ display:none; }
 .bb-sols--live .bb-sol__no,
 .bb-sols--live .bb-sol__name{ transition:background-color .3s ease, border-color .3s ease, color .3s ease; }
-.bb-sols--live .bb-sol:not(.is-active) .bb-sol__btn{ color:var(--ink-muted); }
+.bb-sols--live .bb-sol:not(.bb-sol--active) .bb-sol__btn{ color:var(--ink-muted); }
 .bb-sols--live .bb-sol__btn:hover .bb-sol__arrow,
 .bb-sols--live .bb-sol__btn:focus-visible .bb-sol__arrow{ opacity:.6; }
-.bb-sols--live .bb-sol.is-active .bb-sol__no{
+.bb-sols--live .bb-sol--active .bb-sol__no{
   background:var(--green);
   border-color:var(--green);
   color:var(--paper);
 }
-.bb-sols--live .bb-sol.is-active .bb-sol__arrow{ opacity:1; }
+.bb-sols--live .bb-sol--active .bb-sol__arrow{ opacity:1; }
 
 /* wide: the choice is read in the green panel, the one solid field */
 @media (min-width:1151px){
@@ -2933,7 +2943,7 @@ body > main{
     color:var(--paper);
     transition:opacity .25s ease;
   }
-  .bb-sols__panel.is-swapping{ opacity:0; }
+  .bb-sols__panel--swapping{ opacity:0; }
   .bb-sols__panel-icon{
     display:block;
     width:clamp(44px, 3.4vw, 64px);
@@ -2960,8 +2970,8 @@ body > main{
   .bb-ecosol__label{ position:static; }
   .bb-ecosol__body{ padding-left:0; }
   .bb-sols{ grid-template-columns:1fr; }
-  .bb-sols--live .bb-sol.is-active .bb-sol__detail{ display:block; }
-  .bb-sols--live .bb-sol.is-active .bb-sol__arrow{ transform:rotate(135deg); }
+  .bb-sols--live .bb-sol--active .bb-sol__detail{ display:block; }
+  .bb-sols--live .bb-sol--active .bb-sol__arrow{ transform:rotate(135deg); }
   .bb-sols--live .bb-sol__arrow{ opacity:.6; }
 }
 
@@ -3020,3 +3030,174 @@ body > main{
 @media (max-width:640px){
   .bb-fact__source{ font-size:11px; }
 }
+
+/* rows that cite several sources: the links sit apart */
+.bb-expertise__row .bb-fact__source{ margin-right:clamp(14px, 1.4vw, 28px); }
+
+/* Definition stands on the tinted ground: the stage sits above it */
+.bb-vision__stage{ z-index:1; }
+@media (max-width:699px), (prefers-reduced-motion:reduce){
+  .bb-vision__stage{ position:relative; }
+}
+
+/* The stage lines (Vision & Mission on About, How It's Built here): every rule is a
+   plain 1px box with a flat colour, so the browser snaps it to the pixel grid and all of
+   them read the same. The green progress grows by width, not by a scaled or faded layer
+   (those are rasterised between pixel rows, which made some rules look thicker). Each row
+   is a whole number of pixels high, so no rule lands on a half pixel. */
+.bb-stage{
+  opacity:1;
+  align-items:center;
+  box-sizing:border-box;
+  height:round(up, calc(var(--lede-fs) * 2.55), 1px);
+  padding:0;
+  color:var(--ink);
+  color:color-mix(in srgb, var(--ink) calc(35% + 65% * var(--si, 1)), transparent);
+}
+.bb-stage__no{ opacity:1; color:color-mix(in srgb, var(--ink-muted) calc(35% + 65% * var(--si, 1)), transparent); }
+.bb-stage::before,.bb-stage::after{ height:0; background:none; transform:none; }.bb-stage::before{ border-top:1px solid var(--hairline-soft); }.bb-stage::after{  content:"";  right:auto;  width:calc(var(--si, 1) * 100%);  border-top:1px solid var(--green);}
+.bb-stages{ margin-top:round(up, var(--gap-block-media), 1px); }
+
+/* Benefits: the sources of a panel, in the same small underlined style as elsewhere */
+.bb-sol__detail .bb-fact__source{ margin-right:clamp(12px, 1.2vw, 24px); }
+.bb-sols__panel-text .bb-fact__source{
+  color:rgba(255,255,255,.85);
+  text-decoration-color:rgba(255,255,255,.4);
+}
+.bb-sols__panel-text .bb-fact__source:hover{ color:var(--paper); text-decoration-color:var(--paper); }
+
+/* --- Comparison: the pills of For Whom choose the pair. Every card has one anatomy:
+       the criterion, the verdict, the two materials in two rows, the source. ---------- */
+.bb-vsc-sec .bb-section__title--audiences{
+  max-width:22em;
+  text-wrap:balance;
+  font-size:clamp(20px, 1.75vw, 32px);
+  line-height:1.3;
+  letter-spacing:-.015em;
+}
+.bb-vsd .bb-card{
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  min-height:clamp(280px, 20vw, 340px);
+  padding:clamp(20px, 1.8vw, 34px);
+}
+.bb-vsd__name{
+  margin:0;
+  color:var(--green);
+  font-size:clamp(10px, .62vw, 13px);
+  font-weight:600;
+  letter-spacing:.12em;
+  line-height:1.6;
+  text-transform:uppercase;
+}
+.bb-vsd__take{
+  margin:clamp(16px, 1.6vw, 30px) 0 0;
+  min-height:2.5em;
+  font-size:clamp(18px, 1.55vw, 28px);
+  font-weight:500;
+  line-height:1.2;
+  letter-spacing:-.02em;
+}
+.bb-vsd__rows{
+  align-self:stretch;
+  margin-top:clamp(14px, 1.4vw, 26px);
+  border-top:1px solid var(--hairline);
+}
+.bb-vsd__row{
+  display:grid;
+  grid-template-columns:4.6em minmax(0, 1fr) auto;
+  align-items:center;
+  column-gap:clamp(8px, .8vw, 14px);
+  padding:clamp(9px, .85vw, 15px) 0;
+  border-bottom:1px solid var(--hairline-soft);
+}
+.bb-vsd__who{
+  color:var(--ink-muted);
+  font-size:clamp(11px, .72vw, 13px);
+  font-weight:600;
+}
+.bb-vsd__row--timber .bb-vsd__who{ color:var(--green); }
+.bb-vsd__track{ height:8px; background:var(--hairline-soft); }
+.bb-vsd__track i{
+  display:block;
+  width:var(--w);
+  height:100%;
+  background:rgba(18,18,18,.32);
+}
+.bb-vsd__row--timber .bb-vsd__track i{ background:var(--green); }
+.bb-vsd__v{
+  min-width:2.8em;
+  text-align:right;
+  font-size:clamp(14px, 1.1vw, 20px);
+  font-weight:600;
+  font-variant-numeric:tabular-nums;
+}
+.bb-vsd__row--timber .bb-vsd__v{ color:var(--green); }
+.bb-vsd__row--text{ grid-template-columns:4.6em minmax(0, 1fr); }
+.bb-vsd__w{
+  font-size:clamp(13px, .95vw, 17px);
+  font-weight:500;
+  line-height:1.25;
+}
+.bb-vsd__w small{
+  display:block;
+  margin-top:2px;
+  color:var(--ink-muted);
+  font-size:clamp(11px, .7vw, 13px);
+  font-weight:400;
+  line-height:1.35;
+}
+.bb-vsd__row--timber .bb-vsd__w{ color:var(--green); }
+.bb-vsd__unit{
+  margin:clamp(8px, .8vw, 14px) 0 0;
+  color:var(--ink-muted);
+  font-size:clamp(11px, .7vw, 13px);
+  line-height:1.4;
+}
+.bb-vsd .bb-fact__source{ margin-top:auto; padding-top:clamp(10px, 1vw, 18px); }
+@media (max-width:1150px){
+  .bb-vsd .bb-card{ min-height:0; }
+}
+
+/* the section stands on the green ground of Our Projects */
+.bb-vsc-sec--green{
+  background:
+    repeating-linear-gradient(135deg,
+      rgba(255,255,255,.06) 0 1px,
+      transparent 1px 11px),
+    var(--green);
+  color:var(--paper);
+}
+.bb-vsc-sec--green .bb-section__label{ color:rgba(255,255,255,.7); }
+.bb-vsc-sec--green .bb-pill{
+  border-color:rgba(255,255,255,.4);
+  color:var(--paper);
+}
+.bb-vsc-sec--green .bb-pill:hover,
+.bb-vsc-sec--green .bb-pill[aria-selected="true"]{
+  border-color:var(--paper);
+  background:var(--paper);
+  color:var(--green);
+}
+.bb-vsc-sec--green .bb-card{ color:var(--ink); border:0; }
+
+/* Solution page: every heading sets in one or two lines on a desktop, balanced */
+.bb-section__title--projects,.bb-section__title--sust{  max-width:19em;  text-wrap:balance;}
+
+/* the verdict of every comparison card sets in two balanced lines */
+.bb-vsd__take{
+  max-width:10.5em;
+  text-wrap:balance;
+}
+
+/* In Numbers on the green ground of Our Projects */
+.bb-numbers--green .bb-numbers__intro .bb-section__label{ color:rgba(255,255,255,.7); }
+.bb-numbers--green .bb-section__title--numbers{ color:var(--paper); }
+.bb-numbers--green .bb-fact__value{ color:var(--paper); }
+.bb-numbers--green .bb-fact__label{ color:rgba(255,255,255,.8); }
+.bb-numbers--green .bb-fact__source{
+  color:rgba(255,255,255,.85);
+  text-decoration-color:rgba(255,255,255,.4);
+}
+.bb-numbers--green .bb-fact__source:hover{ color:var(--paper); text-decoration-color:var(--paper); }

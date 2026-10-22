@@ -604,7 +604,7 @@
   nodes.forEach(function (node) { io.observe(node); });
 })();
 
-/* Eco Solutions: one of the nine is open at a time. On a wide screen it is read
+/* Eco Solutions: one solution is open at a time. On a wide screen it is read
    in the panel beside the list; on a narrow one it opens under its row. */
 (function () {
   var root = document.querySelector('.bb-sols');
@@ -629,12 +629,12 @@
     current = row;
     rows.forEach(function (r) {
       var on = r === row;
-      r.classList.toggle('is-active', on);
+      r.classList.toggle('bb-sol--active', on);
       r.querySelector('.bb-sol__btn').setAttribute('aria-expanded', String(on));
     });
     if (swap && wide.matches) {
-      panel.classList.add('is-swapping');
-      window.setTimeout(function () { fillPanel(row); panel.classList.remove('is-swapping'); }, 180);
+      panel.classList.add('bb-sols__panel--swapping');
+      window.setTimeout(function () { fillPanel(row); panel.classList.remove('bb-sols__panel--swapping'); }, 180);
     } else {
       fillPanel(row);
     }
@@ -644,7 +644,7 @@
     var btn = row.querySelector('.bb-sol__btn');
     btn.addEventListener('click', function () {
       if (!wide.matches && row === current) {   // a narrow screen can close its row
-        row.classList.remove('is-active');
+        row.classList.remove('bb-sol--active');
         btn.setAttribute('aria-expanded', 'false');
         current = null;
         return;

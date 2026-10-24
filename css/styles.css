@@ -3244,7 +3244,10 @@ body > main{
 /* an insight page: a hero like every other page's, then the frame every section
    uses (the kind of post on the margin, the heading on the first rule, the words
    and the photographs in the two thirds beside it) */
-.bb-article__main{ padding-top:clamp(20px, 2vw, 44px); }
+.bb-article__main{
+  padding-top:clamp(20px, 2vw, 44px);
+  background:var(--paper);
+}
 .bb-article__main::before{ content:none; }
 /* the facts of the post, in a ruled row under the words */
 .bb-article__facts{

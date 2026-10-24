@@ -9,6 +9,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/styles.css">
 <script src="js/main.js" defer></script>
+<script src="js/insight-video.js" defer></script>
 </head>
 <body>
 
@@ -30,8 +31,8 @@
       <a href="index.html#ecosystem">The IM HOLZ Model</a>
       <a href="sustainability.html">Sustainability</a>
       <a href="about.html">About</a>
-      <a href="index.html#the-shift">Insights</a>
-      <a href="index.html#contact">Contact</a>
+      <a href="insights.html">Insights</a>
+      <a href="contact.html">Contact</a>
     </nav>
 
     <p class="bb-site-lang">
@@ -50,9 +51,164 @@
 </header>
 
 <main id="main">
-  <header class="bb-shell bb-page-intro">
-    <h1 class="bb-section__title">About IM HOLZ Nova</h1>
-  </header>
+  <!-- ============ HERO — layout after the home page ============ -->
+  <section class="bb-hero" id="top" aria-labelledby="hero-heading">
+    <div class="bb-shell">
+
+      <div class="bb-hero__head">
+
+        <h1 class="bb-section__title bb-section__title--hero" id="hero-heading"><span class="bb-hero__title-rise"><span class="bb-hero__title-line">A&nbsp;Vienna-based integrator</span> <span class="bb-hero__title-line">of&nbsp;sustainable infrastructure</span></span></h1>
+
+        <div class="bb-hero__aside">
+          <p class="bb-copy bb-copy--hero">
+            From&nbsp;concept and&nbsp;funding through engineering, supply and&nbsp;delivery, we&nbsp;bring certified European timber, Austrian engineering and&nbsp;smart technologies together with&nbsp;local partners for&nbsp;schools, healthcare, housing and&nbsp;public spaces.
+          </p>
+          <a class="bb-link-underline" href="#vision"><span class="bb-link-underline__label"><span class="bb-link-underline__roll" data-text="Our vision">Our&nbsp;vision</span></span><span class="bb-link-underline__mark" aria-hidden="true"></span></a>
+        </div>
+
+      </div>
+
+      <figure class="bb-hero__figure bb-hero__figure--drawing">
+        <img
+          class="bb-hero__image"
+          src="images/illustrations/modern-school-campus-v6.avif"
+          alt="Line drawing of&nbsp;a&nbsp;modern timber campus with&nbsp;a&nbsp;glazed atrium and&nbsp;planted courtyard"
+          width="1681" height="936" fetchpriority="high">
+        <figcaption class="bb-disclosure bb-disclosure--overlay">Concept visualisation</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ============ THE SHIFT ============ -->
+  <section class="bb-section bb-shift bb-shift--tint" id="the-shift" aria-labelledby="shift-heading">
+<div class="bb-pillars__ground" aria-hidden="true"><i></i><i></i><i></i></div>
+
+    <div class="bb-shell bb-shift__inner">
+
+      <h3 class="bb-section__label">The Shift</h3>
+
+
+      <div class="bb-shift__body">
+        <h4 class="bb-section__title bb-section__title--shift" id="shift-heading">From timber trade to integrated timber infrastructure</h4>
+        <p class="bb-copy bb-copy--section">
+          Wood has always been at the core of what we do — a renewable material that connects the built environment with nature. Building on two decades of experience in international timber markets, we have moved beyond supplying material to understanding what it can enable: better infrastructure that is resource-efficient, adaptable and designed to work with nature.
+        </p>
+      </div>
+
+    </div>
+
+      <!-- A running strip of our own work and people. The set is duplicated
+           at runtime so the loop is seamless without doubling the file. -->
+      <div class="bb-filmstrip" id="insights">
+        <ul class="bb-filmstrip__row">
+          <li class="bb-filmstrip__cell">
+            <figure class="bb-filmstrip__figure">
+              <button class="bb-filmstrip__open" type="button" data-photo="0" aria-label="Open photograph 1 of 13">
+                <img class="bb-filmstrip__image" src="images/photos/Build%27n%20Green%202026.avif" alt="BUILD&#x27;N GREEN 2026 — Circularity in Action — Vienna, Austria · 2026" loading="lazy">
+              </button>
+              <figcaption class="bb-disclosure bb-disclosure--overlay"><span class="bb-filmstrip__caption-event">BUILD&#x27;N GREEN 2026 — Circularity in Action</span><span class="bb-filmstrip__caption-place">Vienna, Austria · 2026</span></figcaption>
+            </figure>
+          </li>
+          <li class="bb-filmstrip__cell">
+            <figure class="bb-filmstrip__figure">
+              <button class="bb-filmstrip__open" type="button" data-photo="1" aria-label="Open photograph 2 of 13">
+                <img class="bb-filmstrip__image" src="images/photos/CEE%20Sustainable%20Finance%20Summit%20in%20Prague%202026.avif" alt="CEE Sustainable Finance Summit — Prague, Czech Republic · 2026" loading="lazy">
+              </button>
+              <figcaption class="bb-disclosure bb-disclosure--overlay"><span class="bb-filmstrip__caption-event">CEE Sustainable Finance Summit</span><span class="bb-filmstrip__caption-place">Prague, Czech Republic · 2026</span></figcaption>
+            </figure>
+          </li>
+          <li class="bb-filmstrip__cell">
+            <figure class="bb-filmstrip__figure">
+              <button class="bb-filmstrip__open" type="button" data-photo="2" aria-label="Open photograph 3 of 13">
+                <img class="bb-filmstrip__image" src="images/photos/CEE%20Sustainable%20Finance%20Summit%20in%20Prague2.avif" alt="CEE Sustainable Finance Summit — Prague, Czech Republic · 2026" loading="lazy">
+              </button>
+              <figcaption class="bb-disclosure bb-disclosure--overlay"><span class="bb-filmstrip__caption-event">CEE Sustainable Finance Summit</span><span class="bb-filmstrip__caption-place">Prague, Czech Republic · 2026</span></figcaption>
+            </figure>
+          </li>
+          <li class="bb-filmstrip__cell">
+            <figure class="bb-filmstrip__figure">
+              <button class="bb-filmstrip__open" type="button" data-photo="3" aria-label="Open photograph 4 of 13">
+                <img class="bb-filmstrip__image" src="images/photos/Eighth%20GEF%20Assembly%20Samarkand%202026%20%281%29%20%281%29.avif" alt="Eighth GEF Assembly — Samarkand, Uzbekistan · 2026" loading="lazy">
+              </button>
+              <figcaption class="bb-disclosure bb-disclosure--overlay"><span class="bb-filmstrip__caption-event">Eighth GEF Assembly</span><span class="bb-filmstrip__caption-place">Samarkand, Uzbekistan · 2026</span></figcaption>
+            </figure>
+          </li>
+          <li class="bb-filmstrip__cell">
+            <figure class="bb-filmstrip__figure">
+              <button class="bb-filmstrip__open" type="button" data-photo="4" aria-label="Open photograph 5 of 13">
+                <img class="bb-filmstrip__image" src="images/photos/Exporttag%202026%20-%20Austrian%20Federal%20Economic%20Chamber%20%28WKO%29%2C%20Vienna.avif" alt="Exporttag — Vienna, Austria · 2026" loading="lazy">
+              </button>
+              <figcaption class="bb-disclosure bb-disclosure--overlay"><span class="bb-filmstrip__caption-event">Exporttag</span><span class="bb-filmstrip__caption-place">Vienna, Austria · 2026</span></figcaption>
+            </figure>
+          </li>
+          <li class="bb-filmstrip__cell">
+            <figure class="bb-filmstrip__figure">
+              <button class="bb-filmstrip__open" type="button" data-photo="5" aria-label="Open photograph 6 of 13">
+                <img class="bb-filmstrip__image" src="images/photos/Exporttag%202026%20-%20Austrian%20Federal%20Economic%20Chamber%20%28WKO%29%2C%20Vienna2.avif" alt="Exporttag — Vienna, Austria · 2026" loading="lazy">
+              </button>
+              <figcaption class="bb-disclosure bb-disclosure--overlay"><span class="bb-filmstrip__caption-event">Exporttag</span><span class="bb-filmstrip__caption-place">Vienna, Austria · 2026</span></figcaption>
+            </figure>
+          </li>
+          <li class="bb-filmstrip__cell">
+            <figure class="bb-filmstrip__figure">
+              <button class="bb-filmstrip__open" type="button" data-photo="6" aria-label="Open photograph 7 of 13">
+                <img class="bb-filmstrip__image" src="images/photos/Monaco%20Smart%20%26%20Sustainable%20Marina%20Rendezvous_2026.avif" alt="Monaco Smart and Sustainable Marina Rendezvous — Monaco · 2026" loading="lazy">
+              </button>
+              <figcaption class="bb-disclosure bb-disclosure--overlay"><span class="bb-filmstrip__caption-event">Monaco Smart and Sustainable Marina Rendezvous</span><span class="bb-filmstrip__caption-place">Monaco · 2026</span></figcaption>
+            </figure>
+          </li>
+          <li class="bb-filmstrip__cell">
+            <figure class="bb-filmstrip__figure">
+              <button class="bb-filmstrip__open" type="button" data-photo="7" aria-label="Open photograph 8 of 13">
+                <img class="bb-filmstrip__image" src="images/photos/Qingdao%20Port%20Tour%202026%2C%20China.avif" alt="Qingdao Port Tour — Qingdao, China · 2026" loading="lazy">
+              </button>
+              <figcaption class="bb-disclosure bb-disclosure--overlay"><span class="bb-filmstrip__caption-event">Qingdao Port Tour</span><span class="bb-filmstrip__caption-place">Qingdao, China · 2026</span></figcaption>
+            </figure>
+          </li>
+          <li class="bb-filmstrip__cell">
+            <figure class="bb-filmstrip__figure">
+              <button class="bb-filmstrip__open" type="button" data-photo="8" aria-label="Open photograph 9 of 13">
+                <img class="bb-filmstrip__image" src="images/photos/Working%20session%20with%20Prof.%20Wolfgang%20Winter%2C%20TU%20Wien%20%E2%80%94%20Vienna%2C%202026.avif" alt="Working meeting with Prof. Wolfgang Winter (TU Wien) — Vienna, Austria · 2026" loading="lazy">
+              </button>
+              <figcaption class="bb-disclosure bb-disclosure--overlay"><span class="bb-filmstrip__caption-event">Working meeting with Prof. Wolfgang Winter (TU Wien)</span><span class="bb-filmstrip__caption-place">Vienna, Austria · 2026</span></figcaption>
+            </figure>
+          </li>
+          <li class="bb-filmstrip__cell">
+            <figure class="bb-filmstrip__figure">
+              <button class="bb-filmstrip__open" type="button" data-photo="9" aria-label="Open photograph 10 of 13">
+                <img class="bb-filmstrip__image" src="images/photos/Dubai.avif" alt="Dubai Wood Show — Dubai, UAE · 2025" loading="lazy">
+              </button>
+              <figcaption class="bb-disclosure bb-disclosure--overlay"><span class="bb-filmstrip__caption-event">Dubai Wood Show</span><span class="bb-filmstrip__caption-place">Dubai, UAE · 2025</span></figcaption>
+            </figure>
+          </li>
+          <li class="bb-filmstrip__cell">
+            <figure class="bb-filmstrip__figure">
+              <button class="bb-filmstrip__open" type="button" data-photo="10" aria-label="Open photograph 11 of 13">
+                <img class="bb-filmstrip__image" src="images/photos/Dubai_2.avif" alt="Dubai Wood Show — Dubai, UAE · 2025" loading="lazy">
+              </button>
+              <figcaption class="bb-disclosure bb-disclosure--overlay"><span class="bb-filmstrip__caption-event">Dubai Wood Show</span><span class="bb-filmstrip__caption-place">Dubai, UAE · 2025</span></figcaption>
+            </figure>
+          </li>
+          <li class="bb-filmstrip__cell">
+            <figure class="bb-filmstrip__figure">
+              <button class="bb-filmstrip__open" type="button" data-photo="11" aria-label="Open photograph 12 of 13">
+                <img class="bb-filmstrip__image" src="images/photos/Vietnam.avif" alt="Vietnam Wood — Ho Chi Minh City, Vietnam · 2025" loading="lazy">
+              </button>
+              <figcaption class="bb-disclosure bb-disclosure--overlay"><span class="bb-filmstrip__caption-event">Vietnam Wood</span><span class="bb-filmstrip__caption-place">Ho Chi Minh City, Vietnam · 2025</span></figcaption>
+            </figure>
+          </li>
+          <li class="bb-filmstrip__cell">
+            <figure class="bb-filmstrip__figure">
+              <button class="bb-filmstrip__open" type="button" data-photo="12" aria-label="Open photograph 13 of 13">
+                <img class="bb-filmstrip__image" src="images/photos/Uzbekistan.avif" alt="Photo from Uzbekistan — Uzbekistan · 2025" loading="lazy">
+              </button>
+              <figcaption class="bb-disclosure bb-disclosure--overlay"><span class="bb-filmstrip__caption-event">Photo from Uzbekistan</span><span class="bb-filmstrip__caption-place">Uzbekistan · 2025</span></figcaption>
+            </figure>
+          </li>
+        </ul>
+      </div>
+  </section>
+
 
   <!-- ============ VISION & MISSION ============ -->
   <!-- The building rises as the vision gives way to the mission. -->
@@ -194,7 +350,7 @@
             together manufacturers, engineers, research institutions, public authorities and development
             finance, and we build relationships that last beyond a single contract.
           </p>
-          <a class="bb-link-underline" href="index.html#ecosystem"><span class="bb-link-underline__label"><span class="bb-link-underline__roll" data-text="See the ecosystem">See the ecosystem</span></span><span class="bb-link-underline__mark" aria-hidden="true"></span></a>
+          <a class="bb-link-underline" href="index.html#ecosystem"><span class="bb-link-underline__label"><span class="bb-link-underline__roll">See the ecosystem</span></span><span class="bb-link-underline__mark" aria-hidden="true"></span></a>
         </li>
         <li class="bb-card bb-card--audience">
           <img class="bb-card__icon" src="images/icons/pillar-sustainability.svg" alt="" width="40" height="40" aria-hidden="true">
@@ -206,7 +362,126 @@
             UN SDGs.
           </p>
           <!-- placeholder: the dedicated sustainability page does not exist yet; point href at it when it does -->
-          <a class="bb-link-underline" href="sustainability.html"><span class="bb-link-underline__label"><span class="bb-link-underline__roll" data-text="Our approach">Our approach</span></span><span class="bb-link-underline__mark" aria-hidden="true"></span></a>
+          <a class="bb-link-underline" href="sustainability.html"><span class="bb-link-underline__label"><span class="bb-link-underline__roll">Our approach</span></span><span class="bb-link-underline__mark" aria-hidden="true"></span></a>
+        </li>
+      </ul>
+
+    </div>
+  </section>
+
+
+  <!-- ============ WHERE WE WORK ============ -->
+  <!-- White ground, so the&nbsp;cards take the&nbsp;tint. The&nbsp;intro is&nbsp;framed as&nbsp;everywhere
+       else: label on&nbsp;the&nbsp;margin, heading on&nbsp;the&nbsp;first rule, the&nbsp;regions in&nbsp;the
+       two right-hand thirds. Each region adds a&nbsp;note for&nbsp;investors. -->
+  <section class="bb-section bb-pillars bb-pillars--plain" id="where-we-work" aria-labelledby="where-heading">
+
+    <div class="bb-pillars__ground bb-pillars__ground--plain" aria-hidden="true"><i></i><i></i><i></i></div>
+
+    <div class="bb-shell">
+
+      <div class="bb-pillars__intro">
+        <p class="bb-section__label">Where We&nbsp;Work</p>
+        <div class="bb-pillars__head">
+          <h2 class="bb-section__title bb-section__title--pillars" id="where-heading">From&nbsp;Vienna to&nbsp;growing markets</h2>
+          <p class="bb-copy bb-copy--section">
+            We&nbsp;are&nbsp;based in&nbsp;Vienna and&nbsp;work with&nbsp;partners wherever regions need healthy, low-carbon
+            buildings and&nbsp;are&nbsp;open to&nbsp;Austrian engineering.
+          </p>
+        </div>
+      </div>
+
+      <ul class="bb-ourprj__works">
+        <li class="bb-card bb-card--work">
+          <img class="bb-work__art" src="images/illustrations/project-house-vienna.avif" alt="" width="849" height="631" aria-hidden="true">
+          <p class="bb-work__status">Home base</p>
+          <h3 class="bb-section__title bb-section__title--work">Austria &amp; Europe</h3>
+          <p class="bb-copy bb-copy--work">Our&nbsp;base in&nbsp;Vienna. EU standards and&nbsp;traceable supply chains give projects a&nbsp;secure footing.</p>
+        </li>
+        <li class="bb-card bb-card--work">
+          <img class="bb-work__art" src="images/illustrations/project-school-wood.avif" alt="" width="854" height="640" aria-hidden="true">
+          <p class="bb-work__status">Pilot projects</p>
+          <h3 class="bb-section__title bb-section__title--work">Central Asia</h3>
+          <p class="bb-copy bb-copy--work">The&nbsp;first pilot schools are&nbsp;in&nbsp;preparation: a&nbsp;fast-growing region with&nbsp;strong demand for&nbsp;schools and&nbsp;healthcare.</p>
+        </li>
+        <li class="bb-card bb-card--work">
+          <img class="bb-work__art bb-work__art--corner" src="images/illustrations/Минималистичная архитектурная линия здания.avif" alt="" width="1508" height="1043" aria-hidden="true">
+          <p class="bb-work__status">Industry events</p>
+          <h3 class="bb-section__title bb-section__title--work">Middle East</h3>
+          <p class="bb-copy bb-copy--work">An&nbsp;active construction market with&nbsp;growing interest in&nbsp;low-carbon building.</p>
+        </li>
+        <li class="bb-card bb-card--work">
+          <img class="bb-work__art bb-work__art--corner" src="images/illustrations/Минималистичный эскиз современного здания.avif" alt="" width="1508" height="1043" aria-hidden="true">
+          <p class="bb-work__status">Market partnerships</p>
+          <h3 class="bb-section__title bb-section__title--work">Asia</h3>
+          <p class="bb-copy bb-copy--work">Large timber markets and&nbsp;trade routes, from&nbsp;Ho Chi Minh City to&nbsp;Qingdao.</p>
+        </li>
+      </ul>
+
+    </div>
+  </section>
+
+
+  <!-- ============ INSIGHTS ============ -->
+  <!-- Tinted ground again, white cards. Each card opens its own article page;
+       the "All insights" link waits for an Insights page. -->
+  <section class="bb-section bb-pillars" id="insights-feed" aria-labelledby="insights-heading">
+
+    <div class="bb-pillars__ground bb-pillars__ground--flat" aria-hidden="true"><i></i><i></i><i></i></div>
+
+    <div class="bb-shell">
+
+      <div class="bb-pillars__intro">
+        <p class="bb-section__label">Insights</p>
+        <div class="bb-pillars__head">
+          <h2 class="bb-section__title bb-section__title--pillars" id="insights-heading">Latest from&nbsp;the&nbsp;field</h2>
+          <p class="bb-copy bb-copy--section">
+            Trade fairs, conversations and&nbsp;projects: what we&nbsp;are&nbsp;working on&nbsp;and&nbsp;who we&nbsp;are&nbsp;meeting along the&nbsp;way.
+          </p>
+          <a class="bb-link-underline" href="insights.html"><span class="bb-link-underline__label"><span class="bb-link-underline__roll">All insights</span></span><span class="bb-link-underline__mark" aria-hidden="true"></span></a>
+        </div>
+      </div>
+
+      <ul class="bb-cards bb-insight-cards">
+        <li class="bb-insight">
+          <a class="bb-insight__card" href="insights-cee-sustainable-finance-summit-2026.html">
+            <span class="bb-insight__media">
+              <img src="images/photos/CEE%20Sustainable%20Finance%20Summit%20in%20Prague%202026.avif" width="1280" height="711" alt="CEE Sustainable Finance Summit, Prague 2026" style="object-position:30% 40%" loading="lazy">
+              <span class="bb-disclosure bb-disclosure--overlay">Conference</span>
+            </span>
+            <span class="bb-insight__meta">2026 &middot; Prague, Czech Republic</span>
+            <span class="bb-section__title bb-section__title--insight">Talking sustainable finance at&nbsp;the&nbsp;CEE Summit</span>
+          </a>
+        </li>
+        <li class="bb-insight">
+          <a class="bb-insight__card" href="insights-gef-assembly-samarkand-2026.html">
+            <span class="bb-insight__media">
+              <img src="images/photos/Eighth%20GEF%20Assembly%20Samarkand%202026%20%281%29%20%281%29.avif" width="1280" height="711" alt="Eighth GEF Assembly, Samarkand 2026" style="object-position:42% 45%" loading="lazy">
+              <span class="bb-disclosure bb-disclosure--overlay">Conference</span>
+            </span>
+            <span class="bb-insight__meta">2026 &middot; Samarkand, Uzbekistan</span>
+            <span class="bb-section__title bb-section__title--insight">Joining the&nbsp;Eighth GEF Assembly in&nbsp;Samarkand</span>
+          </a>
+        </li>
+        <li class="bb-insight">
+          <a class="bb-insight__card" href="insights-buildn-green-2026.html">
+            <span class="bb-insight__media">
+              <img src="images/photos/Build%27n%20Green%202026.avif" width="1280" height="711" alt="BUILD'N GREEN 2026, Vienna" style="object-position:50% 50%" loading="lazy">
+              <span class="bb-disclosure bb-disclosure--overlay">Event</span>
+            </span>
+            <span class="bb-insight__meta">2026 &middot; Vienna, Austria</span>
+            <span class="bb-section__title bb-section__title--insight">Circularity in&nbsp;action at&nbsp;BUILD'N GREEN 2026</span>
+          </a>
+        </li>
+        <li class="bb-insight">
+          <a class="bb-insight__card" href="insights-vietnam-wood-2025.html">
+            <span class="bb-insight__media">
+              <img src="images/photos/Vietnam.avif" width="1280" height="711" alt="Our booth at Vietnam Wood 2025" style="object-position:50% 36%" loading="lazy">
+              <span class="bb-disclosure bb-disclosure--overlay">Trade fair</span>
+            </span>
+            <span class="bb-insight__meta">2025 &middot; Ho Chi Minh City, Vietnam</span>
+            <span class="bb-section__title bb-section__title--insight">Meeting partners at&nbsp;Vietnam Wood 2025</span>
+          </a>
         </li>
       </ul>
 
@@ -237,8 +512,8 @@
           <li><a href="index.html#ecosystem">The IM HOLZ Model</a></li>
           <li><a href="sustainability.html">Sustainability</a></li>
           <li><a href="about.html">About</a></li>
-          <li><a href="index.html#the-shift">Insights</a></li>
-          <li><a href="index.html#contact">Contact</a></li>
+          <li><a href="insights.html">Insights</a></li>
+          <li><a href="contact.html">Contact</a></li>
         </ul>
       </div>
 

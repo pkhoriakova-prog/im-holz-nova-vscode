@@ -427,13 +427,12 @@ body > main{
   overflow:hidden;
   vertical-align:top;
 }
-.bb-link-underline__char-front,
-.bb-link-underline__char-back{
+.bb-link-underline__char > span{
   display:block;
   transition:transform .34s cubic-bezier(.3,.75,.25,1);
   transition-delay:inherit;
 }
-.bb-link-underline__char-back{
+.bb-link-underline__char > span + span{
   position:absolute;
   left:0;
   top:100%;
@@ -456,14 +455,11 @@ body > main{
 }
 .bb-link-underline:hover,
 .bb-link-underline:focus-visible{ color:var(--green); }
-.bb-link-underline:hover .bb-link-underline__char-front,
-.bb-link-underline:hover .bb-link-underline__char-back,
-.bb-link-underline:focus-visible .bb-link-underline__char-front,
-.bb-link-underline:focus-visible .bb-link-underline__char-back{ transform:translateY(-100%); }
+.bb-link-underline:hover .bb-link-underline__char > span,
+.bb-link-underline:focus-visible .bb-link-underline__char > span{ transform:translateY(-100%); }
 
 @media (prefers-reduced-motion:reduce){
-  .bb-link-underline__char-front,
-  .bb-link-underline__char-back{ transition:none; }
+  .bb-link-underline__char > span{ transition:none; }
 }
 .bb-link-underline:hover .bb-link-underline__mark,
 .bb-link-underline:focus-visible .bb-link-underline__mark{ transform:rotate(0deg); }
@@ -625,8 +621,6 @@ body > main{
 .bb-page-intro{
   padding-top:var(--hero-top);
 }
-
-
 
 .bb-copy--section{
   margin:var(--gap-title-text) 0 0;
@@ -896,7 +890,6 @@ body > main{
 .bb-annot:nth-child(3)[data-shown="true"] .bb-annot__mark{ transition-delay:.14s; }
 .bb-annot:nth-child(3)[data-shown="true"] .bb-annot__leader{ transition-delay:.2s; }
 .bb-annot:nth-child(3)[data-shown="true"] .bb-annot__card{ transition-delay:.26s; }
-
 
 /* the per-photograph captions duplicated onto each scene: shown only where
    the scenes are unstacked (tablet and phone) — see the shared query below.
@@ -1341,13 +1334,6 @@ body > main{
   padding:clamp(10px, .85vw, 18px) 0 0;
 }
 
-.bb-project__no{
-  margin:0 0 14px;
-  color:var(--green);
-  font-size:clamp(11px, .677vw, 15px);
-  font-weight:600;
-  letter-spacing:.14em;
-}
 .bb-section__title--project{
   margin:0;
   max-width:20em;
@@ -1355,14 +1341,6 @@ body > main{
   font-weight:600;
   line-height:1.26;
   letter-spacing:-.01em;
-}
-.bb-copy--project{
-  margin:calc(var(--gap-label-title) * .7) 0 0;
-  max-width:40ch;
-  color:var(--ink-muted);
-  font-size:var(--lede-fs);    /* the same rank as the section's note above:
-                                  a project's copy never outgrows it */
-  line-height:1.5;
 }
 
 @media (max-width:1150px){
@@ -1373,20 +1351,10 @@ body > main{
 
 /* the pair of labels that closes each row, set as plain words on a rule —
    not chips */
-.bb-project__tags{
-  display:flex;
-  flex-wrap:wrap;
-  gap:6px clamp(16px, 1.5vw, 32px);
-  margin:clamp(16px, 1.6vw, 34px) 0 0;
-  color:var(--ink-muted);
-  font-size:clamp(11px, .677vw, 15px);
-  letter-spacing:.01em;
-}
 
 @media (max-width:1150px){
   /* the sheet has no outer margin left to stand the drawing in, and the set
      takes the full measure */
-  .bb-tower-art{ display:none; }
   .bb-projects__grid{ margin-left:0; }
 }
 
@@ -1526,8 +1494,6 @@ body > main{
   .bb-ourprj__works{ grid-template-columns:1fr; row-gap:clamp(14px, 3vw, 24px); }
 }
 
-
-
 /* --- In Numbers -----------------------------------------------------------
    Between The Shift and Vision: running head on the margin, a long statement
    and its note on the first rule, and the three figures large beneath it,
@@ -1584,7 +1550,6 @@ body > main{
 }
 
 /* The animated Vision and Mission stage follows the grey In Numbers band. */
-.bb-vision--home{ background:var(--paper); }
 
 /* --- For Whom -------------------------------------------------------------
    The section's frame is the one the sections above it use: running head on
@@ -1604,20 +1569,6 @@ body > main{
 }
 /* The tower stands on the line where this section ends and the grey band
    below begins — footed on that edge, never over it. */
-.bb-tower-art{
-  position:absolute;
-  left:calc(var(--gutter) - var(--rule-inset));   /* out on the edge rule */
-  bottom:-8px;                  /* trim the image's transparent lower edge */
-  width:min(52%, 1000px);
-  z-index:0;                    /* over the section's paper, under its text */
-  pointer-events:none;
-}
-.bb-tower-art__drawing{
-  display:block;
-  width:100%;
-  height:auto;
-  opacity:.78;
-}
 .bb-audiences__ground,
 .bb-pillars__ground,
 .bb-contact__ground{
@@ -2037,20 +1988,10 @@ body > main{
 .bb-pillars__cards .bb-card__title-line{ display:block; }
 .bb-pillars__cards .bb-copy--card{ margin-bottom:var(--gap-text-link); }
 .bb-pillars__cards .bb-link-underline{ margin-top:auto; }
-.bb-pillars--summary::before{
-  content:"";
-  z-index:1;
-  background:var(--hairline);
-}
-.bb-pillars--summary{ background:var(--paper); }
-.bb-pillars--summary .bb-pillars__ground{ background:none; }
-.bb-pillars--summary .bb-shell{ position:relative; z-index:1; }
 .bb-pillars__vision-link{
   display:inline-flex;
 }
-@media (min-width:1151px){
-  .bb-pillars--summary .bb-card--ecosystem{ min-height:clamp(230px, 16vw, 305px); }
-}
+
 @media (max-width:1150px){
   .bb-pillars__intro .bb-section__label{ position:static; display:block; margin-bottom:var(--gap-label-title); }
   .bb-pillars__head{ margin-left:0; }
@@ -2508,7 +2449,6 @@ body > main{
   pointer-events:none;
 }
 
-
 @media (max-width:1150px){
   .bb-site-footer__grid{ grid-template-columns:1fr 1fr; }
   .bb-foot-cell--brand{ grid-column:1 / -1; padding-bottom:clamp(26px,2.6vw,52px);
@@ -2770,8 +2710,6 @@ body > main{
   .bb-legal__list dt{ padding-right:0; }
 }
 
-
-
 /* =========================================================================
    SUSTAINABILITY PAGE
    Built from the sheet's own parts: the hero of the home page, the running
@@ -2939,7 +2877,11 @@ body > main{
     top:calc(var(--header-h) + var(--rule-inset));
     min-height:clamp(300px, 22vw, 440px);
     padding:clamp(28px, 2.6vw, 56px) clamp(24px, 2.2vw, 48px);
-    background:var(--green);
+    background:
+      repeating-linear-gradient(135deg,
+        rgba(255,255,255,.028) 0 1px,
+        transparent 1px 11px),
+      var(--green);
     color:var(--paper);
     transition:opacity .25s ease;
   }
@@ -3019,13 +2961,6 @@ body > main{
   text-decoration-color:var(--hairline);
   text-underline-offset:3px;
 }
-.bb-fact__pre{
-  margin-right:.45em;
-  color:var(--ink-muted);
-  font-size:.3em;
-  font-weight:400;
-  letter-spacing:0;
-}
 .bb-fact__source:hover{ color:var(--green); text-decoration-color:var(--green); }
 @media (max-width:640px){
   .bb-fact__source{ font-size:11px; }
@@ -3081,15 +3016,6 @@ body > main{
   align-items:flex-start;
   min-height:clamp(280px, 20vw, 340px);
   padding:clamp(20px, 1.8vw, 34px);
-}
-.bb-vsd__name{
-  margin:0;
-  color:var(--green);
-  font-size:clamp(10px, .62vw, 13px);
-  font-weight:600;
-  letter-spacing:.12em;
-  line-height:1.6;
-  text-transform:uppercase;
 }
 .bb-vsd__take{
   margin:clamp(16px, 1.6vw, 30px) 0 0;
@@ -3149,12 +3075,6 @@ body > main{
   line-height:1.35;
 }
 .bb-vsd__row--timber .bb-vsd__w{ color:var(--green); }
-.bb-vsd__unit{
-  margin:clamp(8px, .8vw, 14px) 0 0;
-  color:var(--ink-muted);
-  font-size:clamp(11px, .7vw, 13px);
-  line-height:1.4;
-}
 .bb-vsd .bb-fact__source{ margin-top:auto; padding-top:clamp(10px, 1vw, 18px); }
 @media (max-width:1150px){
   .bb-vsd .bb-card{ min-height:0; }
@@ -3192,12 +3112,206 @@ body > main{
 }
 
 /* In Numbers on the green ground of Our Projects */
-.bb-numbers--green .bb-numbers__intro .bb-section__label{ color:rgba(255,255,255,.7); }
-.bb-numbers--green .bb-section__title--numbers{ color:var(--paper); }
-.bb-numbers--green .bb-fact__value{ color:var(--paper); }
-.bb-numbers--green .bb-fact__label{ color:rgba(255,255,255,.8); }
-.bb-numbers--green .bb-fact__source{
-  color:rgba(255,255,255,.85);
-  text-decoration-color:rgba(255,255,255,.4);
+
+/* An e-mail address is set as written, lower case and unspaced, so the whole
+   of it stays on one line inside a card. */
+.bb-link-underline--email{
+  max-width:100%;
+  text-transform:none;
+  letter-spacing:.01em;
 }
-.bb-numbers--green .bb-fact__source:hover{ color:var(--paper); text-decoration-color:var(--paper); }
+.bb-link-underline--email .bb-link-underline__label{ min-width:0; }
+
+/* Cards that take the height of their content; the grid stretches them to the
+   tallest in the row, so they stay equal. */
+.bb-pillars__cards--fit .bb-card--audience{ min-height:0; }
+
+/* --- About: sections on plain white ----------------------------------------
+   A tinted ground left plain white keeps the ruling and the edges; the cards
+   then take the tint themselves so they still stand off the page.
+   ----------------------------------------------------------------------- */
+.bb-pillars__ground--plain{ background:var(--paper); }
+.bb-pillars--plain .bb-card--audience{ background:var(--paper-warm); }
+
+/* cards set in the two right-hand thirds, under the heading on the first rule */
+.bb-pillars__cards--right{
+  grid-template-columns:repeat(2, 1fr);
+  margin-left:calc(33.3333% + var(--rule-inset));
+}
+@media (max-width:1150px){
+  .bb-pillars__cards--right{ margin-left:0; }
+}
+@media (max-width:640px){
+  .bb-pillars__cards--right{ grid-template-columns:1fr; }
+}
+
+/* The Shift on the tinted ground: its content stands above the ground */
+.bb-shift--tint .bb-shell{ position:relative; z-index:1; }
+
+/* --- Insights cards ---------------------------------------------------------
+   No box: the photograph with the kind of post set on its lower corner, then
+   the year and place, then the name. The whole card is the link.
+   ----------------------------------------------------------------------- */
+.bb-insight-cards{
+  grid-template-columns:repeat(4, minmax(0, 1fr));
+  margin:var(--gap-block-media) 0 0;
+  row-gap:clamp(28px, 3vw, 56px);
+}
+.bb-insight__card{
+  display:flex;
+  flex-direction:column;
+  color:var(--ink);
+  text-decoration:none;
+}
+.bb-insight__media{
+  position:relative;
+  display:block;
+  aspect-ratio:5 / 4;
+  overflow:hidden;
+  background:
+    repeating-linear-gradient(135deg,
+      rgba(18,18,18,.016) 0 1px,
+      transparent 1px 11px),
+    var(--paper-warm);
+}
+.bb-insight__media img{
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:transform .5s cubic-bezier(.2,.7,.25,1);
+}
+.bb-insight__media--plate img{
+  position:absolute;
+  right:0;
+  bottom:0;
+  width:100%;
+  height:auto;
+  object-fit:contain;
+}
+.bb-insight__card:hover .bb-insight__media img,
+.bb-insight__card:focus-visible .bb-insight__media img{ transform:scale(1.04); }
+.bb-insight__meta{
+  display:block;
+  margin-top:clamp(14px, 1.2vw, 24px);
+  color:var(--ink-muted);
+  font-size:clamp(11px, .677vw, 15px);
+  font-weight:500;
+  letter-spacing:.06em;
+  line-height:1.3;
+  text-transform:uppercase;
+}
+.bb-section__title--insight{
+  display:block;
+  margin:clamp(8px, .7vw, 14px) 0 0;
+  max-width:18em;
+  text-wrap:balance;
+  font-size:clamp(19px, 1.5vw, 30px);
+  font-weight:500;
+  line-height:1.22;
+  letter-spacing:-.015em;
+  transition:color .25s ease;
+}
+.bb-insight__card:hover .bb-section__title--insight,
+.bb-insight__card:focus-visible .bb-section__title--insight{ color:var(--green); }
+@media (max-width:1150px){
+  .bb-insight-cards{ grid-template-columns:repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width:640px){
+  .bb-insight-cards{ grid-template-columns:minmax(0, 1fr); }
+}
+
+/* the drawings that stand in the corner of their canvas are cut larger, so the
+   building itself matches the size of the others (the card crops the rest) */
+.bb-card--work .bb-work__art--corner{ width:100%; max-width:none; }
+
+/* a white section without the column ruling of the tinted ones */
+.bb-pillars__ground--plain i + i{ border-left:0; }
+
+/* --- Insights page and insight pages ----------------------------------------
+   The list and the article are templates: every insight is one card and one
+   article, set by the same rules whatever it says.
+   ----------------------------------------------------------------------- */
+
+.bb-insight-cards--three{ grid-template-columns:repeat(3, minmax(0, 1fr)); }
+@media (max-width:1150px){
+  .bb-insight-cards--three{ grid-template-columns:repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width:640px){
+  .bb-insight-cards--three{ grid-template-columns:minmax(0, 1fr); }
+}
+
+/* an insight page: a hero like every other page's, then the frame every section
+   uses (the kind of post on the margin, the heading on the first rule, the words
+   and the photographs in the two thirds beside it) */
+.bb-article__main{ padding-top:clamp(20px, 2vw, 44px); }
+.bb-article__main::before{ content:none; }
+/* the facts of the post, in a ruled row under the words */
+.bb-article__facts{
+  display:grid;
+  grid-template-columns:repeat(3, minmax(0, 1fr));
+  margin:var(--gap-block-media) 0 0;
+  border-top:1px solid var(--hairline-soft);
+  border-bottom:1px solid var(--hairline-soft);
+}
+.bb-article__facts > div{ padding:var(--gap-para) var(--rule-inset) var(--gap-para) 0; }
+.bb-article__facts > div + div{ padding-left:var(--rule-inset); border-left:1px solid var(--hairline-soft); }
+.bb-article__facts dt{
+  margin:0 0 4px;
+  color:var(--ink-muted);
+  font-size:var(--label-fs);
+  font-weight:500;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+}
+.bb-article__facts dd{ margin:0; color:var(--ink); font-size:var(--lede-fs); line-height:var(--lede-lh); }
+/* the photographs: the gallery of Project Types, each one opening in the viewer
+   and growing a little under the cursor, two to a row; a photograph that is
+   alone takes both thirds */
+.bb-article__gallery.bb-projects__grid{
+  margin:var(--gap-block-media) 0 0;
+  grid-template-columns:repeat(2, minmax(0, 1fr));
+  column-gap:var(--rule-inset);
+}
+.bb-article__image{ height:auto; }
+.bb-article__image--p{ aspect-ratio:4 / 5; }
+.bb-article__image--l{ aspect-ratio:4 / 3; }
+.bb-article__gallery--1 .bb-project{ grid-column:1 / -1; }
+.bb-article__gallery--1 .bb-article__image--l{ aspect-ratio:16 / 9; }
+.bb-article__gallery--1 .bb-article__image--p{ aspect-ratio:3 / 2; }
+@media (max-width:640px){
+  .bb-article__gallery.bb-projects__grid{ grid-template-columns:minmax(0, 1fr); }
+  .bb-article__facts{ grid-template-columns:minmax(0, 1fr); }
+  .bb-article__facts > div + div{ padding-left:0; border-left:0; border-top:1px solid var(--hairline-soft); }
+}
+
+/* a video of an insight, in the width of the two thirds, above the photographs */
+.bb-article__video{ margin:var(--gap-block-media) 0 0; }
+.bb-article__video video{
+  display:block;
+  width:100%;
+  aspect-ratio:16 / 9;
+  background:var(--ink);
+  object-fit:contain;
+}
+.bb-article__video + .bb-article__gallery.bb-projects__grid{ margin-top:clamp(14px, 1.2vw, 26px); }
+
+/* a card with a video: the still frame fills the picture and grows under the
+   cursor like a photograph; the script plays it while the cursor is on it */
+.bb-insight__media video{
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:transform .5s cubic-bezier(.2,.7,.25,1);
+}
+.bb-insight__card:hover .bb-insight__media video,
+.bb-insight__card:focus-visible .bb-insight__media video{ transform:scale(1.04); }
+
+/* the closing line of a feed of insights */
+.bb-insights__more{ margin:var(--gap-block-media) 0 0; }
+.bb-insights__more .bb-link-underline{ margin-top:0; }
+
+/* the tinted ground of the insight feeds, flat: the tint and the ruling, without
+   the diagonal hatching */
+.bb-pillars__ground--flat{ background:var(--paper-warm); }

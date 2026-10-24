@@ -218,7 +218,8 @@
         var img = b.querySelector('img');
         var figure = b.closest('figure');
         var note = figure && figure.querySelector('figcaption');
-        var projectTitle = b.closest('.bb-project') && b.closest('.bb-project').querySelector('.bb-section__title--project');
+        var project = b.closest('.bb-project');
+        var projectTitle = project && project.querySelector('.bb-section__title--project');
         var stripEvent = note && note.querySelector('.bb-filmstrip__caption-event');
         var stripPlace = note && note.querySelector('.bb-filmstrip__caption-place');
         return {
@@ -357,7 +358,7 @@
   var cards = Array.prototype.slice.call(stage.querySelectorAll('.bb-card--ecosystem'));
   var hub = document.querySelector('.bb-eco-hub');
   var spokes = document.querySelector('.bb-ecosystem__spokes');
-  if (!track || !stage || !cards.length || !hub) return;
+  if (!cards.length || !hub) return;
 
   var wide = window.matchMedia('(min-width: 1151px)');
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
@@ -469,7 +470,7 @@
 (function () {
   var rolls = Array.prototype.slice.call(document.querySelectorAll('.bb-link-underline__roll'));
   rolls.forEach(function (roll) {
-    var text = roll.getAttribute('data-text') || roll.textContent;
+    var text = roll.textContent;
     var link = roll.closest('a');
     if (link && !link.getAttribute('aria-label')) link.setAttribute('aria-label', text);
     roll.setAttribute('aria-hidden', 'true');
@@ -479,10 +480,8 @@
       cell.className = 'bb-link-underline__char';
       cell.style.transitionDelay = (i * 16) + 'ms';
       var a = document.createElement('span');
-      a.className = 'bb-link-underline__char-front';
       a.textContent = ch === ' ' ? ' ' : ch;
       var b = document.createElement('span');
-      b.className = 'bb-link-underline__char-back';
       b.textContent = a.textContent;
       cell.appendChild(a);
       cell.appendChild(b);

@@ -4,7 +4,7 @@
   background:var(--paper);
 }
 
-.bb-ourprj{
+.bb-our-projects{
   background:
     repeating-linear-gradient(135deg,
       rgba(255,255,255,.025) 0 1px,
@@ -12,9 +12,9 @@
     var(--green);
   color:var(--paper);
 }
-.bb-ourprj .bb-section__label{ color:rgba(255,255,255,.7); }
-.bb-ourprj .bb-copy--section{ color:rgba(255,255,255,.78); }
-.bb-ourprj .bb-card--work{
+.bb-our-projects .bb-section-label{ color:rgba(255,255,255,.7); }
+.bb-our-projects .bb-copy--section{ color:rgba(255,255,255,.78); }
+.bb-our-projects .bb-card--work{
   background:var(--paper);
   border:0;
 }

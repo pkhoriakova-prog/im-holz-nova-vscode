@@ -3,7 +3,7 @@
    and the video plays, silent and on a loop. It stops and returns to the still
    frame when the cursor leaves. Nothing plays for those who ask for less motion. */
 (function () {
-  var cards = Array.prototype.slice.call(document.querySelectorAll('.bb-insight__card'));
+  var cards = Array.prototype.slice.call(document.querySelectorAll('.bb-insight__link'));
   var calm = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if (calm) return;
   cards.forEach(function (card) {

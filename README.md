@@ -65,9 +65,13 @@ All HTML, SVG, CSS and JavaScript class names use BEM with the bb- prefix:
 - Block: bb-viewer
 - Element: bb-viewer__image
 - Modifier: bb-viewer__nav--prev (alongside bb-viewer__nav)
-- State: bb-vslide--current or bb-vision--held (alongside the base class)
+- State: bb-vision-slide--current or bb-vision--held (alongside the base class)
 
 Update markup, CSS selectors and JavaScript class references together. IDs, data attributes and CSS custom properties keep their existing names.
+
+An element belongs to a block on the same node or an ancestor. Keep modifiers alongside their base class, and list each class only once per HTML attribute. Reuse the same class for repeated instances of a component; give unrelated components separate block names.
+
+Shared typography uses independent `bb-heading` and `bb-section-label` blocks. Shared section structure uses `bb-section__intro`, `bb-section__head`, `bb-section__cards` and `bb-section__ground`. Project introductions use `bb-project-intro` with its own `__head` and `__lede` elements. Photo grids, work grids and source links are independent `bb-photo-grid`, `bb-work-grid` and `bb-source-link` blocks, since they appear in different sections. Card artwork, status and numbering belong to `bb-card`; photo caption details belong to `bb-disclosure`.
 
 ## Heading hierarchy
 
@@ -77,6 +81,6 @@ On index.html and index-no-pillars.html, the agreed structure uses exactly two h
 
 Other pages retain h2 for section headings and h3 for their cards. Footer column labels and photo captions are paragraphs. Files in fragments/ are standalone previews with their own h1; omit the preview header when embedding their sections in another page. Keep aria-labelledby references pointing to existing headings.
 
-All headings use the shared bb-section__label (left labels) or bb-section__title class. Context-specific title widths and variants use bb-section__title modifiers, including --hero, --projects, --our-projects, --numbers, --audiences, --vision, --ecosystem, --contact and --legal. Card and annotation styles use --project, --work, --card, --eco-card and --annotation modifiers. Always include the base class alongside a modifier.
+All headings use the shared bb-section-label (left labels) or bb-heading class. Context-specific title widths and variants use bb-heading modifiers, including --hero, --projects, --our-projects, --numbers, --audiences, --vision, --ecosystem, --contact and --legal. Card and annotation styles use --project, --work, --card, --eco-card and --annotation modifiers. Always include the base class alongside a modifier.
 
-Repeated components use shared bases with modifiers: bb-card (--audience, --ecosystem, --work), bb-copy (--section, --hero, --project, --work, --card, --ecosystem, --annotation, --footer-brand, --hub), bb-section__label (--footer, --footer-second) and bb-card__icon (--ecosystem). Variant rules retain existing dimensions, spacing and colours. Navigation underline has a fixed 0.8px height and animates its width from 0 to 100% on hover over 0.22 seconds, without transforms.
+Repeated components use shared bases with modifiers: bb-card (--audience, --ecosystem, --work), bb-copy (--section, --hero, --project, --work, --card, --ecosystem, --annotation, --footer-brand, --hub), bb-section-label (--footer, --footer-second) and bb-card__icon (--ecosystem). Variant rules retain existing dimensions, spacing and colours. Navigation underline has a fixed 0.8px height and animates its width from 0 to 100% on hover over 0.22 seconds, without transforms.

@@ -17,6 +17,7 @@
   --green-deep:     #012c22;
   --paper:          #ffffff;
   --paper-warm:     #f4f4f4;                      /* the one tinted ground */
+  --icon-size:      clamp(30px, 2.3vw, 44px);     /* every line icon on the site, so the 1px stroke stays one weight */
   --hairline:       rgba(18,18,18,.16);
   --hairline-soft:  rgba(18,18,18,.09);
   --rule:           rgba(18,18,18,.055);          /* the column rules behind everything */
@@ -315,7 +316,7 @@ body > main{
   line-height:1.5;
 }
 
-.bb-section__title{
+.bb-heading{
   margin:0;
   max-width:var(--section-copy-width, calc(35 * var(--lede-fs)));
   font-size:var(--sec-fs);
@@ -324,7 +325,7 @@ body > main{
   letter-spacing:-.018em;
 }
 
-.bb-section__title--hero{
+.bb-heading--hero{
   margin:0;
   clip-path:inset(-.3em -.08em 0 -.08em);
   max-width:15em;
@@ -403,10 +404,9 @@ body > main{
   left:0;
   right:0;
   bottom:0;
-  height:1px;
+  height:1.5px;
   background:currentColor;
 }
-.bb-link-underline--project::before{ height:1.5px; }
 
 /* The rule under the words stays put — there is already a line here, and it
    does not need to perform. The words do: on hover the label rolls up out of
@@ -552,10 +552,10 @@ body > main{
 @media (max-width:1150px){
   :root{ --header-h:72px; }
 
-  .bb-section__title--hero{ max-width:16em; font-size:clamp(28px, 7.4vw, 46px); }
+  .bb-heading--hero{ max-width:16em; font-size:clamp(28px, 7.4vw, 46px); }
   .bb-hero__title-line{ display:inline; }
   .bb-hero__head{ grid-template-columns:1fr; row-gap:26px; }
-  .bb-section__title--hero,
+  .bb-heading--hero,
   .bb-hero__aside{ grid-column:1 / -1; }
   .bb-hero__aside{ padding-left:0; }
   .bb-hero__aside{ display:block; padding-top:0; max-width:48ch; }
@@ -567,7 +567,7 @@ body > main{
 }
 
 @media (min-width:700px) and (max-width:1150px){
-  .bb-section__title--hero{ max-width:none; font-size:clamp(38px, 5.8vw, 46px); }
+  .bb-heading--hero{ max-width:none; font-size:clamp(38px, 5.8vw, 46px); }
   .bb-hero__title-line{ display:block; }
 }
 
@@ -608,11 +608,11 @@ body > main{
 }
 
 /* the running head: plain tracked capitals on the outer margin, no bullet */
-.bb-section__label{
+.bb-section-label{
   margin:0;
   color:var(--ink-muted);
   font-size:var(--label-fs);
-  font-weight:500;
+  font-weight:400;
   letter-spacing:.16em;
   text-transform:uppercase;
 }
@@ -650,7 +650,7 @@ body > main{
   align-items:start;
 }
 
-.bb-shift .bb-section__label{
+.bb-shift .bb-section-label{
   position:relative;
   z-index:1;
   /* sits on the first line of the heading beside it */
@@ -667,7 +667,7 @@ body > main{
 @media (max-width:1150px){
   .bb-shift__inner{ grid-template-columns:1fr; row-gap:18px; }
   .bb-shift__inner{ grid-template-columns:1fr; }
-  .bb-shift .bb-section__label{ grid-column:1; padding-top:0; }
+  .bb-shift .bb-section-label{ grid-column:1; padding-top:0; }
   .bb-shift__body{ grid-column:1; padding-left:0; }
 }
 
@@ -780,7 +780,7 @@ body > main{
   background:var(--hairline-soft);
 }
 
-.bb-annots{
+.bb-annotations{
   position:absolute;
   inset:0;
   margin:0;
@@ -791,7 +791,7 @@ body > main{
 /* One note = a mark on the photograph, a leader line, and a plain card.
    Flat surfaces and hairlines only — it should read as an annotated drawing,
    not as a tooltip. */
-.bb-annot{
+.bb-annotation{
   position:absolute;
   left:var(--x);
   top:var(--y);
@@ -799,7 +799,7 @@ body > main{
   align-items:center;
   max-width:min(300px, 30%);
 }
-.bb-annot--left{
+.bb-annotation--left{
   flex-direction:row-reverse;
   /* the transform runs after layout, so a note set near the right edge would
      otherwise be laid out inside the sliver of space left of that edge and
@@ -808,7 +808,7 @@ body > main{
   transform:translateX(-100%);
 }
 
-.bb-annot__mark{
+.bb-annotation__mark{
   position:relative;
   flex:0 0 auto;
   width:9px;
@@ -816,16 +816,16 @@ body > main{
   border:1px solid var(--green);
   background:var(--paper);
 }
-.bb-annot__mark::before,
-.bb-annot__mark::after{
+.bb-annotation__mark::before,
+.bb-annotation__mark::after{
   content:"";
   position:absolute;
   background:var(--green);
 }
-.bb-annot__mark::before{ left:3px; right:3px; top:-4px; bottom:-4px; }
-.bb-annot__mark::after { top:3px; bottom:3px; left:-4px; right:-4px; }
+.bb-annotation__mark::before{ left:3px; right:3px; top:-4px; bottom:-4px; }
+.bb-annotation__mark::after { top:3px; bottom:3px; left:-4px; right:-4px; }
 
-.bb-annot__leader{
+.bb-annotation__leader{
   flex:0 0 auto;
   width:clamp(18px, 2vw, 42px);
   height:1px;
@@ -834,9 +834,9 @@ body > main{
   transform-origin:left center;
   transition:transform .5s cubic-bezier(.2,.7,.25,1);
 }
-.bb-annot--left .bb-annot__leader{ transform-origin:right center; }
+.bb-annotation--left .bb-annotation__leader{ transform-origin:right center; }
 
-.bb-annot__card{
+.bb-annotation__card{
   flex:1 1 auto;
   min-width:0;
   padding:12px 14px 14px;
@@ -844,14 +844,14 @@ body > main{
   border:1px solid var(--hairline);
 }
 
-.bb-annot__no{
+.bb-annotation__no{
   margin:0 0 6px;
   color:var(--green);
   font-size:11px;
   font-weight:600;
   letter-spacing:.14em;
 }
-.bb-section__title--annotation{
+.bb-heading--annotation{
   max-width:none;
   margin:0;
   font-size:clamp(13px, .78vw, 17px);
@@ -868,28 +868,28 @@ body > main{
 
 /* the reveal: driven by scroll progress across the track above — each note
    arrives in turn and stays, so the finished drawing is complete at the end */
-.bb-annot__mark,
-.bb-annot__card{
+.bb-annotation__mark,
+.bb-annotation__card{
   opacity:0;
   transform:translateY(10px);
   transition:opacity .42s ease, transform .42s cubic-bezier(.2,.7,.25,1);
 }
-.bb-annot[data-shown="true"] .bb-annot__mark,
-.bb-annot[data-shown="true"] .bb-annot__card{
+.bb-annotation[data-shown="true"] .bb-annotation__mark,
+.bb-annotation[data-shown="true"] .bb-annotation__card{
   opacity:1;
   transform:none;
 }
-.bb-annot[data-shown="true"] .bb-annot__leader{ transform:scaleX(1); }
-.bb-annot[data-shown="true"] .bb-annot__card{ transition-delay:.12s; }
-.bb-annot[data-shown="true"] .bb-annot__leader{ transition-delay:.06s; }
+.bb-annotation[data-shown="true"] .bb-annotation__leader{ transform:scaleX(1); }
+.bb-annotation[data-shown="true"] .bb-annotation__card{ transition-delay:.12s; }
+.bb-annotation[data-shown="true"] .bb-annotation__leader{ transition-delay:.06s; }
 /* the three arrive as one move, a breath apart so it reads as drawn rather
    than switched on */
-.bb-annot:nth-child(2)[data-shown="true"] .bb-annot__mark{ transition-delay:.07s; }
-.bb-annot:nth-child(2)[data-shown="true"] .bb-annot__leader{ transition-delay:.13s; }
-.bb-annot:nth-child(2)[data-shown="true"] .bb-annot__card{ transition-delay:.19s; }
-.bb-annot:nth-child(3)[data-shown="true"] .bb-annot__mark{ transition-delay:.14s; }
-.bb-annot:nth-child(3)[data-shown="true"] .bb-annot__leader{ transition-delay:.2s; }
-.bb-annot:nth-child(3)[data-shown="true"] .bb-annot__card{ transition-delay:.26s; }
+.bb-annotation:nth-child(2)[data-shown="true"] .bb-annotation__mark{ transition-delay:.07s; }
+.bb-annotation:nth-child(2)[data-shown="true"] .bb-annotation__leader{ transition-delay:.13s; }
+.bb-annotation:nth-child(2)[data-shown="true"] .bb-annotation__card{ transition-delay:.19s; }
+.bb-annotation:nth-child(3)[data-shown="true"] .bb-annotation__mark{ transition-delay:.14s; }
+.bb-annotation:nth-child(3)[data-shown="true"] .bb-annotation__leader{ transition-delay:.2s; }
+.bb-annotation:nth-child(3)[data-shown="true"] .bb-annotation__card{ transition-delay:.26s; }
 
 /* the per-photograph captions duplicated onto each scene: shown only where
    the scenes are unstacked (tablet and phone) — see the shared query below.
@@ -906,14 +906,14 @@ body > main{
      notes stack underneath, where they stay readable */
   .bb-solutions__intro{ grid-template-columns:1fr; row-gap:18px; }
   .bb-solutions__head{ padding-left:0; }
-  .bb-solutions .bb-section__label{ padding-top:0; }
+  .bb-solutions .bb-section-label{ padding-top:0; }
   .bb-solutions__track{ height:auto; }
   .bb-solutions__stage{ position:static; height:auto; padding-block:0; }
   .bb-solutions__figure{ height:auto; display:block; }
   .bb-solutions__image{ height:auto; aspect-ratio:16 / 9; }
 
   /* stacked under the photograph, where they stay readable */
-  .bb-annots{
+  .bb-annotations{
     position:static;
     display:grid;
     grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));
@@ -923,8 +923,8 @@ body > main{
     border:1px solid var(--hairline);
     border-top:0;
   }
-  .bb-annots{ margin-top:20px; border-top:1px solid var(--hairline); }
-  .bb-annot{
+  .bb-annotations{ margin-top:20px; border-top:1px solid var(--hairline); }
+  .bb-annotation{
     position:static;
     display:block;
     max-width:none;
@@ -934,10 +934,10 @@ body > main{
   /* the narrow measure is given outright to a note set against the right of
      the photograph; unpinned it has to be released, or the note comes out at
      a third of its cell and the ground shows through beside it */
-  .bb-annot--left{ transform:none; width:auto; }
-  .bb-annot__mark,
-  .bb-annot__leader{ display:none; }
-  .bb-annot__card{ border:0; padding:16px; }
+  .bb-annotation--left{ transform:none; width:auto; }
+  .bb-annotation__mark,
+  .bb-annotation__leader{ display:none; }
+  .bb-annotation__card{ border:0; padding:16px; }
 
   /* both scenes come out of the frame and read one after the other: outside
      with its notes, then inside with its own */
@@ -961,9 +961,9 @@ body > main{
   .bb-solutions__stage{ position:static; height:auto; padding-block:0; }
   .bb-solutions__figure{ height:auto; display:block; }
   .bb-solutions__image{ height:auto; aspect-ratio:16 / 9; }
-  .bb-annot__mark,
-  .bb-annot__card{ opacity:1; transform:none; }
-  .bb-annot__leader{ transform:scaleX(1); }
+  .bb-annotation__mark,
+  .bb-annotation__card{ opacity:1; transform:none; }
+  .bb-annotation__leader{ transform:scaleX(1); }
 
   /* both scenes come out of the frame and read one after the other: outside
      with its notes, then inside with its own */
@@ -1027,8 +1027,8 @@ body > main{
   max-width:calc(100% - 28px);
   pointer-events:none;
 }
-.bb-filmstrip__caption-event,
-.bb-filmstrip__caption-place{
+.bb-disclosure__event,
+.bb-disclosure__place{
   display:block;
   overflow:hidden;
   white-space:nowrap;
@@ -1233,20 +1233,20 @@ body > main{
 /* the same frame as The Shift and Sustainable Solutions: the running head
    stays on the outer margin, the heading and its note are set to the first
    column rule, held off it by the standard inset */
-.bb-projects__intro{
+.bb-project-intro{
   display:grid;
   grid-template-columns:1fr 2fr;
   align-items:start;
 }
-.bb-projects__head{
+.bb-project-intro__head{
   padding-left:var(--rule-inset);
 }
-.bb-section__title--projects{
+.bb-heading--projects{
   max-width:30ch;
   text-wrap:balance;
   font-size:var(--sec-fs);     /* the rank the sections above it are set in */
 }
-.bb-projects__lede{
+.bb-project-intro__lede{
   margin:var(--gap-title-text) 0 0;
 }
 
@@ -1256,7 +1256,7 @@ body > main{
    the pairs sit a little off one another rather than ruling a table. It is a
    small difference on purpose: enough to give the block a rhythm, not enough
    to read as two different formats. */
-.bb-projects__grid{
+.bb-photo-grid{
   /* The plates are pinned to the right of the sheet, and every edge keeps the
      page's standoff from the rule beside it: the set opens one inset past the
      first rule, the pair parts either side of the second, and it closes one
@@ -1334,19 +1334,19 @@ body > main{
   padding:clamp(10px, .85vw, 18px) 0 0;
 }
 
-.bb-section__title--project{
+.bb-heading--project{
   margin:0;
   max-width:20em;
   font-size:clamp(18px, 1.25vw, 26px);
-  font-weight:600;
+  font-weight:500;
   line-height:1.26;
   letter-spacing:-.01em;
 }
 
 @media (max-width:1150px){
-  .bb-projects__intro{ grid-template-columns:1fr; row-gap:18px; }
-  .bb-projects__head{ padding-left:0; }
-  .bb-section__title--projects{ white-space:normal; }
+  .bb-project-intro{ grid-template-columns:1fr; row-gap:18px; }
+  .bb-project-intro__head{ padding-left:0; }
+  .bb-heading--projects{ white-space:normal; }
 }
 
 /* the pair of labels that closes each row, set as plain words on a rule —
@@ -1355,11 +1355,11 @@ body > main{
 @media (max-width:1150px){
   /* the sheet has no outer margin left to stand the drawing in, and the set
      takes the full measure */
-  .bb-projects__grid{ margin-left:0; }
+  .bb-photo-grid{ margin-left:0; }
 }
 
 @media (max-width:640px){
-  .bb-projects__grid{ grid-template-columns:1fr; }
+  .bb-photo-grid{ grid-template-columns:1fr; }
 }
 
 /* --- Our Projects ---------------------------------------------------------
@@ -1368,8 +1368,8 @@ body > main{
    the right as outlined plates, each with a line drawing in its corner, and the
    key figures close the section.
    ----------------------------------------------------------------------- */
-.bb-ourprj::before{ content:none; }
-.bb-ourprj{
+.bb-our-projects::before{ content:none; }
+.bb-our-projects{
   background:
     repeating-linear-gradient(135deg,
       rgba(255,255,255,.06) 0 1px,
@@ -1377,14 +1377,14 @@ body > main{
     var(--green);
   color:var(--paper);
 }
-.bb-ourprj .bb-card--work{ background:var(--paper); border:0; }
-.bb-section__title--our-projects{ max-width:none; white-space:nowrap; }
-.bb-ourprj .bb-section__label{ color:rgba(255,255,255,.7); }
-.bb-ourprj .bb-copy--section{ color:rgba(255,255,255,.78); }
+.bb-our-projects .bb-card--work{ background:var(--paper); border:0; }
+.bb-heading--our-projects{ max-width:none; white-space:nowrap; }
+.bb-our-projects .bb-section-label{ color:rgba(255,255,255,.7); }
+.bb-our-projects .bb-copy--section{ color:rgba(255,255,255,.78); }
 
 /* two projects side by side, each a card with its picture, name, tags and
    text inside */
-.bb-ourprj__works{
+.bb-work-grid{
   list-style:none;
   margin:var(--gap-block-media) 0 0;
   padding:0;
@@ -1408,13 +1408,13 @@ body > main{
   border:1px solid var(--hairline-soft);
   color:var(--ink);
 }
-.bb-section__title--work{
+.bb-heading--work{
   margin:0;
   max-width:13em;              /* the name does not run the width of the card */
   text-wrap:balance;
   color:var(--green);
   font-size:clamp(20px, 1.5vw, 32px);
-  font-weight:600;
+  font-weight:500;
   line-height:1.2;
   letter-spacing:-.012em;
 }
@@ -1426,7 +1426,7 @@ body > main{
   line-height:1.5;
 }
 /* where the project stands: a dot and one line */
-.bb-work__status{
+.bb-card__status{
   display:flex;
   align-items:center;
   gap:.7em;
@@ -1438,7 +1438,7 @@ body > main{
   line-height:1;
   text-transform:uppercase;
 }
-.bb-work__status::before{
+.bb-card__status::before{
   content:"";
   width:.65em;
   height:.65em;
@@ -1453,12 +1453,14 @@ body > main{
   100% { box-shadow:0 0 0 0 rgba(1,67,53,0); opacity:1; }
 }
 @media (prefers-reduced-motion:reduce){
-  .bb-work__status::before{ animation:none; }
+  .bb-card__status::before{ animation:none; }
 }
 .bb-card--work .bb-link-underline{ margin-top:auto; padding-top:var(--gap-text-link); color:var(--ink); }
+.bb-card--work .bb-link-underline:hover,
+.bb-card--work .bb-link-underline:focus-visible{ color:var(--green); }
 /* the building, trimmed to its own outline, stands in the right-hand lower
    corner of the card; the text sits above it */
-.bb-work__art{
+.bb-card__art{
   position:absolute;
   right:0;
   bottom:0;
@@ -1466,20 +1468,20 @@ body > main{
   height:auto;
   pointer-events:none;
 }
-.bb-card--work > :not(.bb-work__art){ position:relative; z-index:1; }
+.bb-card--work > :not(.bb-card__art){ position:relative; z-index:1; }
 
 @media (max-width:1150px){
-  .bb-ourprj__works{ margin-left:0; }
+  .bb-work-grid{ margin-left:0; }
 }
 @media (max-width:1150px){
-  .bb-section__title--our-projects{ white-space:normal; }
+  .bb-heading--our-projects{ white-space:normal; }
 }
 /* small tablets and phones: the building no longer lies under the text but
    stands beneath it in the corner of the card, whole. Two cards to a row on a
    small tablet, one on a phone. */
 @media (max-width:900px){
   .bb-card--work{ aspect-ratio:auto; min-height:0; }
-  .bb-work__art{
+  .bb-card__art{
     position:static;
     order:9;
     width:58%;
@@ -1491,7 +1493,7 @@ body > main{
   .bb-card--work .bb-link-underline{ margin-top:0; padding-top:0; }
 }
 @media (max-width:640px){
-  .bb-ourprj__works{ grid-template-columns:1fr; row-gap:clamp(14px, 3vw, 24px); }
+  .bb-work-grid{ grid-template-columns:1fr; row-gap:clamp(14px, 3vw, 24px); }
 }
 
 /* --- In Numbers -----------------------------------------------------------
@@ -1504,9 +1506,9 @@ body > main{
 .bb-numbers{ position:relative; overflow:hidden; }
 .bb-numbers .bb-shell{ position:relative; z-index:1; }
 .bb-numbers__intro{ position:relative; }
-.bb-numbers__intro .bb-section__label{ position:absolute; left:0; top:0; }
+.bb-numbers__intro .bb-section-label{ position:absolute; left:0; top:0; }
 .bb-numbers__head{ margin-left:calc(33.3333% + var(--rule-inset)); }
-.bb-section__title--numbers{ max-width:min(16.5em, 100%); }
+.bb-heading--numbers{ max-width:min(16.5em, 100%); }
 .bb-numbers__head .bb-copy--section{ max-width:30em; }
 /* the heading breaks before "and": two lines, each its own block */
 .bb-numbers .bb-section__title-line{ display:block; }
@@ -1536,7 +1538,7 @@ body > main{
   line-height:var(--lede-lh);
 }
 @media (max-width:1150px){
-  .bb-numbers__intro .bb-section__label{ position:static; display:block; margin-bottom:var(--gap-label-title); }
+  .bb-numbers__intro .bb-section-label{ position:static; display:block; margin-bottom:var(--gap-label-title); }
   .bb-numbers__head{ margin-left:0; }
   .bb-numbers__figures{ margin-left:0; grid-template-columns:repeat(3, 1fr); }
   .bb-fact{ padding:0 var(--rule-inset) 0 0; }
@@ -1570,7 +1572,7 @@ body > main{
 /* The tower stands on the line where this section ends and the grey band
    below begins — footed on that edge, never over it. */
 .bb-audiences__ground,
-.bb-pillars__ground,
+.bb-section__ground,
 .bb-contact__ground{
   position:absolute;
   inset:0;
@@ -1588,13 +1590,13 @@ body > main{
   pointer-events:none;
 }
 .bb-audiences__ground i + i,
-.bb-pillars__ground i + i,
+.bb-section__ground i + i,
 .bb-contact__ground i + i{ border-left:1px solid var(--rule); }
 /* the two edges of the sheet, redrawn at the same offsets */
 .bb-audiences__ground::before,
 .bb-audiences__ground::after,
-.bb-pillars__ground::before,
-.bb-pillars__ground::after,
+.bb-section__ground::before,
+.bb-section__ground::after,
 .bb-contact__ground::before,
 .bb-contact__ground::after{
   content:"";
@@ -1603,13 +1605,13 @@ body > main{
   bottom:0;
 }
 .bb-audiences__ground::before,
-.bb-pillars__ground::before,
+.bb-section__ground::before,
 .bb-contact__ground::before{
   left:calc(var(--gutter) - var(--rule-inset));
   border-left:1px solid var(--rule);
 }
 .bb-audiences__ground::after,
-.bb-pillars__ground::after,
+.bb-section__ground::after,
 .bb-contact__ground::after{
   right:calc(var(--gutter) - var(--rule-inset));
   border-right:1px solid var(--rule);
@@ -1627,7 +1629,7 @@ body > main{
 .bb-audiences__intro{
   position:relative;
 }
-.bb-audiences .bb-section__label{
+.bb-audiences .bb-section-label{
   position:absolute;
   left:0;
   top:0;
@@ -1635,7 +1637,7 @@ body > main{
 .bb-audiences__head{
   margin-left:calc(33.3333% + var(--rule-inset));
 }
-.bb-section__title--audiences{ max-width:19em; }
+.bb-heading--audiences{ max-width:19em; }
 /* the heading uses the same measure and rank as The Shift */
 
 /* The control, squared off like everything else drawn on this sheet: it reads as a
@@ -1684,7 +1686,7 @@ body > main{
   margin-top:var(--gap-text-link);
 }
 @media (min-width:1151px){
-  .bb-mailbtn.bb-audiences__cta{ display:none; }
+  .bb-mail-button.bb-audiences__cta{ display:none; }
 }
 .bb-cards{
   display:grid;
@@ -1705,14 +1707,14 @@ body > main{
 }
 .bb-card__icon{
   display:block;
-  width:clamp(26px, 2vw, 40px);
+  width:var(--icon-size);
   height:auto;
 }
-.bb-section__title--card{
+.bb-heading--card{
   max-width:none;
   margin:clamp(18px, 1.8vw, 38px) 0 0;
   font-size:clamp(16px, 1.05vw, 23px);
-  font-weight:600;
+  font-weight:500;
   line-height:1.26;
   letter-spacing:-.008em;
 }
@@ -1730,7 +1732,7 @@ body > main{
 @media (max-width:1150px){
   /* the running head returns to the flow: there is no longer a margin wide
      enough to hold it beside the centred heading */
-  .bb-audiences .bb-section__label{ position:static; display:block; margin-bottom:var(--gap-label-title); }
+  .bb-audiences .bb-section-label{ position:static; display:block; margin-bottom:var(--gap-label-title); }
   .bb-audiences__head{ margin-left:0; }
   .bb-cards{ grid-template-columns:repeat(2, 1fr); }
 }
@@ -1761,9 +1763,9 @@ body > main{
   padding-top:calc((var(--sec-lh) - 1) / 2 * var(--sec-fs) + var(--cap-k) * var(--sec-fs)
                  - (1.45 - 1) / 2 * var(--label-fs) - var(--cap-k) * var(--label-fs));
 }
-.bb-vlabel{ grid-area:1 / 1; }
-.bb-vlabel--vision{ opacity:var(--v); }
-.bb-vlabel--mission{ opacity:var(--m); }
+.bb-vision-label{ grid-area:1 / 1; }
+.bb-vision-label--vision{ opacity:var(--v); }
+.bb-vision-label--mission{ opacity:var(--m); }
 
 .bb-vision__text{
   position:relative;
@@ -1774,19 +1776,19 @@ body > main{
   padding-left:var(--rule-inset);
   padding-right:var(--rule-inset);
 }
-.bb-section__title--vision{ max-width:100%; }
+.bb-heading--vision{ max-width:100%; }
 .bb-vision__switch{ display:none; }
-.bb-vslide{ grid-area:1 / 1; }
-.bb-vslide__label{ display:none; }
+.bb-vision-slide{ grid-area:1 / 1; }
+.bb-vision-slide__label{ display:none; }
 /* the heading breaks after the comma: two lines, the second opening on "beyond" */
-.bb-vslide__title-line{ display:block; }
+.bb-vision-slide__title-line{ display:block; }
 /* each statement drifts a short way and softens as it leaves or arrives */
-.bb-vslide--vision{
+.bb-vision-slide--vision{
   opacity:var(--v);
   transform:translateY(calc((1 - var(--v)) * -14px));
   will-change:opacity, transform;
 }
-.bb-vslide--mission{
+.bb-vision-slide--mission{
   opacity:var(--m);
   transform:translateY(calc((1 - var(--m)) * 14px));
   will-change:opacity, transform;
@@ -1811,7 +1813,7 @@ body > main{
 .bb-stage__no{
   color:var(--ink-muted);
   font-size:var(--label-fs);
-  font-weight:500;
+  font-weight:400;
   letter-spacing:.16em;
 }
 .bb-stage::before,
@@ -1893,6 +1895,9 @@ body > main{
 @media (min-width:700px) and (prefers-reduced-motion:no-preference){
   .bb-vision.bb-vision--held + .bb-pillars,
   .bb-vision.bb-vision--held + .bb-projects{ visibility:hidden; }
+  /* once the stage lets go, the real section is on the page: the copy of its top
+     drawn under the stage is hidden, or the two would print one over the other */
+  .bb-vision:not(.bb-vision--held) .bb-vision__peek{ visibility:hidden; }
 }
 
 /* On tablets, keep both statements in the same place and give the drawing
@@ -1901,7 +1906,7 @@ body > main{
   .bb-vision__inner{ grid-template-columns:minmax(0, 1.25fr) minmax(0, .75fr); gap:clamp(24px, 4vw, 56px); }
   .bb-vision__labels{ display:none; }
   .bb-vision__text{ grid-column:1; grid-row:1; padding-left:0; padding-right:0; }
-  .bb-vslide__label{ display:block; margin-bottom:var(--gap-label-title); }
+  .bb-vision-slide__label{ display:block; margin-bottom:var(--gap-label-title); }
   .bb-vision__art{ grid-column:2; grid-row:1; justify-self:end; width:min(100%, 300px); }
 }
 
@@ -1925,12 +1930,12 @@ body > main{
   .bb-vision__inner{ grid-template-columns:1fr; row-gap:clamp(20px, 5vw, 32px); }
   .bb-vision__labels{ display:none; }
   .bb-vision__text{ display:block; width:100%; padding:0; }
-  .bb-vslide{ opacity:1; transform:none; filter:none; will-change:auto; pointer-events:auto; }
-  .bb-vision__text .bb-vslide{ margin-top:0; }
-  .bb-vision__text .bb-vslide:not(.bb-vslide--current){ display:none; }
-  .bb-vision__text .bb-vslide.bb-vslide--current{ opacity:1; visibility:visible; animation:vslide-in .6s cubic-bezier(.22, 1, .36, 1) both; }
-  .bb-vision__text .bb-vslide__label{ display:none; }
-  .bb-vslide--vision .bb-section__title--vision{ max-width:min(75%, 18ch); }
+  .bb-vision-slide{ opacity:1; transform:none; filter:none; will-change:auto; pointer-events:auto; }
+  .bb-vision__text .bb-vision-slide{ margin-top:0; }
+  .bb-vision__text .bb-vision-slide:not(.bb-vision-slide--current){ display:none; }
+  .bb-vision__text .bb-vision-slide.bb-vision-slide--current{ opacity:1; visibility:visible; animation:vslide-in .6s cubic-bezier(.22, 1, .36, 1) both; }
+  .bb-vision__text .bb-vision-slide__label{ display:none; }
+  .bb-vision-slide--vision .bb-heading--vision{ max-width:min(75%, 18ch); }
   .bb-vision__art{
     grid-column:1;
     grid-row:auto;
@@ -1956,10 +1961,10 @@ body > main{
 @media (prefers-reduced-motion:reduce){
   .bb-vision__labels{ display:none; }
   .bb-vision__text{ display:block; }
-  .bb-vslide{ opacity:1; transform:none; filter:none; will-change:auto; pointer-events:auto; }
-  .bb-vision__text .bb-vslide.bb-vslide--current{ animation:none; }
-  .bb-vslide + .bb-vslide{ margin-top:clamp(36px, 5vw, 64px); }
-  .bb-vslide__label{ display:block; margin-bottom:var(--gap-label-title); }
+  .bb-vision-slide{ opacity:1; transform:none; filter:none; will-change:auto; pointer-events:auto; }
+  .bb-vision__text .bb-vision-slide.bb-vision-slide--current{ animation:none; }
+  .bb-vision-slide + .bb-vision-slide{ margin-top:clamp(36px, 5vw, 64px); }
+  .bb-vision-slide__label{ display:block; margin-bottom:var(--gap-label-title); }
 }
 @media (min-width:700px) and (max-width:1150px) and (prefers-reduced-motion:reduce){
   .bb-vision__inner{ grid-template-columns:1fr; row-gap:clamp(36px, 7vw, 64px); }
@@ -1968,8 +1973,8 @@ body > main{
 }
 @media (max-width:699px) and (prefers-reduced-motion:reduce){
   .bb-vision__text{ display:block; }
-  .bb-vision__text .bb-vslide{ margin-top:0; }
-  .bb-vision__text .bb-vslide__label{ display:none; }
+  .bb-vision__text .bb-vision-slide{ margin-top:0; }
+  .bb-vision__text .bb-vision-slide__label{ display:none; }
 }
 
 /* --- Four Pillars ---------------------------------------------------------
@@ -1978,24 +1983,24 @@ body > main{
    ----------------------------------------------------------------------- */
 .bb-pillars::before{ content:none; }
 .bb-pillars{ position:relative; overflow:hidden; }
-.bb-pillars__intro{ position:relative; }
-.bb-pillars__intro .bb-section__label{ position:absolute; left:0; top:0; }
-.bb-pillars__head{ margin-left:calc(33.3333% + var(--rule-inset)); }
-.bb-pillars__cards{ margin-top:var(--gap-block-media); }
-.bb-pillars__cards .bb-card--audience{
+.bb-section__intro{ position:relative; }
+.bb-section__intro .bb-section-label{ position:absolute; left:0; top:0; }
+.bb-section__head{ margin-left:calc(33.3333% + var(--rule-inset)); }
+.bb-section__cards{ margin-top:var(--gap-block-media); }
+.bb-section__cards .bb-card--audience{
   min-height:clamp(320px, 22vw, 420px);
 }
-.bb-pillars__cards .bb-card__title-line{ display:block; }
-.bb-pillars__cards .bb-copy--card{ margin-bottom:var(--gap-text-link); }
-.bb-pillars__cards .bb-link-underline{ margin-top:auto; }
-.bb-pillars__vision-link{
+.bb-section__cards .bb-card__title-line{ display:block; }
+.bb-section__cards .bb-copy--card{ margin-bottom:var(--gap-text-link); }
+.bb-section__cards .bb-link-underline{ margin-top:auto; }
+.bb-section__vision-link{
   display:inline-flex;
 }
 
 @media (max-width:1150px){
-  .bb-pillars__intro .bb-section__label{ position:static; display:block; margin-bottom:var(--gap-label-title); }
-  .bb-pillars__head{ margin-left:0; }
-  .bb-pillars__cards .bb-card--audience{ min-height:0; }
+  .bb-section__intro .bb-section-label{ position:static; display:block; margin-bottom:var(--gap-label-title); }
+  .bb-section__head{ margin-left:0; }
+  .bb-section__cards .bb-card--audience{ min-height:0; }
 }
 
 /* --- Ecosystem ------------------------------------------------------------
@@ -2019,7 +2024,7 @@ body > main{
 .bb-ecosystem__head{
   padding-left:var(--rule-inset);
 }
-.bb-section__title--ecosystem{ max-width:calc(28 * var(--lede-fs)); }
+.bb-heading--ecosystem{ max-width:calc(28 * var(--lede-fs)); }
 
 /* the travel is one viewport for the pinned field plus the distance the
    movement itself needs — no spare scroll anywhere */
@@ -2110,7 +2115,7 @@ body > main{
   will-change:transform;
 }
 /* the number is set in a ruled circle, as a plate number on a drawing */
-.bb-eco-card__no{
+.bb-card__number{
   display:flex;
   align-items:center;
   justify-content:center;
@@ -2128,21 +2133,21 @@ body > main{
   position:absolute;
   top:clamp(20px, 1.9vw, 40px);
   right:clamp(18px, 1.6vw, 34px);
-  width:clamp(30px, 2.3vw, 44px);
+  width:var(--icon-size);
   height:auto;
   opacity:.85;
 }
-.bb-section__title--eco-card{
+.bb-heading--eco-card{
   margin:auto 0 0;             /* the name and its line sit together at the
                                   foot of the plate, under the number */
   max-width:14em;
   font-size:clamp(17px, 1.15vw, 24px);
-  font-weight:600;
+  font-weight:500;
   line-height:1.26;
   letter-spacing:-.008em;
 }
 /* "and" always opens a new line in a goal name — set by the markup, not by where the width happens to fall */
-.bb-eco-card__and{ display:block; }
+.bb-card__conjunction{ display:block; }
 .bb-copy--ecosystem{
   margin:var(--gap-label-title) 0 0;
   max-width:30em;
@@ -2245,14 +2250,14 @@ body > main{
   grid-template-columns:1fr 2fr;
   align-items:start;
 }
-.bb-contact .bb-section__label{ margin:0; }
+.bb-contact .bb-section-label{ margin:0; }
 
 .bb-contact__body{
   padding-left:var(--rule-inset);
 }
 
 /* Keep the heading in a narrower column so it wraps naturally. */
-.bb-section__title--contact{
+.bb-heading--contact{
   margin:0;
   max-width:none;
   font-size:var(--sec-fs);
@@ -2261,7 +2266,7 @@ body > main{
   letter-spacing:-.018em;
 }
 @media (min-width:1151px){
-  .bb-section__title--contact span{ display:block; white-space:nowrap; }
+  .bb-heading--contact span{ display:block; white-space:nowrap; }
 }
 /* the address on the left, the invitation on the right, both on the measure
    the sentence above them is set to */
@@ -2285,13 +2290,13 @@ body > main{
 @media (max-width:1150px){
   .bb-contact__inner{ grid-template-columns:1fr; row-gap:18px; }
   .bb-contact__body{ padding-left:0; }
-  .bb-section__title--contact{ max-width:18em; }
+  .bb-heading--contact{ max-width:18em; }
   .bb-contact__act{ grid-column:1; padding-left:0; }
 }
 
 /* --- the address: a filled block in the ink of the page, not the green the
    audience control uses for a chosen tab -------------------------------- */
-.bb-mailbtn{
+.bb-mail-button{
   display:inline-flex;
   align-items:center;
   gap:.75em;
@@ -2308,12 +2313,12 @@ body > main{
 }
 /* solid at rest and outlined under the cursor — plainly seen, and it borrows
    nothing from the green the audience tabs use */
-.bb-mailbtn:hover,
-.bb-mailbtn:focus-visible{
+.bb-mail-button:hover,
+.bb-mail-button:focus-visible{
   background:none;
   color:var(--ink);
 }
-.bb-mailbtn__icon{
+.bb-mail-button__icon{
   display:block;
   background:currentColor;
   -webkit-mask:url("../images/icons/envelope.svg") center / contain no-repeat;
@@ -2404,15 +2409,15 @@ body > main{
   line-height:1.45;
 }
 
-.bb-section__label--footer{
+.bb-section-label--footer{
   margin:0 0 clamp(16px, 1.5vw, 30px);
   color:rgba(255,255,255,.55);
   font-size:var(--label-fs);
-  font-weight:500;
+  font-weight:400;
   letter-spacing:.16em;
   text-transform:uppercase;
 }
-.bb-section__label--footer-second{ margin-top:clamp(26px, 2.6vw, 52px); }
+.bb-section-label--footer-second{ margin-top:clamp(26px, 2.6vw, 52px); }
 
 .bb-foot-list{
   margin:0;
@@ -2480,10 +2485,10 @@ body > main{
   /* the tinted bands are ruled on the same halves the sheet is ruled on:
      one line down the middle, not two */
   .bb-audiences__ground,
-  .bb-pillars__ground,
+  .bb-section__ground,
   .bb-contact__ground{ grid-template-columns:repeat(2, 1fr); }
   .bb-audiences__ground i:nth-child(3),
-  .bb-pillars__ground i:nth-child(3),
+  .bb-section__ground i:nth-child(3),
   .bb-contact__ground i:nth-child(3){ display:none; }
 }
 
@@ -2516,15 +2521,15 @@ body > main{
      Three plates, each on the full measure, one under the other. Unpinned
      they were laid into a hairline grid at a third of its width, which read
      as three grey blocks with the copy crushed into the corner of them. */
-  .bb-annots{
+  .bb-annotations{
     display:block;
     gap:0;
     margin-top:16px;
     background:none;
     border:0;
   }
-  .bb-annot,
-  .bb-annot--left{
+  .bb-annotation,
+  .bb-annotation--left{
     display:flex;
     width:100%;
     max-width:none;
@@ -2532,21 +2537,21 @@ body > main{
     background:var(--paper);
     border:1px solid var(--rule);
   }
-  .bb-annot + .bb-annot{ margin-top:clamp(10px, 2.6vw, 16px); }
-  .bb-annot__mark,
-  .bb-annot__leader{ display:none; }
+  .bb-annotation + .bb-annotation{ margin-top:clamp(10px, 2.6vw, 16px); }
+  .bb-annotation__mark,
+  .bb-annotation__leader{ display:none; }
   /* the reveal is driven by the pinned scroll, which does not run here.
      Padded on the same scale as the hub card in Ecosystem — a block sized
      by what is in it, not forced to a height borrowed from a card of a
      different kind. */
-  .bb-annot__card{
+  .bb-annotation__card{
     flex:1 1 auto;
     border:0;
     opacity:1;
     transform:none;
     padding:clamp(24px, 2.2vw, 46px) clamp(22px, 2vw, 42px);
   }
-  .bb-section__title--annotation{ font-size:17px; }
+  .bb-heading--annotation{ font-size:17px; }
   .bb-copy--annotation{ font-size:14px; }
 
   /* --- one card size for the two card grids on the page --------------- */
@@ -2566,7 +2571,7 @@ body > main{
     gap:16px;
     max-width:none;
   }
-  .bb-mailbtn{ max-width:100%; }
+  .bb-mail-button{ max-width:100%; }
   .bb-contact__cta{ align-self:flex-start; }
 
   /* --- Footer: the two lists take the halves the sheet is ruled into, and
@@ -2638,12 +2643,12 @@ body > main{
 }
 
 /* Annotation positions moved from HTML into the stylesheet. */
-.bb-annot--position-01{ --x:20%; --y:38%; }
-.bb-annot--position-02{ --x:72%; --y:29%; }
-.bb-annot--position-03{ --x:80%; --y:82%; }
-.bb-annot--position-04{ --x:20%; --y:24%; }
-.bb-annot--position-05{ --x:88%; --y:33%; }
-.bb-annot--position-06{ --x:30%; --y:62%; }
+.bb-annotation--position-01{ --x:20%; --y:38%; }
+.bb-annotation--position-02{ --x:72%; --y:29%; }
+.bb-annotation--position-03{ --x:80%; --y:82%; }
+.bb-annotation--position-04{ --x:20%; --y:24%; }
+.bb-annotation--position-05{ --x:88%; --y:33%; }
+.bb-annotation--position-06{ --x:30%; --y:62%; }
 
 /* =========================================================================
    LEGAL NOTICE (impressum.html)
@@ -2661,7 +2666,7 @@ body > main{
   grid-template-columns:1fr 2fr;
   align-items:start;
 }
-.bb-legal .bb-section__label{
+.bb-legal .bb-section-label{
   position:relative;
   z-index:1;
   padding-top:calc((var(--sec-lh) - 1) / 2 * var(--sec-fs) + var(--cap-k) * var(--sec-fs)
@@ -2672,7 +2677,7 @@ body > main{
   z-index:1;
   padding-left:var(--rule-inset);
 }
-.bb-section__title--legal{ max-width:calc(35 * var(--lede-fs)); }
+.bb-heading--legal{ max-width:calc(35 * var(--lede-fs)); }
 
 .bb-legal__list{ margin:var(--gap-title-text) 0 0; }
 .bb-legal__list > div{
@@ -2702,7 +2707,7 @@ body > main{
 
 @media (max-width:1150px){
   .bb-legal__inner{ grid-template-columns:1fr; row-gap:18px; }
-  .bb-legal .bb-section__label{ padding-top:0; }
+  .bb-legal .bb-section-label{ padding-top:0; }
   .bb-legal__body{ padding-left:0; }
 }
 @media (max-width:700px){
@@ -2730,27 +2735,27 @@ body > main{
 /* --- the frame shared by the sections below: running head on the margin,
        heading on the first rule, everything else in the two right columns --- */
 .bb-solutions--announcement > .bb-shell,
-.bb-sust > .bb-shell,
-.bb-ecosol > .bb-shell{ position:relative; z-index:1; }
+.bb-sustainability > .bb-shell,
+.bb-ecosystem-solutions > .bb-shell{ position:relative; z-index:1; }
 .bb-solutions--announcement .bb-solutions__track::after{ background:transparent; }
 
-.bb-sust__intro{ position:relative; }
-.bb-sust__intro .bb-section__label{ position:absolute; left:0; top:0; }
-.bb-sust__head,
-.bb-sust__list{ margin-left:calc(33.3333% + var(--rule-inset)); }
-.bb-section__title--sust{ max-width:19em; }
+.bb-sustainability__intro{ position:relative; }
+.bb-sustainability__intro .bb-section-label{ position:absolute; left:0; top:0; }
+.bb-sustainability__head,
+.bb-sustainability__list{ margin-left:calc(33.3333% + var(--rule-inset)); }
+.bb-heading--sust{ max-width:19em; }
 /* "to" opens the second line: the width is set so the first line ends before it */
-.bb-section__title--expertise{ max-width:14.2em; }
-.bb-section__title--sdg{ max-width:11.8em; }
-.bb-sust__list{
+.bb-heading--expertise{ max-width:14.2em; }
+.bb-heading--sdg{ max-width:11.8em; }
+.bb-sustainability__list{
   list-style:none;
   padding:0;
   margin-top:var(--gap-block-media);
 }
 @media (max-width:1150px){
-  .bb-sust__intro .bb-section__label{ position:static; display:block; margin-bottom:var(--gap-label-title); }
-  .bb-sust__head,
-  .bb-sust__list{ margin-left:0; }
+  .bb-sustainability__intro .bb-section-label{ position:static; display:block; margin-bottom:var(--gap-label-title); }
+  .bb-sustainability__head,
+  .bb-sustainability__list{ margin-left:0; }
 }
 
 /* --- Our Approach: four cards across the full width under the heading ------ */
@@ -2766,11 +2771,11 @@ body > main{
 .bb-approach::before{ content:none; }
 .bb-approach .bb-shell{ position:relative; z-index:1; }
 .bb-principles .bb-card--audience{ min-height:clamp(270px, 18vw, 350px); }
-.bb-principles .bb-section__title--card{ margin-top:clamp(28px, 3vw, 64px); }
+.bb-principles .bb-heading--card{ margin-top:clamp(28px, 3vw, 64px); }
 @media (max-width:1150px){
   .bb-principles{ grid-template-columns:repeat(2, 1fr); }
   .bb-principles .bb-card--audience{ min-height:0; }
-  .bb-principles .bb-section__title--card{ margin-top:clamp(28px, 4vw, 48px); }
+  .bb-principles .bb-heading--card{ margin-top:clamp(28px, 4vw, 48px); }
 }
 @media (max-width:640px){
   .bb-principles{ grid-template-columns:1fr; }
@@ -2778,20 +2783,20 @@ body > main{
 
 /* --- Eco Solutions: the running head is held on the margin while the heading
        and the solution rows scroll past in the two right columns ------------- */
-.bb-ecosol{ position:relative; }
-.bb-ecosol::before{ content:none; }
-.bb-ecosol .bb-shell{ position:relative; z-index:1; }
-.bb-ecosol__layout{
+.bb-ecosystem-solutions{ position:relative; }
+.bb-ecosystem-solutions::before{ content:none; }
+.bb-ecosystem-solutions .bb-shell{ position:relative; z-index:1; }
+.bb-ecosystem-solutions__layout{
   display:grid;
   grid-template-columns:1fr 2fr;
   align-items:start;
 }
-.bb-ecosol__label{
+.bb-ecosystem-solutions__label{
   position:sticky;
   top:calc(var(--header-h) + var(--anchor-gap));
 }
-.bb-ecosol__body{ padding-left:var(--rule-inset); }
-.bb-sols{
+.bb-ecosystem-solutions__body{ padding-left:var(--rule-inset); }
+.bb-solution-picker{
   --sol-no:clamp(30px, 2.4vw, 46px);
   display:grid;
   grid-template-columns:minmax(0, 1fr) minmax(0, 1fr);
@@ -2799,15 +2804,15 @@ body > main{
   align-items:start;
   margin-top:var(--gap-block-media);
 }
-.bb-sols__list{
+.bb-solution-picker__list{
   margin:0;
   padding:0;
   list-style:none;
   border-top:1px solid var(--hairline);
 }
-.bb-sol{ border-bottom:1px solid var(--hairline-soft); }
-.bb-sol__title{ margin:0; font:inherit; }
-.bb-sol__btn{
+.bb-solution{ border-bottom:1px solid var(--hairline-soft); }
+.bb-solution__title{ margin:0; font:inherit; }
+.bb-solution__btn{
   display:grid;
   grid-template-columns:var(--sol-no) 1fr auto;
   align-items:center;
@@ -2824,7 +2829,7 @@ body > main{
   text-align:left;
   cursor:default;
 }
-.bb-sol__no{
+.bb-solution__no{
   display:flex;
   align-items:center;
   justify-content:center;
@@ -2837,7 +2842,7 @@ body > main{
   font-weight:600;
   letter-spacing:.1em;
 }
-.bb-sol__arrow{
+.bb-solution__arrow{
   width:9px;
   height:9px;
   border-top:1.5px solid var(--green);
@@ -2846,32 +2851,32 @@ body > main{
   opacity:0;
   transition:opacity .3s ease, transform .3s ease;
 }
-.bb-sol__detail{ padding:0 0 clamp(20px, 2vw, 40px) calc(var(--sol-no) + clamp(14px, 1.4vw, 28px)); }
-.bb-sol__detail .bb-copy--card{ margin:0; max-width:30em; }
-.bb-sol__detail .bb-link-underline{ margin-top:var(--gap-text-link); }
+.bb-solution__detail{ padding:0 0 clamp(20px, 2vw, 40px) calc(var(--sol-no) + clamp(14px, 1.4vw, 28px)); }
+.bb-solution__detail .bb-copy--card{ margin:0; max-width:30em; }
+.bb-solution__detail .bb-link-underline{ margin-top:var(--gap-text-link); }
 
-.bb-sols__panel{
+.bb-solution-picker__panel{
   display:none;
 }
 
 /* script on: the list becomes a chooser */
-.bb-sols--live .bb-sol__btn{ cursor:pointer; }
-.bb-sols--live .bb-sol__detail{ display:none; }
-.bb-sols--live .bb-sol__no,
-.bb-sols--live .bb-sol__name{ transition:background-color .3s ease, border-color .3s ease, color .3s ease; }
-.bb-sols--live .bb-sol:not(.bb-sol--active) .bb-sol__btn{ color:var(--ink-muted); }
-.bb-sols--live .bb-sol__btn:hover .bb-sol__arrow,
-.bb-sols--live .bb-sol__btn:focus-visible .bb-sol__arrow{ opacity:.6; }
-.bb-sols--live .bb-sol--active .bb-sol__no{
+.bb-solution-picker--live .bb-solution__btn{ cursor:pointer; }
+.bb-solution-picker--live .bb-solution__detail{ display:none; }
+.bb-solution-picker--live .bb-solution__no,
+.bb-solution-picker--live .bb-solution__name{ transition:background-color .3s ease, border-color .3s ease, color .3s ease; }
+.bb-solution-picker--live .bb-solution:not(.bb-solution--active) .bb-solution__btn{ color:var(--ink-muted); }
+.bb-solution-picker--live .bb-solution__btn:hover .bb-solution__arrow,
+.bb-solution-picker--live .bb-solution__btn:focus-visible .bb-solution__arrow{ opacity:.6; }
+.bb-solution-picker--live .bb-solution--active .bb-solution__no{
   background:var(--green);
   border-color:var(--green);
   color:var(--paper);
 }
-.bb-sols--live .bb-sol--active .bb-sol__arrow{ opacity:1; }
+.bb-solution-picker--live .bb-solution--active .bb-solution__arrow{ opacity:1; }
 
 /* wide: the choice is read in the green panel, the one solid field */
 @media (min-width:1151px){
-  .bb-sols--live .bb-sols__panel{
+  .bb-solution-picker--live .bb-solution-picker__panel{
     display:block;
     position:sticky;
     top:calc(var(--header-h) + var(--rule-inset));
@@ -2885,36 +2890,36 @@ body > main{
     color:var(--paper);
     transition:opacity .25s ease;
   }
-  .bb-sols__panel--swapping{ opacity:0; }
-  .bb-sols__panel-icon{
+  .bb-solution-picker__panel--swapping{ opacity:0; }
+  .bb-solution-picker__panel-icon{
     display:block;
     width:clamp(44px, 3.4vw, 64px);
     height:auto;
     filter:brightness(0) invert(1);   /* the line icons are green; here drawn in white */
   }
-  .bb-sols__panel-title{
+  .bb-solution-picker__panel-title{
     margin:clamp(40px, 5vw, 110px) 0 0;
     font-size:clamp(21px, 1.5vw, 32px);
     font-weight:600;
     letter-spacing:-.012em;
   }
-  .bb-sols__panel-text .bb-copy{
+  .bb-solution-picker__panel-text .bb-copy{
     margin:var(--gap-label-title) 0 0;
     color:rgba(255,255,255,.8);
     max-width:28em;
   }
-  .bb-sols__panel-text .bb-link-underline{ margin-top:var(--gap-text-link); color:var(--paper); }
+  .bb-solution-picker__panel-text .bb-link-underline{ margin-top:var(--gap-text-link); color:var(--paper); }
 }
 
 /* narrower: one column, the chosen row opens in place */
 @media (max-width:1150px){
-  .bb-ecosol__layout{ grid-template-columns:1fr; row-gap:var(--gap-label-title); }
-  .bb-ecosol__label{ position:static; }
-  .bb-ecosol__body{ padding-left:0; }
-  .bb-sols{ grid-template-columns:1fr; }
-  .bb-sols--live .bb-sol--active .bb-sol__detail{ display:block; }
-  .bb-sols--live .bb-sol--active .bb-sol__arrow{ transform:rotate(135deg); }
-  .bb-sols--live .bb-sol__arrow{ opacity:.6; }
+  .bb-ecosystem-solutions__layout{ grid-template-columns:1fr; row-gap:var(--gap-label-title); }
+  .bb-ecosystem-solutions__label{ position:static; }
+  .bb-ecosystem-solutions__body{ padding-left:0; }
+  .bb-solution-picker{ grid-template-columns:1fr; }
+  .bb-solution-picker--live .bb-solution--active .bb-solution__detail{ display:block; }
+  .bb-solution-picker--live .bb-solution--active .bb-solution__arrow{ transform:rotate(135deg); }
+  .bb-solution-picker--live .bb-solution__arrow{ opacity:.6; }
 }
 
 /* --- Austrian Expertise & Certifications: ruled rows on the tinted band ---- */
@@ -2939,7 +2944,7 @@ body > main{
   line-height:1.6;
   text-transform:uppercase;
 }
-.bb-expertise__row .bb-section__title--card{ margin:0; }
+.bb-expertise__row .bb-heading--card{ margin:0; }
 .bb-expertise__row .bb-copy--card{ max-width:34em; }
 @media (max-width:1150px){
   .bb-expertise__row{ grid-template-columns:33.3333% 1fr; }
@@ -2949,9 +2954,9 @@ body > main{
 }
 /* the figures stand in one row: equal captions, the source pinned to the foot of each */
 .bb-numbers__figures .bb-fact{ display:flex; flex-direction:column; }
-.bb-numbers__figures .bb-fact__source{ margin-top:auto; padding-top:clamp(8px, .8vw, 16px); align-self:flex-start; }
+.bb-numbers__figures .bb-source-link{ margin-top:auto; padding-top:clamp(8px, .8vw, 16px); align-self:flex-start; }
 /* --- In Numbers with published figures: the source sits under each caption ---- */
-.bb-fact__source{
+.bb-source-link{
   display:inline-block;
   margin-top:clamp(8px, .8vw, 16px);
   color:var(--ink-muted);
@@ -2961,13 +2966,13 @@ body > main{
   text-decoration-color:var(--hairline);
   text-underline-offset:3px;
 }
-.bb-fact__source:hover{ color:var(--green); text-decoration-color:var(--green); }
+.bb-source-link:hover{ color:var(--green); text-decoration-color:var(--green); }
 @media (max-width:640px){
-  .bb-fact__source{ font-size:11px; }
+  .bb-source-link{ font-size:11px; }
 }
 
 /* rows that cite several sources: the links sit apart */
-.bb-expertise__row .bb-fact__source{ margin-right:clamp(14px, 1.4vw, 28px); }
+.bb-expertise__row .bb-source-link{ margin-right:clamp(14px, 1.4vw, 28px); }
 
 /* Definition stands on the tinted ground: the stage sits above it */
 .bb-vision__stage{ z-index:1; }
@@ -2994,30 +2999,30 @@ body > main{
 .bb-stages{ margin-top:round(up, var(--gap-block-media), 1px); }
 
 /* Benefits: the sources of a panel, in the same small underlined style as elsewhere */
-.bb-sol__detail .bb-fact__source{ margin-right:clamp(12px, 1.2vw, 24px); }
-.bb-sols__panel-text .bb-fact__source{
+.bb-solution__detail .bb-source-link{ margin-right:clamp(12px, 1.2vw, 24px); }
+.bb-solution-picker__panel-text .bb-source-link{
   color:rgba(255,255,255,.85);
   text-decoration-color:rgba(255,255,255,.4);
 }
-.bb-sols__panel-text .bb-fact__source:hover{ color:var(--paper); text-decoration-color:var(--paper); }
+.bb-solution-picker__panel-text .bb-source-link:hover{ color:var(--paper); text-decoration-color:var(--paper); }
 
 /* --- Comparison: the pills of For Whom choose the pair. Every card has one anatomy:
        the criterion, the verdict, the two materials in two rows, the source. ---------- */
-.bb-vsc-sec .bb-section__title--audiences{
+.bb-material-comparison .bb-heading--audiences{
   max-width:22em;
   text-wrap:balance;
   font-size:clamp(20px, 1.75vw, 32px);
   line-height:1.3;
   letter-spacing:-.015em;
 }
-.bb-vsd .bb-card{
+.bb-comparison-grid .bb-card{
   display:flex;
   flex-direction:column;
   align-items:flex-start;
   min-height:clamp(280px, 20vw, 340px);
   padding:clamp(20px, 1.8vw, 34px);
 }
-.bb-vsd__take{
+.bb-comparison-grid__take{
   margin:clamp(16px, 1.6vw, 30px) 0 0;
   min-height:2.5em;
   font-size:clamp(18px, 1.55vw, 28px);
@@ -3025,12 +3030,12 @@ body > main{
   line-height:1.2;
   letter-spacing:-.02em;
 }
-.bb-vsd__rows{
+.bb-comparison-grid__rows{
   align-self:stretch;
   margin-top:clamp(14px, 1.4vw, 26px);
   border-top:1px solid var(--hairline);
 }
-.bb-vsd__row{
+.bb-comparison-grid__row{
   display:grid;
   grid-template-columns:4.6em minmax(0, 1fr) auto;
   align-items:center;
@@ -3038,35 +3043,35 @@ body > main{
   padding:clamp(9px, .85vw, 15px) 0;
   border-bottom:1px solid var(--hairline-soft);
 }
-.bb-vsd__who{
+.bb-comparison-grid__who{
   color:var(--ink-muted);
   font-size:clamp(11px, .72vw, 13px);
   font-weight:600;
 }
-.bb-vsd__row--timber .bb-vsd__who{ color:var(--green); }
-.bb-vsd__track{ height:8px; background:var(--hairline-soft); }
-.bb-vsd__track i{
+.bb-comparison-grid__row--timber .bb-comparison-grid__who{ color:var(--green); }
+.bb-comparison-grid__track{ height:8px; background:var(--hairline-soft); }
+.bb-comparison-grid__track i{
   display:block;
   width:var(--w);
   height:100%;
   background:rgba(18,18,18,.32);
 }
-.bb-vsd__row--timber .bb-vsd__track i{ background:var(--green); }
-.bb-vsd__v{
+.bb-comparison-grid__row--timber .bb-comparison-grid__track i{ background:var(--green); }
+.bb-comparison-grid__v{
   min-width:2.8em;
   text-align:right;
   font-size:clamp(14px, 1.1vw, 20px);
   font-weight:600;
   font-variant-numeric:tabular-nums;
 }
-.bb-vsd__row--timber .bb-vsd__v{ color:var(--green); }
-.bb-vsd__row--text{ grid-template-columns:4.6em minmax(0, 1fr); }
-.bb-vsd__w{
+.bb-comparison-grid__row--timber .bb-comparison-grid__v{ color:var(--green); }
+.bb-comparison-grid__row--text{ grid-template-columns:4.6em minmax(0, 1fr); }
+.bb-comparison-grid__w{
   font-size:clamp(13px, .95vw, 17px);
   font-weight:500;
   line-height:1.25;
 }
-.bb-vsd__w small{
+.bb-comparison-grid__w small{
   display:block;
   margin-top:2px;
   color:var(--ink-muted);
@@ -3074,14 +3079,14 @@ body > main{
   font-weight:400;
   line-height:1.35;
 }
-.bb-vsd__row--timber .bb-vsd__w{ color:var(--green); }
-.bb-vsd .bb-fact__source{ margin-top:auto; padding-top:clamp(10px, 1vw, 18px); }
+.bb-comparison-grid__row--timber .bb-comparison-grid__w{ color:var(--green); }
+.bb-comparison-grid .bb-source-link{ margin-top:auto; padding-top:clamp(10px, 1vw, 18px); }
 @media (max-width:1150px){
-  .bb-vsd .bb-card{ min-height:0; }
+  .bb-comparison-grid .bb-card{ min-height:0; }
 }
 
 /* the section stands on the green ground of Our Projects */
-.bb-vsc-sec--green{
+.bb-material-comparison--green{
   background:
     repeating-linear-gradient(135deg,
       rgba(255,255,255,.06) 0 1px,
@@ -3089,24 +3094,24 @@ body > main{
     var(--green);
   color:var(--paper);
 }
-.bb-vsc-sec--green .bb-section__label{ color:rgba(255,255,255,.7); }
-.bb-vsc-sec--green .bb-pill{
+.bb-material-comparison--green .bb-section-label{ color:rgba(255,255,255,.7); }
+.bb-material-comparison--green .bb-pill{
   border-color:rgba(255,255,255,.4);
   color:var(--paper);
 }
-.bb-vsc-sec--green .bb-pill:hover,
-.bb-vsc-sec--green .bb-pill[aria-selected="true"]{
+.bb-material-comparison--green .bb-pill:hover,
+.bb-material-comparison--green .bb-pill[aria-selected="true"]{
   border-color:var(--paper);
   background:var(--paper);
   color:var(--green);
 }
-.bb-vsc-sec--green .bb-card{ color:var(--ink); border:0; }
+.bb-material-comparison--green .bb-card{ color:var(--ink); border:0; }
 
 /* Solution page: every heading sets in one or two lines on a desktop, balanced */
-.bb-section__title--projects,.bb-section__title--sust{  max-width:19em;  text-wrap:balance;}
+.bb-heading--projects,.bb-heading--sust{  max-width:19em;  text-wrap:balance;}
 
 /* the verdict of every comparison card sets in two balanced lines */
-.bb-vsd__take{
+.bb-comparison-grid__take{
   max-width:10.5em;
   text-wrap:balance;
 }
@@ -3124,25 +3129,32 @@ body > main{
 
 /* Cards that take the height of their content; the grid stretches them to the
    tallest in the row, so they stay equal. */
-.bb-pillars__cards--fit .bb-card--audience{ min-height:0; }
+.bb-section__cards--fit .bb-card--audience{ min-height:0; }
+.bb-section__cards--fit .bb-copy--card:last-child{ margin-bottom:0; }
 
 /* --- About: sections on plain white ----------------------------------------
    A tinted ground left plain white keeps the ruling and the edges; the cards
    then take the tint themselves so they still stand off the page.
    ----------------------------------------------------------------------- */
-.bb-pillars__ground--plain{ background:var(--paper); }
-.bb-pillars--plain .bb-card--audience{ background:var(--paper-warm); }
+.bb-section__ground--plain{ background:var(--paper); }
+.bb-pillars--plain .bb-card--audience{
+  background:
+    repeating-linear-gradient(135deg,
+      rgba(18,18,18,.016) 0 1px,
+      transparent 1px 11px),
+    var(--paper-warm);
+}
 
 /* cards set in the two right-hand thirds, under the heading on the first rule */
-.bb-pillars__cards--right{
+.bb-section__cards--right{
   grid-template-columns:repeat(2, 1fr);
   margin-left:calc(33.3333% + var(--rule-inset));
 }
 @media (max-width:1150px){
-  .bb-pillars__cards--right{ margin-left:0; }
+  .bb-section__cards--right{ margin-left:0; }
 }
 @media (max-width:640px){
-  .bb-pillars__cards--right{ grid-template-columns:1fr; }
+  .bb-section__cards--right{ grid-template-columns:1fr; }
 }
 
 /* The Shift on the tinted ground: its content stands above the ground */
@@ -3157,7 +3169,7 @@ body > main{
   margin:var(--gap-block-media) 0 0;
   row-gap:clamp(28px, 3vw, 56px);
 }
-.bb-insight__card{
+.bb-insight__link{
   display:flex;
   flex-direction:column;
   color:var(--ink);
@@ -3189,8 +3201,8 @@ body > main{
   height:auto;
   object-fit:contain;
 }
-.bb-insight__card:hover .bb-insight__media img,
-.bb-insight__card:focus-visible .bb-insight__media img{ transform:scale(1.04); }
+.bb-insight__link:hover .bb-insight__media img,
+.bb-insight__link:focus-visible .bb-insight__media img{ transform:scale(1.04); }
 .bb-insight__meta{
   display:block;
   margin-top:clamp(14px, 1.2vw, 24px);
@@ -3201,7 +3213,7 @@ body > main{
   line-height:1.3;
   text-transform:uppercase;
 }
-.bb-section__title--insight{
+.bb-heading--insight{
   display:block;
   margin:clamp(8px, .7vw, 14px) 0 0;
   max-width:18em;
@@ -3212,8 +3224,8 @@ body > main{
   letter-spacing:-.015em;
   transition:color .25s ease;
 }
-.bb-insight__card:hover .bb-section__title--insight,
-.bb-insight__card:focus-visible .bb-section__title--insight{ color:var(--green); }
+.bb-insight__link:hover .bb-heading--insight,
+.bb-insight__link:focus-visible .bb-heading--insight{ color:var(--green); }
 @media (max-width:1150px){
   .bb-insight-cards{ grid-template-columns:repeat(2, minmax(0, 1fr)); }
 }
@@ -3223,10 +3235,10 @@ body > main{
 
 /* the drawings that stand in the corner of their canvas are cut larger, so the
    building itself matches the size of the others (the card crops the rest) */
-.bb-card--work .bb-work__art--corner{ width:100%; max-width:none; }
+.bb-card--work .bb-card__art--corner{ width:100%; max-width:none; }
 
 /* a white section without the column ruling of the tinted ones */
-.bb-pillars__ground--plain i + i{ border-left:0; }
+.bb-section__ground--plain i + i{ border-left:0; }
 
 /* --- Insights page and insight pages ----------------------------------------
    The list and the article are templates: every insight is one card and one
@@ -3263,7 +3275,7 @@ body > main{
   margin:0 0 4px;
   color:var(--ink-muted);
   font-size:var(--label-fs);
-  font-weight:500;
+  font-weight:400;
   letter-spacing:.16em;
   text-transform:uppercase;
 }
@@ -3271,7 +3283,7 @@ body > main{
 /* the photographs: the gallery of Project Types, each one opening in the viewer
    and growing a little under the cursor, two to a row; a photograph that is
    alone takes both thirds */
-.bb-article__gallery.bb-projects__grid{
+.bb-article__gallery.bb-photo-grid{
   margin:var(--gap-block-media) 0 0;
   grid-template-columns:repeat(2, minmax(0, 1fr));
   column-gap:var(--rule-inset);
@@ -3283,7 +3295,7 @@ body > main{
 .bb-article__gallery--1 .bb-article__image--l{ aspect-ratio:16 / 9; }
 .bb-article__gallery--1 .bb-article__image--p{ aspect-ratio:3 / 2; }
 @media (max-width:640px){
-  .bb-article__gallery.bb-projects__grid{ grid-template-columns:minmax(0, 1fr); }
+  .bb-article__gallery.bb-photo-grid{ grid-template-columns:minmax(0, 1fr); }
   .bb-article__facts{ grid-template-columns:minmax(0, 1fr); }
   .bb-article__facts > div + div{ padding-left:0; border-left:0; border-top:1px solid var(--hairline-soft); }
 }
@@ -3297,7 +3309,7 @@ body > main{
   background:var(--ink);
   object-fit:contain;
 }
-.bb-article__video + .bb-article__gallery.bb-projects__grid{ margin-top:clamp(14px, 1.2vw, 26px); }
+.bb-article__video + .bb-article__gallery.bb-photo-grid{ margin-top:clamp(14px, 1.2vw, 26px); }
 
 /* a card with a video: the still frame fills the picture and grows under the
    cursor like a photograph; the script plays it while the cursor is on it */
@@ -3308,13 +3320,142 @@ body > main{
   object-fit:cover;
   transition:transform .5s cubic-bezier(.2,.7,.25,1);
 }
-.bb-insight__card:hover .bb-insight__media video,
-.bb-insight__card:focus-visible .bb-insight__media video{ transform:scale(1.04); }
+.bb-insight__link:hover .bb-insight__media video,
+.bb-insight__link:focus-visible .bb-insight__media video{ transform:scale(1.04); }
 
 /* the closing line of a feed of insights */
-.bb-insights__more{ margin:var(--gap-block-media) 0 0; }
-.bb-insights__more .bb-link-underline{ margin-top:0; }
+.bb-feed-more{ margin:var(--gap-block-media) 0 0; }
+.bb-feed-more .bb-link-underline{ margin-top:0; }
 
-/* the tinted ground of the insight feeds, flat: the tint and the ruling, without
-   the diagonal hatching */
-.bb-pillars__ground--flat{ background:var(--paper-warm); }
+
+/* three steps instead of five: they take the last three floors, so their lines are
+   still being drawn left to right once the steps are on the page */
+.bb-stages--three .bb-stage:nth-child(1){ --si:var(--f2); }
+.bb-stages--three .bb-stage:nth-child(2){ --si:var(--f3); }
+.bb-stages--three .bb-stage:nth-child(3){ --si:var(--f4); }
+
+/* an insight: the kind of post and the heading on the first row, then the facts
+   on the margin and the photographs in the two thirds beside them, both starting
+   on the same line */
+.bb-article__intro{
+  display:grid;
+  grid-template-columns:1fr 2fr;
+  align-items:start;
+}
+.bb-article__intro .bb-section-label{ position:static; display:block; grid-column:1; grid-row:1; }
+.bb-article__intro .bb-section__head{
+  grid-column:2;
+  grid-row:1;
+  margin-left:0;
+  padding-left:var(--rule-inset);
+}
+.bb-article__intro > .bb-article__facts{
+  grid-column:1;
+  grid-row:2;
+  grid-template-columns:minmax(0, 1fr);
+  margin-top:var(--gap-block-media);
+  border-bottom:0;
+  max-width:18em;
+}
+.bb-article__intro > .bb-article__facts > div + div{
+  padding-left:0;
+  border-left:0;
+  border-top:1px solid var(--hairline-soft);
+}
+.bb-article__media{
+  grid-column:2;
+  grid-row:2;
+  padding-left:var(--rule-inset);
+}
+@media (max-width:1150px){
+  .bb-article__intro{ grid-template-columns:1fr; row-gap:18px; }
+  .bb-article__intro .bb-section-label,
+  .bb-article__intro .bb-section__head,
+  .bb-article__intro > .bb-article__facts,
+  .bb-article__media{ grid-column:1; grid-row:auto; }
+  .bb-article__intro .bb-section__head,
+  .bb-article__media{ padding-left:0; }
+  .bb-article__intro > .bb-article__facts{ max-width:none; }
+}
+
+/* on a phone every photograph keeps the one proportion, 3:2, the insight pages and
+   the insight cards included */
+@media (max-width:640px){
+  .bb-article__main .bb-article__gallery .bb-article__image,
+  .bb-insight__media{ aspect-ratio:3 / 2; }
+}
+
+/* --- 404: the numerals on the left, what to do on the right --- */
+.bb-notfound{ padding-block:clamp(70px, 12vw, 240px); }
+.bb-notfound__top{
+  display:grid;
+  grid-template-columns:minmax(0, 1.45fr) minmax(0, 1fr);
+  column-gap:var(--rule-inset);
+  align-items:end;
+}
+.bb-notfound__code{
+  margin:0;
+  color:var(--green);
+  font-size:clamp(130px, 29vw, 560px);
+  font-weight:500;
+  line-height:.8;
+  letter-spacing:-.06em;
+}
+.bb-notfound__aside .bb-copy--section{ margin-top:var(--gap-title-text); }
+.bb-notfound__links{
+  list-style:none;
+  margin:var(--gap-block-media) 0 0;
+  padding:0;
+  border-bottom:1px solid var(--hairline-soft);
+}
+.bb-notfound__links li{ border-top:1px solid var(--hairline-soft); }
+.bb-notfound__links a{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:1em 0;
+  color:var(--ink);
+  font-size:var(--lede-fs);
+  font-weight:500;
+  text-decoration:none;
+  transition:color .25s ease, background-color .25s ease, padding .3s cubic-bezier(.2,.7,.25,1);
+}
+.bb-notfound__links a::after{
+  content:"\2192";
+  transition:transform .3s cubic-bezier(.2,.7,.25,1);
+}
+.bb-notfound__links a:hover,
+.bb-notfound__links a:focus-visible{
+  color:var(--green);
+  background:var(--paper-warm);
+  padding-inline:.9em;
+}
+.bb-notfound__links a:hover::after,
+.bb-notfound__links a:focus-visible::after{ transform:translateX(4px); }
+@media (max-width:900px){
+  .bb-notfound__top{ grid-template-columns:1fr; row-gap:clamp(20px, 5vw, 40px); }
+}
+
+/* captions under figures break into even lines, so no figure or small word is left hanging */
+.bb-numbers__figures--balanced .bb-fact__label{ text-wrap:balance; }
+
+/* the plan of the pilot school, in the two thirds under the facts */
+.bb-school-plan{
+  margin:var(--gap-block-media) 0 0;
+  padding:clamp(14px, 1.6vw, 32px);
+  background:
+    repeating-linear-gradient(135deg,
+      rgba(18,18,18,.016) 0 1px,
+      transparent 1px 11px),
+    var(--paper-warm);
+  border:1px solid var(--hairline-soft);
+}
+.bb-school-plan img{ display:block; width:100%; height:auto; }
+.bb-school-plan .bb-disclosure{
+  position:static;
+  margin-top:clamp(10px, 1vw, 18px);
+  max-width:none;
+  background:none;
+  padding:0;
+  color:var(--ink-muted);
+}

@@ -480,6 +480,11 @@ body > main{
   background:var(--hairline-soft);
 }
 
+.bb-hero__figure--school .bb-hero__image,
+.bb-hero__figure--bottom .bb-hero__image{
+  object-position:center bottom;
+}
+
 /* The disclosure sits on the photograph itself, bottom left: it belongs to
    the image, not to the page under it. A flat panel carries it over any
    frame — no rounding, no shadow. */
@@ -1035,6 +1040,11 @@ body > main{
   text-overflow:ellipsis;
 }
 
+.bb-hero__figure .bb-disclosure--overlay{
+  width:max-content;
+  max-width:calc(100% - 48px);
+}
+
 .bb-filmstrip__image{
   width:100%;
   height:100%;
@@ -1320,6 +1330,14 @@ body > main{
   object-fit:cover;
   background:var(--hairline-soft);
   transition:transform .5s cubic-bezier(.2,.7,.25,1);
+}
+
+.bb-project__image:is(
+  [src$="kindergarten-hallwang.avif"],
+  [src$="healthcare-madeleine-bres.avif"],
+  [src$="hospitality-quartier.avif"]
+){
+  filter:brightness(1.07) sepia(.09) saturate(1.12);
 }
 
 .bb-project__open:hover .bb-project__image,
@@ -2643,9 +2661,9 @@ body > main{
 }
 
 /* Annotation positions moved from HTML into the stylesheet. */
-.bb-annotation--position-01{ --x:20%; --y:38%; }
-.bb-annotation--position-02{ --x:72%; --y:29%; }
-.bb-annotation--position-03{ --x:80%; --y:82%; }
+.bb-annotation--position-01{ --x:16%; --y:56%; }
+.bb-annotation--position-02{ --x:66%; --y:22%; }
+.bb-annotation--position-03{ --x:88%; --y:73%; }
 .bb-annotation--position-04{ --x:20%; --y:24%; }
 .bb-annotation--position-05{ --x:88%; --y:33%; }
 .bb-annotation--position-06{ --x:30%; --y:62%; }

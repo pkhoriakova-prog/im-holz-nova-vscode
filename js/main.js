@@ -64,6 +64,7 @@
   var outView = out.querySelector('.bb-scene__view');
   var inView = inn.querySelector('.bb-scene__view');
   var outImg = out.querySelector('.bb-scene__image');
+  var inImg = inn.querySelector('.bb-scene__image');
   var notesOut = Array.prototype.slice.call(out.querySelectorAll('.bb-annotation'));
   var notesIn = Array.prototype.slice.call(inn.querySelectorAll('.bb-annotation'));
 
@@ -74,7 +75,7 @@
   /* where the glazing sits in the exterior photograph itself: the point at
      which the hall behind the glass — the stair, the warm timber — is already
      showing through, so the inside comes up out of the place it is visible in */
-  var DOOR_U = 0.600, DOOR_V = 0.630;
+  var DOOR_U = 0.540, DOOR_V = 0.640;
 
   var OUT_SETTLE = 0.055;   // the frame comes in a touch large and settles
   var SETTLED = 0.052;
@@ -106,7 +107,7 @@
      cropped to fill it */
   function door() {
     var fw = frame.clientWidth, fh = frame.clientHeight;
-    var iw = outImg.naturalWidth || 2400, ih = outImg.naturalHeight || 1856;
+    var iw = outImg.naturalWidth || 1672, ih = outImg.naturalHeight || 941;
     if (!fw || !fh) return { x: DOOR_U, y: DOOR_V };
     var s = Math.max(fw / iw, fh / ih);          // object-fit: cover
     var dw = iw * s, dh = ih * s;
@@ -117,7 +118,53 @@
              y: Math.min(Math.max(y, 0.06), 0.94) };
   }
 
+  /* the notes outside are set in the photograph's own coordinates (data-u /
+     data-v), so each mark lands on the same detail whatever the frame's
+     proportion crops away, and follows the settle */
+  function place(scale) {
+    var fw = frame.clientWidth, fh = frame.clientHeight;
+    if (!fw || !fh) return;
+    var iw = outImg.naturalWidth || 1672, ih = outImg.naturalHeight || 941;
+    var s = Math.max(fw / iw, fh / ih);
+    var dw = iw * s, dh = ih * s;
+    var ox = (fw - dw) / 2, oy = (fh - dh) / 2;
+    var d = door();
+    var cx = d.x * fw, cy = d.y * fh;
+    notesOut.forEach(function (n) {
+      var u = parseFloat(n.getAttribute('data-u'));
+      var v = parseFloat(n.getAttribute('data-v'));
+      if (isNaN(u) || isNaN(v)) return;
+      var x = ox + u * dw, y = oy + v * dh;
+      x = cx + (x - cx) * scale;
+      y = cy + (y - cy) * scale;
+      n.style.setProperty('--x', (x / fw * 100).toFixed(2) + '%');
+      n.style.setProperty('--y', (y / fh * 100).toFixed(2) + '%');
+    });
+  }
+
+  /* the same for the notes inside, which sit on the second photograph */
+  function placeIn(scale) {
+    var fw = frame.clientWidth, fh = frame.clientHeight;
+    if (!fw || !fh) return;
+    var iw = inImg.naturalWidth || 1670, ih = inImg.naturalHeight || 941;
+    var s = Math.max(fw / iw, fh / ih);
+    var dw = iw * s, dh = ih * s;
+    var ox = (fw - dw) / 2, oy = (fh - dh) / 2;
+    var cx = fw * 0.5, cy = fh * 0.56;           // the inside's transform-origin
+    notesIn.forEach(function (n) {
+      var u = parseFloat(n.getAttribute('data-u'));
+      var v = parseFloat(n.getAttribute('data-v'));
+      if (isNaN(u) || isNaN(v)) return;
+      var x = cx + (ox + u * dw - cx) * scale;
+      var y = cy + (oy + v * dh - cy) * scale;
+      n.style.setProperty('--x', (x / fw * 100).toFixed(2) + '%');
+      n.style.setProperty('--y', (y / fh * 100).toFixed(2) + '%');
+    });
+  }
+
   function rest() {
+    place(1);
+    placeIn(1);
     outView.style.removeProperty('--view-scale');
     inView.style.setProperty('--view-scale', '1');
     inn.style.setProperty('--in-on', '1');
@@ -146,13 +193,15 @@
     var settle = 1 + OUT_SETTLE * (1 - span(p, 0, SETTLED));
     var push = 1 + PUSH * accel(span(p, GO, DISS1));
     outView.style.setProperty('--view-scale', (settle * push).toFixed(4));
+    place(settle * push);
 
     /* inside: comes up over the last third of the drive, and goes on into the
        room afterwards.  One unbroken forward move, no stop at the threshold */
     inn.style.setProperty('--in-on', smooth(span(p, DISS0, DISS1)).toFixed(4));
     var k = span(p, DISS0, DEEP);
-    inView.style.setProperty('--view-scale',
-      (IN_FROM + (IN_TO - IN_FROM) * k).toFixed(4));
+    var inScale = IN_FROM + (IN_TO - IN_FROM) * k;
+    inView.style.setProperty('--view-scale', inScale.toFixed(4));
+    placeIn(inScale);
 
     /* the notes outside are gone before the drive starts, so nothing is left
        pointing at a picture that is no longer there */
@@ -171,6 +220,7 @@
   (pinned.addEventListener ? pinned.addEventListener.bind(pinned, 'change')
                            : pinned.addListener.bind(pinned))(onScroll);
   if (outImg && !outImg.complete) outImg.addEventListener('load', onScroll);
+  if (inImg && !inImg.complete) inImg.addEventListener('load', onScroll);
   paint();
 })();
 

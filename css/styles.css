@@ -1340,6 +1340,10 @@ body > main{
   filter:brightness(1.07) sepia(.09) saturate(1.12);
 }
 
+.bb-project__image[src$="Pflegewohnheim Erika Horn.avif"]{
+  filter:saturate(.88) brightness(.98);
+}
+
 .bb-project__open:hover .bb-project__image,
 .bb-project__open:focus-visible .bb-project__image{
   transform:scale(1.04);

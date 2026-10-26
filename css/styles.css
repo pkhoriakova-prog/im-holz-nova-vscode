@@ -1404,6 +1404,21 @@ body > main{
 .bb-our-projects .bb-section-label{ color:rgba(255,255,255,.7); }
 .bb-our-projects .bb-copy--section{ color:rgba(255,255,255,.78); }
 
+/* About: regional presence on white, before the green project section. */
+.bb-where-we-work{
+  background:var(--paper);
+  color:var(--ink);
+}
+.bb-where-we-work .bb-section-label{ color:var(--ink-muted); }
+.bb-where-we-work .bb-copy--section{ color:var(--ink-muted); }
+.bb-where-we-work .bb-card--work{
+  background:
+    repeating-linear-gradient(135deg,
+      rgba(18,18,18,.016) 0 1px,
+      transparent 1px 11px),
+    var(--paper-warm);
+}
+
 /* two projects side by side, each a card with its picture, name, tags and
    text inside */
 .bb-work-grid{

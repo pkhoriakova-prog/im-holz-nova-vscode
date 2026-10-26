@@ -1518,16 +1518,24 @@ body > main{
    small tablet, one on a phone. */
 @media (max-width:900px){
   .bb-card--work{ aspect-ratio:auto; min-height:0; }
+  .bb-work-grid{ align-items:start; }
   .bb-card__art{
     position:static;
     order:9;
     width:58%;
     max-width:none;
-    margin:auto calc(-1 * var(--work-px)) calc(-1 * var(--work-py)) auto;   /* on the foot of the card, at its right edge */
+    margin:8px calc(-1 * var(--work-px)) calc(-1 * var(--work-py)) auto;
   }
   .bb-copy--work,
-  .bb-card--work .bb-link-underline{ margin-bottom:var(--gap-text-link); }
+  .bb-card--work .bb-link-underline{ margin-bottom:12px; }
   .bb-card--work .bb-link-underline{ margin-top:0; padding-top:0; }
+  .bb-our-projects:not(.bb-where-we-work) .bb-card__art{
+    width:70%;
+    margin-top:-32px;
+  }
+  .bb-our-projects:not(.bb-where-we-work) .bb-link-underline{
+    margin-bottom:0;
+  }
 }
 @media (max-width:640px){
   .bb-work-grid{ grid-template-columns:1fr; row-gap:clamp(14px, 3vw, 24px); }
@@ -3273,6 +3281,30 @@ body > main{
 /* the drawings that stand in the corner of their canvas are cut larger, so the
    building itself matches the size of the others (the card crops the rest) */
 .bb-card--work .bb-card__art--corner{ width:100%; max-width:none; }
+
+/* Regional drawings include transparent space around the building. */
+.bb-where-we-work .bb-card__art{
+  --region-art-scale:.94;
+  width:calc(100% * var(--region-art-scale));
+  max-width:none;
+}
+.bb-where-we-work .bb-card__art[src*="where-we-work-central-asia-"],
+.bb-where-we-work .bb-card__art[src*="where-we-work-asia-"]{
+  --region-art-scale:.88;
+}
+.bb-where-we-work .bb-card__art[src*="where-we-work-middle-east-"],
+.bb-where-we-work .bb-card__art[src*="where-we-work-austria-europe-"]{
+  --region-art-scale:.88;
+  filter:hue-rotate(14deg) saturate(1.08) brightness(1.04);
+}
+@media (max-width:900px){
+  .bb-where-we-work .bb-card__art{
+    width:calc((100% + 2 * var(--work-px)) * var(--region-art-scale));
+    align-self:flex-end;
+    flex-shrink:0;
+    margin-top:clamp(-24px, -4vw, -12px);
+  }
+}
 
 /* a white section without the column ruling of the tinted ones */
 .bb-section__ground--plain i + i{ border-left:0; }

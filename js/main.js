@@ -41,6 +41,21 @@
   });
 })();
 
+/* Header menu — mark the link of the page we are on (articles count as Insights). */
+(function () {
+  var links = document.querySelectorAll('#primary-nav a');
+  function key(path) {
+    var s = path.replace(/\/+$/, '').split('/').pop().replace(/\.html$/, '');
+    return /^insights/.test(s) ? 'insights' : s;
+  }
+  var here = key(location.pathname);
+  if (!here) return;
+  for (var i = 0; i < links.length; i++) {
+    var href = (links[i].getAttribute('href') || '').split('#')[0];
+    if (href && key(href) === here) links[i].setAttribute('aria-current', 'page');
+  }
+})();
+
 /* Sustainable solutions: two scenes on one pinned frame.
 
    The reader is taken up to the building, driven into its glazing until the

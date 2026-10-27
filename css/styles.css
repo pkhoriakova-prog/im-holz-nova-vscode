@@ -222,6 +222,9 @@ body > main{
 }
 .bb-site-nav a:hover{ color:var(--green); }
 .bb-site-nav a:hover::after{ width:100%; }
+/* the page we are on keeps the hover state */
+.bb-site-nav a[aria-current="page"]{ color:var(--green); }
+.bb-site-nav a[aria-current="page"]::after{ width:100%; }
 
 .bb-site-lang{
   justify-self:end;

@@ -221,6 +221,7 @@ body > main{
   transition:width .22s ease;
 }
 .bb-site-nav a:hover{ color:var(--green); }
+.bb-heading--hero.bb-heading--hero-wide{ max-width:24em; text-wrap:balance; }  /* long hero titles: two lines at most */
 .bb-site-nav a:hover::after{ width:100%; }
 /* the page we are on keeps the hover state */
 .bb-site-nav a[aria-current="page"]{ color:var(--green); }
@@ -234,19 +235,30 @@ body > main{
   letter-spacing:.01em;
   color:var(--ink);
 }
-.bb-site-lang__current{
+/* the language switch behaves like the menu: the active language is green and
+   underlined, the other one is muted and takes the same line on hover */
+.bb-site-lang__current,
+.bb-site-lang__other{
   position:relative;
-  padding-bottom:1px;
+  padding-block:4px;
+  text-decoration:none;
 }
-.bb-site-lang__current::after{
+.bb-site-lang__current{ color:var(--green); }
+.bb-site-lang__other{ color:var(--ink-muted); transition:color .22s ease; }
+.bb-site-lang__current::after,
+.bb-site-lang__other::after{
   content:"";
   position:absolute;
-  left:0; right:0; bottom:0;
-  height:1px;
-  background:var(--ink);
+  left:0; bottom:0;
+  width:0;
+  height:.8px;
+  background:var(--green);
+  transition:width .22s ease;
 }
+.bb-site-lang__current::after{ width:100%; }
+.bb-site-lang__other:hover{ color:var(--green); }
+.bb-site-lang__other:hover::after{ width:100%; }
 .bb-site-lang__sep{ color:var(--ink-muted); margin-inline:2px; }
-.bb-site-lang__other{ color:var(--ink-muted); }
 
 /* --- menu button: only present once the inline nav no longer fits --- */
 .bb-nav-toggle{
@@ -1518,6 +1530,11 @@ body > main{
 }
 .bb-card--work > :not(.bb-card__art){ position:relative; z-index:1; }
 
+/* on the widths where the building lies under the text, the card is raised so
+   that the text and the link stay clear of it */
+@media (min-width:901px){
+  .bb-our-projects:not(.bb-where-we-work) .bb-card--work{ min-height:calc(.1107 * 100vw + 215px); min-width:0; width:100%; }
+}
 @media (max-width:1150px){
   .bb-work-grid{ margin-left:0; }
 }
@@ -1565,7 +1582,7 @@ body > main{
 .bb-numbers__intro .bb-section-label{ position:absolute; left:0; top:0; }
 .bb-numbers__head{ margin-left:calc(33.3333% + var(--rule-inset)); }
 .bb-heading--numbers{ max-width:min(16.5em, 100%); }
-.bb-numbers__head .bb-copy--section{ max-width:30em; }
+.bb-numbers__head .bb-copy--section{ max-width:36em; text-wrap:pretty; }
 /* the heading breaks before "and": two lines, each its own block */
 .bb-numbers .bb-section__title-line{ display:block; }
 .bb-numbers__figures{

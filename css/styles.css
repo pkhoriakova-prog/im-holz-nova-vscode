@@ -3564,6 +3564,15 @@ body > main{
 /* Founder: laid out exactly like an insight page, on the grey ground. */
 .bb-founder{ background:transparent; padding-block:clamp(52px, 6.5vw, 132px); }
 .bb-founder .bb-shell{ position:relative; z-index:1; }
+/* Keep the founder background hatch, including its animation peek. */
+.bb-founder > .bb-section__ground{
+  background:
+    repeating-linear-gradient(135deg,
+      rgba(18,18,18,.016) 0 1px,
+      transparent 1px 11px),
+    var(--paper-warm);
+}
+.bb-founder > .bb-section__ground i + i{ border-left:0; }
 /* the two photographs of the founder keep one proportion */
 .bb-founder .bb-article__image{ aspect-ratio:4 / 5; object-fit:cover; }
 /* a little wider than an insight's facts, so the award reads on two clean lines */
@@ -3643,3 +3652,11 @@ body > main{
 .bb-solution__item-link::after{ width:.55em; height:.55em; border-width:1.5px; transition:transform .3s ease; }
 .bb-solution__item-link:hover::after,
 .bb-solution__item-link:focus-visible::after{ transform:rotate(45deg) translate(2px, -2px); }
+
+/* Plain section backgrounds have no outer sheet lines. */
+.bb-section__ground--plain::before,
+.bb-section__ground--plain::after,
+.bb-founder > .bb-section__ground::before,
+.bb-founder > .bb-section__ground::after{ content:none; }
+/* Extend the plain project background across the full section. */
+.bb-projects__ground{ left:0; right:0; }

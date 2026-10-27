@@ -336,6 +336,11 @@ body > main{
   letter-spacing:-.022em;
 }
 
+.bb-heading--hero-partners,
+.bb-heading--hero-model{
+  max-width:none;
+}
+
 /* The headline rises into view from behind its own clipping window.
    clip-path masks without adding to the line box, so the block stays exactly
    as tall as its lines; the negative insets spare the sides and ascenders. */
@@ -404,8 +409,10 @@ body > main{
   left:0;
   right:0;
   bottom:0;
-  height:1.5px;
-  background:currentColor;
+  height:0;
+  /* a border, not a filled strip: a border is snapped to whole device pixels,
+     so every rule under every link is the same weight wherever it falls */
+  border-top:2px solid currentColor;
 }
 
 /* The rule under the words stays put — there is already a line here, and it
@@ -636,6 +643,10 @@ body > main{
 }
 .bb-copy--section + .bb-copy--section{
   margin-top:var(--gap-para);
+}
+/* The Shift: balance the lines so they run to a similar length. */
+.bb-shift .bb-copy--section{
+  text-wrap:balance;
 }
 @media (min-width:1151px){
   /* Copy set against the first inner rule stops before the second one. */
@@ -1403,21 +1414,18 @@ body > main{
 .bb-heading--our-projects{ max-width:none; white-space:nowrap; }
 .bb-our-projects .bb-section-label{ color:rgba(255,255,255,.7); }
 .bb-our-projects .bb-copy--section{ color:rgba(255,255,255,.78); }
-
-/* About: regional presence on white, before the green project section. */
+/* About: regional presence on grey, white cards, before the green project section. */
 .bb-where-we-work{
-  background:var(--paper);
-  color:var(--ink);
-}
-.bb-where-we-work .bb-section-label{ color:var(--ink-muted); }
-.bb-where-we-work .bb-copy--section{ color:var(--ink-muted); }
-.bb-where-we-work .bb-card--work{
   background:
     repeating-linear-gradient(135deg,
       rgba(18,18,18,.016) 0 1px,
       transparent 1px 11px),
     var(--paper-warm);
+  color:var(--ink);
 }
+.bb-where-we-work .bb-section-label{ color:var(--ink-muted); }
+.bb-where-we-work .bb-copy--section{ color:var(--ink-muted); }
+.bb-where-we-work .bb-card--work{ background:var(--paper); }
 
 /* two projects side by side, each a card with its picture, name, tags and
    text inside */
@@ -1938,6 +1946,7 @@ body > main{
 }
 .bb-vision__peek{ display:none; }
 @media (min-width:700px) and (prefers-reduced-motion:no-preference){
+  .bb-vision.bb-vision--held + .bb-founder,
   .bb-vision.bb-vision--held + .bb-pillars,
   .bb-vision.bb-vision--held + .bb-projects{ visibility:hidden; }
   /* once the stage lets go, the real section is on the page: the copy of its top
@@ -2371,6 +2380,29 @@ body > main{
   width:1.25em;
   height:1.25em;
   flex:0 0 auto;
+}
+
+.bb-mail-button--contact{
+  align-self:flex-start;
+  margin-top:auto;
+  max-width:100%;
+  min-height:44px;
+}
+.bb-mail-button--contact .bb-mail-button__label{
+  min-width:0;
+  overflow-wrap:anywhere;
+}
+.bb-mail-button__icon--location{
+  -webkit-mask-image:url("../images/icons/button-location.svg");
+  mask-image:url("../images/icons/button-location.svg");
+}
+.bb-mail-button__icon--phone{
+  -webkit-mask-image:url("../images/icons/button-phone.svg");
+  mask-image:url("../images/icons/button-phone.svg");
+}
+.bb-mail-button__icon--linkedin{
+  -webkit-mask-image:url("../images/icons/button-linkedin.svg");
+  mask-image:url("../images/icons/button-linkedin.svg");
 }
 
 /* --- Footer -------------------------------------------------------------
@@ -3528,3 +3560,86 @@ body > main{
   padding:0;
   color:var(--ink-muted);
 }
+
+/* Founder: laid out exactly like an insight page, on the grey ground. */
+.bb-founder{ background:transparent; padding-block:clamp(52px, 6.5vw, 132px); }
+.bb-founder .bb-shell{ position:relative; z-index:1; }
+/* the two photographs of the founder keep one proportion */
+.bb-founder .bb-article__image{ aspect-ratio:4 / 5; object-fit:cover; }
+/* a little wider than an insight's facts, so the award reads on two clean lines */
+.bb-founder .bb-article__intro > .bb-article__facts{ max-width:24em; }
+.bb-founder .bb-article__facts dd{ text-wrap:balance; }
+
+/* Eco Solutions: a group lists its solutions; the ones with a page of their own
+   are links, the rest are plain lines until their pages are ready. */
+.bb-solution__items{
+  list-style:none;
+  margin:var(--gap-label-title) 0 0;
+  padding:0;
+  max-width:30em;
+  border-top:1px solid rgba(18,18,18,.14);
+}
+.bb-solution__items li{
+  padding:.7em 0;
+  border-bottom:1px solid currentColor;
+  font-size:var(--lede-fs);
+  line-height:1.35;
+}
+.bb-solution__items li,
+.bb-solution__items li::before{ border-color:rgba(18,18,18,.14); }
+.bb-solution-picker__panel-text .bb-solution__items,
+.bb-solution-picker__panel-text .bb-solution__items li{ border-color:rgba(255,255,255,.22); }
+.bb-solution__item-link{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:1em;
+  color:inherit;
+  text-decoration:none;
+  font-weight:600;
+}
+.bb-solution__item-link::after{
+  content:"";
+  flex:0 0 auto;
+  width:.7em;
+  height:.7em;
+  border-top:2px solid currentColor;
+  border-right:2px solid currentColor;
+  transform:rotate(45deg);
+  transition:transform .25s ease;
+}
+.bb-solution__item-link:hover::after,
+.bb-solution__item-link:focus-visible::after{ transform:rotate(45deg) translate(2px, -2px); }
+.bb-solution__detail .bb-solution__item-link{ color:var(--green); }
+.bb-solution-picker__panel-text .bb-solution__item-link{ color:var(--paper); }
+@media (min-width:1151px){
+  .bb-solution-picker__panel-text .bb-solution__items{ color:rgba(255,255,255,.85); max-width:28em; }
+}
+/* the solution that has its own page: the arrow sits right after the words */
+.bb-solution__item-link{ justify-content:space-between; gap:1em; }
+/* the solution that has its own page reads like the other lines, with the arrow
+   at the end. Under the cursor a light bar fades in behind it, exactly as wide as
+   the rules above and below, the words are underlined and the arrow steps forward.
+   Every line is indented the same, so the text of all of them stays aligned. */
+.bb-solution__items li{ padding-inline:.8em; }
+.bb-solution__items li:has(> .bb-solution__item-link){ padding:0; }
+.bb-solution__item-link{
+  padding:.7em .8em;
+  font-weight:500;
+  text-decoration:underline;
+  text-decoration-color:transparent;
+  text-decoration-thickness:1px;
+  text-underline-offset:.28em;
+  transition:background-color .3s ease, text-decoration-color .3s ease;
+}
+.bb-solution__item-link:hover,
+.bb-solution__item-link:focus-visible{
+  background:rgba(18,18,18,.07);
+  text-decoration-color:currentColor;
+}
+.bb-solution-picker__panel-text .bb-solution__item-link:hover,
+.bb-solution-picker__panel-text .bb-solution__item-link:focus-visible{ background:rgba(255,255,255,.16); }
+.bb-solution__item-link{ padding-right:1.5em; }
+.bb-solution__item-link::after{ width:.55em; height:.55em; border-width:1.5px; transition:transform .3s ease; }
+.bb-solution__item-link:hover::after,
+.bb-solution__item-link:focus-visible::after{ transform:rotate(45deg) translate(2px, -2px); }

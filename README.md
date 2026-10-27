@@ -77,7 +77,7 @@ Shared typography uses independent `bb-heading` and `bb-section-label` blocks. S
 
 Each complete page has one visible h1 describing its main topic. Heading levels and visual styling are independent; BEM classes control appearance.
 
-On index.html and index-no-pillars.html, the agreed structure uses exactly two h2 headings: the left-hand labels Our Projects and Ecosystem. Their large headings on the right use h3, and their card headings use h4. Other left-hand section labels (The Shift, In Numbers, Project Types, For Whom and Contact) use h3, their large headings on the right use h4, and their card headings use h5. This intentionally allows h3 headings before the first h2; the two-h2 limit is a project preference.
+On index.html, the agreed structure uses exactly two h2 headings: the left-hand labels Our Projects and Ecosystem. Their large headings on the right use h3, and their card headings use h4. Other left-hand section labels (The Shift, In Numbers, Project Types, For Whom and Contact) use h3, their large headings on the right use h4, and their card headings use h5. This intentionally allows h3 headings before the first h2; the two-h2 limit is a project preference.
 
 Other pages retain h2 for section headings and h3 for their cards. Footer column labels and photo captions are paragraphs. Files in fragments/ are standalone previews with their own h1; omit the preview header when embedding their sections in another page. Keep aria-labelledby references pointing to existing headings.
 

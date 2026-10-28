@@ -1,0 +1,91 @@
+{
+  "before": {
+    "success": true,
+    "data": {
+      "output": "",
+      "output_encoding": "utf8",
+      "result": {
+        "13": {
+          "title": "Integrating Sustainable Solutions | IM HOLZ Nova",
+          "lang": "en",
+          "meta": {
+            "rank_math_description": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_focus_keyword": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_facebook_title": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_facebook_description": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_twitter_title": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_twitter_description": {
+              "exists": false,
+              "value": ""
+            }
+          }
+        },
+        "341": {
+          "title": "Integration nachhaltiger Lösungen | IM HOLZ Nova",
+          "lang": "de",
+          "meta": {
+            "rank_math_description": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_focus_keyword": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_facebook_title": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_facebook_description": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_twitter_title": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_twitter_description": {
+              "exists": false,
+              "value": ""
+            }
+          }
+        }
+      },
+      "result_type": "array",
+      "exception": null
+    }
+  },
+  "after": {
+    "13": {
+      "rank_math_description": "IM HOLZ Nova, a sustainable infrastructure solutions integrator, connects technologies, international partners and local expertise to shape project concepts.",
+      "rank_math_focus_keyword": "sustainable infrastructure solutions,technology integration,sustainable project development,IM HOLZ Nova",
+      "rank_math_facebook_title": "IM HOLZ Nova – Sustainable Infrastructure Solutions Integrator",
+      "rank_math_facebook_description": "We bring together technologies, international partners and local expertise to turn project ideas into viable concepts tailored to local needs and conditions.",
+      "rank_math_twitter_title": "IM HOLZ Nova – Sustainable Infrastructure Solutions Integrator",
+      "rank_math_twitter_description": "We bring together technologies, international partners and local expertise to turn project ideas into viable concepts tailored to local needs and conditions."
+    },
+    "341": {
+      "rank_math_description": "IM HOLZ Nova: Integrator für nachhaltige Infrastruktur. Wir verbinden Technologien, internationale Partner und lokale Expertise für passende Projektkonzepte.",
+      "rank_math_focus_keyword": "nachhaltige Infrastrukturlösungen,Technologieintegration,nachhaltige Projektentwicklung,IM HOLZ Nova",
+      "rank_math_facebook_title": "IM HOLZ Nova – Integrator für nachhaltige Infrastrukturlösungen",
+      "rank_math_facebook_description": "Wir bringen Technologien, internationale Partner und lokale Expertise zusammen, um Projektideen in tragfähige Konzepte zu überführen – abgestimmt auf die Bedürfnisse und Bedingungen vor Ort.",
+      "rank_math_twitter_title": "IM HOLZ Nova – Integrator für nachhaltige Infrastrukturlösungen",
+      "rank_math_twitter_description": "Wir bringen Technologien, internationale Partner und lokale Expertise zusammen, um Projektideen in tragfähige Konzepte zu überführen – abgestimmt auf die Bedürfnisse und Bedingungen vor Ort."
+    }
+  }
+}

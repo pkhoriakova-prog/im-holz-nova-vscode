@@ -1,0 +1,990 @@
+{
+  "root": {
+    "id": 1,
+    "data": {
+      "type": "root",
+      "properties": []
+    },
+    "children": [
+      {
+        "id": 100,
+        "data": {
+          "type": "OxygenElements\\Component",
+          "properties": {
+            "content": {
+              "content": {
+                "block": {
+                  "componentId": 105,
+                  "targets": [
+                    {
+                      "nodeId": 100,
+                      "controlPath": "content.content.text",
+                      "propertyKey": "db2b075a-6a4f-4b3a-9bc1-dda76fabcec9"
+                    },
+                    {
+                      "nodeId": 101,
+                      "controlPath": "content.content.text",
+                      "propertyKey": "666a8ea8-96d1-4668-b48f-5f0bdb91d4ad"
+                    },
+                    {
+                      "nodeId": 104,
+                      "controlPath": "content.content.text",
+                      "propertyKey": "898e913c-21ad-48f9-a44f-ecb601e2e4c7"
+                    },
+                    {
+                      "nodeId": 108,
+                      "controlPath": "content.content.url",
+                      "propertyKey": "9292cb4d-5743-4117-b820-fc9bcd2d325a"
+                    },
+                    {
+                      "nodeId": 105,
+                      "controlPath": "content.content.text",
+                      "propertyKey": "8e8f7043-67c9-446e-abd0-42dc1377b0df"
+                    },
+                    {
+                      "nodeId": 111,
+                      "controlPath": "content.image",
+                      "propertyKey": "1a3dc264-2da8-44bd-b04d-8ae7c5adfae0"
+                    },
+                    {
+                      "nodeId": 112,
+                      "controlPath": "content.content.text",
+                      "propertyKey": "49179145-d54a-4ead-b706-315ae83febfd"
+                    },
+                    {
+                      "nodeId": 112,
+                      "controlPath": "settings.conditions.visible",
+                      "propertyKey": "bc3e6342-f77a-412b-b7eb-281c6b7b672a"
+                    }
+                  ],
+                  "properties": {
+                    "db2b075a-6a4f-4b3a-9bc1-dda76fabcec9": "<span class=\"bb-title-w15\">Meeting partners at Vietnam Wood 2025 in Ho Chi Minh City</span>",
+                    "666a8ea8-96d1-4668-b48f-5f0bdb91d4ad": "",
+                    "898e913c-21ad-48f9-a44f-ecb601e2e4c7": "The day has just begun at Vietnam Wood 2025 in Ho Chi Minh City. Stop by our booth A693 to meet the team and talk about certified timber and sustainable construction in the region.",
+                    "8e8f7043-67c9-446e-abd0-42dc1377b0df": "All insights",
+                    "9292cb4d-5743-4117-b820-fc9bcd2d325a": "/en/insights/",
+                    "1a3dc264-2da8-44bd-b04d-8ae7c5adfae0": {
+                      "from": "media_library",
+                      "media": {
+                        "id": 280,
+                        "filename": "ho-chi-minh-city-im-holz-nova-insights-v02.avif",
+                        "url": "https://dev.imholz.at/wp-content/uploads/2026/10/ho-chi-minh-city-im-holz-nova-insights-v02.avif",
+                        "alt": "",
+                        "caption": "",
+                        "mime": "image/avif",
+                        "type": "image",
+                        "sizes": {
+                          "thumbnail": {
+                            "height": 150,
+                            "width": 150,
+                            "url": "https://dev.imholz.at/wp-content/uploads/2026/10/ho-chi-minh-city-im-holz-nova-insights-v02-150x150.jpg",
+                            "orientation": "landscape"
+                          },
+                          "medium": {
+                            "height": 200,
+                            "width": 300,
+                            "url": "https://dev.imholz.at/wp-content/uploads/2026/10/ho-chi-minh-city-im-holz-nova-insights-v02-300x200.jpg",
+                            "orientation": "landscape"
+                          },
+                          "large": {
+                            "height": 684,
+                            "width": 1024,
+                            "url": "https://dev.imholz.at/wp-content/uploads/2026/10/ho-chi-minh-city-im-holz-nova-insights-v02-1024x684.jpg",
+                            "orientation": "landscape"
+                          },
+                          "medium_large": {
+                            "height": 513,
+                            "width": 768,
+                            "url": "https://dev.imholz.at/wp-content/uploads/2026/10/ho-chi-minh-city-im-holz-nova-insights-v02-768x513.jpg",
+                            "orientation": "landscape"
+                          },
+                          "1536x1536": {
+                            "height": 1025,
+                            "width": 1536,
+                            "url": "https://dev.imholz.at/wp-content/uploads/2026/10/ho-chi-minh-city-im-holz-nova-insights-v02-1536x1025.jpg",
+                            "orientation": "landscape"
+                          },
+                          "2048x2048": {
+                            "height": 1367,
+                            "width": 2048,
+                            "url": "https://dev.imholz.at/wp-content/uploads/2026/10/ho-chi-minh-city-im-holz-nova-insights-v02-2048x1367.jpg",
+                            "orientation": "landscape"
+                          },
+                          "full": {
+                            "url": "https://dev.imholz.at/wp-content/uploads/2026/10/ho-chi-minh-city-im-holz-nova-insights-v02.avif",
+                            "height": 1709,
+                            "width": 2560,
+                            "orientation": "landscape"
+                          }
+                        },
+                        "attributes": {
+                          "srcset": "https://dev.imholz.at/wp-content/uploads/2026/10/ho-chi-minh-city-im-holz-nova-insights-v02.avif 2560w, https://dev.imholz.at/wp-content/uploads/2026/10/ho-chi-minh-city-im-holz-nova-insights-v02-300x200.jpg 300w, https://dev.imholz.at/wp-content/uploads/2026/10/ho-chi-minh-city-im-holz-nova-insights-v02-1024x684.jpg 1024w, https://dev.imholz.at/wp-content/uploads/2026/10/ho-chi-minh-city-im-holz-nova-insights-v02-768x513.jpg 768w, https://dev.imholz.at/wp-content/uploads/2026/10/ho-chi-minh-city-im-holz-nova-insights-v02-1536x1025.jpg 1536w, https://dev.imholz.at/wp-content/uploads/2026/10/ho-chi-minh-city-im-holz-nova-insights-v02-2048x1367.jpg 2048w",
+                          "sizes": "(max-width: 2560px) 100vw, 2560px"
+                        }
+                      },
+                      "alt": "custom",
+                      "custom_alt": "Ho Chi Minh City, Vietnam",
+                      "lazy_load": false
+                    },
+                    "49179145-d54a-4ead-b706-315ae83febfd": "Ho Chi Minh City, Vietnam"
+                  }
+                }
+              }
+            },
+            "meta": {
+              "friendlyName": "Page Hero"
+            }
+          }
+        },
+        "children": []
+      },
+      {
+        "id": 133,
+        "data": {
+          "type": "OxygenElements\\Container",
+          "properties": {
+            "settings": {
+              "advanced": {
+                "tag": "section",
+                "attributes": [
+                  {
+                    "name": "id",
+                    "value": "article"
+                  },
+                  {
+                    "name": "aria-labelledby",
+                    "value": "article-label"
+                  }
+                ]
+              }
+            },
+            "meta": {
+              "classes": [
+                "ea38d95f-ed12-448a-b1c2-eadca5966d09",
+                "b4d42e98-b587-4729-af19-7760af9fd258"
+              ]
+            }
+          }
+        },
+        "children": [
+          {
+            "id": 132,
+            "data": {
+              "type": "OxygenElements\\Container",
+              "properties": {
+                "meta": {
+                  "classes": [
+                    "10d41092-8b1c-4337-8a1f-c2a6708e2100"
+                  ]
+                }
+              }
+            },
+            "children": [
+              {
+                "id": 131,
+                "data": {
+                  "type": "OxygenElements\\Container",
+                  "properties": {
+                    "meta": {
+                      "classes": [
+                        "8d2be95b-b235-4afa-a1de-f2ac73a36cc4",
+                        "0899153c-793b-4a88-bf34-7049fd2b7216"
+                      ]
+                    }
+                  }
+                },
+                "children": [
+                  {
+                    "id": 101,
+                    "data": {
+                      "type": "OxygenElements\\Text",
+                      "properties": {
+                        "content": {
+                          "content": {
+                            "text": "Trade fair · 2025"
+                          }
+                        },
+                        "settings": {
+                          "advanced": {
+                            "tag": "h2",
+                            "attributes": [
+                              {
+                                "name": "id",
+                                "value": "article-label"
+                              }
+                            ]
+                          }
+                        },
+                        "meta": {
+                          "classes": [
+                            "c47a5f14-5ee2-41dc-ba78-6d25e86ca899"
+                          ]
+                        }
+                      }
+                    },
+                    "children": []
+                  },
+                  {
+                    "id": 106,
+                    "data": {
+                      "type": "OxygenElements\\Container",
+                      "properties": {
+                        "meta": {
+                          "classes": [
+                            "48187309-463d-40d6-92f3-93f7167641aa"
+                          ]
+                        }
+                      }
+                    },
+                    "children": [
+                      {
+                        "id": 102,
+                        "data": {
+                          "type": "OxygenElements\\Text",
+                          "properties": {
+                            "content": {
+                              "content": {
+                                "text": "At our booth in Ho Chi Minh City"
+                              }
+                            },
+                            "settings": {
+                              "advanced": {
+                                "tag": "h3",
+                                "attributes": [
+                                  {
+                                    "name": "id",
+                                    "value": "article-sub"
+                                  }
+                                ]
+                              }
+                            },
+                            "meta": {
+                              "classes": [
+                                "c7ac9dfa-28bc-4987-8597-30b0d62d3e63",
+                                "e63bbbd4-10eb-46df-a006-19a1b360b3be"
+                              ]
+                            }
+                          }
+                        },
+                        "children": []
+                      },
+                      {
+                        "id": 103,
+                        "data": {
+                          "type": "OxygenElements\\Text",
+                          "properties": {
+                            "content": {
+                              "content": {
+                                "text": "The day has just begun at Vietnam Wood 2025, and we are at our booth. Stop by booth A693 to meet the team and talk about certified timber and sustainable construction."
+                              }
+                            },
+                            "settings": {
+                              "advanced": {
+                                "tag": "p"
+                              }
+                            },
+                            "meta": {
+                              "classes": [
+                                "8e275127-b408-4268-85e9-0a2ecbe546b9",
+                                "9e774b40-c018-4737-8691-108f45347b5d"
+                              ]
+                            }
+                          }
+                        },
+                        "children": []
+                      },
+                      {
+                        "id": 104,
+                        "data": {
+                          "type": "OxygenElements\\Text",
+                          "properties": {
+                            "content": {
+                              "content": {
+                                "text": "VietnamWood is the international exhibition for the wood-processing industry in Ho Chi Minh City. The 2025 edition ran from 19 to 22 November at the Saigon Exhibition and Convention Center, with more than 320 exhibitors from 28 countries and regions expected."
+                              }
+                            },
+                            "settings": {
+                              "advanced": {
+                                "tag": "p"
+                              }
+                            },
+                            "meta": {
+                              "classes": [
+                                "8e275127-b408-4268-85e9-0a2ecbe546b9",
+                                "9e774b40-c018-4737-8691-108f45347b5d"
+                              ]
+                            }
+                          }
+                        },
+                        "children": []
+                      },
+                      {
+                        "id": 105,
+                        "data": {
+                          "type": "OxygenElements\\Text",
+                          "properties": {
+                            "content": {
+                              "content": {
+                                "text": "Our booth gave us a place to talk about certified timber with buyers and partners from Vietnam and the wider region."
+                              }
+                            },
+                            "settings": {
+                              "advanced": {
+                                "tag": "p"
+                              }
+                            },
+                            "meta": {
+                              "classes": [
+                                "8e275127-b408-4268-85e9-0a2ecbe546b9",
+                                "9e774b40-c018-4737-8691-108f45347b5d"
+                              ]
+                            }
+                          }
+                        },
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "id": 116,
+                    "data": {
+                      "type": "OxygenElements\\Container",
+                      "properties": {
+                        "settings": {
+                          "advanced": {
+                            "tag": "dl"
+                          }
+                        },
+                        "meta": {
+                          "classes": [
+                            "87551d37-5aa4-4482-8610-11c2bfc09edf"
+                          ]
+                        }
+                      }
+                    },
+                    "children": [
+                      {
+                        "id": 109,
+                        "data": {
+                          "type": "OxygenElements\\Container",
+                          "properties": {
+                            "meta": {
+                              "classes": [
+                                "d8752643-9282-4aee-830b-dd9b927558c1"
+                              ]
+                            }
+                          }
+                        },
+                        "children": [
+                          {
+                            "id": 107,
+                            "data": {
+                              "type": "OxygenElements\\Text",
+                              "properties": {
+                                "content": {
+                                  "content": {
+                                    "text": "Type"
+                                  }
+                                },
+                                "settings": {
+                                  "advanced": {
+                                    "tag": "dt"
+                                  }
+                                },
+                                "meta": {
+                                  "classes": [
+                                    "1f937004-fe14-460e-a2a4-7a84506a38e3"
+                                  ]
+                                }
+                              }
+                            },
+                            "children": []
+                          },
+                          {
+                            "id": 108,
+                            "data": {
+                              "type": "OxygenElements\\Text",
+                              "properties": {
+                                "content": {
+                                  "content": {
+                                    "text": "Trade fair"
+                                  }
+                                },
+                                "settings": {
+                                  "advanced": {
+                                    "tag": "dd"
+                                  }
+                                },
+                                "meta": {
+                                  "classes": [
+                                    "2301f165-7835-4fd7-b308-089d6ddae239"
+                                  ]
+                                }
+                              }
+                            },
+                            "children": []
+                          }
+                        ]
+                      },
+                      {
+                        "id": 112,
+                        "data": {
+                          "type": "OxygenElements\\Container",
+                          "properties": {
+                            "meta": {
+                              "classes": [
+                                "d8752643-9282-4aee-830b-dd9b927558c1"
+                              ]
+                            }
+                          }
+                        },
+                        "children": [
+                          {
+                            "id": 110,
+                            "data": {
+                              "type": "OxygenElements\\Text",
+                              "properties": {
+                                "content": {
+                                  "content": {
+                                    "text": "Place"
+                                  }
+                                },
+                                "settings": {
+                                  "advanced": {
+                                    "tag": "dt"
+                                  }
+                                },
+                                "meta": {
+                                  "classes": [
+                                    "1f937004-fe14-460e-a2a4-7a84506a38e3"
+                                  ]
+                                }
+                              }
+                            },
+                            "children": []
+                          },
+                          {
+                            "id": 111,
+                            "data": {
+                              "type": "OxygenElements\\Text",
+                              "properties": {
+                                "content": {
+                                  "content": {
+                                    "text": "Ho Chi Minh City, Vietnam"
+                                  }
+                                },
+                                "settings": {
+                                  "advanced": {
+                                    "tag": "dd"
+                                  }
+                                },
+                                "meta": {
+                                  "classes": [
+                                    "2301f165-7835-4fd7-b308-089d6ddae239"
+                                  ]
+                                }
+                              }
+                            },
+                            "children": []
+                          }
+                        ]
+                      },
+                      {
+                        "id": 115,
+                        "data": {
+                          "type": "OxygenElements\\Container",
+                          "properties": {
+                            "meta": {
+                              "classes": [
+                                "d8752643-9282-4aee-830b-dd9b927558c1"
+                              ]
+                            }
+                          }
+                        },
+                        "children": [
+                          {
+                            "id": 113,
+                            "data": {
+                              "type": "OxygenElements\\Text",
+                              "properties": {
+                                "content": {
+                                  "content": {
+                                    "text": "Dates"
+                                  }
+                                },
+                                "settings": {
+                                  "advanced": {
+                                    "tag": "dt"
+                                  }
+                                },
+                                "meta": {
+                                  "classes": [
+                                    "1f937004-fe14-460e-a2a4-7a84506a38e3"
+                                  ]
+                                }
+                              }
+                            },
+                            "children": []
+                          },
+                          {
+                            "id": 114,
+                            "data": {
+                              "type": "OxygenElements\\Text",
+                              "properties": {
+                                "content": {
+                                  "content": {
+                                    "text": "19–22 November 2025"
+                                  }
+                                },
+                                "settings": {
+                                  "advanced": {
+                                    "tag": "dd"
+                                  }
+                                },
+                                "meta": {
+                                  "classes": [
+                                    "2301f165-7835-4fd7-b308-089d6ddae239"
+                                  ]
+                                }
+                              }
+                            },
+                            "children": []
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "id": 130,
+                    "data": {
+                      "type": "OxygenElements\\Container",
+                      "properties": {
+                        "meta": {
+                          "classes": [
+                            "ecd6043a-76f0-412f-8a7f-c09134343316"
+                          ]
+                        }
+                      }
+                    },
+                    "children": [
+                      {
+                        "id": 124,
+                        "data": {
+                          "type": "OxygenElements\\Container",
+                          "properties": {
+                            "settings": {
+                              "advanced": {
+                                "tag": "ol"
+                              }
+                            },
+                            "meta": {
+                              "classes": [
+                                "03c521ae-b14e-4dbb-8641-3337164c3335",
+                                "19e2f846-9fec-4787-895b-f26bc21d50bf"
+                              ]
+                            }
+                          }
+                        },
+                        "children": [
+                          {
+                            "id": 123,
+                            "data": {
+                              "type": "OxygenElements\\Container",
+                              "properties": {
+                                "settings": {
+                                  "advanced": {
+                                    "tag": "li"
+                                  }
+                                },
+                                "meta": {
+                                  "classes": [
+                                    "fa4520a8-51a8-42f6-baf1-a4e02945a08e"
+                                  ]
+                                }
+                              }
+                            },
+                            "children": [
+                              {
+                                "id": 122,
+                                "data": {
+                                  "type": "OxygenElements\\Container",
+                                  "properties": {
+                                    "settings": {
+                                      "advanced": {
+                                        "tag": "figure"
+                                      }
+                                    },
+                                    "meta": {
+                                      "classes": [
+                                        "f1569405-61b0-4a87-b6b9-f2d536ec4930"
+                                      ]
+                                    }
+                                  }
+                                },
+                                "children": [
+                                  {
+                                    "id": 118,
+                                    "data": {
+                                      "type": "OxygenElements\\ContainerLink",
+                                      "properties": {
+                                        "content": {
+                                          "content": []
+                                        },
+                                        "settings": {
+                                          "advanced": {
+                                            "tag": "button",
+                                            "attributes": [
+                                              {
+                                                "name": "type",
+                                                "value": "button"
+                                              },
+                                              {
+                                                "name": "data-photo",
+                                                "value": "0"
+                                              },
+                                              {
+                                                "name": "aria-label",
+                                                "value": "Open photograph 1 of 1"
+                                              }
+                                            ]
+                                          }
+                                        },
+                                        "meta": {
+                                          "classes": [
+                                            "34700dcf-8059-4e11-8998-f6cc6b3bc672"
+                                          ]
+                                        }
+                                      }
+                                    },
+                                    "children": [
+                                      {
+                                        "id": 117,
+                                        "data": {
+                                          "type": "OxygenElements\\Image",
+                                          "properties": {
+                                            "content": {
+                                              "image": {
+                                                "from": "url",
+                                                "url": "https://dev.imholz.at/wp-content/uploads/2026/10/Vietnam.avif",
+                                                "lazy_load": true,
+                                                "alt_when_from_url": "custom",
+                                                "custom_alt_when_from_url": "Our booth at Vietnam Wood 2025"
+                                              }
+                                            },
+                                            "meta": {
+                                              "classes": [
+                                                "de0f0292-7080-4d7c-ba9f-0df030336853",
+                                                "0ab4911e-5a43-4859-b336-9ce767e72a94",
+                                                "2bcdb0b1-ea95-47f3-99a8-7fc9104b0b7d",
+                                                "75f49fc6-a9f1-42b4-8586-d3034e3cad59"
+                                              ]
+                                            },
+                                            "settings": {
+                                              "advanced": {
+                                                "attributes": [
+                                                  {
+                                                    "name": "width",
+                                                    "value": "1280"
+                                                  },
+                                                  {
+                                                    "name": "height",
+                                                    "value": "711"
+                                                  }
+                                                ]
+                                              }
+                                            }
+                                          }
+                                        },
+                                        "children": []
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "id": 121,
+                                    "data": {
+                                      "type": "OxygenElements\\Container",
+                                      "properties": {
+                                        "settings": {
+                                          "advanced": {
+                                            "tag": "figcaption"
+                                          }
+                                        },
+                                        "meta": {
+                                          "classes": [
+                                            "a17596c6-f5fc-421b-b2ac-93147fc25b0f",
+                                            "8d7df061-ecc3-4749-baa1-cdb9c9aeea1c"
+                                          ]
+                                        }
+                                      }
+                                    },
+                                    "children": [
+                                      {
+                                        "id": 119,
+                                        "data": {
+                                          "type": "OxygenElements\\Text",
+                                          "properties": {
+                                            "content": {
+                                              "content": {
+                                                "text": "Meeting partners at Vietnam Wood 2025"
+                                              }
+                                            },
+                                            "settings": {
+                                              "advanced": {
+                                                "tag": "span"
+                                              }
+                                            },
+                                            "meta": {
+                                              "classes": [
+                                                "5784fa62-c2f5-463e-94bd-02595c5e667a"
+                                              ]
+                                            }
+                                          }
+                                        },
+                                        "children": []
+                                      },
+                                      {
+                                        "id": 120,
+                                        "data": {
+                                          "type": "OxygenElements\\Text",
+                                          "properties": {
+                                            "content": {
+                                              "content": {
+                                                "text": "Ho Chi Minh City, Vietnam · 2025"
+                                              }
+                                            },
+                                            "settings": {
+                                              "advanced": {
+                                                "tag": "span"
+                                              }
+                                            },
+                                            "meta": {
+                                              "classes": [
+                                                "2850f3e8-f207-4bbb-8024-2998083ff409"
+                                              ]
+                                            }
+                                          }
+                                        },
+                                        "children": []
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "id": 129,
+                        "data": {
+                          "type": "OxygenElements\\Container",
+                          "properties": {
+                            "settings": {
+                              "advanced": {
+                                "tag": "p"
+                              }
+                            },
+                            "meta": {
+                              "classes": [
+                                "23c432e8-7031-4326-ad18-f7c972bfbea8"
+                              ]
+                            }
+                          }
+                        },
+                        "children": [
+                          {
+                            "id": 128,
+                            "data": {
+                              "type": "OxygenElements\\ContainerLink",
+                              "properties": {
+                                "content": {
+                                  "content": {
+                                    "url": "https://www.linkedin.com/company/imholz-nova/"
+                                  }
+                                },
+                                "meta": {
+                                  "classes": [
+                                    "5694f98f-51cd-4165-99ea-848516008391"
+                                  ]
+                                },
+                                "settings": {
+                                  "advanced": {
+                                    "attributes": [
+                                      {
+                                        "name": "target",
+                                        "value": "_blank"
+                                      },
+                                      {
+                                        "name": "rel",
+                                        "value": "noopener noreferrer"
+                                      }
+                                    ]
+                                  }
+                                }
+                              }
+                            },
+                            "children": [
+                              {
+                                "id": 126,
+                                "data": {
+                                  "type": "OxygenElements\\Container",
+                                  "properties": {
+                                    "settings": {
+                                      "advanced": {
+                                        "tag": "span"
+                                      }
+                                    },
+                                    "meta": {
+                                      "classes": [
+                                        "c951426d-f021-4b91-a75a-c92bce1c89f0"
+                                      ]
+                                    }
+                                  }
+                                },
+                                "children": [
+                                  {
+                                    "id": 125,
+                                    "data": {
+                                      "type": "OxygenElements\\Text",
+                                      "properties": {
+                                        "content": {
+                                          "content": {
+                                            "text": "See more events on LinkedIn"
+                                          }
+                                        },
+                                        "settings": {
+                                          "advanced": {
+                                            "tag": "span"
+                                          }
+                                        },
+                                        "meta": {
+                                          "classes": [
+                                            "a8ddc3d1-7a83-419c-955c-1d2eb3e73bdf"
+                                          ]
+                                        }
+                                      }
+                                    },
+                                    "children": []
+                                  }
+                                ]
+                              },
+                              {
+                                "id": 127,
+                                "data": {
+                                  "type": "OxygenElements\\Text",
+                                  "properties": {
+                                    "content": {
+                                      "content": {
+                                        "text": ""
+                                      }
+                                    },
+                                    "settings": {
+                                      "advanced": {
+                                        "tag": "span",
+                                        "attributes": [
+                                          {
+                                            "name": "aria-hidden",
+                                            "value": "true"
+                                          }
+                                        ]
+                                      }
+                                    },
+                                    "meta": {
+                                      "classes": [
+                                        "3387c786-210a-44e5-88e5-9125e433704c"
+                                      ]
+                                    }
+                                  }
+                                },
+                                "children": []
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": 134,
+        "data": {
+          "type": "OxygenElements\\Component",
+          "properties": {
+            "content": {
+              "content": {
+                "block": {
+                  "componentId": 282,
+                  "targets": [
+                    {
+                      "nodeId": 101,
+                      "controlPath": "content.content.text",
+                      "propertyKey": "a3771073-c397-4e73-9111-d616642be768"
+                    },
+                    {
+                      "nodeId": 102,
+                      "controlPath": "content.content.text",
+                      "propertyKey": "06000f67-9d5e-4c2c-bf23-0ca014cf302e"
+                    },
+                    {
+                      "nodeId": 103,
+                      "controlPath": "content.content.text",
+                      "propertyKey": "52103a7a-a77c-4161-9bb1-39d61e5b4243"
+                    },
+                    {
+                      "nodeId": 107,
+                      "controlPath": "settings.conditions.visible",
+                      "propertyKey": "1e36fa4b-3b85-4475-a386-b33371f368e2"
+                    },
+                    {
+                      "nodeId": 116,
+                      "controlPath": "settings.conditions.visible",
+                      "propertyKey": "348cb8b1-69fe-4a8e-8b46-e092530c00e7"
+                    },
+                    {
+                      "nodeId": 123,
+                      "controlPath": "settings.conditions.visible",
+                      "propertyKey": "a1f57bbe-d757-4e67-a7bc-001dbf5c4c69"
+                    },
+                    {
+                      "nodeId": 130,
+                      "controlPath": "settings.conditions.visible",
+                      "propertyKey": "e31d49b0-f67d-4e18-8851-22e84567bfd5"
+                    },
+                    {
+                      "nodeId": 137,
+                      "controlPath": "settings.conditions.visible",
+                      "propertyKey": "f82d1b90-dde6-4984-bba6-d179d58eb985"
+                    },
+                    {
+                      "nodeId": 144,
+                      "controlPath": "settings.conditions.visible",
+                      "propertyKey": "43ec0147-a722-486d-bfe0-082a06b40da6"
+                    }
+                  ],
+                  "properties": {
+                    "a3771073-c397-4e73-9111-d616642be768": "More Insights",
+                    "06000f67-9d5e-4c2c-bf23-0ca014cf302e": "Keep reading",
+                    "52103a7a-a77c-4161-9bb1-39d61e5b4243": "More from the road: the fairs, conferences and conversations we have taken part in, the newest first.",
+                    "1e36fa4b-3b85-4475-a386-b33371f368e2": false,
+                    "f82d1b90-dde6-4984-bba6-d179d58eb985": false
+                  }
+                }
+              }
+            },
+            "meta": {
+              "friendlyName": "Insights Feed"
+            }
+          }
+        },
+        "children": []
+      }
+    ]
+  },
+  "_nextNodeId": 135,
+  "status": "exported"
+}

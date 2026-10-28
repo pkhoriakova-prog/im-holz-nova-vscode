@@ -1,0 +1,642 @@
+{
+  "changes": [
+    {
+      "post": 372,
+      "node": 129,
+      "image": {
+        "from": "url",
+        "url": "https://dev.imholz.at/wp-content/uploads/2026/10/modern-school-campus-v6.avif",
+        "lazy_load": true,
+        "alt_when_from_url": "decorative"
+      },
+      "after": "Konzeptskizze eines Schulcampus mit verglastem Eingang und begrüntem Vorplatz"
+    },
+    {
+      "post": 389,
+      "node": 100,
+      "component": 443,
+      "key": "1a3dc264-2da8-44bd-b04d-8ae7c5adfae0",
+      "image": {
+        "from": "media_library",
+        "media": {
+          "id": 222,
+          "filename": "engineered-timber-im-holz-nova-sustainable-construction-v03.avif",
+          "url": "https://dev.imholz.at/wp-content/uploads/2026/10/engineered-timber-im-holz-nova-sustainable-construction-v03.avif",
+          "alt": "",
+          "caption": "",
+          "mime": "image/avif",
+          "type": "image",
+          "sizes": {
+            "thumbnail": {
+              "height": 150,
+              "width": 150,
+              "url": "https://dev.imholz.at/wp-content/uploads/2026/10/engineered-timber-im-holz-nova-sustainable-construction-v03-150x150.jpg",
+              "orientation": "landscape"
+            },
+            "medium": {
+              "height": 200,
+              "width": 300,
+              "url": "https://dev.imholz.at/wp-content/uploads/2026/10/engineered-timber-im-holz-nova-sustainable-construction-v03-300x200.jpg",
+              "orientation": "landscape"
+            },
+            "large": {
+              "height": 683,
+              "width": 1024,
+              "url": "https://dev.imholz.at/wp-content/uploads/2026/10/engineered-timber-im-holz-nova-sustainable-construction-v03-1024x683.jpg",
+              "orientation": "landscape"
+            },
+            "medium_large": {
+              "height": 512,
+              "width": 768,
+              "url": "https://dev.imholz.at/wp-content/uploads/2026/10/engineered-timber-im-holz-nova-sustainable-construction-v03-768x512.jpg",
+              "orientation": "landscape"
+            },
+            "1536x1536": {
+              "height": 1024,
+              "width": 1536,
+              "url": "https://dev.imholz.at/wp-content/uploads/2026/10/engineered-timber-im-holz-nova-sustainable-construction-v03-1536x1024.jpg",
+              "orientation": "landscape"
+            },
+            "2048x2048": {
+              "height": 1366,
+              "width": 2048,
+              "url": "https://dev.imholz.at/wp-content/uploads/2026/10/engineered-timber-im-holz-nova-sustainable-construction-v03-2048x1366.jpg",
+              "orientation": "landscape"
+            },
+            "full": {
+              "url": "https://dev.imholz.at/wp-content/uploads/2026/10/engineered-timber-im-holz-nova-sustainable-construction-v03.avif",
+              "height": 1707,
+              "width": 2560,
+              "orientation": "landscape"
+            }
+          },
+          "attributes": {
+            "srcset": "https://dev.imholz.at/wp-content/uploads/2026/10/engineered-timber-im-holz-nova-sustainable-construction-v03.avif 2560w, https://dev.imholz.at/wp-content/uploads/2026/10/engineered-timber-im-holz-nova-sustainable-construction-v03-300x200.jpg 300w, https://dev.imholz.at/wp-content/uploads/2026/10/engineered-timber-im-holz-nova-sustainable-construction-v03-1024x683.jpg 1024w, https://dev.imholz.at/wp-content/uploads/2026/10/engineered-timber-im-holz-nova-sustainable-construction-v03-768x512.jpg 768w, https://dev.imholz.at/wp-content/uploads/2026/10/engineered-timber-im-holz-nova-sustainable-construction-v03-1536x1024.jpg 1536w, https://dev.imholz.at/wp-content/uploads/2026/10/engineered-timber-im-holz-nova-sustainable-construction-v03-2048x1366.jpg 2048w",
+            "sizes": "(max-width: 2560px) 100vw, 2560px"
+          }
+        },
+        "alt": "decorative",
+        "lazy_load": false
+      },
+      "after": "Sichtbares Holztragwerk mit Dachträgern und Stützen auf einer Baustelle"
+    },
+    {
+      "post": 389,
+      "node": 136,
+      "image": {
+        "from": "url",
+        "url": "https://dev.imholz.at/wp-content/uploads/2026/10/modern-school-campus-v6.avif",
+        "lazy_load": true,
+        "alt_when_from_url": "decorative"
+      },
+      "after": "Konzeptskizze eines Schulcampus mit verglastem Eingang und begrüntem Vorplatz"
+    },
+    {
+      "post": 396,
+      "node": 171,
+      "component": 443,
+      "key": "1a3dc264-2da8-44bd-b04d-8ae7c5adfae0",
+      "image": {
+        "from": "media_library",
+        "media": {
+          "id": 173,
+          "filename": "sustainability-im-holz-nova-sustainable-construction.avif",
+          "url": "https://dev.imholz.at/wp-content/uploads/2026/10/sustainability-im-holz-nova-sustainable-construction.avif",
+          "alt": "",
+          "caption": "",
+          "mime": "image/avif",
+          "type": "image",
+          "sizes": {
+            "thumbnail": {
+              "height": 150,
+              "width": 150,
+              "url": "https://dev.imholz.at/wp-content/uploads/2026/10/sustainability-im-holz-nova-sustainable-construction-150x150.jpg",
+              "orientation": "landscape"
+            },
+            "medium": {
+              "height": 188,
+              "width": 300,
+              "url": "https://dev.imholz.at/wp-content/uploads/2026/10/sustainability-im-holz-nova-sustainable-construction-300x188.jpg",
+              "orientation": "landscape"
+            },
+            "large": {
+              "height": 640,
+              "width": 1024,
+              "url": "https://dev.imholz.at/wp-content/uploads/2026/10/sustainability-im-holz-nova-sustainable-construction-1024x640.jpg",
+              "orientation": "landscape"
+            },
+            "medium_large": {
+              "height": 480,
+              "width": 768,
+              "url": "https://dev.imholz.at/wp-content/uploads/2026/10/sustainability-im-holz-nova-sustainable-construction-768x480.jpg",
+              "orientation": "landscape"
+            },
+            "1536x1536": {
+              "height": 960,
+              "width": 1536,
+              "url": "https://dev.imholz.at/wp-content/uploads/2026/10/sustainability-im-holz-nova-sustainable-construction-1536x960.jpg",
+              "orientation": "landscape"
+            },
+            "full": {
+              "url": "https://dev.imholz.at/wp-content/uploads/2026/10/sustainability-im-holz-nova-sustainable-construction.avif",
+              "height": 1280,
+              "width": 2048,
+              "orientation": "landscape"
+            }
+          },
+          "attributes": {
+            "srcset": "https://dev.imholz.at/wp-content/uploads/2026/10/sustainability-im-holz-nova-sustainable-construction.avif 2048w, https://dev.imholz.at/wp-content/uploads/2026/10/sustainability-im-holz-nova-sustainable-construction-300x188.jpg 300w, https://dev.imholz.at/wp-content/uploads/2026/10/sustainability-im-holz-nova-sustainable-construction-1024x640.jpg 1024w, https://dev.imholz.at/wp-content/uploads/2026/10/sustainability-im-holz-nova-sustainable-construction-768x480.jpg 768w, https://dev.imholz.at/wp-content/uploads/2026/10/sustainability-im-holz-nova-sustainable-construction-1536x960.jpg 1536w",
+            "sizes": "(max-width: 2048px) 100vw, 2048px"
+          }
+        },
+        "alt": "decorative",
+        "lazy_load": false
+      },
+      "after": "Eine Hand berührt einen moosbewachsenen Baumstamm im Wald"
+    },
+    {
+      "post": 401,
+      "node": 182,
+      "component": 443,
+      "key": "1a3dc264-2da8-44bd-b04d-8ae7c5adfae0",
+      "image": {
+        "from": "media_library",
+        "media": {
+          "id": 240,
+          "filename": "engineered-timber-im-holz-nova-sustainable-construction-v02.avif",
+          "url": "https://dev.imholz.at/wp-content/uploads/2026/10/engineered-timber-im-holz-nova-sustainable-construction-v02.avif",
+          "alt": "",
+          "caption": "",
+          "mime": "image/avif",
+          "type": "image",
+          "sizes": {
+            "thumbnail": {
+              "height": 150,
+              "width": 150,
+              "url": "https://dev.imholz.at/wp-content/uploads/2026/10/engineered-timber-im-holz-nova-sustainable-construction-v02-150x150.jpg",
+              "orientation": "landscape"
+            },
+            "medium": {
+              "height": 200,
+              "width": 300,
+              "url": "https://dev.imholz.at/wp-content/uploads/2026/10/engineered-timber-im-holz-nova-sustainable-construction-v02-300x200.jpg",
+              "orientation": "landscape"
+            },
+            "large": {
+              "height": 683,
+              "width": 1024,
+              "url": "https://dev.imholz.at/wp-content/uploads/2026/10/engineered-timber-im-holz-nova-sustainable-construction-v02-1024x683.jpg",
+              "orientation": "landscape"
+            },
+            "medium_large": {
+              "height": 512,
+              "width": 768,
+              "url": "https://dev.imholz.at/wp-content/uploads/2026/10/engineered-timber-im-holz-nova-sustainable-construction-v02-768x512.jpg",
+              "orientation": "landscape"
+            },
+            "1536x1536": {
+              "height": 1024,
+              "width": 1536,
+              "url": "https://dev.imholz.at/wp-content/uploads/2026/10/engineered-timber-im-holz-nova-sustainable-construction-v02-1536x1024.jpg",
+              "orientation": "landscape"
+            },
+            "2048x2048": {
+              "height": 1366,
+              "width": 2048,
+              "url": "https://dev.imholz.at/wp-content/uploads/2026/10/engineered-timber-im-holz-nova-sustainable-construction-v02-2048x1366.jpg",
+              "orientation": "landscape"
+            },
+            "full": {
+              "url": "https://dev.imholz.at/wp-content/uploads/2026/10/engineered-timber-im-holz-nova-sustainable-construction-v02.avif",
+              "height": 1707,
+              "width": 2560,
+              "orientation": "landscape"
+            }
+          },
+          "attributes": {
+            "srcset": "https://dev.imholz.at/wp-content/uploads/2026/10/engineered-timber-im-holz-nova-sustainable-construction-v02.avif 2560w, https://dev.imholz.at/wp-content/uploads/2026/10/engineered-timber-im-holz-nova-sustainable-construction-v02-300x200.jpg 300w, https://dev.imholz.at/wp-content/uploads/2026/10/engineered-timber-im-holz-nova-sustainable-construction-v02-1024x683.jpg 1024w, https://dev.imholz.at/wp-content/uploads/2026/10/engineered-timber-im-holz-nova-sustainable-construction-v02-768x512.jpg 768w, https://dev.imholz.at/wp-content/uploads/2026/10/engineered-timber-im-holz-nova-sustainable-construction-v02-1536x1024.jpg 1536w, https://dev.imholz.at/wp-content/uploads/2026/10/engineered-timber-im-holz-nova-sustainable-construction-v02-2048x1366.jpg 2048w",
+            "sizes": "(max-width: 2560px) 100vw, 2560px"
+          }
+        },
+        "alt": "decorative",
+        "lazy_load": false
+      },
+      "after": "Geschwungene Holzrippen unter einem Dach mit Akustikpaneelen"
+    },
+    {
+      "post": 401,
+      "node": 216,
+      "image": {
+        "from": "url",
+        "url": "https://dev.imholz.at/wp-content/uploads/2026/10/modern-school-campus-v6.avif",
+        "lazy_load": true,
+        "alt_when_from_url": "decorative"
+      },
+      "after": "Konzeptskizze eines Schulcampus mit verglastem Eingang und begrüntem Vorplatz"
+    },
+    {
+      "post": 407,
+      "node": 100,
+      "component": 443,
+      "key": "1a3dc264-2da8-44bd-b04d-8ae7c5adfae0",
+      "image": {
+        "from": "media_library",
+        "media": {
+          "id": 276,
+          "filename": "insights-im-holz-nova-sustainable-construction-v02.avif",
+          "url": "https://dev.imholz.at/wp-content/uploads/2026/10/insights-im-holz-nova-sustainable-construction-v02.avif",
+          "alt": "",
+          "caption": "",
+          "mime": "image/avif",
+          "type": "image",
+          "sizes": {
+            "thumbnail": {
+              "height": 150,
+              "width": 150,
+              "url": "https://dev.imholz.at/wp-content/uploads/2026/10/insights-im-holz-nova-sustainable-construction-v02-150x150.jpg",
+              "orientation": "landscape"
+            },
+            "medium": {
+              "height": 169,
+              "width": 300,
+              "url": "https://dev.imholz.at/wp-content/uploads/2026/10/insights-im-holz-nova-sustainable-construction-v02-300x169.jpg",
+              "orientation": "landscape"
+            },
+            "large": {
+              "height": 578,
+              "width": 1024,
+              "url": "https://dev.imholz.at/wp-content/uploads/2026/10/insights-im-holz-nova-sustainable-construction-v02-1024x578.jpg",
+              "orientation": "landscape"
+            },
+            "medium_large": {
+              "height": 433,
+              "width": 768,
+              "url": "https://dev.imholz.at/wp-content/uploads/2026/10/insights-im-holz-nova-sustainable-construction-v02-768x433.jpg",
+              "orientation": "landscape"
+            },
+            "1536x1536": {
+              "height": 866,
+              "width": 1536,
+              "url": "https://dev.imholz.at/wp-content/uploads/2026/10/insights-im-holz-nova-sustainable-construction-v02-1536x866.jpg",
+              "orientation": "landscape"
+            },
+            "full": {
+              "url": "https://dev.imholz.at/wp-content/uploads/2026/10/insights-im-holz-nova-sustainable-construction-v02.avif",
+              "height": 942,
+              "width": 1670,
+              "orientation": "landscape"
+            }
+          },
+          "attributes": {
+            "srcset": "https://dev.imholz.at/wp-content/uploads/2026/10/insights-im-holz-nova-sustainable-construction-v02.avif 1670w, https://dev.imholz.at/wp-content/uploads/2026/10/insights-im-holz-nova-sustainable-construction-v02-300x169.jpg 300w, https://dev.imholz.at/wp-content/uploads/2026/10/insights-im-holz-nova-sustainable-construction-v02-1024x578.jpg 1024w, https://dev.imholz.at/wp-content/uploads/2026/10/insights-im-holz-nova-sustainable-construction-v02-768x433.jpg 768w, https://dev.imholz.at/wp-content/uploads/2026/10/insights-im-holz-nova-sustainable-construction-v02-1536x866.jpg 1536w",
+            "sizes": "(max-width: 1670px) 100vw, 1670px"
+          }
+        },
+        "alt": "decorative",
+        "lazy_load": false
+      },
+      "after": "KI-generiertes Konzeptbild: Vier Personen im Gespräch, von oben gesehen"
+    },
+    {
+      "post": 103,
+      "node": 129,
+      "image": {
+        "from": "url",
+        "url": "https://dev.imholz.at/wp-content/uploads/2026/10/modern-school-campus-v6.avif",
+        "lazy_load": true,
+        "alt_when_from_url": "decorative"
+      },
+      "after": "Concept sketch of a school campus with a glazed entrance and planted forecourt"
+    },
+    {
+      "post": 223,
+      "node": 100,
+      "component": 105,
+      "key": "1a3dc264-2da8-44bd-b04d-8ae7c5adfae0",
+      "image": {
+        "from": "media_library",
+        "media": {
+          "id": 222,
+          "filename": "engineered-timber-im-holz-nova-sustainable-construction-v03.avif",
+          "url": "https://dev.imholz.at/wp-content/uploads/2026/10/engineered-timber-im-holz-nova-sustainable-construction-v03.avif",
+          "alt": "",
+          "caption": "",
+          "mime": "image/avif",
+          "type": "image",
+          "sizes": {
+            "thumbnail": {
+              "height": 150,
+              "width": 150,
+              "url": "https://dev.imholz.at/wp-content/uploads/2026/10/engineered-timber-im-holz-nova-sustainable-construction-v03-150x150.jpg",
+              "orientation": "landscape"
+            },
+            "medium": {
+              "height": 200,
+              "width": 300,
+              "url": "https://dev.imholz.at/wp-content/uploads/2026/10/engineered-timber-im-holz-nova-sustainable-construction-v03-300x200.jpg",
+              "orientation": "landscape"
+            },
+            "large": {
+              "height": 683,
+              "width": 1024,
+              "url": "https://dev.imholz.at/wp-content/uploads/2026/10/engineered-timber-im-holz-nova-sustainable-construction-v03-1024x683.jpg",
+              "orientation": "landscape"
+            },
+            "medium_large": {
+              "height": 512,
+              "width": 768,
+              "url": "https://dev.imholz.at/wp-content/uploads/2026/10/engineered-timber-im-holz-nova-sustainable-construction-v03-768x512.jpg",
+              "orientation": "landscape"
+            },
+            "1536x1536": {
+              "height": 1024,
+              "width": 1536,
+              "url": "https://dev.imholz.at/wp-content/uploads/2026/10/engineered-timber-im-holz-nova-sustainable-construction-v03-1536x1024.jpg",
+              "orientation": "landscape"
+            },
+            "2048x2048": {
+              "height": 1366,
+              "width": 2048,
+              "url": "https://dev.imholz.at/wp-content/uploads/2026/10/engineered-timber-im-holz-nova-sustainable-construction-v03-2048x1366.jpg",
+              "orientation": "landscape"
+            },
+            "full": {
+              "url": "https://dev.imholz.at/wp-content/uploads/2026/10/engineered-timber-im-holz-nova-sustainable-construction-v03.avif",
+              "height": 1707,
+              "width": 2560,
+              "orientation": "landscape"
+            }
+          },
+          "attributes": {
+            "srcset": "https://dev.imholz.at/wp-content/uploads/2026/10/engineered-timber-im-holz-nova-sustainable-construction-v03.avif 2560w, https://dev.imholz.at/wp-content/uploads/2026/10/engineered-timber-im-holz-nova-sustainable-construction-v03-300x200.jpg 300w, https://dev.imholz.at/wp-content/uploads/2026/10/engineered-timber-im-holz-nova-sustainable-construction-v03-1024x683.jpg 1024w, https://dev.imholz.at/wp-content/uploads/2026/10/engineered-timber-im-holz-nova-sustainable-construction-v03-768x512.jpg 768w, https://dev.imholz.at/wp-content/uploads/2026/10/engineered-timber-im-holz-nova-sustainable-construction-v03-1536x1024.jpg 1536w, https://dev.imholz.at/wp-content/uploads/2026/10/engineered-timber-im-holz-nova-sustainable-construction-v03-2048x1366.jpg 2048w",
+            "sizes": "(max-width: 2560px) 100vw, 2560px"
+          }
+        },
+        "alt": "decorative",
+        "lazy_load": false
+      },
+      "after": "Exposed timber roof beams and columns during construction"
+    },
+    {
+      "post": 223,
+      "node": 136,
+      "image": {
+        "from": "url",
+        "url": "https://dev.imholz.at/wp-content/uploads/2026/10/modern-school-campus-v6.avif",
+        "lazy_load": true,
+        "alt_when_from_url": "decorative"
+      },
+      "after": "Concept sketch of a school campus with a glazed entrance and planted forecourt"
+    },
+    {
+      "post": 15,
+      "node": 171,
+      "component": 105,
+      "key": "1a3dc264-2da8-44bd-b04d-8ae7c5adfae0",
+      "image": {
+        "from": "media_library",
+        "media": {
+          "id": 173,
+          "filename": "sustainability-im-holz-nova-sustainable-construction.avif",
+          "url": "https://dev.imholz.at/wp-content/uploads/2026/10/sustainability-im-holz-nova-sustainable-construction.avif",
+          "alt": "",
+          "caption": "",
+          "mime": "image/avif",
+          "type": "image",
+          "sizes": {
+            "thumbnail": {
+              "height": 150,
+              "width": 150,
+              "url": "https://dev.imholz.at/wp-content/uploads/2026/10/sustainability-im-holz-nova-sustainable-construction-150x150.jpg",
+              "orientation": "landscape"
+            },
+            "medium": {
+              "height": 188,
+              "width": 300,
+              "url": "https://dev.imholz.at/wp-content/uploads/2026/10/sustainability-im-holz-nova-sustainable-construction-300x188.jpg",
+              "orientation": "landscape"
+            },
+            "large": {
+              "height": 640,
+              "width": 1024,
+              "url": "https://dev.imholz.at/wp-content/uploads/2026/10/sustainability-im-holz-nova-sustainable-construction-1024x640.jpg",
+              "orientation": "landscape"
+            },
+            "medium_large": {
+              "height": 480,
+              "width": 768,
+              "url": "https://dev.imholz.at/wp-content/uploads/2026/10/sustainability-im-holz-nova-sustainable-construction-768x480.jpg",
+              "orientation": "landscape"
+            },
+            "1536x1536": {
+              "height": 960,
+              "width": 1536,
+              "url": "https://dev.imholz.at/wp-content/uploads/2026/10/sustainability-im-holz-nova-sustainable-construction-1536x960.jpg",
+              "orientation": "landscape"
+            },
+            "full": {
+              "url": "https://dev.imholz.at/wp-content/uploads/2026/10/sustainability-im-holz-nova-sustainable-construction.avif",
+              "height": 1280,
+              "width": 2048,
+              "orientation": "landscape"
+            }
+          },
+          "attributes": {
+            "srcset": "https://dev.imholz.at/wp-content/uploads/2026/10/sustainability-im-holz-nova-sustainable-construction.avif 2048w, https://dev.imholz.at/wp-content/uploads/2026/10/sustainability-im-holz-nova-sustainable-construction-300x188.jpg 300w, https://dev.imholz.at/wp-content/uploads/2026/10/sustainability-im-holz-nova-sustainable-construction-1024x640.jpg 1024w, https://dev.imholz.at/wp-content/uploads/2026/10/sustainability-im-holz-nova-sustainable-construction-768x480.jpg 768w, https://dev.imholz.at/wp-content/uploads/2026/10/sustainability-im-holz-nova-sustainable-construction-1536x960.jpg 1536w",
+            "sizes": "(max-width: 2048px) 100vw, 2048px"
+          }
+        },
+        "alt": "decorative",
+        "lazy_load": false
+      },
+      "after": "A hand touching a moss-covered tree trunk in a forest"
+    },
+    {
+      "post": 14,
+      "node": 182,
+      "component": 105,
+      "key": "1a3dc264-2da8-44bd-b04d-8ae7c5adfae0",
+      "image": {
+        "from": "media_library",
+        "media": {
+          "id": 240,
+          "filename": "engineered-timber-im-holz-nova-sustainable-construction-v02.avif",
+          "url": "https://dev.imholz.at/wp-content/uploads/2026/10/engineered-timber-im-holz-nova-sustainable-construction-v02.avif",
+          "alt": "",
+          "caption": "",
+          "mime": "image/avif",
+          "type": "image",
+          "sizes": {
+            "thumbnail": {
+              "height": 150,
+              "width": 150,
+              "url": "https://dev.imholz.at/wp-content/uploads/2026/10/engineered-timber-im-holz-nova-sustainable-construction-v02-150x150.jpg",
+              "orientation": "landscape"
+            },
+            "medium": {
+              "height": 200,
+              "width": 300,
+              "url": "https://dev.imholz.at/wp-content/uploads/2026/10/engineered-timber-im-holz-nova-sustainable-construction-v02-300x200.jpg",
+              "orientation": "landscape"
+            },
+            "large": {
+              "height": 683,
+              "width": 1024,
+              "url": "https://dev.imholz.at/wp-content/uploads/2026/10/engineered-timber-im-holz-nova-sustainable-construction-v02-1024x683.jpg",
+              "orientation": "landscape"
+            },
+            "medium_large": {
+              "height": 512,
+              "width": 768,
+              "url": "https://dev.imholz.at/wp-content/uploads/2026/10/engineered-timber-im-holz-nova-sustainable-construction-v02-768x512.jpg",
+              "orientation": "landscape"
+            },
+            "1536x1536": {
+              "height": 1024,
+              "width": 1536,
+              "url": "https://dev.imholz.at/wp-content/uploads/2026/10/engineered-timber-im-holz-nova-sustainable-construction-v02-1536x1024.jpg",
+              "orientation": "landscape"
+            },
+            "2048x2048": {
+              "height": 1366,
+              "width": 2048,
+              "url": "https://dev.imholz.at/wp-content/uploads/2026/10/engineered-timber-im-holz-nova-sustainable-construction-v02-2048x1366.jpg",
+              "orientation": "landscape"
+            },
+            "full": {
+              "url": "https://dev.imholz.at/wp-content/uploads/2026/10/engineered-timber-im-holz-nova-sustainable-construction-v02.avif",
+              "height": 1707,
+              "width": 2560,
+              "orientation": "landscape"
+            }
+          },
+          "attributes": {
+            "srcset": "https://dev.imholz.at/wp-content/uploads/2026/10/engineered-timber-im-holz-nova-sustainable-construction-v02.avif 2560w, https://dev.imholz.at/wp-content/uploads/2026/10/engineered-timber-im-holz-nova-sustainable-construction-v02-300x200.jpg 300w, https://dev.imholz.at/wp-content/uploads/2026/10/engineered-timber-im-holz-nova-sustainable-construction-v02-1024x683.jpg 1024w, https://dev.imholz.at/wp-content/uploads/2026/10/engineered-timber-im-holz-nova-sustainable-construction-v02-768x512.jpg 768w, https://dev.imholz.at/wp-content/uploads/2026/10/engineered-timber-im-holz-nova-sustainable-construction-v02-1536x1024.jpg 1536w, https://dev.imholz.at/wp-content/uploads/2026/10/engineered-timber-im-holz-nova-sustainable-construction-v02-2048x1366.jpg 2048w",
+            "sizes": "(max-width: 2560px) 100vw, 2560px"
+          }
+        },
+        "alt": "decorative",
+        "lazy_load": false
+      },
+      "after": "Curved timber ribs beneath a roof with acoustic panels"
+    },
+    {
+      "post": 14,
+      "node": 216,
+      "image": {
+        "from": "url",
+        "url": "https://dev.imholz.at/wp-content/uploads/2026/10/modern-school-campus-v6.avif",
+        "lazy_load": true,
+        "alt_when_from_url": "decorative"
+      },
+      "after": "Concept sketch of a school campus with a glazed entrance and planted forecourt"
+    },
+    {
+      "post": 297,
+      "node": 100,
+      "component": 105,
+      "key": "1a3dc264-2da8-44bd-b04d-8ae7c5adfae0",
+      "image": {
+        "from": "media_library",
+        "media": {
+          "id": 276,
+          "filename": "insights-im-holz-nova-sustainable-construction-v02.avif",
+          "url": "https://dev.imholz.at/wp-content/uploads/2026/10/insights-im-holz-nova-sustainable-construction-v02.avif",
+          "alt": "",
+          "caption": "",
+          "mime": "image/avif",
+          "type": "image",
+          "sizes": {
+            "thumbnail": {
+              "height": 150,
+              "width": 150,
+              "url": "https://dev.imholz.at/wp-content/uploads/2026/10/insights-im-holz-nova-sustainable-construction-v02-150x150.jpg",
+              "orientation": "landscape"
+            },
+            "medium": {
+              "height": 169,
+              "width": 300,
+              "url": "https://dev.imholz.at/wp-content/uploads/2026/10/insights-im-holz-nova-sustainable-construction-v02-300x169.jpg",
+              "orientation": "landscape"
+            },
+            "large": {
+              "height": 578,
+              "width": 1024,
+              "url": "https://dev.imholz.at/wp-content/uploads/2026/10/insights-im-holz-nova-sustainable-construction-v02-1024x578.jpg",
+              "orientation": "landscape"
+            },
+            "medium_large": {
+              "height": 433,
+              "width": 768,
+              "url": "https://dev.imholz.at/wp-content/uploads/2026/10/insights-im-holz-nova-sustainable-construction-v02-768x433.jpg",
+              "orientation": "landscape"
+            },
+            "1536x1536": {
+              "height": 866,
+              "width": 1536,
+              "url": "https://dev.imholz.at/wp-content/uploads/2026/10/insights-im-holz-nova-sustainable-construction-v02-1536x866.jpg",
+              "orientation": "landscape"
+            },
+            "full": {
+              "url": "https://dev.imholz.at/wp-content/uploads/2026/10/insights-im-holz-nova-sustainable-construction-v02.avif",
+              "height": 942,
+              "width": 1670,
+              "orientation": "landscape"
+            }
+          },
+          "attributes": {
+            "srcset": "https://dev.imholz.at/wp-content/uploads/2026/10/insights-im-holz-nova-sustainable-construction-v02.avif 1670w, https://dev.imholz.at/wp-content/uploads/2026/10/insights-im-holz-nova-sustainable-construction-v02-300x169.jpg 300w, https://dev.imholz.at/wp-content/uploads/2026/10/insights-im-holz-nova-sustainable-construction-v02-1024x578.jpg 1024w, https://dev.imholz.at/wp-content/uploads/2026/10/insights-im-holz-nova-sustainable-construction-v02-768x433.jpg 768w, https://dev.imholz.at/wp-content/uploads/2026/10/insights-im-holz-nova-sustainable-construction-v02-1536x866.jpg 1536w",
+            "sizes": "(max-width: 1670px) 100vw, 1670px"
+          }
+        },
+        "alt": "decorative",
+        "lazy_load": false
+      },
+      "after": "AI-generated concept image of four people in conversation, viewed from above"
+    },
+    {
+      "post": 356,
+      "node": 105,
+      "image": {
+        "from": "url",
+        "url": "https://dev.imholz.at/wp-content/uploads/2026/10/project-house-vienna.avif",
+        "lazy_load": true,
+        "alt_when_from_url": "decorative"
+      },
+      "after": "Architekturskizze eines mehrgeschossigen Gebäudes mit geschwungenen Balkonen"
+    },
+    {
+      "post": 356,
+      "node": 114,
+      "image": {
+        "from": "url",
+        "url": "https://dev.imholz.at/wp-content/uploads/2026/10/project-school-wood.avif",
+        "lazy_load": true,
+        "alt_when_from_url": "decorative"
+      },
+      "after": "Konzeptskizze eines zweigeschossigen Schulgebäudes mit großen Fensterflächen"
+    },
+    {
+      "post": 107,
+      "node": 105,
+      "image": {
+        "from": "url",
+        "url": "https://dev.imholz.at/wp-content/uploads/2026/10/project-house-vienna.avif",
+        "lazy_load": true,
+        "alt_when_from_url": "decorative"
+      },
+      "after": "Architectural sketch of a multi-storey building with curved balconies"
+    },
+    {
+      "post": 107,
+      "node": 114,
+      "image": {
+        "from": "url",
+        "url": "https://dev.imholz.at/wp-content/uploads/2026/10/project-school-wood.avif",
+        "lazy_load": true,
+        "alt_when_from_url": "decorative"
+      },
+      "after": "Concept sketch of a two-storey school building with large windows"
+    }
+  ]
+}

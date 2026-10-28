@@ -1,0 +1,91 @@
+{
+  "before": {
+    "success": true,
+    "data": {
+      "output": "",
+      "output_encoding": "utf8",
+      "result": [
+        {
+          "id": 389,
+          "title": "Konstruktionsholz: CLT & Brettschichtholz | IM HOLZ Nova",
+          "meta": {
+            "rank_math_description": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_focus_keyword": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_facebook_title": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_facebook_description": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_twitter_title": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_twitter_description": {
+              "exists": false,
+              "value": ""
+            }
+          }
+        },
+        {
+          "id": 223,
+          "title": "Engineered Timber: CLT & Glulam | IM HOLZ Nova",
+          "meta": {
+            "rank_math_description": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_focus_keyword": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_facebook_title": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_facebook_description": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_twitter_title": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_twitter_description": {
+              "exists": false,
+              "value": ""
+            }
+          }
+        }
+      ],
+      "result_type": "array",
+      "exception": null
+    }
+  },
+  "after": {
+    "223": {
+      "rank_math_focus_keyword": "engineered timber,cross-laminated timber,glulam",
+      "rank_math_description": "Prefabricated structures use engineered timber such as CLT and glulam. Applications, assembly and reuse compared with concrete and steel.",
+      "rank_math_facebook_title": "Engineered Timber: CLT & Glulam | IM HOLZ Nova",
+      "rank_math_facebook_description": "CLT for walls, floors and roofs, and glulam for beams and columns: prefabricated timber systems with examples and sources on assembly, weight, embodied carbon and reuse.",
+      "rank_math_twitter_title": "Engineered Timber: CLT & Glulam | IM HOLZ Nova",
+      "rank_math_twitter_description": "CLT for walls, floors and roofs, and glulam for beams and columns: prefabricated timber systems with examples and sources on assembly, weight, embodied carbon and reuse."
+    },
+    "389": {
+      "rank_math_focus_keyword": "Konstruktionsholz,Brettsperrholz,Brettschichtholz",
+      "rank_math_description": "Mit Konstruktionsholz entstehen vorgefertigte Tragwerke aus CLT und Brettschichtholz. Einsatz, Montage und Wiederverwendung im Vergleich zu Beton und Stahl.",
+      "rank_math_facebook_title": "Konstruktionsholz: CLT & Brettschichtholz | IM HOLZ Nova",
+      "rank_math_facebook_description": "CLT für Wände, Decken und Dächer, Brettschichtholz für Träger und Stützen: vorgefertigte Holzbausysteme mit Beispielen und Quellen zu Montage, Gewicht, CO₂-Bilanz und Wiederverwendung.",
+      "rank_math_twitter_title": "Konstruktionsholz: CLT & Brettschichtholz | IM HOLZ Nova",
+      "rank_math_twitter_description": "CLT für Wände, Decken und Dächer, Brettschichtholz für Träger und Stützen: vorgefertigte Holzbausysteme mit Beispielen und Quellen zu Montage, Gewicht, CO₂-Bilanz und Wiederverwendung."
+    }
+  }
+}

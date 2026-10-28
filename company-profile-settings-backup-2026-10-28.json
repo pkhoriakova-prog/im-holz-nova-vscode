@@ -1,0 +1,206 @@
+{
+  "rankMath": {
+    "success": true,
+    "data": {
+      "titles": {
+        "noindex_empty_taxonomies": true,
+        "title_separator": "-",
+        "capitalize_titles": false,
+        "twitter_card_type": "summary_large_image",
+        "knowledgegraph_type": "company",
+        "knowledgegraph_name": "IM HOLZ Nova GmbH",
+        "website_name": "IM HOLZ Nova",
+        "local_business_type": "Organization",
+        "local_address_format": "{address} {locality}, {region} {postalcode}",
+        "opening_hours": [
+          {
+            "day": "Monday",
+            "time": "09:00-17:00"
+          },
+          {
+            "day": "Tuesday",
+            "time": "09:00-17:00"
+          },
+          {
+            "day": "Wednesday",
+            "time": "09:00-17:00"
+          },
+          {
+            "day": "Thursday",
+            "time": "09:00-17:00"
+          },
+          {
+            "day": "Friday",
+            "time": "09:00-17:00"
+          },
+          {
+            "day": "Saturday",
+            "time": "09:00-17:00"
+          },
+          {
+            "day": "Sunday",
+            "time": "09:00-17:00"
+          }
+        ],
+        "opening_hours_format": false,
+        "homepage_title": "%sitename% %page% %sep% %sitedesc%",
+        "homepage_description": "",
+        "homepage_custom_robots": false,
+        "disable_author_archives": false,
+        "url_author_base": "author",
+        "author_custom_robots": true,
+        "author_robots": [
+          "noindex"
+        ],
+        "author_archive_title": "%name% %sep% %sitename% %page%",
+        "author_add_meta_box": true,
+        "disable_date_archives": true,
+        "date_archive_title": "%date% %page% %sep% %sitename%",
+        "search_title": "%search_query% %page% %sep% %sitename%",
+        "404_title": "Page Not Found %sep% %sitename%",
+        "date_archive_robots": [
+          "noindex"
+        ],
+        "noindex_search": true,
+        "noindex_archive_subpages": false,
+        "noindex_password_protected": false,
+        "pt_download_default_rich_snippet": "product",
+        "author_slack_enhanced_sharing": true,
+        "pt_post_title": "%title% %sep% %sitename%",
+        "pt_post_description": "%excerpt%",
+        "pt_post_robots": [
+          "index"
+        ],
+        "pt_post_custom_robots": false,
+        "pt_post_default_rich_snippet": "article",
+        "pt_post_default_article_type": "BlogPosting",
+        "pt_post_default_snippet_name": "%seo_title%",
+        "pt_post_default_snippet_desc": "%seo_description%",
+        "pt_post_slack_enhanced_sharing": true,
+        "pt_post_ls_use_fk": "titles",
+        "pt_post_add_meta_box": true,
+        "pt_post_bulk_editing": "editing",
+        "pt_post_link_suggestions": true,
+        "pt_post_primary_taxonomy": "category",
+        "pt_page_title": "%title% %sep% %sitename%",
+        "pt_page_description": "%excerpt%",
+        "pt_page_robots": [
+          "index"
+        ],
+        "pt_page_custom_robots": false,
+        "pt_page_default_rich_snippet": "article",
+        "pt_page_default_article_type": "Article",
+        "pt_page_default_snippet_name": "%seo_title%",
+        "pt_page_default_snippet_desc": "%seo_description%",
+        "pt_page_slack_enhanced_sharing": true,
+        "pt_page_ls_use_fk": "titles",
+        "pt_page_add_meta_box": true,
+        "pt_page_bulk_editing": "editing",
+        "pt_page_link_suggestions": true,
+        "pt_attachment_title": "%title% %sep% %sitename%",
+        "pt_attachment_description": "%excerpt%",
+        "pt_attachment_robots": [
+          "noindex"
+        ],
+        "pt_attachment_custom_robots": true,
+        "pt_attachment_default_rich_snippet": false,
+        "pt_attachment_default_article_type": "Article",
+        "pt_attachment_default_snippet_name": "%seo_title%",
+        "pt_attachment_default_snippet_desc": "%seo_description%",
+        "pt_attachment_slack_enhanced_sharing": false,
+        "pt_attachment_add_meta_box": false,
+        "pt_product_title": "%title% %sep% %sitename%",
+        "pt_product_description": "%excerpt%",
+        "pt_product_robots": [
+          "index"
+        ],
+        "pt_product_custom_robots": false,
+        "pt_product_default_rich_snippet": "product",
+        "pt_product_default_article_type": "Article",
+        "pt_product_default_snippet_name": "%seo_title%",
+        "pt_product_default_snippet_desc": "%seo_description%",
+        "pt_product_slack_enhanced_sharing": true,
+        "pt_product_ls_use_fk": "titles",
+        "pt_product_add_meta_box": true,
+        "pt_product_bulk_editing": "editing",
+        "pt_product_link_suggestions": true,
+        "pt_product_primary_taxonomy": "product_cat",
+        "pt_web-story_title": "%title% %sep% %sitename%",
+        "pt_web-story_description": "%excerpt%",
+        "pt_web-story_robots": [
+          "index"
+        ],
+        "pt_web-story_custom_robots": false,
+        "pt_web-story_default_rich_snippet": "article",
+        "pt_web-story_default_article_type": "Article",
+        "pt_web-story_default_snippet_name": "%seo_title%",
+        "pt_web-story_default_snippet_desc": "%seo_description%",
+        "pt_web-story_slack_enhanced_sharing": false,
+        "pt_web-story_add_meta_box": false,
+        "tax_category_title": "%term% %sep% %sitename%",
+        "tax_category_robots": [
+          "index"
+        ],
+        "tax_category_add_meta_box": true,
+        "tax_category_custom_robots": false,
+        "tax_category_description": "%term_description%",
+        "tax_category_slack_enhanced_sharing": true,
+        "tax_category_bulk_editing": 0,
+        "tax_post_tag_title": "%term% %sep% %sitename%",
+        "tax_post_tag_robots": [
+          "noindex"
+        ],
+        "tax_post_tag_add_meta_box": false,
+        "tax_post_tag_custom_robots": true,
+        "tax_post_tag_description": "%term_description%",
+        "tax_post_tag_slack_enhanced_sharing": true,
+        "tax_post_tag_bulk_editing": 0,
+        "remove_product_cat_snippet_data": true,
+        "remove_product_tag_snippet_data": true,
+        "knowledgegraph_logo": "https://dev.imholz.at/wp-content/uploads/2026/10/im-holz-nova-organization-logo.png",
+        "knowledgegraph_logo_id": 478
+      },
+      "modules": {
+        "ai-visibility": true,
+        "content-ai": true,
+        "404-monitor": true,
+        "acf": false,
+        "analytics": true,
+        "buddypress": false,
+        "image-seo": true,
+        "instant-indexing": true,
+        "link-counter": true,
+        "link-genius": false,
+        "llms-txt": true,
+        "local-seo": false,
+        "news-sitemap": false,
+        "podcast": false,
+        "redirections": false,
+        "rich-snippet": true,
+        "role-manager": false,
+        "seo-analysis": true,
+        "sitemap": true,
+        "video-sitemap": false,
+        "web-stories": false,
+        "woocommerce": false
+      }
+    }
+  },
+  "bridge": {
+    "success": true,
+    "data": {
+      "output": "",
+      "output_encoding": "utf8",
+      "result": {
+        "bridge_exists": false,
+        "bridge_content": null,
+        "address_class_files": [
+          "/data/8/1/811081e9-a2ab-4ed3-860c-f95383619822/imholz.at/sub/dev/wp-content/plugins/seo-by-rank-math/includes/admin/class-cmb2-fields.php",
+          "/data/8/1/811081e9-a2ab-4ed3-860c-f95383619822/imholz.at/sub/dev/wp-content/plugins/seo-by-rank-math/includes/admin/class-cmb2-options.php"
+        ]
+      },
+      "result_type": "array",
+      "exception": null
+    }
+  }
+}

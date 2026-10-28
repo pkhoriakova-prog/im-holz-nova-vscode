@@ -1,0 +1,85 @@
+{
+  "before": {
+    "success": true,
+    "data": {
+      "output": "",
+      "output_encoding": "utf8",
+      "result": [
+        {
+          "id": 13,
+          "title": "Integrating Sustainable Solutions | IM HOLZ Nova"
+        },
+        {
+          "id": 14,
+          "title": "About Us: Sustainability Integrator in Vienna | IM HOLZ Nova"
+        },
+        {
+          "id": 15,
+          "title": "Sustainable Building & Resource Efficiency | IM HOLZ Nova"
+        },
+        {
+          "id": 103,
+          "title": "Connecting Technologies & Partners | IM HOLZ Nova"
+        },
+        {
+          "id": 223,
+          "title": "Engineered Timber: CLT & Glulam | IM HOLZ Nova"
+        },
+        {
+          "id": 268,
+          "title": "Contact for Sustainable Projects | IM HOLZ Nova"
+        },
+        {
+          "id": 297,
+          "title": "Insights: Events & Partnerships | IM HOLZ Nova"
+        },
+        {
+          "id": 341,
+          "title": "Integration nachhaltiger Lösungen | IM HOLZ Nova"
+        },
+        {
+          "id": 342,
+          "title": "Kontakt für nachhaltige Projekte | IM HOLZ Nova"
+        },
+        {
+          "id": 372,
+          "title": "Technologien und Partner verbinden | IM HOLZ Nova"
+        },
+        {
+          "id": 389,
+          "title": "Brettsperrholz (CLT) & Brettschichtholz | IM HOLZ Nova"
+        },
+        {
+          "id": 396,
+          "title": "Nachhaltiges Bauen & Ressourceneffizienz | IM HOLZ Nova"
+        },
+        {
+          "id": 401,
+          "title": "Über uns: Integrator aus Wien | IM HOLZ Nova"
+        },
+        {
+          "id": 407,
+          "title": "Einblicke: Messen & Kooperationen | IM HOLZ Nova"
+        }
+      ],
+      "result_type": "array",
+      "exception": null
+    }
+  },
+  "after": {
+    "13": "Sustainable Infrastructure Solutions | IM HOLZ Nova",
+    "14": "About IM HOLZ Nova | Sustainable Solutions Integrator",
+    "15": "Sustainable Building and Resource Efficiency | IM HOLZ Nova",
+    "103": "Technology Integration and Project Development | IM HOLZ Nova",
+    "223": "Timber Construction with CLT and Glulam | IM HOLZ Nova",
+    "268": "Contact for Sustainable Infrastructure Projects | IM HOLZ Nova",
+    "297": "Trade Fairs, Conferences and Partnerships | IM HOLZ Nova",
+    "341": "Integration nachhaltiger Infrastrukturlösungen | IM HOLZ Nova",
+    "342": "Kontakt für nachhaltige Infrastrukturprojekte | IM HOLZ Nova",
+    "372": "Technologieintegration und Projektentwicklung | IM HOLZ Nova",
+    "389": "Holzbau mit Brettsperrholz und Brettschichtholz | IM HOLZ Nova",
+    "396": "Nachhaltiges Bauen und Ressourceneffizienz | IM HOLZ Nova",
+    "401": "Über IM HOLZ Nova | Integrator für nachhaltige Lösungen",
+    "407": "Messen, Konferenzen und Partnerschaften | IM HOLZ Nova"
+  }
+}

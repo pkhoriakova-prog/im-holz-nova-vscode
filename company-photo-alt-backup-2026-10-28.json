@@ -1,0 +1,770 @@
+[
+  {
+    "post": 370,
+    "node": 107,
+    "before": {
+      "from": "url",
+      "url": "https://dev.imholz.at/wp-content/uploads/2026/10/Buildn-Green-2026.avif",
+      "lazy_load": true,
+      "alt_when_from_url": "custom",
+      "custom_alt_when_from_url": "BUILD'N GREEN 2026 — Circularity in Action — Wien, Österreich · 2026"
+    },
+    "after": "IM HOLZ Nova: BUILD'N GREEN 2026 — Circularity in Action — Wien, Österreich · 2026"
+  },
+  {
+    "post": 370,
+    "node": 114,
+    "before": {
+      "from": "url",
+      "url": "https://dev.imholz.at/wp-content/uploads/2026/10/CEE-Sustainable-Finance-Summit-in-Prague-2026.avif",
+      "lazy_load": true,
+      "alt_when_from_url": "custom",
+      "custom_alt_when_from_url": "CEE Sustainable Finance Summit — Prag, Tschechien · 2026"
+    },
+    "after": "IM HOLZ Nova: CEE Sustainable Finance Summit — Prag, Tschechien · 2026"
+  },
+  {
+    "post": 370,
+    "node": 121,
+    "before": {
+      "from": "url",
+      "url": "https://dev.imholz.at/wp-content/uploads/2026/10/CEE-Sustainable-Finance-Summit-in-Prague2.avif",
+      "lazy_load": true,
+      "alt_when_from_url": "custom",
+      "custom_alt_when_from_url": "CEE Sustainable Finance Summit — Prag, Tschechien · 2026"
+    },
+    "after": "IM HOLZ Nova: CEE Sustainable Finance Summit — Prag, Tschechien · 2026"
+  },
+  {
+    "post": 370,
+    "node": 128,
+    "before": {
+      "from": "url",
+      "url": "https://dev.imholz.at/wp-content/uploads/2026/10/Eighth-GEF-Assembly-Samarkand-2026-1-1.avif",
+      "lazy_load": true,
+      "alt_when_from_url": "custom",
+      "custom_alt_when_from_url": "Achte GEF-Versammlung — Samarkand, Usbekistan · 2026"
+    },
+    "after": "IM HOLZ Nova: Achte GEF-Versammlung — Samarkand, Usbekistan · 2026"
+  },
+  {
+    "post": 370,
+    "node": 135,
+    "before": {
+      "from": "url",
+      "url": "https://dev.imholz.at/wp-content/uploads/2026/10/Exporttag-2026-Austrian-Federal-Economic-Chamber-WKO-Vienna.avif",
+      "lazy_load": true,
+      "alt_when_from_url": "custom",
+      "custom_alt_when_from_url": "Exporttag — Wien, Österreich · 2026"
+    },
+    "after": "IM HOLZ Nova: Exporttag — Wien, Österreich · 2026"
+  },
+  {
+    "post": 370,
+    "node": 142,
+    "before": {
+      "from": "url",
+      "url": "https://dev.imholz.at/wp-content/uploads/2026/10/Exporttag-2026-Austrian-Federal-Economic-Chamber-WKO-Vienna2.avif",
+      "lazy_load": true,
+      "alt_when_from_url": "custom",
+      "custom_alt_when_from_url": "Exporttag — Wien, Österreich · 2026"
+    },
+    "after": "IM HOLZ Nova: Exporttag — Wien, Österreich · 2026"
+  },
+  {
+    "post": 370,
+    "node": 149,
+    "before": {
+      "from": "url",
+      "url": "https://dev.imholz.at/wp-content/uploads/2026/10/Monaco-Smart-Sustainable-Marina-Rendezvous_2026.avif",
+      "lazy_load": true,
+      "alt_when_from_url": "custom",
+      "custom_alt_when_from_url": "Monaco Smart and Sustainable Marina Rendezvous — Monaco · 2026"
+    },
+    "after": "Anna Holz, Gründerin von IM HOLZ Nova, beim Monaco Smart and Sustainable Marina Rendezvous 2026"
+  },
+  {
+    "post": 370,
+    "node": 156,
+    "before": {
+      "from": "url",
+      "url": "https://dev.imholz.at/wp-content/uploads/2026/10/Qingdao-Port-Tour-2026-China.avif",
+      "lazy_load": true,
+      "alt_when_from_url": "custom",
+      "custom_alt_when_from_url": "Besuch des Hafens Qingdao — Qingdao, China · 2026"
+    },
+    "after": "IM HOLZ Nova: Besuch des Hafens Qingdao — Qingdao, China · 2026"
+  },
+  {
+    "post": 370,
+    "node": 163,
+    "before": {
+      "from": "url",
+      "url": "https://dev.imholz.at/wp-content/uploads/2026/10/Working-session-with-Prof.-Wolfgang-Winter-TU-Wien-—-Vienna-2026.avif",
+      "lazy_load": true,
+      "alt_when_from_url": "custom",
+      "custom_alt_when_from_url": "Arbeitstreffen mit Prof. Wolfgang Winter (TU Wien) — Wien, Österreich · 2026"
+    },
+    "after": "IM HOLZ Nova: Arbeitstreffen mit Prof. Wolfgang Winter (TU Wien) — Wien, Österreich · 2026"
+  },
+  {
+    "post": 370,
+    "node": 170,
+    "before": {
+      "from": "url",
+      "url": "https://dev.imholz.at/wp-content/uploads/2026/10/Dubai.avif",
+      "lazy_load": true,
+      "alt_when_from_url": "custom",
+      "custom_alt_when_from_url": "Dubai WoodShow — Dubai, VAE · 2025"
+    },
+    "after": "IM HOLZ Nova: Dubai WoodShow — Dubai, VAE · 2025"
+  },
+  {
+    "post": 370,
+    "node": 177,
+    "before": {
+      "from": "url",
+      "url": "https://dev.imholz.at/wp-content/uploads/2026/10/Dubai_2.avif",
+      "lazy_load": true,
+      "alt_when_from_url": "custom",
+      "custom_alt_when_from_url": "Dubai WoodShow — Dubai, VAE · 2025"
+    },
+    "after": "Anna Holz, Gründerin von IM HOLZ Nova, mit der Businesswoman of the Year Runner-Up-Auszeichnung bei der Dubai WoodShow 2025"
+  },
+  {
+    "post": 370,
+    "node": 184,
+    "before": {
+      "from": "url",
+      "url": "https://dev.imholz.at/wp-content/uploads/2026/10/Vietnam.avif",
+      "lazy_load": true,
+      "alt_when_from_url": "custom",
+      "custom_alt_when_from_url": "VietnamWood — Ho-⁠Chi-⁠Minh-⁠Stadt, Vietnam · 2025"
+    },
+    "after": "Messestand von IM HOLZ Nova auf der VietnamWood 2025 in Ho-Chi-Minh-Stadt"
+  },
+  {
+    "post": 370,
+    "node": 191,
+    "before": {
+      "from": "url",
+      "url": "https://dev.imholz.at/wp-content/uploads/2026/10/Uzbekistan.avif",
+      "lazy_load": true,
+      "alt_when_from_url": "custom",
+      "custom_alt_when_from_url": "Foto aus Usbekistan — Usbekistan · 2025"
+    },
+    "after": "IM HOLZ Nova in Usbekistan, 2025"
+  },
+  {
+    "post": 245,
+    "node": 107,
+    "before": {
+      "from": "url",
+      "url": "https://dev.imholz.at/wp-content/uploads/2026/10/Buildn-Green-2026.avif",
+      "lazy_load": true,
+      "alt_when_from_url": "custom",
+      "custom_alt_when_from_url": "BUILD'N GREEN 2026 — Circularity in Action — Vienna, Austria · 2026"
+    },
+    "after": "IM HOLZ Nova: BUILD'N GREEN 2026 — Circularity in Action — Vienna, Austria · 2026"
+  },
+  {
+    "post": 245,
+    "node": 114,
+    "before": {
+      "from": "url",
+      "url": "https://dev.imholz.at/wp-content/uploads/2026/10/CEE-Sustainable-Finance-Summit-in-Prague-2026.avif",
+      "lazy_load": true,
+      "alt_when_from_url": "custom",
+      "custom_alt_when_from_url": "CEE Sustainable Finance Summit — Prague, Czech Republic · 2026"
+    },
+    "after": "IM HOLZ Nova: CEE Sustainable Finance Summit — Prague, Czech Republic · 2026"
+  },
+  {
+    "post": 245,
+    "node": 121,
+    "before": {
+      "from": "url",
+      "url": "https://dev.imholz.at/wp-content/uploads/2026/10/CEE-Sustainable-Finance-Summit-in-Prague2.avif",
+      "lazy_load": true,
+      "alt_when_from_url": "custom",
+      "custom_alt_when_from_url": "CEE Sustainable Finance Summit — Prague, Czech Republic · 2026"
+    },
+    "after": "IM HOLZ Nova: CEE Sustainable Finance Summit — Prague, Czech Republic · 2026"
+  },
+  {
+    "post": 245,
+    "node": 128,
+    "before": {
+      "from": "url",
+      "url": "https://dev.imholz.at/wp-content/uploads/2026/10/Eighth-GEF-Assembly-Samarkand-2026-1-1.avif",
+      "lazy_load": true,
+      "alt_when_from_url": "custom",
+      "custom_alt_when_from_url": "Eighth GEF Assembly — Samarkand, Uzbekistan · 2026"
+    },
+    "after": "IM HOLZ Nova: Eighth GEF Assembly — Samarkand, Uzbekistan · 2026"
+  },
+  {
+    "post": 245,
+    "node": 135,
+    "before": {
+      "from": "url",
+      "url": "https://dev.imholz.at/wp-content/uploads/2026/10/Exporttag-2026-Austrian-Federal-Economic-Chamber-WKO-Vienna.avif",
+      "lazy_load": true,
+      "alt_when_from_url": "custom",
+      "custom_alt_when_from_url": "Exporttag — Vienna, Austria · 2026"
+    },
+    "after": "IM HOLZ Nova: Exporttag — Vienna, Austria · 2026"
+  },
+  {
+    "post": 245,
+    "node": 142,
+    "before": {
+      "from": "url",
+      "url": "https://dev.imholz.at/wp-content/uploads/2026/10/Exporttag-2026-Austrian-Federal-Economic-Chamber-WKO-Vienna2.avif",
+      "lazy_load": true,
+      "alt_when_from_url": "custom",
+      "custom_alt_when_from_url": "Exporttag — Vienna, Austria · 2026"
+    },
+    "after": "IM HOLZ Nova: Exporttag — Vienna, Austria · 2026"
+  },
+  {
+    "post": 245,
+    "node": 149,
+    "before": {
+      "from": "url",
+      "url": "https://dev.imholz.at/wp-content/uploads/2026/10/Monaco-Smart-Sustainable-Marina-Rendezvous_2026.avif",
+      "lazy_load": true,
+      "alt_when_from_url": "custom",
+      "custom_alt_when_from_url": "Monaco Smart and Sustainable Marina Rendezvous — Monaco · 2026"
+    },
+    "after": "Anna Holz, founder of IM HOLZ Nova, at the Monaco Smart and Sustainable Marina Rendezvous 2026"
+  },
+  {
+    "post": 245,
+    "node": 156,
+    "before": {
+      "from": "url",
+      "url": "https://dev.imholz.at/wp-content/uploads/2026/10/Qingdao-Port-Tour-2026-China.avif",
+      "lazy_load": true,
+      "alt_when_from_url": "custom",
+      "custom_alt_when_from_url": "Qingdao Port Tour — Qingdao, China · 2026"
+    },
+    "after": "IM HOLZ Nova: Qingdao Port Tour — Qingdao, China · 2026"
+  },
+  {
+    "post": 245,
+    "node": 163,
+    "before": {
+      "from": "url",
+      "url": "https://dev.imholz.at/wp-content/uploads/2026/10/Working-session-with-Prof.-Wolfgang-Winter-TU-Wien-—-Vienna-2026.avif",
+      "lazy_load": true,
+      "alt_when_from_url": "custom",
+      "custom_alt_when_from_url": "Working meeting with Prof. Wolfgang Winter (TU Wien) — Vienna, Austria · 2026"
+    },
+    "after": "IM HOLZ Nova: Working meeting with Prof. Wolfgang Winter (TU Wien) — Vienna, Austria · 2026"
+  },
+  {
+    "post": 245,
+    "node": 170,
+    "before": {
+      "from": "url",
+      "url": "https://dev.imholz.at/wp-content/uploads/2026/10/Dubai.avif",
+      "lazy_load": true,
+      "alt_when_from_url": "custom",
+      "custom_alt_when_from_url": "Dubai Wood Show — Dubai, UAE · 2025"
+    },
+    "after": "IM HOLZ Nova: Dubai Wood Show — Dubai, UAE · 2025"
+  },
+  {
+    "post": 245,
+    "node": 177,
+    "before": {
+      "from": "url",
+      "url": "https://dev.imholz.at/wp-content/uploads/2026/10/Dubai_2.avif",
+      "lazy_load": true,
+      "alt_when_from_url": "custom",
+      "custom_alt_when_from_url": "Dubai Wood Show — Dubai, UAE · 2025"
+    },
+    "after": "Anna Holz, founder of IM HOLZ Nova, with the Businesswoman of the Year Runner-Up award at Dubai WoodShow 2025"
+  },
+  {
+    "post": 245,
+    "node": 184,
+    "before": {
+      "from": "url",
+      "url": "https://dev.imholz.at/wp-content/uploads/2026/10/Vietnam.avif",
+      "lazy_load": true,
+      "alt_when_from_url": "custom",
+      "custom_alt_when_from_url": "Vietnam Wood — Ho Chi Minh City, Vietnam · 2025"
+    },
+    "after": "IM HOLZ Nova booth at VietnamWood 2025 in Ho Chi Minh City"
+  },
+  {
+    "post": 245,
+    "node": 191,
+    "before": {
+      "from": "url",
+      "url": "https://dev.imholz.at/wp-content/uploads/2026/10/Uzbekistan.avif",
+      "lazy_load": true,
+      "alt_when_from_url": "custom",
+      "custom_alt_when_from_url": "Photo from Uzbekistan — Uzbekistan · 2025"
+    },
+    "after": "IM HOLZ Nova in Uzbekistan, 2025"
+  },
+  {
+    "post": 402,
+    "node": 110,
+    "before": {
+      "from": "url",
+      "url": "https://dev.imholz.at/wp-content/uploads/2026/10/CEE-Sustainable-Finance-Summit-in-Prague-2026.avif",
+      "lazy_load": true,
+      "alt_when_from_url": "custom",
+      "custom_alt_when_from_url": "CEE Sustainable Finance Summit, Prag 2026"
+    },
+    "after": "IM HOLZ Nova: CEE Sustainable Finance Summit, Prag 2026"
+  },
+  {
+    "post": 402,
+    "node": 117,
+    "before": {
+      "from": "url",
+      "url": "https://dev.imholz.at/wp-content/uploads/2026/10/Eighth-GEF-Assembly-Samarkand-2026-1-1.avif",
+      "lazy_load": true,
+      "alt_when_from_url": "custom",
+      "custom_alt_when_from_url": "Achte GEF-Versammlung, Samarkand 2026"
+    },
+    "after": "IM HOLZ Nova: Achte GEF-Versammlung, Samarkand 2026"
+  },
+  {
+    "post": 402,
+    "node": 124,
+    "before": {
+      "from": "url",
+      "url": "https://dev.imholz.at/wp-content/uploads/2026/10/Buildn-Green-2026.avif",
+      "lazy_load": true,
+      "alt_when_from_url": "custom",
+      "custom_alt_when_from_url": "BUILD'N GREEN 2026, Wien"
+    },
+    "after": "IM HOLZ Nova: BUILD'N GREEN 2026, Wien"
+  },
+  {
+    "post": 402,
+    "node": 131,
+    "before": {
+      "from": "url",
+      "url": "https://dev.imholz.at/wp-content/uploads/2026/10/Vietnam.avif",
+      "lazy_load": true,
+      "alt_when_from_url": "custom",
+      "custom_alt_when_from_url": "Unser Stand auf der VietnamWood 2025"
+    },
+    "after": "Messestand von IM HOLZ Nova auf der VietnamWood 2025 in Ho-Chi-Minh-Stadt"
+  },
+  {
+    "post": 402,
+    "node": 138,
+    "before": {
+      "from": "url",
+      "url": "https://dev.imholz.at/wp-content/uploads/2026/10/Dubai.avif",
+      "lazy_load": true,
+      "alt_when_from_url": "custom",
+      "custom_alt_when_from_url": "Dubai WoodShow 2025"
+    },
+    "after": "IM HOLZ Nova: Dubai WoodShow 2025"
+  },
+  {
+    "post": 282,
+    "node": 110,
+    "before": {
+      "from": "url",
+      "url": "https://dev.imholz.at/wp-content/uploads/2026/10/CEE-Sustainable-Finance-Summit-in-Prague-2026.avif",
+      "lazy_load": true,
+      "alt_when_from_url": "custom",
+      "custom_alt_when_from_url": "CEE Sustainable Finance Summit, Prague 2026"
+    },
+    "after": "IM HOLZ Nova: CEE Sustainable Finance Summit, Prague 2026"
+  },
+  {
+    "post": 282,
+    "node": 117,
+    "before": {
+      "from": "url",
+      "url": "https://dev.imholz.at/wp-content/uploads/2026/10/Eighth-GEF-Assembly-Samarkand-2026-1-1.avif",
+      "lazy_load": true,
+      "alt_when_from_url": "custom",
+      "custom_alt_when_from_url": "Eighth GEF Assembly, Samarkand 2026"
+    },
+    "after": "IM HOLZ Nova: Eighth GEF Assembly, Samarkand 2026"
+  },
+  {
+    "post": 282,
+    "node": 124,
+    "before": {
+      "from": "url",
+      "url": "https://dev.imholz.at/wp-content/uploads/2026/10/Buildn-Green-2026.avif",
+      "lazy_load": true,
+      "alt_when_from_url": "custom",
+      "custom_alt_when_from_url": "BUILD'N GREEN 2026, Vienna"
+    },
+    "after": "IM HOLZ Nova: BUILD'N GREEN 2026, Vienna"
+  },
+  {
+    "post": 282,
+    "node": 131,
+    "before": {
+      "from": "url",
+      "url": "https://dev.imholz.at/wp-content/uploads/2026/10/Vietnam.avif",
+      "lazy_load": true,
+      "alt_when_from_url": "custom",
+      "custom_alt_when_from_url": "Our booth at Vietnam Wood 2025"
+    },
+    "after": "IM HOLZ Nova booth at VietnamWood 2025 in Ho Chi Minh City"
+  },
+  {
+    "post": 282,
+    "node": 138,
+    "before": {
+      "from": "url",
+      "url": "https://dev.imholz.at/wp-content/uploads/2026/10/Dubai.avif",
+      "lazy_load": true,
+      "alt_when_from_url": "custom",
+      "custom_alt_when_from_url": "Dubai Wood Show 2025"
+    },
+    "after": "IM HOLZ Nova: Dubai Wood Show 2025"
+  },
+  {
+    "post": 401,
+    "node": 246,
+    "before": {
+      "from": "url",
+      "url": "https://dev.imholz.at/wp-content/uploads/2026/10/Monaco-Smart-Sustainable-Marina-Rendezvous_2026.avif",
+      "lazy_load": true,
+      "alt_when_from_url": "custom",
+      "custom_alt_when_from_url": "Anna Holz bei der Monaco Smart and Sustainable Marina Rendezvous, 2026"
+    },
+    "after": "Anna Holz, Gründerin von IM HOLZ Nova, beim Monaco Smart and Sustainable Marina Rendezvous 2026"
+  },
+  {
+    "post": 401,
+    "node": 253,
+    "before": {
+      "from": "url",
+      "url": "https://dev.imholz.at/wp-content/uploads/2026/10/Dubai_2.avif",
+      "lazy_load": true,
+      "alt_when_from_url": "custom",
+      "custom_alt_when_from_url": "Anna Holz mit der Auszeichnung als Zweitplatzierte der Businesswoman of the Year bei der Dubai WoodShow 2025"
+    },
+    "after": "Anna Holz, Gründerin von IM HOLZ Nova, mit der Businesswoman of the Year Runner-Up-Auszeichnung bei der Dubai WoodShow 2025"
+  },
+  {
+    "post": 14,
+    "node": 246,
+    "before": {
+      "from": "url",
+      "url": "https://dev.imholz.at/wp-content/uploads/2026/10/Monaco-Smart-Sustainable-Marina-Rendezvous_2026.avif",
+      "lazy_load": true,
+      "alt_when_from_url": "custom",
+      "custom_alt_when_from_url": "Anna Holz at the Monaco Smart and Sustainable Marina Rendezvous, 2026"
+    },
+    "after": "Anna Holz, founder of IM HOLZ Nova, at the Monaco Smart and Sustainable Marina Rendezvous 2026"
+  },
+  {
+    "post": 14,
+    "node": 253,
+    "before": {
+      "from": "url",
+      "url": "https://dev.imholz.at/wp-content/uploads/2026/10/Dubai_2.avif",
+      "lazy_load": true,
+      "alt_when_from_url": "custom",
+      "custom_alt_when_from_url": "Anna Holz with the Businesswoman of the Year Runner-Up award at the Dubai WoodShow 2025"
+    },
+    "after": "Anna Holz, founder of IM HOLZ Nova, with the Businesswoman of the Year Runner-Up award at Dubai WoodShow 2025"
+  },
+  {
+    "post": 407,
+    "node": 107,
+    "before": {
+      "from": "url",
+      "url": "https://dev.imholz.at/wp-content/uploads/2026/10/CEE-Sustainable-Finance-Summit-in-Prague-2026.avif",
+      "lazy_load": true,
+      "alt_when_from_url": "custom",
+      "custom_alt_when_from_url": "CEE Sustainable Finance Summit, Prag 2026"
+    },
+    "after": "IM HOLZ Nova: CEE Sustainable Finance Summit, Prag 2026"
+  },
+  {
+    "post": 407,
+    "node": 114,
+    "before": {
+      "from": "url",
+      "url": "https://dev.imholz.at/wp-content/uploads/2026/10/Eighth-GEF-Assembly-Samarkand-2026-1-1.avif",
+      "lazy_load": true,
+      "alt_when_from_url": "custom",
+      "custom_alt_when_from_url": "Achte GEF-Versammlung, Samarkand 2026"
+    },
+    "after": "IM HOLZ Nova: Achte GEF-Versammlung, Samarkand 2026"
+  },
+  {
+    "post": 407,
+    "node": 121,
+    "before": {
+      "from": "url",
+      "url": "https://dev.imholz.at/wp-content/uploads/2026/10/Buildn-Green-2026.avif",
+      "lazy_load": true,
+      "alt_when_from_url": "custom",
+      "custom_alt_when_from_url": "BUILD'N GREEN 2026, Wien"
+    },
+    "after": "IM HOLZ Nova: BUILD'N GREEN 2026, Wien"
+  },
+  {
+    "post": 407,
+    "node": 128,
+    "before": {
+      "from": "url",
+      "url": "https://dev.imholz.at/wp-content/uploads/2026/10/Vietnam.avif",
+      "lazy_load": true,
+      "alt_when_from_url": "custom",
+      "custom_alt_when_from_url": "Unser Stand auf der VietnamWood 2025"
+    },
+    "after": "Messestand von IM HOLZ Nova auf der VietnamWood 2025 in Ho-Chi-Minh-Stadt"
+  },
+  {
+    "post": 407,
+    "node": 135,
+    "before": {
+      "from": "url",
+      "url": "https://dev.imholz.at/wp-content/uploads/2026/10/Dubai.avif",
+      "lazy_load": true,
+      "alt_when_from_url": "custom",
+      "custom_alt_when_from_url": "Dubai WoodShow 2025"
+    },
+    "after": "IM HOLZ Nova: Dubai WoodShow 2025"
+  },
+  {
+    "post": 297,
+    "node": 107,
+    "before": {
+      "from": "url",
+      "url": "https://dev.imholz.at/wp-content/uploads/2026/10/CEE-Sustainable-Finance-Summit-in-Prague-2026.avif",
+      "lazy_load": true,
+      "alt_when_from_url": "custom",
+      "custom_alt_when_from_url": "CEE Sustainable Finance Summit, Prague 2026"
+    },
+    "after": "IM HOLZ Nova: CEE Sustainable Finance Summit, Prague 2026"
+  },
+  {
+    "post": 297,
+    "node": 114,
+    "before": {
+      "from": "url",
+      "url": "https://dev.imholz.at/wp-content/uploads/2026/10/Eighth-GEF-Assembly-Samarkand-2026-1-1.avif",
+      "lazy_load": true,
+      "alt_when_from_url": "custom",
+      "custom_alt_when_from_url": "Eighth GEF Assembly, Samarkand 2026"
+    },
+    "after": "IM HOLZ Nova: Eighth GEF Assembly, Samarkand 2026"
+  },
+  {
+    "post": 297,
+    "node": 121,
+    "before": {
+      "from": "url",
+      "url": "https://dev.imholz.at/wp-content/uploads/2026/10/Buildn-Green-2026.avif",
+      "lazy_load": true,
+      "alt_when_from_url": "custom",
+      "custom_alt_when_from_url": "BUILD'N GREEN 2026, Vienna"
+    },
+    "after": "IM HOLZ Nova: BUILD'N GREEN 2026, Vienna"
+  },
+  {
+    "post": 297,
+    "node": 128,
+    "before": {
+      "from": "url",
+      "url": "https://dev.imholz.at/wp-content/uploads/2026/10/Vietnam.avif",
+      "lazy_load": true,
+      "alt_when_from_url": "custom",
+      "custom_alt_when_from_url": "Our booth at Vietnam Wood 2025"
+    },
+    "after": "IM HOLZ Nova booth at VietnamWood 2025 in Ho Chi Minh City"
+  },
+  {
+    "post": 297,
+    "node": 135,
+    "before": {
+      "from": "url",
+      "url": "https://dev.imholz.at/wp-content/uploads/2026/10/Dubai.avif",
+      "lazy_load": true,
+      "alt_when_from_url": "custom",
+      "custom_alt_when_from_url": "Dubai Wood Show 2025"
+    },
+    "after": "IM HOLZ Nova: Dubai Wood Show 2025"
+  },
+  {
+    "post": 410,
+    "node": 117,
+    "before": {
+      "from": "url",
+      "url": "https://dev.imholz.at/wp-content/uploads/2026/10/CEE-Sustainable-Finance-Summit-in-Prague-2026.avif",
+      "lazy_load": true,
+      "alt_when_from_url": "custom",
+      "custom_alt_when_from_url": "CEE Sustainable Finance Summit, Prag 2026"
+    },
+    "after": "IM HOLZ Nova: CEE Sustainable Finance Summit, Prag 2026"
+  },
+  {
+    "post": 410,
+    "node": 124,
+    "before": {
+      "from": "url",
+      "url": "https://dev.imholz.at/wp-content/uploads/2026/10/CEE-Sustainable-Finance-Summit-in-Prague2.avif",
+      "lazy_load": true,
+      "alt_when_from_url": "custom",
+      "custom_alt_when_from_url": "CEE Sustainable Finance Summit, Prag 2026"
+    },
+    "after": "IM HOLZ Nova: CEE Sustainable Finance Summit, Prag 2026"
+  },
+  {
+    "post": 411,
+    "node": 117,
+    "before": {
+      "from": "url",
+      "url": "https://dev.imholz.at/wp-content/uploads/2026/10/Eighth-GEF-Assembly-Samarkand-2026-1-1.avif",
+      "lazy_load": true,
+      "alt_when_from_url": "custom",
+      "custom_alt_when_from_url": "Achte GEF-Versammlung, Samarkand 2026"
+    },
+    "after": "IM HOLZ Nova: Achte GEF-Versammlung, Samarkand 2026"
+  },
+  {
+    "post": 412,
+    "node": 117,
+    "before": {
+      "from": "url",
+      "url": "https://dev.imholz.at/wp-content/uploads/2026/10/Buildn-Green-2026.avif",
+      "lazy_load": true,
+      "alt_when_from_url": "custom",
+      "custom_alt_when_from_url": "BUILD'N GREEN 2026, Wien"
+    },
+    "after": "IM HOLZ Nova: BUILD'N GREEN 2026, Wien"
+  },
+  {
+    "post": 413,
+    "node": 117,
+    "before": {
+      "from": "url",
+      "url": "https://dev.imholz.at/wp-content/uploads/2026/10/Vietnam.avif",
+      "lazy_load": true,
+      "alt_when_from_url": "custom",
+      "custom_alt_when_from_url": "Unser Stand auf der VietnamWood 2025"
+    },
+    "after": "Messestand von IM HOLZ Nova auf der VietnamWood 2025 in Ho-Chi-Minh-Stadt"
+  },
+  {
+    "post": 414,
+    "node": 117,
+    "before": {
+      "from": "url",
+      "url": "https://dev.imholz.at/wp-content/uploads/2026/10/Dubai.avif",
+      "lazy_load": true,
+      "alt_when_from_url": "custom",
+      "custom_alt_when_from_url": "Dubai WoodShow 2025"
+    },
+    "after": "IM HOLZ Nova: Dubai WoodShow 2025"
+  },
+  {
+    "post": 414,
+    "node": 124,
+    "before": {
+      "from": "url",
+      "url": "https://dev.imholz.at/wp-content/uploads/2026/10/Dubai_2.avif",
+      "lazy_load": true,
+      "alt_when_from_url": "custom",
+      "custom_alt_when_from_url": "Dubai WoodShow 2025"
+    },
+    "after": "Anna Holz, Gründerin von IM HOLZ Nova, mit der Businesswoman of the Year Runner-Up-Auszeichnung bei der Dubai WoodShow 2025"
+  },
+  {
+    "post": 298,
+    "node": 117,
+    "before": {
+      "from": "url",
+      "url": "https://dev.imholz.at/wp-content/uploads/2026/10/CEE-Sustainable-Finance-Summit-in-Prague-2026.avif",
+      "lazy_load": true,
+      "alt_when_from_url": "custom",
+      "custom_alt_when_from_url": "CEE Sustainable Finance Summit, Prague 2026"
+    },
+    "after": "IM HOLZ Nova: CEE Sustainable Finance Summit, Prague 2026"
+  },
+  {
+    "post": 298,
+    "node": 124,
+    "before": {
+      "from": "url",
+      "url": "https://dev.imholz.at/wp-content/uploads/2026/10/CEE-Sustainable-Finance-Summit-in-Prague2.avif",
+      "lazy_load": true,
+      "alt_when_from_url": "custom",
+      "custom_alt_when_from_url": "CEE Sustainable Finance Summit, Prague 2026"
+    },
+    "after": "IM HOLZ Nova: CEE Sustainable Finance Summit, Prague 2026"
+  },
+  {
+    "post": 299,
+    "node": 117,
+    "before": {
+      "from": "url",
+      "url": "https://dev.imholz.at/wp-content/uploads/2026/10/Eighth-GEF-Assembly-Samarkand-2026-1-1.avif",
+      "lazy_load": true,
+      "alt_when_from_url": "custom",
+      "custom_alt_when_from_url": "Eighth GEF Assembly, Samarkand 2026"
+    },
+    "after": "IM HOLZ Nova: Eighth GEF Assembly, Samarkand 2026"
+  },
+  {
+    "post": 300,
+    "node": 117,
+    "before": {
+      "from": "url",
+      "url": "https://dev.imholz.at/wp-content/uploads/2026/10/Buildn-Green-2026.avif",
+      "lazy_load": true,
+      "alt_when_from_url": "custom",
+      "custom_alt_when_from_url": "BUILD'N GREEN 2026, Vienna"
+    },
+    "after": "IM HOLZ Nova: BUILD'N GREEN 2026, Vienna"
+  },
+  {
+    "post": 301,
+    "node": 117,
+    "before": {
+      "from": "url",
+      "url": "https://dev.imholz.at/wp-content/uploads/2026/10/Vietnam.avif",
+      "lazy_load": true,
+      "alt_when_from_url": "custom",
+      "custom_alt_when_from_url": "Our booth at Vietnam Wood 2025"
+    },
+    "after": "IM HOLZ Nova booth at VietnamWood 2025 in Ho Chi Minh City"
+  },
+  {
+    "post": 302,
+    "node": 117,
+    "before": {
+      "from": "url",
+      "url": "https://dev.imholz.at/wp-content/uploads/2026/10/Dubai.avif",
+      "lazy_load": true,
+      "alt_when_from_url": "custom",
+      "custom_alt_when_from_url": "Dubai Wood Show 2025"
+    },
+    "after": "IM HOLZ Nova: Dubai Wood Show 2025"
+  },
+  {
+    "post": 302,
+    "node": 124,
+    "before": {
+      "from": "url",
+      "url": "https://dev.imholz.at/wp-content/uploads/2026/10/Dubai_2.avif",
+      "lazy_load": true,
+      "alt_when_from_url": "custom",
+      "custom_alt_when_from_url": "Dubai WoodShow 2025"
+    },
+    "after": "Anna Holz, founder of IM HOLZ Nova, with the Businesswoman of the Year Runner-Up award at Dubai WoodShow 2025"
+  }
+]

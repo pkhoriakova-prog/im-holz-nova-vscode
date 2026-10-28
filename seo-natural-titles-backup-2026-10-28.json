@@ -1,0 +1,65 @@
+{
+  "before": {
+    "success": true,
+    "data": {
+      "output": "",
+      "output_encoding": "utf8",
+      "result": [
+        {
+          "id": 14,
+          "title": "About Us: Sustainable Solutions Integrator | IM HOLZ Nova"
+        },
+        {
+          "id": 15,
+          "title": "Sustainability: Building & Resources | IM HOLZ Nova"
+        },
+        {
+          "id": 103,
+          "title": "The IM HOLZ Model: Technologies & Partners | IM HOLZ Nova"
+        },
+        {
+          "id": 268,
+          "title": "Contact: Projects & Partnerships | IM HOLZ Nova"
+        },
+        {
+          "id": 297,
+          "title": "Insights: News & Events | IM HOLZ Nova"
+        },
+        {
+          "id": 342,
+          "title": "Kontakt: Projekte & Partnerschaften | IM HOLZ Nova"
+        },
+        {
+          "id": 372,
+          "title": "Das IM HOLZ Modell: Technologien & Partner | IM HOLZ Nova"
+        },
+        {
+          "id": 396,
+          "title": "Nachhaltigkeit: Bauen & Ressourcen | IM HOLZ Nova"
+        },
+        {
+          "id": 401,
+          "title": "Über uns: Integrator aus Wien | IM HOLZ Nova"
+        },
+        {
+          "id": 407,
+          "title": "Einblicke: Neuigkeiten & Veranstaltungen | IM HOLZ Nova"
+        }
+      ],
+      "result_type": "array",
+      "exception": null
+    }
+  },
+  "after": {
+    "14": "About IM HOLZ Nova",
+    "15": "Sustainability at IM HOLZ Nova",
+    "103": "The IM HOLZ Nova Integration Model",
+    "268": "Contact IM HOLZ Nova",
+    "297": "Insights from IM HOLZ Nova",
+    "342": "Kontakt zu IM HOLZ Nova",
+    "372": "Das Integrationsmodell von IM HOLZ Nova",
+    "396": "Nachhaltigkeit bei IM HOLZ Nova",
+    "401": "Über IM HOLZ Nova",
+    "407": "Einblicke bei IM HOLZ Nova"
+  }
+}

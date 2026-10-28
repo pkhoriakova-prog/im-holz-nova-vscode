@@ -1,0 +1,369 @@
+{
+  "site": "https://dev.imholz.at",
+  "changes": [
+    {
+      "id": 401,
+      "node": 309,
+      "type": "OxygenElements\\Text",
+      "path": [
+        "content",
+        "content",
+        "text"
+      ],
+      "old": "Pilotprojekte",
+      "value": "Schulkonzept"
+    },
+    {
+      "id": 401,
+      "node": 311,
+      "type": "OxygenElements\\Text",
+      "path": [
+        "content",
+        "content",
+        "text"
+      ],
+      "old": "Die ersten Pilotschulen sind in Vorbereitung: eine schnell wachsende Region mit starker Nachfrage nach Schulen und Gesundheitseinrichtungen.",
+      "value": "Unser Schulkonzept für Zentralasien befindet sich ausschließlich in der Konzeptphase. Die Region wächst schnell und hat einen hohen Bedarf an Schulen und Gesundheitseinrichtungen."
+    },
+    {
+      "id": 14,
+      "node": 309,
+      "type": "OxygenElements\\Text",
+      "path": [
+        "content",
+        "content",
+        "text"
+      ],
+      "old": "Pilot projects",
+      "value": "School concept"
+    },
+    {
+      "id": 14,
+      "node": 311,
+      "type": "OxygenElements\\Text",
+      "path": [
+        "content",
+        "content",
+        "text"
+      ],
+      "old": "The first pilot schools are in preparation: a fast-growing region with strong demand for schools and healthcare.",
+      "value": "Our school concept for Central Asia is at the concept stage only. The region is growing rapidly and has strong demand for schools and healthcare facilities."
+    },
+    {
+      "id": 411,
+      "node": 100,
+      "type": "OxygenElements\\Component",
+      "path": [
+        "content",
+        "content",
+        "block",
+        "properties",
+        "898e913c-21ad-48f9-a44f-ecb601e2e4c7"
+      ],
+      "old": "Die Globale Umweltfazilität (GEF) bringt alle vier Jahre Länder und Institutionen zusammen. In Samarkand, in der Region, in der unsere ersten Pilotschulen entstehen, haben wir uns am Gespräch über die Umwelt und die Partnerschaften dahinter beteiligt.",
+      "value": "Die Globale Umweltfazilität (GEF) bringt alle vier Jahre Länder und Institutionen zusammen. In Samarkand haben wir uns über Umweltthemen und internationale Zusammenarbeit ausgetauscht. Unser Schulkonzept für Zentralasien befindet sich ausschließlich in der Konzeptphase."
+    },
+    {
+      "id": 411,
+      "node": 103,
+      "type": "OxygenElements\\Text",
+      "path": [
+        "content",
+        "content",
+        "text"
+      ],
+      "old": "Wir haben an der Achten GEF-Versammlung in Samarkand, Usbekistan, teilgenommen, einer Region, in der wir unsere ersten Pilotschulen vorbereiten.",
+      "value": "Wir haben an der Achten GEF-Versammlung in Samarkand, Usbekistan, teilgenommen. Für Zentralasien liegt unser Schulkonzept CA Smart School vor; es befindet sich ausschließlich in der Konzeptphase."
+    },
+    {
+      "id": 411,
+      "node": 105,
+      "type": "OxygenElements\\Text",
+      "path": [
+        "content",
+        "content",
+        "text"
+      ],
+      "old": "In Zentralasien entstehen unsere ersten Pilotschulen, daher bedeutete die Anwesenheit in Samarkand, Partner und Institutionen zu treffen, die die Umweltagenda der Region mitbestimmen.",
+      "value": "Der Austausch in Samarkand bot die Gelegenheit, mit Partnern und Institutionen ins Gespräch zu kommen, die die Umweltagenda Zentralasiens mitgestalten. Unser Schulkonzept für die Region befindet sich ausschließlich in der Konzeptphase."
+    },
+    {
+      "id": 299,
+      "node": 100,
+      "type": "OxygenElements\\Component",
+      "path": [
+        "content",
+        "content",
+        "block",
+        "properties",
+        "898e913c-21ad-48f9-a44f-ecb601e2e4c7"
+      ],
+      "old": "The Global Environment Facility brings countries and institutions together once every four years. In Samarkand, in the region where our first pilot schools are taking shape, we joined the conversation on the environment and the partnerships behind it.",
+      "value": "The Global Environment Facility brings countries and institutions together once every four years. In Samarkand, we joined discussions on environmental priorities and international cooperation. Our school concept for Central Asia is at the concept stage only."
+    },
+    {
+      "id": 299,
+      "node": 103,
+      "type": "OxygenElements\\Text",
+      "path": [
+        "content",
+        "content",
+        "text"
+      ],
+      "old": "We joined the Eighth GEF Assembly in Samarkand, Uzbekistan, a region where we are preparing our first pilot schools.",
+      "value": "We attended the Eighth GEF Assembly in Samarkand, Uzbekistan. CA Smart School is our school concept for Central Asia and remains at the concept stage only."
+    },
+    {
+      "id": 299,
+      "node": 105,
+      "type": "OxygenElements\\Text",
+      "path": [
+        "content",
+        "content",
+        "text"
+      ],
+      "old": "Central Asia is where our first pilot schools are taking shape, so being in Samarkand meant meeting partners and institutions who help set the region’s environmental agenda.",
+      "value": "Being in Samarkand offered an opportunity to meet partners and institutions who help shape Central Asia’s environmental agenda. Our school concept for the region remains at the concept stage only."
+    },
+    {
+      "id": 376,
+      "node": 107,
+      "type": "OxygenElements\\Text",
+      "path": [
+        "content",
+        "content",
+        "text"
+      ],
+      "old": "Die Frage ist also nicht nur, wie viele Schulen, sondern wie sie gebaut werden. Neue Schulen werden schnell gebraucht, und sie müssen sicherer, wärmer und im Betrieb günstiger sein. Herkömmlicher Beton braucht 24–36 Monate und verursacht 400–500 kg CO₂ pro m², und für öffentliche Schulen aus Massivholz gibt es in der Region noch kein Vorbild. Hier setzt dieses Pilotprojekt an.",
+      "value": "Die Frage ist also nicht nur, wie viele Schulen gebraucht werden, sondern auch, wie sie gebaut werden. Neue Schulen sollen sicher, energieeffizient und wirtschaftlich im Betrieb sein. CA Smart School untersucht dafür einen möglichen Holzbauansatz für Zentralasien. Die Initiative befindet sich ausschließlich in der Konzeptphase."
+    },
+    {
+      "id": 376,
+      "node": 131,
+      "type": "OxygenElements\\Text",
+      "path": [
+        "content",
+        "content",
+        "text"
+      ],
+      "old": "Die Pilotschule ist ein U-förmiges Gebäude, das sich zur Straße öffnet und einen geschützten Innenhof von 26 × 19 m umschließt: ein geschützter Ort, der Unterricht im Freien auch in den Übergangszeiten des kontinentalen Klimas ermöglicht. Die Flügel steigen von zwei auf vier Geschosse an, damit Tageslicht in den Hof gelangt und das Gebäude unter 15 m bleibt.",
+      "value": "Das Konzept sieht ein U-förmiges Schulgebäude vor, das sich zur Straße öffnet und einen geschützten Innenhof von 26 × 19 m umschließt. Dieser soll Unterricht im Freien auch in den Übergangszeiten des kontinentalen Klimas ermöglichen. Zwei bis vier Geschosse sollen Tageslicht im Hof sichern und die Gebäudehöhe unter 15 m halten."
+    },
+    {
+      "id": 376,
+      "node": 132,
+      "type": "OxygenElements\\Text",
+      "path": [
+        "content",
+        "content",
+        "text"
+      ],
+      "old": "Im Inneren liegen Klassenräume, ein IT- und Maker-Raum, eine Bibliothek, Kunst- und Musikräume, eine Cafeteria und eine Sporthalle, auf dem Dach ein 300 m² großes Auditorium, das die Nachbarschaft nach dem Unterricht nutzen kann.",
+      "value": "Vorgesehen sind Klassenräume, ein IT- und Maker-Raum, eine Bibliothek, Kunst- und Musikräume, eine Cafeteria und eine Sporthalle. Ein 300 m² großes Auditorium auf dem Dach könnte der Nachbarschaft außerhalb der Unterrichtszeiten offenstehen."
+    },
+    {
+      "id": 376,
+      "node": 133,
+      "type": "OxygenElements\\Text",
+      "path": [
+        "content",
+        "content",
+        "text"
+      ],
+      "old": "Das Tragwerk besteht aus Brettsperrholz auf Brettschichtholzstützen in einem 6 × 6 m Raster und bleibt in den Klassenräumen sichtbar. Beton beschränkt sich auf die Bodenplatte, die Aufzugsschächte und die Fundamente. Passivhaus-Lüftung, Wärmepumpe und Photovoltaik auf dem Dach zielen auf unter 50 kWh/m² im Jahr.",
+      "value": "Das Konzept sieht Brettsperrholz auf Brettschichtholzstützen in einem 6 × 6 m großen Raster vor. Das Tragwerk soll in den Klassenräumen sichtbar bleiben. Beton wäre auf Bodenplatte, Aufzugsschächte und Fundamente beschränkt. Lüftung, Wärmepumpe und Photovoltaik sind mit einem Zielwert von unter 50 kWh/m² pro Jahr vorgesehen; die technische Machbarkeit ist noch zu prüfen."
+    },
+    {
+      "id": 376,
+      "node": 141,
+      "type": "OxygenElements\\Text",
+      "path": [
+        "content",
+        "content",
+        "text"
+      ],
+      "old": "Bauzeit",
+      "value": "Bauzeit – Konzeptziel"
+    },
+    {
+      "id": 376,
+      "node": 146,
+      "type": "OxygenElements\\Text",
+      "path": [
+        "content",
+        "content",
+        "text"
+      ],
+      "old": "Grundriss des Erdgeschosses der Pilotschule, 48 × 35 m. Konzeptphase.",
+      "value": "Konzeptgrundriss des Erdgeschosses, 48 × 35 m. Keine Ausführungsplanung."
+    },
+    {
+      "id": 376,
+      "node": 145,
+      "type": "OxygenElements\\Image",
+      "path": [
+        "content",
+        "image",
+        "custom_alt_when_from_url"
+      ],
+      "old": "Grundriss des Erdgeschosses der Pilotschule: ein U-förmiges Gebäude um einen Innenhof, mit einer Sporthalle im Norden",
+      "value": "Konzeptgrundriss einer Schule: ein U-förmiges Gebäude um einen Innenhof, mit einer Sporthalle im Norden"
+    },
+    {
+      "id": 376,
+      "node": 163,
+      "type": "OxygenElements\\Text",
+      "path": [
+        "content",
+        "content",
+        "text"
+      ],
+      "old": "Weniger Kohlenstoff",
+      "value": "Emissionsminderung prüfen"
+    },
+    {
+      "id": 376,
+      "node": 167,
+      "type": "OxygenElements\\Text",
+      "path": [
+        "content",
+        "content",
+        "text"
+      ],
+      "old": "CLT speichert etwa 1 tCO₂ pro m³. Der graue Kohlenstoff wird auf 45 % unter dem eines vergleichbaren Stahlbetonrahmens geschätzt: unter 150 kg CO₂/m², gegenüber einer Basis von 430 kg/m².",
+      "value": "Eine mögliche Emissionsminderung ist ein Ziel des Konzepts. Ob und in welchem Umfang sie erreicht werden kann, müsste durch eine projektspezifische Ökobilanz geprüft werden."
+    },
+    {
+      "id": 376,
+      "node": 175,
+      "type": "OxygenElements\\Text",
+      "path": [
+        "content",
+        "content",
+        "text"
+      ],
+      "old": "Werkseitig vorgefertigte Platten funktionieren auch in harten kontinentalen Wintern. Das Tragwerk wird in 10–14 Wochen errichtet gegenüber 24–30 bei Beton, und die Schule kann nach etwa 18 Monaten fertig sein.",
+      "value": "Für das Konzept werden etwa 18 Monate Gesamtbauzeit und 10–14 Wochen für die Tragwerksmontage angenommen. Diese vorläufigen Zeitansätze müssten anhand von Standort, Planung und Lieferbedingungen überprüft werden."
+    },
+    {
+      "id": 144,
+      "node": 107,
+      "type": "OxygenElements\\Text",
+      "path": [
+        "content",
+        "content",
+        "text"
+      ],
+      "old": "So the question is not only how many schools, but how they are built. New schools are needed fast, and they have to be safer, warmer and cheaper to run. Conventional concrete takes 24–36 months and carries 400–500 kg of CO₂ per m², and there is no regional precedent yet for public schools in mass timber. This pilot starts there.",
+      "value": "The question is not only how many schools are needed, but also how they should be built. New schools should be safe, energy-efficient and economical to operate. CA Smart School explores a possible timber-based approach for Central Asia. The initiative remains at the concept stage only."
+    },
+    {
+      "id": 144,
+      "node": 131,
+      "type": "OxygenElements\\Text",
+      "path": [
+        "content",
+        "content",
+        "text"
+      ],
+      "old": "The pilot school is a U-shaped building that opens to the street and wraps around a protected courtyard of 26 × 19 m: a sheltered place for outdoor learning that stretches the season in a continental climate. The wings step from two to four storeys, so daylight reaches the yard and the building stays under 15 m.",
+      "value": "The concept proposes a U-shaped school building that opens to the street and wraps around a sheltered courtyard measuring 26 × 19 m. The courtyard is intended to extend opportunities for outdoor learning in a continental climate. Wings of two to four storeys would allow daylight into the courtyard while keeping the building below 15 m."
+    },
+    {
+      "id": 144,
+      "node": 132,
+      "type": "OxygenElements\\Text",
+      "path": [
+        "content",
+        "content",
+        "text"
+      ],
+      "old": "Inside are classrooms, an IT and maker space, a library, art and music rooms, a cafeteria and a sports hall, and on the roof a 300 m² auditorium that the neighbourhood can use after school hours.",
+      "value": "The proposed spaces include classrooms, an IT and maker space, a library, art and music rooms, a cafeteria and a sports hall. A 300 m² rooftop auditorium could be available to the local community outside school hours."
+    },
+    {
+      "id": 144,
+      "node": 133,
+      "type": "OxygenElements\\Text",
+      "path": [
+        "content",
+        "content",
+        "text"
+      ],
+      "old": "The frame is cross-laminated timber on glulam columns across a 6 × 6 m grid, left exposed in the classrooms. Concrete is limited to the ground slab, the lift shafts and the foundations. Passive House ventilation, a heat pump and rooftop solar aim at under 50 kWh/m² a year.",
+      "value": "The concept proposes cross-laminated timber on glulam columns in a 6 × 6 m grid, with the structure left exposed in classrooms. Concrete would be limited to the ground slab, lift shafts and foundations. Ventilation, a heat pump and rooftop solar are proposed with a target of under 50 kWh/m² a year; technical feasibility remains to be assessed."
+    },
+    {
+      "id": 144,
+      "node": 141,
+      "type": "OxygenElements\\Text",
+      "path": [
+        "content",
+        "content",
+        "text"
+      ],
+      "old": "Build time",
+      "value": "Build time — concept target"
+    },
+    {
+      "id": 144,
+      "node": 146,
+      "type": "OxygenElements\\Text",
+      "path": [
+        "content",
+        "content",
+        "text"
+      ],
+      "old": "Ground floor plan of the pilot school, 48 × 35 m. Concept stage.",
+      "value": "Conceptual ground floor plan, 48 × 35 m. Not a construction drawing."
+    },
+    {
+      "id": 144,
+      "node": 145,
+      "type": "OxygenElements\\Image",
+      "path": [
+        "content",
+        "image",
+        "custom_alt_when_from_url"
+      ],
+      "old": "Ground floor plan of the pilot school: a U-shaped building around a courtyard, with a sports hall to the north",
+      "value": "Conceptual school floor plan: a U-shaped building around a courtyard, with a sports hall to the north"
+    },
+    {
+      "id": 144,
+      "node": 163,
+      "type": "OxygenElements\\Text",
+      "path": [
+        "content",
+        "content",
+        "text"
+      ],
+      "old": "Lower carbon",
+      "value": "Assessing carbon savings"
+    },
+    {
+      "id": 144,
+      "node": 167,
+      "type": "OxygenElements\\Text",
+      "path": [
+        "content",
+        "content",
+        "text"
+      ],
+      "old": "CLT stores about 1 tCO₂ per m³. Embodied carbon is estimated at 45% below an equivalent reinforced-concrete frame: under 150 kg CO₂/m², against a 430 kg/m² baseline.",
+      "value": "Reducing emissions is an aim of the concept. Whether and to what extent this can be achieved would need to be assessed through a project-specific life cycle assessment."
+    },
+    {
+      "id": 144,
+      "node": 175,
+      "type": "OxygenElements\\Text",
+      "path": [
+        "content",
+        "content",
+        "text"
+      ],
+      "old": "Factory-prefabricated panels work through harsh continental winters. The structural frame is erected in 10–14 weeks against 24–30 for concrete, and the school can be ready within about 18 months.",
+      "value": "The concept assumes about 18 months for construction overall and 10–14 weeks for structural assembly. These preliminary timelines would need to be assessed against the site, design and supply conditions."
+    }
+  ]
+}

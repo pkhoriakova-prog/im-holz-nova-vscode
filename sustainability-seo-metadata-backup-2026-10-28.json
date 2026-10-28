@@ -1,0 +1,89 @@
+{
+  "before": {
+    "success": true,
+    "data": {
+      "output": "",
+      "output_encoding": "utf8",
+      "result": [
+        {
+          "id": 396,
+          "meta": {
+            "rank_math_description": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_focus_keyword": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_facebook_title": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_facebook_description": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_twitter_title": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_twitter_description": {
+              "exists": false,
+              "value": ""
+            }
+          }
+        },
+        {
+          "id": 15,
+          "meta": {
+            "rank_math_description": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_focus_keyword": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_facebook_title": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_facebook_description": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_twitter_title": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_twitter_description": {
+              "exists": false,
+              "value": ""
+            }
+          }
+        }
+      ],
+      "result_type": "array",
+      "exception": null
+    }
+  },
+  "after": {
+    "15": {
+      "rank_math_focus_keyword": "sustainability,sustainable building,resource-efficient construction",
+      "rank_math_description": "Sustainability at IM HOLZ Nova: integrating building, energy and water solutions with local expertise to support resource-efficient infrastructure projects.",
+      "rank_math_facebook_title": "Sustainability at IM HOLZ Nova",
+      "rank_math_facebook_description": "Our approach brings together buildings, energy, water and materials. With specialist partners, we assess how solutions can meet local needs and use resources efficiently over the long term.",
+      "rank_math_twitter_title": "Sustainability at IM HOLZ Nova",
+      "rank_math_twitter_description": "Our approach brings together buildings, energy, water and materials. With specialist partners, we assess how solutions can meet local needs and use resources efficiently over the long term."
+    },
+    "396": {
+      "rank_math_focus_keyword": "Nachhaltigkeit,nachhaltiges Bauen,Ressourceneffizienz",
+      "rank_math_description": "Nachhaltigkeit bei IM HOLZ Nova: Wir verbinden Lösungen für Gebäude, Energie und Wasser mit lokaler Expertise für einen effizienten Ressourceneinsatz.",
+      "rank_math_facebook_title": "Nachhaltigkeit bei IM HOLZ Nova",
+      "rank_math_facebook_description": "Unser Ansatz verbindet Gebäude, Energie, Wasser und Materialien. Gemeinsam mit Fachpartnern prüfen wir, welche Lösungen zu lokalen Bedürfnissen passen und Ressourcen langfristig schonen können.",
+      "rank_math_twitter_title": "Nachhaltigkeit bei IM HOLZ Nova",
+      "rank_math_twitter_description": "Unser Ansatz verbindet Gebäude, Energie, Wasser und Materialien. Gemeinsam mit Fachpartnern prüfen wir, welche Lösungen zu lokalen Bedürfnissen passen und Ressourcen langfristig schonen können."
+    }
+  }
+}

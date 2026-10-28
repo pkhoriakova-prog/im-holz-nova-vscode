@@ -1,0 +1,186 @@
+{
+  "before": {
+    "success": true,
+    "data": {
+      "output": "",
+      "output_encoding": "utf8",
+      "result": {
+        "site_icon": "477",
+        "pages": [
+          {
+            "id": 13,
+            "had_title": false,
+            "title": ""
+          },
+          {
+            "id": 14,
+            "had_title": false,
+            "title": ""
+          },
+          {
+            "id": 15,
+            "had_title": false,
+            "title": ""
+          },
+          {
+            "id": 16,
+            "had_title": false,
+            "title": ""
+          },
+          {
+            "id": 103,
+            "had_title": false,
+            "title": ""
+          },
+          {
+            "id": 144,
+            "had_title": false,
+            "title": ""
+          },
+          {
+            "id": 223,
+            "had_title": false,
+            "title": ""
+          },
+          {
+            "id": 268,
+            "had_title": false,
+            "title": ""
+          },
+          {
+            "id": 297,
+            "had_title": false,
+            "title": ""
+          },
+          {
+            "id": 298,
+            "had_title": false,
+            "title": ""
+          },
+          {
+            "id": 299,
+            "had_title": false,
+            "title": ""
+          },
+          {
+            "id": 300,
+            "had_title": false,
+            "title": ""
+          },
+          {
+            "id": 301,
+            "had_title": false,
+            "title": ""
+          },
+          {
+            "id": 302,
+            "had_title": false,
+            "title": ""
+          },
+          {
+            "id": 341,
+            "had_title": false,
+            "title": ""
+          },
+          {
+            "id": 342,
+            "had_title": false,
+            "title": ""
+          },
+          {
+            "id": 372,
+            "had_title": false,
+            "title": ""
+          },
+          {
+            "id": 376,
+            "had_title": false,
+            "title": ""
+          },
+          {
+            "id": 389,
+            "had_title": false,
+            "title": ""
+          },
+          {
+            "id": 396,
+            "had_title": false,
+            "title": ""
+          },
+          {
+            "id": 401,
+            "had_title": false,
+            "title": ""
+          },
+          {
+            "id": 407,
+            "had_title": false,
+            "title": ""
+          },
+          {
+            "id": 410,
+            "had_title": false,
+            "title": ""
+          },
+          {
+            "id": 411,
+            "had_title": false,
+            "title": ""
+          },
+          {
+            "id": 412,
+            "had_title": false,
+            "title": ""
+          },
+          {
+            "id": 413,
+            "had_title": false,
+            "title": ""
+          },
+          {
+            "id": 414,
+            "had_title": false,
+            "title": ""
+          },
+          {
+            "id": 431,
+            "had_title": false,
+            "title": ""
+          }
+        ]
+      },
+      "result_type": "array",
+      "exception": null
+    }
+  },
+  "plannedTitles": {
+    "13": "Integrating Sustainable Solutions | IM HOLZ Nova",
+    "14": "About Us: Sustainability Integrator in Vienna | IM HOLZ Nova",
+    "15": "Sustainable Building & Resource Efficiency | IM HOLZ Nova",
+    "16": "Legal Notice & Company Information | IM HOLZ Nova",
+    "103": "Connecting Technologies & Partners | IM HOLZ Nova",
+    "144": "CA Smart School: Central Asia School Concept | IM HOLZ Nova",
+    "223": "Engineered Timber: CLT & Glulam | IM HOLZ Nova",
+    "268": "Contact for Sustainable Projects | IM HOLZ Nova",
+    "297": "Insights: Events & Partnerships | IM HOLZ Nova",
+    "298": "CEE Summit 2026: Sustainable Finance | IM HOLZ Nova",
+    "299": "GEF Assembly 2026 in Samarkand | IM HOLZ Nova",
+    "300": "BUILD’N GREEN 2026: Circular Construction | IM HOLZ Nova",
+    "301": "VietnamWood 2025: Connecting with Partners | IM HOLZ Nova",
+    "302": "Dubai WoodShow 2025: Timber Industry Dialogue | IM HOLZ Nova",
+    "341": "Integration nachhaltiger Lösungen | IM HOLZ Nova",
+    "342": "Kontakt für nachhaltige Projekte | IM HOLZ Nova",
+    "372": "Technologien und Partner verbinden | IM HOLZ Nova",
+    "376": "CA Smart School: Schulkonzept Zentralasien | IM HOLZ Nova",
+    "389": "Brettsperrholz (CLT) & Brettschichtholz | IM HOLZ Nova",
+    "396": "Nachhaltiges Bauen & Ressourceneffizienz | IM HOLZ Nova",
+    "401": "Über uns: Integrator aus Wien | IM HOLZ Nova",
+    "407": "Einblicke: Messen & Kooperationen | IM HOLZ Nova",
+    "410": "CEE Summit 2026: Nachhaltige Finanzierung | IM HOLZ Nova",
+    "411": "GEF-Versammlung 2026 in Samarkand | IM HOLZ Nova",
+    "412": "BUILD’N GREEN 2026: Kreislaufgerechtes Bauen | IM HOLZ Nova",
+    "413": "VietnamWood 2025: Austausch mit Partnern | IM HOLZ Nova",
+    "414": "Dubai WoodShow 2025: Dialog der Holzbranche | IM HOLZ Nova",
+    "431": "Impressum & Unternehmensangaben | IM HOLZ Nova"
+  }
+}

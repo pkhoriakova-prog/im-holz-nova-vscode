@@ -1,0 +1,395 @@
+{
+  "before": {
+    "success": true,
+    "data": {
+      "output": "",
+      "output_encoding": "utf8",
+      "result": [
+        {
+          "id": 410,
+          "title": "CEE Summit 2026: Nachhaltige Finanzierung | IM HOLZ Nova",
+          "meta": {
+            "rank_math_description": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_focus_keyword": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_facebook_title": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_facebook_description": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_twitter_title": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_twitter_description": {
+              "exists": false,
+              "value": ""
+            }
+          }
+        },
+        {
+          "id": 411,
+          "title": "GEF-Versammlung 2026 in Samarkand | IM HOLZ Nova",
+          "meta": {
+            "rank_math_description": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_focus_keyword": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_facebook_title": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_facebook_description": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_twitter_title": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_twitter_description": {
+              "exists": false,
+              "value": ""
+            }
+          }
+        },
+        {
+          "id": 412,
+          "title": "BUILD’N GREEN 2026: Kreislaufgerechtes Bauen | IM HOLZ Nova",
+          "meta": {
+            "rank_math_description": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_focus_keyword": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_facebook_title": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_facebook_description": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_twitter_title": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_twitter_description": {
+              "exists": false,
+              "value": ""
+            }
+          }
+        },
+        {
+          "id": 413,
+          "title": "VietnamWood 2025: Austausch mit Partnern | IM HOLZ Nova",
+          "meta": {
+            "rank_math_description": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_focus_keyword": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_facebook_title": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_facebook_description": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_twitter_title": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_twitter_description": {
+              "exists": false,
+              "value": ""
+            }
+          }
+        },
+        {
+          "id": 414,
+          "title": "Dubai WoodShow 2025: Dialog der Holzbranche | IM HOLZ Nova",
+          "meta": {
+            "rank_math_description": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_focus_keyword": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_facebook_title": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_facebook_description": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_twitter_title": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_twitter_description": {
+              "exists": false,
+              "value": ""
+            }
+          }
+        },
+        {
+          "id": 298,
+          "title": "CEE Summit 2026: Sustainable Finance | IM HOLZ Nova",
+          "meta": {
+            "rank_math_description": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_focus_keyword": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_facebook_title": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_facebook_description": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_twitter_title": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_twitter_description": {
+              "exists": false,
+              "value": ""
+            }
+          }
+        },
+        {
+          "id": 299,
+          "title": "GEF Assembly 2026 in Samarkand | IM HOLZ Nova",
+          "meta": {
+            "rank_math_description": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_focus_keyword": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_facebook_title": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_facebook_description": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_twitter_title": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_twitter_description": {
+              "exists": false,
+              "value": ""
+            }
+          }
+        },
+        {
+          "id": 300,
+          "title": "BUILD’N GREEN 2026: Circular Construction | IM HOLZ Nova",
+          "meta": {
+            "rank_math_description": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_focus_keyword": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_facebook_title": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_facebook_description": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_twitter_title": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_twitter_description": {
+              "exists": false,
+              "value": ""
+            }
+          }
+        },
+        {
+          "id": 301,
+          "title": "VietnamWood 2025: Connecting with Partners | IM HOLZ Nova",
+          "meta": {
+            "rank_math_description": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_focus_keyword": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_facebook_title": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_facebook_description": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_twitter_title": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_twitter_description": {
+              "exists": false,
+              "value": ""
+            }
+          }
+        },
+        {
+          "id": 302,
+          "title": "Dubai WoodShow 2025: Timber Industry Dialogue | IM HOLZ Nova",
+          "meta": {
+            "rank_math_description": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_focus_keyword": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_facebook_title": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_facebook_description": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_twitter_title": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_twitter_description": {
+              "exists": false,
+              "value": ""
+            }
+          }
+        }
+      ],
+      "result_type": "array",
+      "exception": null
+    }
+  },
+  "after": {
+    "298": {
+      "rank_math_focus_keyword": "sustainable finance,CEE Sustainable Finance Summit,Prague",
+      "rank_math_description": "Discussions in Prague on sustainable finance, low-carbon infrastructure and the information potential funders need to assess project concepts.",
+      "rank_math_facebook_title": "CEE Summit 2026: Sustainable Finance | IM HOLZ Nova",
+      "rank_math_facebook_description": "In Prague, we joined business, finance and policy representatives to discuss sustainable finance and resilient infrastructure, including the information and assessments needed to prepare projects for funding discussions.",
+      "rank_math_twitter_title": "CEE Summit 2026: Sustainable Finance | IM HOLZ Nova",
+      "rank_math_twitter_description": "In Prague, we joined business, finance and policy representatives to discuss sustainable finance and resilient infrastructure, including the information and assessments needed to prepare projects for funding discussions."
+    },
+    "299": {
+      "rank_math_focus_keyword": "GEF Assembly,Samarkand,international cooperation",
+      "rank_math_description": "Discussions with institutions and partners in Samarkand on environmental priorities and international cooperation at the GEF Assembly.",
+      "rank_math_facebook_title": "GEF Assembly 2026 in Samarkand | IM HOLZ Nova",
+      "rank_math_facebook_description": "In Samarkand, we met institutions and partners to discuss Central Asia’s environmental agenda and international cooperation during the Eighth GEF Assembly.",
+      "rank_math_twitter_title": "GEF Assembly 2026 in Samarkand | IM HOLZ Nova",
+      "rank_math_twitter_description": "In Samarkand, we met institutions and partners to discuss Central Asia’s environmental agenda and international cooperation during the Eighth GEF Assembly."
+    },
+    "300": {
+      "rank_math_focus_keyword": "BUILD’N GREEN,circular construction,Vienna",
+      "rank_math_description": "Conversations in Vienna about circular construction, materials, reuse and the role of timber at BUILD’N GREEN 2026.",
+      "rank_math_facebook_title": "BUILD’N GREEN 2026: Circular Construction | IM HOLZ Nova",
+      "rank_math_facebook_description": "In Vienna, we met people shaping circular construction. BUILD’N GREEN covered materials, design, operation, deconstruction and reuse, alongside discussions on the role of timber.",
+      "rank_math_twitter_title": "BUILD’N GREEN 2026: Circular Construction | IM HOLZ Nova",
+      "rank_math_twitter_description": "In Vienna, we met people shaping circular construction. BUILD’N GREEN covered materials, design, operation, deconstruction and reuse, alongside discussions on the role of timber."
+    },
+    "301": {
+      "rank_math_focus_keyword": "VietnamWood,certified timber,sustainable construction",
+      "rank_math_description": "At VietnamWood booth A693 in Ho Chi Minh City, we met buyers and partners to discuss certified timber and sustainable construction.",
+      "rank_math_facebook_title": "VietnamWood 2025: Connecting with Partners | IM HOLZ Nova",
+      "rank_math_facebook_description": "At our booth A693 in Ho Chi Minh City, we met buyers and partners from Vietnam and the wider region to discuss certified timber and sustainable construction.",
+      "rank_math_twitter_title": "VietnamWood 2025: Connecting with Partners | IM HOLZ Nova",
+      "rank_math_twitter_description": "At our booth A693 in Ho Chi Minh City, we met buyers and partners from Vietnam and the wider region to discuss certified timber and sustainable construction."
+    },
+    "302": {
+      "rank_math_focus_keyword": "Dubai WoodShow,wood industry,low-carbon building",
+      "rank_math_description": "Meetings with developers, institutions and partners at Dubai WoodShow, exploring the wood industry and growing interest in low-carbon building.",
+      "rank_math_facebook_title": "Dubai WoodShow 2025: Timber Industry Dialogue | IM HOLZ Nova",
+      "rank_math_facebook_description": "In Dubai, we met developers, institutions and partners from the Middle East and North Africa, connecting with the wood industry in a region showing growing interest in low-carbon building.",
+      "rank_math_twitter_title": "Dubai WoodShow 2025: Timber Industry Dialogue | IM HOLZ Nova",
+      "rank_math_twitter_description": "In Dubai, we met developers, institutions and partners from the Middle East and North Africa, connecting with the wood industry in a region showing growing interest in low-carbon building."
+    },
+    "410": {
+      "rank_math_focus_keyword": "nachhaltige Finanzierung,CEE Sustainable Finance Summit,Prag",
+      "rank_math_description": "Gespräche in Prag über nachhaltige Finanzierung, CO₂-arme Infrastruktur und die Anforderungen potenzieller Geldgeber an Projektkonzepte.",
+      "rank_math_facebook_title": "CEE Summit 2026: Nachhaltige Finanzierung | IM HOLZ Nova",
+      "rank_math_facebook_description": "In Prag haben wir mit Vertretern aus Wirtschaft, Finanzwelt und Politik über nachhaltige Finanzierung und widerstandsfähige Infrastruktur gesprochen. Im Fokus standen auch die Anforderungen an die Vorbereitung von Projekten.",
+      "rank_math_twitter_title": "CEE Summit 2026: Nachhaltige Finanzierung | IM HOLZ Nova",
+      "rank_math_twitter_description": "In Prag haben wir mit Vertretern aus Wirtschaft, Finanzwelt und Politik über nachhaltige Finanzierung und widerstandsfähige Infrastruktur gesprochen. Im Fokus standen auch die Anforderungen an die Vorbereitung von Projekten."
+    },
+    "411": {
+      "rank_math_focus_keyword": "GEF-Versammlung,Samarkand,internationale Zusammenarbeit",
+      "rank_math_description": "Austausch mit Institutionen und Partnern in Samarkand über Umweltprioritäten und internationale Zusammenarbeit bei der GEF-Versammlung.",
+      "rank_math_facebook_title": "GEF-Versammlung 2026 in Samarkand | IM HOLZ Nova",
+      "rank_math_facebook_description": "In Samarkand haben wir uns mit Institutionen und Partnern über die Umweltagenda Zentralasiens und internationale Zusammenarbeit ausgetauscht. Die Gespräche fanden im Rahmen der achten GEF-Versammlung statt.",
+      "rank_math_twitter_title": "GEF-Versammlung 2026 in Samarkand | IM HOLZ Nova",
+      "rank_math_twitter_description": "In Samarkand haben wir uns mit Institutionen und Partnern über die Umweltagenda Zentralasiens und internationale Zusammenarbeit ausgetauscht. Die Gespräche fanden im Rahmen der achten GEF-Versammlung statt."
+    },
+    "412": {
+      "rank_math_focus_keyword": "BUILD’N GREEN,Kreislaufwirtschaft,Wien",
+      "rank_math_description": "Gespräche in Wien über kreislaufgerechtes Bauen, Materialien, Wiederverwendung und die Rolle von Holz bei BUILD’N GREEN 2026.",
+      "rank_math_facebook_title": "BUILD’N GREEN 2026: Kreislaufgerechtes Bauen | IM HOLZ Nova",
+      "rank_math_facebook_description": "In Wien haben wir Menschen getroffen, die kreislaufgerechtes Bauen gestalten. Bei BUILD’N GREEN ging es um Materialien, Planung, Betrieb, Rückbau und Wiederverwendung sowie die Rolle von Holz.",
+      "rank_math_twitter_title": "BUILD’N GREEN 2026: Kreislaufgerechtes Bauen | IM HOLZ Nova",
+      "rank_math_twitter_description": "In Wien haben wir Menschen getroffen, die kreislaufgerechtes Bauen gestalten. Bei BUILD’N GREEN ging es um Materialien, Planung, Betrieb, Rückbau und Wiederverwendung sowie die Rolle von Holz."
+    },
+    "413": {
+      "rank_math_focus_keyword": "VietnamWood,zertifiziertes Holz,nachhaltiges Bauen",
+      "rank_math_description": "An Stand A693 der VietnamWood in Ho-Chi-Minh-Stadt sprachen wir mit Einkäufern und Partnern über zertifiziertes Holz und nachhaltiges Bauen.",
+      "rank_math_facebook_title": "VietnamWood 2025: Austausch mit Partnern | IM HOLZ Nova",
+      "rank_math_facebook_description": "An unserem Messestand A693 in Ho-Chi-Minh-Stadt haben wir Einkäufer und Partner aus Vietnam und der Region getroffen. Unsere Gespräche drehten sich um zertifiziertes Holz und nachhaltiges Bauen.",
+      "rank_math_twitter_title": "VietnamWood 2025: Austausch mit Partnern | IM HOLZ Nova",
+      "rank_math_twitter_description": "An unserem Messestand A693 in Ho-Chi-Minh-Stadt haben wir Einkäufer und Partner aus Vietnam und der Region getroffen. Unsere Gespräche drehten sich um zertifiziertes Holz und nachhaltiges Bauen."
+    },
+    "414": {
+      "rank_math_focus_keyword": "Dubai WoodShow,Holzbranche,CO₂-armem Bauen",
+      "rank_math_description": "Treffen mit Entwicklern, Institutionen und Partnern auf der Dubai WoodShow über die Holzbranche und das wachsende Interesse an CO₂-armem Bauen.",
+      "rank_math_facebook_title": "Dubai WoodShow 2025: Dialog der Holzbranche | IM HOLZ Nova",
+      "rank_math_facebook_description": "In Dubai haben wir Entwickler, Institutionen und Partner aus dem Nahen Osten und Nordafrika getroffen. Im Mittelpunkt standen Kontakte in der Holzbranche und das Interesse an CO₂-armem Bauen.",
+      "rank_math_twitter_title": "Dubai WoodShow 2025: Dialog der Holzbranche | IM HOLZ Nova",
+      "rank_math_twitter_description": "In Dubai haben wir Entwickler, Institutionen und Partner aus dem Nahen Osten und Nordafrika getroffen. Im Mittelpunkt standen Kontakte in der Holzbranche und das Interesse an CO₂-armem Bauen."
+    }
+  }
+}

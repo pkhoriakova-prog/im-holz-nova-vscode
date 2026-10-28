@@ -1,0 +1,799 @@
+{
+  "before": {
+    "success": true,
+    "data": {
+      "output": "",
+      "output_encoding": "utf8",
+      "result": [
+        {
+          "id": 431,
+          "meta": {
+            "rank_math_facebook_image": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_facebook_image_id": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_twitter_image": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_twitter_image_id": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_twitter_use_facebook": {
+              "exists": false,
+              "value": ""
+            }
+          }
+        },
+        {
+          "id": 414,
+          "meta": {
+            "rank_math_facebook_image": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_facebook_image_id": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_twitter_image": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_twitter_image_id": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_twitter_use_facebook": {
+              "exists": false,
+              "value": ""
+            }
+          }
+        },
+        {
+          "id": 413,
+          "meta": {
+            "rank_math_facebook_image": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_facebook_image_id": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_twitter_image": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_twitter_image_id": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_twitter_use_facebook": {
+              "exists": false,
+              "value": ""
+            }
+          }
+        },
+        {
+          "id": 412,
+          "meta": {
+            "rank_math_facebook_image": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_facebook_image_id": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_twitter_image": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_twitter_image_id": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_twitter_use_facebook": {
+              "exists": false,
+              "value": ""
+            }
+          }
+        },
+        {
+          "id": 411,
+          "meta": {
+            "rank_math_facebook_image": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_facebook_image_id": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_twitter_image": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_twitter_image_id": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_twitter_use_facebook": {
+              "exists": false,
+              "value": ""
+            }
+          }
+        },
+        {
+          "id": 410,
+          "meta": {
+            "rank_math_facebook_image": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_facebook_image_id": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_twitter_image": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_twitter_image_id": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_twitter_use_facebook": {
+              "exists": false,
+              "value": ""
+            }
+          }
+        },
+        {
+          "id": 407,
+          "meta": {
+            "rank_math_facebook_image": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_facebook_image_id": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_twitter_image": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_twitter_image_id": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_twitter_use_facebook": {
+              "exists": false,
+              "value": ""
+            }
+          }
+        },
+        {
+          "id": 401,
+          "meta": {
+            "rank_math_facebook_image": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_facebook_image_id": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_twitter_image": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_twitter_image_id": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_twitter_use_facebook": {
+              "exists": false,
+              "value": ""
+            }
+          }
+        },
+        {
+          "id": 396,
+          "meta": {
+            "rank_math_facebook_image": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_facebook_image_id": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_twitter_image": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_twitter_image_id": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_twitter_use_facebook": {
+              "exists": false,
+              "value": ""
+            }
+          }
+        },
+        {
+          "id": 389,
+          "meta": {
+            "rank_math_facebook_image": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_facebook_image_id": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_twitter_image": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_twitter_image_id": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_twitter_use_facebook": {
+              "exists": false,
+              "value": ""
+            }
+          }
+        },
+        {
+          "id": 376,
+          "meta": {
+            "rank_math_facebook_image": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_facebook_image_id": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_twitter_image": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_twitter_image_id": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_twitter_use_facebook": {
+              "exists": false,
+              "value": ""
+            }
+          }
+        },
+        {
+          "id": 372,
+          "meta": {
+            "rank_math_facebook_image": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_facebook_image_id": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_twitter_image": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_twitter_image_id": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_twitter_use_facebook": {
+              "exists": false,
+              "value": ""
+            }
+          }
+        },
+        {
+          "id": 342,
+          "meta": {
+            "rank_math_facebook_image": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_facebook_image_id": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_twitter_image": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_twitter_image_id": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_twitter_use_facebook": {
+              "exists": false,
+              "value": ""
+            }
+          }
+        },
+        {
+          "id": 341,
+          "meta": {
+            "rank_math_facebook_image": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_facebook_image_id": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_twitter_image": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_twitter_image_id": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_twitter_use_facebook": {
+              "exists": false,
+              "value": ""
+            }
+          }
+        },
+        {
+          "id": 302,
+          "meta": {
+            "rank_math_facebook_image": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_facebook_image_id": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_twitter_image": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_twitter_image_id": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_twitter_use_facebook": {
+              "exists": false,
+              "value": ""
+            }
+          }
+        },
+        {
+          "id": 301,
+          "meta": {
+            "rank_math_facebook_image": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_facebook_image_id": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_twitter_image": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_twitter_image_id": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_twitter_use_facebook": {
+              "exists": false,
+              "value": ""
+            }
+          }
+        },
+        {
+          "id": 300,
+          "meta": {
+            "rank_math_facebook_image": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_facebook_image_id": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_twitter_image": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_twitter_image_id": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_twitter_use_facebook": {
+              "exists": false,
+              "value": ""
+            }
+          }
+        },
+        {
+          "id": 299,
+          "meta": {
+            "rank_math_facebook_image": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_facebook_image_id": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_twitter_image": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_twitter_image_id": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_twitter_use_facebook": {
+              "exists": false,
+              "value": ""
+            }
+          }
+        },
+        {
+          "id": 298,
+          "meta": {
+            "rank_math_facebook_image": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_facebook_image_id": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_twitter_image": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_twitter_image_id": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_twitter_use_facebook": {
+              "exists": false,
+              "value": ""
+            }
+          }
+        },
+        {
+          "id": 297,
+          "meta": {
+            "rank_math_facebook_image": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_facebook_image_id": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_twitter_image": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_twitter_image_id": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_twitter_use_facebook": {
+              "exists": false,
+              "value": ""
+            }
+          }
+        },
+        {
+          "id": 268,
+          "meta": {
+            "rank_math_facebook_image": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_facebook_image_id": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_twitter_image": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_twitter_image_id": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_twitter_use_facebook": {
+              "exists": false,
+              "value": ""
+            }
+          }
+        },
+        {
+          "id": 14,
+          "meta": {
+            "rank_math_facebook_image": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_facebook_image_id": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_twitter_image": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_twitter_image_id": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_twitter_use_facebook": {
+              "exists": false,
+              "value": ""
+            }
+          }
+        },
+        {
+          "id": 223,
+          "meta": {
+            "rank_math_facebook_image": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_facebook_image_id": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_twitter_image": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_twitter_image_id": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_twitter_use_facebook": {
+              "exists": false,
+              "value": ""
+            }
+          }
+        },
+        {
+          "id": 15,
+          "meta": {
+            "rank_math_facebook_image": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_facebook_image_id": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_twitter_image": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_twitter_image_id": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_twitter_use_facebook": {
+              "exists": false,
+              "value": ""
+            }
+          }
+        },
+        {
+          "id": 144,
+          "meta": {
+            "rank_math_facebook_image": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_facebook_image_id": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_twitter_image": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_twitter_image_id": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_twitter_use_facebook": {
+              "exists": false,
+              "value": ""
+            }
+          }
+        },
+        {
+          "id": 103,
+          "meta": {
+            "rank_math_facebook_image": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_facebook_image_id": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_twitter_image": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_twitter_image_id": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_twitter_use_facebook": {
+              "exists": false,
+              "value": ""
+            }
+          }
+        },
+        {
+          "id": 16,
+          "meta": {
+            "rank_math_facebook_image": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_facebook_image_id": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_twitter_image": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_twitter_image_id": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_twitter_use_facebook": {
+              "exists": false,
+              "value": ""
+            }
+          }
+        },
+        {
+          "id": 13,
+          "meta": {
+            "rank_math_facebook_image": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_facebook_image_id": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_twitter_image": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_twitter_image_id": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_twitter_use_facebook": {
+              "exists": false,
+              "value": ""
+            }
+          }
+        }
+      ],
+      "result_type": "array",
+      "exception": null
+    }
+  },
+  "sources": [
+    {
+      "de": 341,
+      "url": "https://dev.imholz.at/wp-content/uploads/2026/10/greg-rosenke-wooden-school.avif",
+      "alt": "Die R.E. Mountain Secondary School in Langley",
+      "kind": "hero"
+    },
+    {
+      "de": 342,
+      "url": "https://dev.imholz.at/wp-content/uploads/2026/10/contact-im-holz-nova-sustainable-construction.avif",
+      "alt": "Grand Ring auf der Expo 2025 in Osaka, Japan, entworfen von Sou Fujimoto",
+      "kind": "hero"
+    },
+    {
+      "de": 372,
+      "url": "https://dev.imholz.at/wp-content/uploads/2026/10/the-im-holz-model-im-holz-nova-sustainable-construction-v02.avif",
+      "alt": "IM HOLZ Nova",
+      "kind": "hero"
+    },
+    {
+      "de": 376,
+      "url": "https://dev.imholz.at/wp-content/uploads/2026/10/AMS-Student-Nest-University-of-British-Columbia.avif",
+      "alt": "AMS Student Nest an der University of British Columbia in Vancouver, Kanada",
+      "kind": "hero"
+    },
+    {
+      "de": 389,
+      "url": "https://dev.imholz.at/wp-content/uploads/2026/10/engineered-timber-im-holz-nova-sustainable-construction-v03.avif",
+      "alt": "IM HOLZ Nova",
+      "kind": "hero"
+    },
+    {
+      "de": 396,
+      "url": "https://dev.imholz.at/wp-content/uploads/2026/10/sustainability-im-holz-nova-sustainable-construction.avif",
+      "alt": "IM HOLZ Nova",
+      "kind": "hero"
+    },
+    {
+      "de": 401,
+      "url": "https://dev.imholz.at/wp-content/uploads/2026/10/engineered-timber-im-holz-nova-sustainable-construction-v02.avif",
+      "alt": "IM HOLZ Nova",
+      "kind": "hero"
+    },
+    {
+      "de": 407,
+      "url": "https://dev.imholz.at/wp-content/uploads/2026/10/insights-im-holz-nova-sustainable-construction-v02.avif",
+      "alt": "IM HOLZ Nova",
+      "kind": "hero"
+    },
+    {
+      "de": 431,
+      "url": "https://dev.imholz.at/wp-content/uploads/2026/10/im-holz-nova-organization-logo.png",
+      "alt": "IM HOLZ Nova",
+      "kind": "logo"
+    },
+    {
+      "de": 414,
+      "url": "https://dev.imholz.at/wp-content/uploads/2026/10/Dubai.avif",
+      "alt": "Dubai WoodShow 2025",
+      "kind": "article"
+    },
+    {
+      "de": 413,
+      "url": "https://dev.imholz.at/wp-content/uploads/2026/10/Vietnam.avif",
+      "alt": "Unser Stand auf der VietnamWood 2025",
+      "kind": "article"
+    },
+    {
+      "de": 412,
+      "url": "https://dev.imholz.at/wp-content/uploads/2026/10/Buildn-Green-2026.avif",
+      "alt": "BUILD'N GREEN 2026, Wien",
+      "kind": "article"
+    },
+    {
+      "de": 411,
+      "url": "https://dev.imholz.at/wp-content/uploads/2026/10/Eighth-GEF-Assembly-Samarkand-2026-1-1.avif",
+      "alt": "Achte GEF-Versammlung, Samarkand 2026",
+      "kind": "article"
+    },
+    {
+      "de": 410,
+      "url": "https://dev.imholz.at/wp-content/uploads/2026/10/CEE-Sustainable-Finance-Summit-in-Prague-2026.avif",
+      "alt": "CEE Sustainable Finance Summit, Prag 2026",
+      "kind": "article"
+    }
+  ]
+}

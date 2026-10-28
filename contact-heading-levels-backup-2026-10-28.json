@@ -1,0 +1,938 @@
+[
+  {
+    "id": 445,
+    "tree": {
+      "root": {
+        "id": 1,
+        "data": {
+          "type": "root",
+          "properties": []
+        },
+        "children": [
+          {
+            "id": 116,
+            "data": {
+              "type": "OxygenElements\\Container",
+              "properties": {
+                "settings": {
+                  "advanced": {
+                    "tag": "section",
+                    "attributes": [
+                      {
+                        "name": "id",
+                        "value": "kontaktaufnahme"
+                      },
+                      {
+                        "name": "aria-labelledby",
+                        "value": "kontaktaufnahme-ueberschrift"
+                      }
+                    ]
+                  }
+                },
+                "meta": {
+                  "classes": [
+                    "ea38d95f-ed12-448a-b1c2-eadca5966d09",
+                    "0b7c6042-1df0-40b5-b376-83205aff0d08"
+                  ]
+                }
+              }
+            },
+            "children": [
+              {
+                "id": 100,
+                "data": {
+                  "type": "OxygenElements\\Text",
+                  "properties": {
+                    "content": {
+                      "content": {
+                        "text": "<i></i><i></i><i></i>"
+                      }
+                    },
+                    "meta": {
+                      "classes": [
+                        "a9fda9fd-5e0a-4203-9119-5b405fd6ce3c"
+                      ]
+                    },
+                    "settings": {
+                      "advanced": {
+                        "attributes": [
+                          {
+                            "name": "aria-hidden",
+                            "value": "true"
+                          }
+                        ]
+                      }
+                    }
+                  }
+                },
+                "children": []
+              },
+              {
+                "id": 115,
+                "data": {
+                  "type": "OxygenElements\\Container",
+                  "properties": {
+                    "meta": {
+                      "classes": [
+                        "10d41092-8b1c-4337-8a1f-c2a6708e2100"
+                      ]
+                    }
+                  }
+                },
+                "children": [
+                  {
+                    "id": 114,
+                    "data": {
+                      "type": "OxygenElements\\Container",
+                      "properties": {
+                        "meta": {
+                          "classes": [
+                            "e470f088-b3d2-4a68-867f-ed6b98a043cf"
+                          ]
+                        }
+                      }
+                    },
+                    "children": [
+                      {
+                        "id": 101,
+                        "data": {
+                          "type": "OxygenElements\\Text",
+                          "properties": {
+                            "content": {
+                              "content": {
+                                "text": "Contact"
+                              }
+                            },
+                            "settings": {
+                              "advanced": {
+                                "tag": "h3"
+                              }
+                            },
+                            "meta": {
+                              "classes": [
+                                "c47a5f14-5ee2-41dc-ba78-6d25e86ca899"
+                              ],
+                              "component": {
+                                "editableProperties": [
+                                  {
+                                    "enabled": true,
+                                    "label": "Section label",
+                                    "controlPath": "content.content.text",
+                                    "propertyKey": "0872a027-954f-46db-9840-76504a863661"
+                                  }
+                                ]
+                              }
+                            }
+                          }
+                        },
+                        "children": []
+                      },
+                      {
+                        "id": 105,
+                        "data": {
+                          "type": "OxygenElements\\Container",
+                          "properties": {
+                            "meta": {
+                              "classes": [
+                                "65e45722-8dc3-4004-8624-d56a60a51e99"
+                              ]
+                            }
+                          }
+                        },
+                        "children": [
+                          {
+                            "id": 104,
+                            "data": {
+                              "type": "OxygenElements\\Container",
+                              "properties": {
+                                "settings": {
+                                  "advanced": {
+                                    "tag": "h4",
+                                    "attributes": [
+                                      {
+                                        "name": "id",
+                                        "value": "kontaktaufnahme-ueberschrift"
+                                      }
+                                    ]
+                                  }
+                                },
+                                "meta": {
+                                  "classes": [
+                                    "c7ac9dfa-28bc-4987-8597-30b0d62d3e63",
+                                    "4298a7f9-6791-44f6-9a8e-965190008640"
+                                  ]
+                                }
+                              }
+                            },
+                            "children": [
+                              {
+                                "id": 102,
+                                "data": {
+                                  "type": "OxygenElements\\Text",
+                                  "properties": {
+                                    "content": {
+                                      "content": {
+                                        "text": "Tell us about your project — let’s explore"
+                                      }
+                                    },
+                                    "settings": {
+                                      "advanced": {
+                                        "tag": "span"
+                                      }
+                                    },
+                                    "meta": {
+                                      "component": {
+                                        "editableProperties": [
+                                          {
+                                            "enabled": true,
+                                            "label": "Heading, first line",
+                                            "controlPath": "content.content.text",
+                                            "propertyKey": "928b8da4-1df9-425e-8cef-82c5040aaf7d"
+                                          }
+                                        ]
+                                      }
+                                    }
+                                  }
+                                },
+                                "children": []
+                              },
+                              {
+                                "id": 103,
+                                "data": {
+                                  "type": "OxygenElements\\Text",
+                                  "properties": {
+                                    "content": {
+                                      "content": {
+                                        "text": "solutions, partners and next steps"
+                                      }
+                                    },
+                                    "settings": {
+                                      "advanced": {
+                                        "tag": "span"
+                                      }
+                                    },
+                                    "meta": {
+                                      "component": {
+                                        "editableProperties": [
+                                          {
+                                            "enabled": true,
+                                            "label": "Heading, second line",
+                                            "controlPath": "content.content.text",
+                                            "propertyKey": "935e3b37-9e6d-4ab6-96d3-793417df4f77"
+                                          }
+                                        ]
+                                      }
+                                    }
+                                  }
+                                },
+                                "children": []
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "id": 113,
+                        "data": {
+                          "type": "OxygenElements\\Container",
+                          "properties": {
+                            "meta": {
+                              "classes": [
+                                "674686ec-13a4-44e6-8cf7-c0f0c29a41f9"
+                              ]
+                            }
+                          }
+                        },
+                        "children": [
+                          {
+                            "id": 108,
+                            "data": {
+                              "type": "OxygenElements\\ContainerLink",
+                              "properties": {
+                                "content": {
+                                  "content": {
+                                    "url": "mailto:austria@imholz-group.com"
+                                  }
+                                },
+                                "meta": {
+                                  "classes": [
+                                    "18d7a47a-240d-4560-a18b-314816b1c6f5"
+                                  ],
+                                  "component": {
+                                    "editableProperties": [
+                                      {
+                                        "enabled": true,
+                                        "label": "Button address",
+                                        "controlPath": "content.content.url",
+                                        "propertyKey": "ddef5735-dd4d-4b63-ab7f-040623c80ea4"
+                                      }
+                                    ]
+                                  }
+                                }
+                              }
+                            },
+                            "children": [
+                              {
+                                "id": 106,
+                                "data": {
+                                  "type": "OxygenElements\\Text",
+                                  "properties": {
+                                    "content": {
+                                      "content": {
+                                        "text": ""
+                                      }
+                                    },
+                                    "settings": {
+                                      "advanced": {
+                                        "tag": "span",
+                                        "attributes": [
+                                          {
+                                            "name": "aria-hidden",
+                                            "value": "true"
+                                          }
+                                        ]
+                                      }
+                                    },
+                                    "meta": {
+                                      "classes": [
+                                        "767e543a-310b-477b-ac5b-77de684b920f"
+                                      ]
+                                    }
+                                  }
+                                },
+                                "children": []
+                              },
+                              {
+                                "id": 107,
+                                "data": {
+                                  "type": "OxygenElements\\Text",
+                                  "properties": {
+                                    "content": {
+                                      "content": {
+                                        "text": "austria@imholz-group.com"
+                                      }
+                                    },
+                                    "settings": {
+                                      "advanced": {
+                                        "tag": "span"
+                                      }
+                                    },
+                                    "meta": {
+                                      "classes": [
+                                        "289c5917-297c-47a9-97fb-02b6af1384a8"
+                                      ],
+                                      "component": {
+                                        "editableProperties": [
+                                          {
+                                            "enabled": true,
+                                            "label": "Button label",
+                                            "controlPath": "content.content.text",
+                                            "propertyKey": "fa3d90e5-c328-4da7-be6e-d64cc2f9e329"
+                                          }
+                                        ]
+                                      }
+                                    }
+                                  }
+                                },
+                                "children": []
+                              }
+                            ]
+                          },
+                          {
+                            "id": 112,
+                            "data": {
+                              "type": "OxygenElements\\ContainerLink",
+                              "properties": {
+                                "content": {
+                                  "content": {
+                                    "url": "/en/contact/"
+                                  }
+                                },
+                                "meta": {
+                                  "classes": [
+                                    "5694f98f-51cd-4165-99ea-848516008391",
+                                    "c28baba3-26a7-47d3-be66-947639fd51f2"
+                                  ],
+                                  "component": {
+                                    "editableProperties": [
+                                      {
+                                        "enabled": true,
+                                        "label": "Link address",
+                                        "controlPath": "content.content.url",
+                                        "propertyKey": "2b167d28-7214-40e0-83ff-22016a97fbe3"
+                                      }
+                                    ]
+                                  }
+                                }
+                              }
+                            },
+                            "children": [
+                              {
+                                "id": 110,
+                                "data": {
+                                  "type": "OxygenElements\\Container",
+                                  "properties": {
+                                    "settings": {
+                                      "advanced": {
+                                        "tag": "span"
+                                      }
+                                    },
+                                    "meta": {
+                                      "classes": [
+                                        "c951426d-f021-4b91-a75a-c92bce1c89f0"
+                                      ]
+                                    }
+                                  }
+                                },
+                                "children": [
+                                  {
+                                    "id": 109,
+                                    "data": {
+                                      "type": "OxygenElements\\Text",
+                                      "properties": {
+                                        "content": {
+                                          "content": {
+                                            "text": "Get in touch"
+                                          }
+                                        },
+                                        "settings": {
+                                          "advanced": {
+                                            "tag": "span"
+                                          }
+                                        },
+                                        "meta": {
+                                          "classes": [
+                                            "a8ddc3d1-7a83-419c-955c-1d2eb3e73bdf"
+                                          ],
+                                          "component": {
+                                            "editableProperties": [
+                                              {
+                                                "enabled": true,
+                                                "label": "Link label",
+                                                "controlPath": "content.content.text",
+                                                "propertyKey": "bd5c9d59-b15a-4225-9560-5676caf52a75"
+                                              }
+                                            ]
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "children": []
+                                  }
+                                ]
+                              },
+                              {
+                                "id": 111,
+                                "data": {
+                                  "type": "OxygenElements\\Text",
+                                  "properties": {
+                                    "content": {
+                                      "content": {
+                                        "text": ""
+                                      }
+                                    },
+                                    "settings": {
+                                      "advanced": {
+                                        "tag": "span",
+                                        "attributes": [
+                                          {
+                                            "name": "aria-hidden",
+                                            "value": "true"
+                                          }
+                                        ]
+                                      }
+                                    },
+                                    "meta": {
+                                      "classes": [
+                                        "3387c786-210a-44e5-88e5-9125e433704c"
+                                      ]
+                                    }
+                                  }
+                                },
+                                "children": []
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "_nextNodeId": 117,
+      "status": "exported"
+    }
+  },
+  {
+    "id": 109,
+    "tree": {
+      "root": {
+        "id": 1,
+        "data": {
+          "type": "root",
+          "properties": []
+        },
+        "children": [
+          {
+            "id": 116,
+            "data": {
+              "type": "OxygenElements\\Container",
+              "properties": {
+                "settings": {
+                  "advanced": {
+                    "tag": "section",
+                    "attributes": [
+                      {
+                        "name": "id",
+                        "value": "contact"
+                      },
+                      {
+                        "name": "aria-labelledby",
+                        "value": "contact-heading"
+                      }
+                    ]
+                  }
+                },
+                "meta": {
+                  "classes": [
+                    "ea38d95f-ed12-448a-b1c2-eadca5966d09",
+                    "0b7c6042-1df0-40b5-b376-83205aff0d08"
+                  ]
+                }
+              }
+            },
+            "children": [
+              {
+                "id": 100,
+                "data": {
+                  "type": "OxygenElements\\Text",
+                  "properties": {
+                    "content": {
+                      "content": {
+                        "text": "<i></i><i></i><i></i>"
+                      }
+                    },
+                    "meta": {
+                      "classes": [
+                        "a9fda9fd-5e0a-4203-9119-5b405fd6ce3c"
+                      ]
+                    },
+                    "settings": {
+                      "advanced": {
+                        "attributes": [
+                          {
+                            "name": "aria-hidden",
+                            "value": "true"
+                          }
+                        ]
+                      }
+                    }
+                  }
+                },
+                "children": []
+              },
+              {
+                "id": 115,
+                "data": {
+                  "type": "OxygenElements\\Container",
+                  "properties": {
+                    "meta": {
+                      "classes": [
+                        "10d41092-8b1c-4337-8a1f-c2a6708e2100"
+                      ]
+                    }
+                  }
+                },
+                "children": [
+                  {
+                    "id": 114,
+                    "data": {
+                      "type": "OxygenElements\\Container",
+                      "properties": {
+                        "meta": {
+                          "classes": [
+                            "e470f088-b3d2-4a68-867f-ed6b98a043cf"
+                          ]
+                        }
+                      }
+                    },
+                    "children": [
+                      {
+                        "id": 101,
+                        "data": {
+                          "type": "OxygenElements\\Text",
+                          "properties": {
+                            "content": {
+                              "content": {
+                                "text": "Contact"
+                              }
+                            },
+                            "settings": {
+                              "advanced": {
+                                "tag": "h3"
+                              }
+                            },
+                            "meta": {
+                              "classes": [
+                                "c47a5f14-5ee2-41dc-ba78-6d25e86ca899"
+                              ],
+                              "component": {
+                                "editableProperties": [
+                                  {
+                                    "enabled": true,
+                                    "label": "Section label",
+                                    "controlPath": "content.content.text",
+                                    "propertyKey": "0872a027-954f-46db-9840-76504a863661"
+                                  }
+                                ]
+                              }
+                            }
+                          }
+                        },
+                        "children": []
+                      },
+                      {
+                        "id": 105,
+                        "data": {
+                          "type": "OxygenElements\\Container",
+                          "properties": {
+                            "meta": {
+                              "classes": [
+                                "65e45722-8dc3-4004-8624-d56a60a51e99"
+                              ]
+                            }
+                          }
+                        },
+                        "children": [
+                          {
+                            "id": 104,
+                            "data": {
+                              "type": "OxygenElements\\Container",
+                              "properties": {
+                                "settings": {
+                                  "advanced": {
+                                    "tag": "h4",
+                                    "attributes": [
+                                      {
+                                        "name": "id",
+                                        "value": "contact-heading"
+                                      }
+                                    ]
+                                  }
+                                },
+                                "meta": {
+                                  "classes": [
+                                    "c7ac9dfa-28bc-4987-8597-30b0d62d3e63",
+                                    "4298a7f9-6791-44f6-9a8e-965190008640"
+                                  ]
+                                }
+                              }
+                            },
+                            "children": [
+                              {
+                                "id": 102,
+                                "data": {
+                                  "type": "OxygenElements\\Text",
+                                  "properties": {
+                                    "content": {
+                                      "content": {
+                                        "text": "Tell us about your project — let’s explore"
+                                      }
+                                    },
+                                    "settings": {
+                                      "advanced": {
+                                        "tag": "span"
+                                      }
+                                    },
+                                    "meta": {
+                                      "component": {
+                                        "editableProperties": [
+                                          {
+                                            "enabled": true,
+                                            "label": "Heading, first line",
+                                            "controlPath": "content.content.text",
+                                            "propertyKey": "928b8da4-1df9-425e-8cef-82c5040aaf7d"
+                                          }
+                                        ]
+                                      }
+                                    }
+                                  }
+                                },
+                                "children": []
+                              },
+                              {
+                                "id": 103,
+                                "data": {
+                                  "type": "OxygenElements\\Text",
+                                  "properties": {
+                                    "content": {
+                                      "content": {
+                                        "text": "solutions, partners and next steps"
+                                      }
+                                    },
+                                    "settings": {
+                                      "advanced": {
+                                        "tag": "span"
+                                      }
+                                    },
+                                    "meta": {
+                                      "component": {
+                                        "editableProperties": [
+                                          {
+                                            "enabled": true,
+                                            "label": "Heading, second line",
+                                            "controlPath": "content.content.text",
+                                            "propertyKey": "935e3b37-9e6d-4ab6-96d3-793417df4f77"
+                                          }
+                                        ]
+                                      }
+                                    }
+                                  }
+                                },
+                                "children": []
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "id": 113,
+                        "data": {
+                          "type": "OxygenElements\\Container",
+                          "properties": {
+                            "meta": {
+                              "classes": [
+                                "674686ec-13a4-44e6-8cf7-c0f0c29a41f9"
+                              ]
+                            }
+                          }
+                        },
+                        "children": [
+                          {
+                            "id": 108,
+                            "data": {
+                              "type": "OxygenElements\\ContainerLink",
+                              "properties": {
+                                "content": {
+                                  "content": {
+                                    "url": "mailto:austria@imholz-group.com"
+                                  }
+                                },
+                                "meta": {
+                                  "classes": [
+                                    "18d7a47a-240d-4560-a18b-314816b1c6f5"
+                                  ],
+                                  "component": {
+                                    "editableProperties": [
+                                      {
+                                        "enabled": true,
+                                        "label": "Button address",
+                                        "controlPath": "content.content.url",
+                                        "propertyKey": "ddef5735-dd4d-4b63-ab7f-040623c80ea4"
+                                      }
+                                    ]
+                                  }
+                                }
+                              }
+                            },
+                            "children": [
+                              {
+                                "id": 106,
+                                "data": {
+                                  "type": "OxygenElements\\Text",
+                                  "properties": {
+                                    "content": {
+                                      "content": {
+                                        "text": ""
+                                      }
+                                    },
+                                    "settings": {
+                                      "advanced": {
+                                        "tag": "span",
+                                        "attributes": [
+                                          {
+                                            "name": "aria-hidden",
+                                            "value": "true"
+                                          }
+                                        ]
+                                      }
+                                    },
+                                    "meta": {
+                                      "classes": [
+                                        "767e543a-310b-477b-ac5b-77de684b920f"
+                                      ]
+                                    }
+                                  }
+                                },
+                                "children": []
+                              },
+                              {
+                                "id": 107,
+                                "data": {
+                                  "type": "OxygenElements\\Text",
+                                  "properties": {
+                                    "content": {
+                                      "content": {
+                                        "text": "austria@imholz-group.com"
+                                      }
+                                    },
+                                    "settings": {
+                                      "advanced": {
+                                        "tag": "span"
+                                      }
+                                    },
+                                    "meta": {
+                                      "classes": [
+                                        "289c5917-297c-47a9-97fb-02b6af1384a8"
+                                      ],
+                                      "component": {
+                                        "editableProperties": [
+                                          {
+                                            "enabled": true,
+                                            "label": "Button label",
+                                            "controlPath": "content.content.text",
+                                            "propertyKey": "fa3d90e5-c328-4da7-be6e-d64cc2f9e329"
+                                          }
+                                        ]
+                                      }
+                                    }
+                                  }
+                                },
+                                "children": []
+                              }
+                            ]
+                          },
+                          {
+                            "id": 112,
+                            "data": {
+                              "type": "OxygenElements\\ContainerLink",
+                              "properties": {
+                                "content": {
+                                  "content": {
+                                    "url": "/en/contact/"
+                                  }
+                                },
+                                "meta": {
+                                  "classes": [
+                                    "5694f98f-51cd-4165-99ea-848516008391",
+                                    "c28baba3-26a7-47d3-be66-947639fd51f2"
+                                  ],
+                                  "component": {
+                                    "editableProperties": [
+                                      {
+                                        "enabled": true,
+                                        "label": "Link address",
+                                        "controlPath": "content.content.url",
+                                        "propertyKey": "2b167d28-7214-40e0-83ff-22016a97fbe3"
+                                      }
+                                    ]
+                                  }
+                                }
+                              }
+                            },
+                            "children": [
+                              {
+                                "id": 110,
+                                "data": {
+                                  "type": "OxygenElements\\Container",
+                                  "properties": {
+                                    "settings": {
+                                      "advanced": {
+                                        "tag": "span"
+                                      }
+                                    },
+                                    "meta": {
+                                      "classes": [
+                                        "c951426d-f021-4b91-a75a-c92bce1c89f0"
+                                      ]
+                                    }
+                                  }
+                                },
+                                "children": [
+                                  {
+                                    "id": 109,
+                                    "data": {
+                                      "type": "OxygenElements\\Text",
+                                      "properties": {
+                                        "content": {
+                                          "content": {
+                                            "text": "Get in touch"
+                                          }
+                                        },
+                                        "settings": {
+                                          "advanced": {
+                                            "tag": "span"
+                                          }
+                                        },
+                                        "meta": {
+                                          "classes": [
+                                            "a8ddc3d1-7a83-419c-955c-1d2eb3e73bdf"
+                                          ],
+                                          "component": {
+                                            "editableProperties": [
+                                              {
+                                                "enabled": true,
+                                                "label": "Link label",
+                                                "controlPath": "content.content.text",
+                                                "propertyKey": "bd5c9d59-b15a-4225-9560-5676caf52a75"
+                                              }
+                                            ]
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "children": []
+                                  }
+                                ]
+                              },
+                              {
+                                "id": 111,
+                                "data": {
+                                  "type": "OxygenElements\\Text",
+                                  "properties": {
+                                    "content": {
+                                      "content": {
+                                        "text": ""
+                                      }
+                                    },
+                                    "settings": {
+                                      "advanced": {
+                                        "tag": "span",
+                                        "attributes": [
+                                          {
+                                            "name": "aria-hidden",
+                                            "value": "true"
+                                          }
+                                        ]
+                                      }
+                                    },
+                                    "meta": {
+                                      "classes": [
+                                        "3387c786-210a-44e5-88e5-9125e433704c"
+                                      ]
+                                    }
+                                  }
+                                },
+                                "children": []
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "_nextNodeId": 117,
+      "status": "exported"
+    }
+  }
+]

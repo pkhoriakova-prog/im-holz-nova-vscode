@@ -1,0 +1,821 @@
+{
+  "site": "https://dev.imholz.at",
+  "changes": [
+    {
+      "id": 341,
+      "node": 218,
+      "type": "OxygenElements\\Text",
+      "changed": [
+        {
+          "path": [
+            "content",
+            "content",
+            "text"
+          ],
+          "old": "Internationale Handelserfahrung bildet eine Grundlage von Beziehungen. Wir entwickeln ein breiteres Integrationsmodell rund um Technologieauswahl, lokale Bedürfnisse, Zusammenarbeit und Nachhaltigkeit und ziehen Fachkompetenz hinzu, sobald eine Initiative sie braucht.",
+          "value": "Unsere internationale Handelserfahrung bildet die Grundlage unseres Partnernetzwerks. Wir entwickeln ein breiteres Integrationsmodell rund um Technologieauswahl, lokale Bedürfnisse, Zusammenarbeit und Nachhaltigkeit und ziehen Fachkompetenz hinzu, sobald eine Initiative sie braucht."
+        }
+      ]
+    },
+    {
+      "id": 342,
+      "node": 100,
+      "type": "OxygenElements\\Component",
+      "changed": [
+        {
+          "path": [
+            "content",
+            "content",
+            "block",
+            "properties",
+            "db2b075a-6a4f-4b3a-9bc1-dda76fabcec9"
+          ],
+          "old": "<span class=\"bb-title-w24\">Erzählen Sie uns von Ihrem Projekt und klären <br>wir gemeinsam die nächsten Schritte</span>",
+          "value": "<span class=\"bb-title-w24\">Erzählen Sie uns von Ihrem Projekt –<br>gemeinsam klären wir die nächsten Schritte.</span>"
+        }
+      ]
+    },
+    {
+      "id": 342,
+      "node": 116,
+      "type": "OxygenElements\\Text",
+      "changed": [
+        {
+          "path": [
+            "content",
+            "content",
+            "text"
+          ],
+          "old": "Erzählen Sie uns von Ihrem Projekt, Ihrer Technologie oder Ihrem Kooperationsvorschlag. Nennen Sie Standort, Prioritäten und die gesuchte Expertise oder Partner, damit wir einen sinnvollen nächsten Schritt besprechen können.",
+          "value": "Erzählen Sie uns von Ihrem Projekt, Ihrer Technologie oder Ihrem Kooperationsvorschlag. Nennen Sie uns den Projektstandort, Ihre Prioritäten und die Fachkompetenzen oder Partner, die Sie suchen. So können wir gemeinsam einen sinnvollen nächsten Schritt besprechen."
+        }
+      ]
+    },
+    {
+      "id": 372,
+      "node": 100,
+      "type": "OxygenElements\\Component",
+      "changed": [
+        {
+          "path": [
+            "content",
+            "content",
+            "block",
+            "properties",
+            "db2b075a-6a4f-4b3a-9bc1-dda76fabcec9"
+          ],
+          "old": "<span class=\"bb-title-block\">Nachhaltige Lösungen verbinden</span>",
+          "value": "<span class=\"bb-title-block\">Nachhaltige Lösungen</span>"
+        },
+        {
+          "path": [
+            "content",
+            "content",
+            "block",
+            "properties",
+            "666a8ea8-96d1-4668-b48f-5f0bdb91d4ad"
+          ],
+          "old": "mit Partnern und Expertise",
+          "value": "mit den passenden Partnern und Fachkompetenzen verbinden"
+        }
+      ]
+    },
+    {
+      "id": 372,
+      "node": 111,
+      "type": "OxygenElements\\Text",
+      "changed": [
+        {
+          "path": [
+            "content",
+            "content",
+            "text"
+          ],
+          "old": "Ein Auftraggeber hat womöglich einen Bedarf ohne definierte Lösung; ein Hersteller eine Technologie ohne lokalen Projektpartner. IM HOLZ Nova hilft, diese Ausgangspunkte zu verbinden, einen gemeinsamen Projektrahmen zu entwickeln und die Zusammenarbeit zu organisieren. Planung, Bau, Forschung und Finanzdienstleistungen erbringen separat beauftragte Fachleute, mit je Projekt vereinbarten Verantwortlichkeiten.",
+          "value": "Ein Auftraggeber hat womöglich einen Bedarf ohne definierte Lösung; ein Hersteller eine Technologie ohne lokalen Projektpartner. IM HOLZ Nova hilft, diese Ausgangspunkte zu verbinden, einen gemeinsamen Projektrahmen zu entwickeln und die Zusammenarbeit zu organisieren. Planung, Bau, Forschung und Finanzdienstleistungen erbringen separat beauftragte Fachleute, mit Verantwortlichkeiten, die für jedes Projekt gesondert vereinbart werden."
+        }
+      ]
+    },
+    {
+      "id": 372,
+      "node": 170,
+      "type": "OxygenElements\\Text",
+      "changed": [
+        {
+          "path": [
+            "content",
+            "content",
+            "text"
+          ],
+          "old": "Fünf Unterstützungsbereiche, mit je Initiative vereinbarter Beteiligung von uns und Verantwortung der Fachpartner.",
+          "value": "Wir unterstützen in fünf Bereichen. Unser Beitrag und die Verantwortlichkeiten der Fachpartner werden für jede Initiative individuell vereinbart."
+        }
+      ]
+    },
+    {
+      "id": 376,
+      "node": 100,
+      "type": "OxygenElements\\Component",
+      "changed": [
+        {
+          "path": [
+            "content",
+            "content",
+            "block",
+            "properties",
+            "db2b075a-6a4f-4b3a-9bc1-dda76fabcec9"
+          ],
+          "old": "<span class=\"bb-title-w24\">Eine klimaresiliente Holzschule für Zentralasien, <br>gebaut, um sich zu wiederholen</span>",
+          "value": "<span class=\"bb-title-w24\">Eine klimaresiliente Holzschule für Zentralasien –<br>als übertragbares Konzept</span>"
+        }
+      ]
+    },
+    {
+      "id": 376,
+      "node": 131,
+      "type": "OxygenElements\\Text",
+      "changed": [
+        {
+          "path": [
+            "content",
+            "content",
+            "text"
+          ],
+          "old": "Die Pilotschule ist ein U-förmiges Gebäude, das sich zur Straße öffnet und einen geschützten Innenhof von 26 × 19 m umschließt: ein geschützter Ort für Unterricht im Freien, der die Saison im Kontinentalklima verlängert. Die Flügel steigen von zwei auf vier Geschosse an, damit Tageslicht in den Hof gelangt und das Gebäude unter 15 m bleibt.",
+          "value": "Die Pilotschule ist ein U-förmiges Gebäude, das sich zur Straße öffnet und einen geschützten Innenhof von 26 × 19 m umschließt: ein geschützter Ort, der Unterricht im Freien auch in den Übergangszeiten des kontinentalen Klimas ermöglicht. Die Flügel steigen von zwei auf vier Geschosse an, damit Tageslicht in den Hof gelangt und das Gebäude unter 15 m bleibt."
+        }
+      ]
+    },
+    {
+      "id": 376,
+      "node": 156,
+      "type": "OxygenElements\\Text",
+      "changed": [
+        {
+          "path": [
+            "content",
+            "content",
+            "text"
+          ],
+          "old": "Dasselbe Raster und dieselben Platten wiederholen sich von Schule zu Schule, und das macht das Modell übertragbar. Hier sind sechs Gründe, warum es trägt, in der Reihenfolge, in der ein Auftraggeber sie üblicherweise abwägt.",
+          "value": "Dasselbe Raster und dieselben Platten wiederholen sich von Schule zu Schule, und das macht das Modell übertragbar. Sechs mögliche Vorteile des Konzepts im Überblick."
+        }
+      ]
+    },
+    {
+      "id": 389,
+      "node": 100,
+      "type": "OxygenElements\\Component",
+      "changed": [
+        {
+          "path": [
+            "content",
+            "content",
+            "block",
+            "properties",
+            "898e913c-21ad-48f9-a44f-ecb601e2e4c7"
+          ],
+          "old": "Eine Schule, die früher öffnet. Ein Tragwerk mit kleinerem CO₂-Fußabdruck. Ein Bauprogramm, das wiederholen kann, was funktioniert. Konstruktionsholz bringt die Präzision der Fertigung in den Bau: Sein Wert beginnt beim Material und entfaltet sich, wenn das ganze Gebäude darum herum geplant wird.",
+          "value": "Eine Schule, die früher öffnet. Ein Tragwerk mit kleinerem CO₂-Fußabdruck. Ein Baukonzept, das bewährte Lösungen auf weitere Projekte übertragbar macht. Konstruktionsholz bringt die Präzision der Fertigung in den Bau: Sein Wert beginnt beim Material und entfaltet sich, wenn das ganze Gebäude darum herum geplant wird."
+        }
+      ]
+    },
+    {
+      "id": 389,
+      "node": 160,
+      "type": "OxygenElements\\Text",
+      "changed": [
+        {
+          "path": [
+            "content",
+            "content",
+            "text"
+          ],
+          "old": "Die Vorfertigung verlagert Entscheidungen nach vorn, sodass die Baustelle zusammensetzt, was das Team bereits geklärt hat. Die Platten kommen in Reihenfolge an und werden trocken verbunden. Am Brock Commons montierten neun Monteure ein Tragwerk mit 18 Geschossen in 70 Tagen; eine US-Vergleichsstudie nennt Einsparungen von bis zu 3,5 Monaten bei Hochhaustragwerken.",
+          "value": "Durch die Vorfertigung werden wesentliche Planungsentscheidungen frühzeitig getroffen. Auf der Baustelle werden die vorbereiteten Bauteile montiert. Die Platten kommen in Reihenfolge an und werden trocken verbunden. Am Brock Commons montierten neun Monteure ein Tragwerk mit 18 Geschossen in 70 Tagen; eine US-Vergleichsstudie nennt Einsparungen von bis zu 3,5 Monaten bei Hochhaustragwerken."
+        }
+      ]
+    },
+    {
+      "id": 389,
+      "node": 207,
+      "type": "OxygenElements\\Text",
+      "changed": [
+        {
+          "path": [
+            "content",
+            "content",
+            "text"
+          ],
+          "old": "Trockenmontage bedeutet wenig Zementmischen, schwere Maschinen und Staub auf der Baustelle sowie weniger Lkw-Fahrten durch die Nachbarschaft. Die Belege sind indikativ: Sie stammen aus Branchenleitfäden und Projektberichten, nicht aus unabhängigen Studien.",
+          "value": "Die Trockenmontage kann den Bedarf an Nassarbeiten und schweren Maschinen sowie Staub, Lärm und Lkw-Verkehr auf der Baustelle reduzieren. Die Belege sind indikativ: Sie stammen aus Branchenleitfäden und Projektberichten, nicht aus unabhängigen Studien."
+        }
+      ]
+    },
+    {
+      "id": 389,
+      "node": 365,
+      "type": "OxygenElements\\Text",
+      "changed": [
+        {
+          "path": [
+            "content",
+            "content",
+            "text"
+          ],
+          "old": "≈3.3×",
+          "value": "≈3,3×"
+        }
+      ]
+    },
+    {
+      "id": 396,
+      "node": 191,
+      "type": "OxygenElements\\Text",
+      "changed": [
+        {
+          "path": [
+            "content",
+            "content",
+            "text"
+          ],
+          "old": "Gebäude, die in Nutzung bleiben",
+          "value": "Gebäude für eine langfristige Nutzung"
+        }
+      ]
+    },
+    {
+      "id": 396,
+      "node": 293,
+      "type": "OxygenElements\\Text",
+      "changed": [
+        {
+          "path": [
+            "content",
+            "content",
+            "text"
+          ],
+          "old": "Die Optionen sind nach der Aufgabe gruppiert, die sie lösen helfen: Bau, Forst und Ökologie, Energie, Wasser und Klima sowie Forschung und Materialien. Es sind Optionen, die mit Fachpartnern zu prüfen sind, kein festes Paket. Wo eine Detailseite fertig ist, lässt sie sich aus der Liste öffnen.",
+          "value": "Die Optionen sind nach der Aufgabe gruppiert, die sie lösen helfen: Bau, Forst und Ökologie, Energie, Wasser und Klima sowie Forschung und Materialien. Es sind Optionen, die mit Fachpartnern zu prüfen sind, kein festes Paket. Weiterführende Informationen finden Sie auf den verlinkten Detailseiten."
+        }
+      ]
+    },
+    {
+      "id": 401,
+      "node": 192,
+      "type": "OxygenElements\\Text",
+      "changed": [
+        {
+          "path": [
+            "content",
+            "content",
+            "text"
+          ],
+          "old": "Unsere Vision ist es, nachhaltige Lösungen durch internationale Zusammenarbeit leichter erkundbar und anwendbar zu machen. Das bedeutet, Gebäudetechnologien, Energie, Wasser und Ressourceneffizienz mit lokalen Bedürfnissen, Forschung und Fachexpertise zu verbinden. Holzbau ist ein möglicher Teil dieses breiteren Ansatzes.",
+          "value": "Unsere Vision ist es, nachhaltige Lösungen durch internationale Zusammenarbeit leichter zugänglich und praktisch nutzbar zu machen. Das bedeutet, Gebäudetechnologien, Energie, Wasser und Ressourceneffizienz mit lokalen Bedürfnissen, Forschung und Fachexpertise zu verbinden. Holzbau ist ein möglicher Teil dieses breiteren Ansatzes."
+        }
+      ]
+    },
+    {
+      "id": 401,
+      "node": 255,
+      "type": "OxygenElements\\Text",
+      "changed": [
+        {
+          "path": [
+            "content",
+            "content",
+            "text"
+          ],
+          "old": "Dubai Wood Show",
+          "value": "Dubai WoodShow"
+        }
+      ]
+    },
+    {
+      "id": 401,
+      "node": 277,
+      "type": "OxygenElements\\Text",
+      "changed": [
+        {
+          "path": [
+            "content",
+            "content",
+            "text"
+          ],
+          "old": "Lokale Bedingungen prägen den Projektrahmen. Wir suchen den Dialog mit Auftraggebern, Gemeinschaften, Institutionen und lokalen Fachleuten, damit die vorgeschlagenen Lösungen Klima, Betrieb, Instandhaltung und Lebensweisen widerspiegeln. Der Wissensaustausch wird mit den jeweiligen Partnern entwickelt.",
+          "value": "Lokale Bedingungen prägen den Projektrahmen. Wir suchen den Dialog mit Auftraggebern, Gemeinschaften, Institutionen und lokalen Fachleuten, damit die vorgeschlagenen Lösungen zum lokalen Klima, zu den Lebensweisen vor Ort und zu den Anforderungen an Betrieb und Instandhaltung passen. Der Wissensaustausch wird mit den jeweiligen Partnern entwickelt."
+        }
+      ]
+    },
+    {
+      "id": 401,
+      "node": 281,
+      "type": "OxygenElements\\Text",
+      "changed": [
+        {
+          "path": [
+            "content",
+            "content",
+            "text"
+          ],
+          "old": "Wir entwickeln die Zusammenarbeit zwischen Herstellern, Ingenieuren, Forschungseinrichtungen, Auftraggebern, Behörden und potenziellen Geldgebern. Jede Initiative braucht ihre eigene Partnerzusammensetzung, vereinbarte Verantwortlichkeiten und Grundlage der Beteiligung.",
+          "value": "Wir entwickeln die Zusammenarbeit zwischen Herstellern, Ingenieuren, Forschungseinrichtungen, Auftraggebern, Behörden und potenziellen Geldgebern. Jede Initiative braucht die passenden Partner, klar vereinbarte Verantwortlichkeiten und verbindliche Rahmenbedingungen für die Zusammenarbeit."
+        }
+      ]
+    },
+    {
+      "id": 401,
+      "node": 304,
+      "type": "OxygenElements\\Text",
+      "changed": [
+        {
+          "path": [
+            "content",
+            "content",
+            "text"
+          ],
+          "old": "Heimatbasis",
+          "value": "Standort"
+        }
+      ]
+    },
+    {
+      "id": 407,
+      "node": 104,
+      "type": "OxygenElements\\Text",
+      "changed": [
+        {
+          "path": [
+            "content",
+            "content",
+            "text"
+          ],
+          "old": "Jede Messe, jede Konferenz und jedes Gespräch trägt zu dem bei, was wir bauen. Hier teilen wir, wo wir waren, wen wir getroffen haben und was wir mitgenommen haben, das Neueste zuerst.",
+          "value": "Jede Messe, jede Konferenz und jedes Gespräch liefert Impulse für die Initiativen, die wir entwickeln. Hier teilen wir, wo wir waren, wen wir getroffen haben und was wir mitgenommen haben, das Neueste zuerst."
+        }
+      ]
+    },
+    {
+      "id": 407,
+      "node": 128,
+      "type": "OxygenElements\\Image",
+      "changed": [
+        {
+          "path": [
+            "content",
+            "image",
+            "custom_alt_when_from_url"
+          ],
+          "old": "Unser Stand auf der Vietnam Wood 2025",
+          "value": "Unser Stand auf der VietnamWood 2025"
+        }
+      ]
+    },
+    {
+      "id": 407,
+      "node": 132,
+      "type": "OxygenElements\\Text",
+      "changed": [
+        {
+          "path": [
+            "content",
+            "content",
+            "text"
+          ],
+          "old": "Partner treffen auf der Vietnam Wood 2025",
+          "value": "Im Austausch mit Partnern auf der VietnamWood 2025"
+        }
+      ]
+    },
+    {
+      "id": 407,
+      "node": 135,
+      "type": "OxygenElements\\Image",
+      "changed": [
+        {
+          "path": [
+            "content",
+            "image",
+            "custom_alt_when_from_url"
+          ],
+          "old": "Dubai Wood Show 2025",
+          "value": "Dubai WoodShow 2025"
+        }
+      ]
+    },
+    {
+      "id": 410,
+      "node": 104,
+      "type": "OxygenElements\\Text",
+      "changed": [
+        {
+          "path": [
+            "content",
+            "content",
+            "text"
+          ],
+          "old": "Der vom International Sustainable Finance Centre organisierte Gipfel brachte vom 14. bis 16. September ausgewählte Führungskräfte aus Wirtschaft, Finanzwelt und Politik nach Prag. Seine drei Tage reichten von Geopolitik, Finanzen und KI über Wirtschaft und Elektrifizierung bis zu kritischer Infrastruktur und Resilienz.",
+          "value": "Der vom International Sustainable Finance Centre organisierte Gipfel brachte vom 14. bis 16. September ausgewählte Führungskräfte aus Wirtschaft, Finanzwelt und Politik nach Prag. Das dreitägige Programm behandelte Themen von Geopolitik, Finanzwirtschaft und KI bis hin zu Elektrifizierung, kritischer Infrastruktur und Resilienz."
+        }
+      ]
+    },
+    {
+      "id": 412,
+      "node": 104,
+      "type": "OxygenElements\\Text",
+      "changed": [
+        {
+          "path": [
+            "content",
+            "content",
+            "text"
+          ],
+          "old": "Die zweitägige Konferenz fand am 28. und 29. April in der Wirtschaftskammer Österreich in Wien und online statt. Sie verband Vorträge, Podien und Workshops mit Business-Matchmaking und Exkursionen und folgte dem gesamten Leben eines Gebäudes: Ressourcen und Materialien, Planung und Finanzierung, Nutzung und Betrieb sowie Rückbau, Recycling und Wiederverwendung. Ein besonderer Schwerpunkt lag auf dem Wiederaufbau der Ukraine.",
+          "value": "Die zweitägige Konferenz fand am 28. und 29. April in der Wirtschaftskammer Österreich in Wien und online statt. Sie verband Vorträge, Podien und Workshops mit Business-Matchmaking und Exkursionen und beleuchtete den gesamten Lebenszyklus eines Gebäudes: Ressourcen und Materialien, Planung und Finanzierung, Nutzung und Betrieb sowie Rückbau, Recycling und Wiederverwendung. Ein besonderer Schwerpunkt lag auf dem Wiederaufbau der Ukraine."
+        }
+      ]
+    },
+    {
+      "id": 412,
+      "node": 105,
+      "type": "OxygenElements\\Text",
+      "changed": [
+        {
+          "path": [
+            "content",
+            "content",
+            "text"
+          ],
+          "old": "Kreislaufwirtschaft liegt nah an unserem Blick auf Holz: ein nachwachsender Werkstoff, der den aufgenommenen Kohlenstoff so lange speichert, wie er genutzt wird. Es war ein guter Ort, um Partner zu treffen, die diese Sicht teilen.",
+          "value": "Der Gedanke der Kreislaufwirtschaft prägt auch unseren Blick auf Holz: ein nachwachsender Werkstoff, der den aufgenommenen Kohlenstoff so lange speichert, wie er genutzt wird. Es war ein guter Ort, um Partner zu treffen, die diese Sicht teilen."
+        }
+      ]
+    },
+    {
+      "id": 413,
+      "node": 100,
+      "type": "OxygenElements\\Component",
+      "changed": [
+        {
+          "path": [
+            "content",
+            "content",
+            "block",
+            "properties",
+            "db2b075a-6a4f-4b3a-9bc1-dda76fabcec9"
+          ],
+          "old": "<span class=\"bb-title-w15\">Partner treffen auf der Vietnam Wood 2025</span>",
+          "value": "<span class=\"bb-title-w15\">Im Austausch mit Partnern auf der VietnamWood 2025</span>"
+        },
+        {
+          "path": [
+            "content",
+            "content",
+            "block",
+            "properties",
+            "898e913c-21ad-48f9-a44f-ecb601e2e4c7"
+          ],
+          "old": "Der Tag hat gerade begonnen auf der Vietnam Wood 2025 in Ho-⁠Chi-⁠Minh-⁠Stadt. Besuchen Sie unseren Stand A693, um das Team kennenzulernen und über zertifiziertes Holz und nachhaltiges Bauen in der Region zu sprechen.",
+          "value": "Auf der VietnamWood 2025 in Ho-⁠Chi-⁠Minh-⁠Stadt haben wir Einkäufer und Partner aus Vietnam und der Region getroffen. An unserem Stand A693 sprachen wir über zertifiziertes Holz und nachhaltiges Bauen."
+        }
+      ]
+    },
+    {
+      "id": 413,
+      "node": 103,
+      "type": "OxygenElements\\Text",
+      "changed": [
+        {
+          "path": [
+            "content",
+            "content",
+            "text"
+          ],
+          "old": "Der Tag hat gerade begonnen auf der Vietnam Wood 2025, und wir sind an unserem Stand. Besuchen Sie uns an Stand A693, um das Team zu treffen und über zertifiziertes Holz und nachhaltiges Bauen zu sprechen.",
+          "value": "An unserem Stand A693 auf der VietnamWood 2025 haben wir Einkäufer und Partner getroffen und mit ihnen über zertifiziertes Holz und nachhaltiges Bauen gesprochen."
+        }
+      ]
+    },
+    {
+      "id": 413,
+      "node": 104,
+      "type": "OxygenElements\\Text",
+      "changed": [
+        {
+          "path": [
+            "content",
+            "content",
+            "text"
+          ],
+          "old": "Die VietnamWood ist die internationale Fachmesse für die holzverarbeitende Industrie in Ho-⁠Chi-⁠Minh-⁠Stadt. Die Ausgabe 2025 fand vom 19. bis 22. November im Saigon Exhibition and Convention Center statt, mit mehr als 320 erwarteten Ausstellern aus 28 Ländern und Regionen.",
+          "value": "Die VietnamWood ist die internationale Fachmesse für die holzverarbeitende Industrie in Ho-⁠Chi-⁠Minh-⁠Stadt. Die Ausgabe 2025 fand vom 19. bis 22. November im Saigon Exhibition and Convention Center statt, mit einer angekündigten Beteiligung von mehr als 320 Ausstellern aus 28 Ländern und Regionen."
+        }
+      ]
+    },
+    {
+      "id": 413,
+      "node": 117,
+      "type": "OxygenElements\\Image",
+      "changed": [
+        {
+          "path": [
+            "content",
+            "image",
+            "custom_alt_when_from_url"
+          ],
+          "old": "Unser Stand auf der Vietnam Wood 2025",
+          "value": "Unser Stand auf der VietnamWood 2025"
+        }
+      ]
+    },
+    {
+      "id": 413,
+      "node": 119,
+      "type": "OxygenElements\\Text",
+      "changed": [
+        {
+          "path": [
+            "content",
+            "content",
+            "text"
+          ],
+          "old": "Partner treffen auf der Vietnam Wood 2025",
+          "value": "Im Austausch mit Partnern auf der VietnamWood 2025"
+        }
+      ]
+    },
+    {
+      "id": 414,
+      "node": 102,
+      "type": "OxygenElements\\Text",
+      "changed": [
+        {
+          "path": [
+            "content",
+            "content",
+            "text"
+          ],
+          "old": "Dubai und die weitere Region",
+          "value": "Dubai und die umliegende Region"
+        }
+      ]
+    },
+    {
+      "id": 414,
+      "node": 103,
+      "type": "OxygenElements\\Text",
+      "changed": [
+        {
+          "path": [
+            "content",
+            "content",
+            "text"
+          ],
+          "old": "Wir haben an der Dubai Wood Show 2025 in Dubai, VAE, teilgenommen, um Entwickler, Institutionen und Partner aus der Region zu treffen.",
+          "value": "Wir haben an der Dubai WoodShow 2025 in Dubai, VAE, teilgenommen, um Entwickler, Institutionen und Partner aus der Region zu treffen."
+        }
+      ]
+    },
+    {
+      "id": 414,
+      "node": 117,
+      "type": "OxygenElements\\Image",
+      "changed": [
+        {
+          "path": [
+            "content",
+            "image",
+            "custom_alt_when_from_url"
+          ],
+          "old": "Dubai Wood Show 2025",
+          "value": "Dubai WoodShow 2025"
+        }
+      ]
+    },
+    {
+      "id": 370,
+      "node": 104,
+      "type": "OxygenElements\\Text",
+      "changed": [
+        {
+          "path": [
+            "content",
+            "content",
+            "text"
+          ],
+          "old": "Die Integration nachhaltiger Lösungen ist der nächste logische Schritt auf diesem Weg, keine Richtungsänderung. Heute gehen wir weiter: Wir verbinden nachhaltiges Bauen mit Energie-, Wasser- und ressourceneffizienten Lösungen, gemeinsam mit den passenden Partnern und Fachleuten für jedes Projekt.",
+          "value": "Die Integration nachhaltiger Lösungen ist der nächste logische Schritt auf diesem Weg, keine Richtungsänderung. Heute gehen wir weiter: Wir verbinden nachhaltiges Bauen mit Lösungen für Energieeffizienz, Wassermanagement und einen schonenden Ressourceneinsatz – gemeinsam mit den passenden Partnern und Fachleuten für jedes Projekt."
+        }
+      ]
+    },
+    {
+      "id": 370,
+      "node": 170,
+      "type": "OxygenElements\\Image",
+      "changed": [
+        {
+          "path": [
+            "content",
+            "image",
+            "custom_alt_when_from_url"
+          ],
+          "old": "Dubai Wood Show — Dubai, VAE · 2025",
+          "value": "Dubai WoodShow — Dubai, VAE · 2025"
+        }
+      ]
+    },
+    {
+      "id": 370,
+      "node": 172,
+      "type": "OxygenElements\\Text",
+      "changed": [
+        {
+          "path": [
+            "content",
+            "content",
+            "text"
+          ],
+          "old": "Dubai Wood Show",
+          "value": "Dubai WoodShow"
+        }
+      ]
+    },
+    {
+      "id": 370,
+      "node": 177,
+      "type": "OxygenElements\\Image",
+      "changed": [
+        {
+          "path": [
+            "content",
+            "image",
+            "custom_alt_when_from_url"
+          ],
+          "old": "Dubai Wood Show — Dubai, VAE · 2025",
+          "value": "Dubai WoodShow — Dubai, VAE · 2025"
+        }
+      ]
+    },
+    {
+      "id": 370,
+      "node": 179,
+      "type": "OxygenElements\\Text",
+      "changed": [
+        {
+          "path": [
+            "content",
+            "content",
+            "text"
+          ],
+          "old": "Dubai Wood Show",
+          "value": "Dubai WoodShow"
+        }
+      ]
+    },
+    {
+      "id": 370,
+      "node": 184,
+      "type": "OxygenElements\\Image",
+      "changed": [
+        {
+          "path": [
+            "content",
+            "image",
+            "custom_alt_when_from_url"
+          ],
+          "old": "Vietnam Wood — Ho-⁠Chi-⁠Minh-⁠Stadt, Vietnam · 2025",
+          "value": "VietnamWood — Ho-⁠Chi-⁠Minh-⁠Stadt, Vietnam · 2025"
+        }
+      ]
+    },
+    {
+      "id": 370,
+      "node": 186,
+      "type": "OxygenElements\\Text",
+      "changed": [
+        {
+          "path": [
+            "content",
+            "content",
+            "text"
+          ],
+          "old": "Vietnam Wood",
+          "value": "VietnamWood"
+        }
+      ]
+    },
+    {
+      "id": 356,
+      "node": 117,
+      "type": "OxygenElements\\Text",
+      "changed": [
+        {
+          "path": [
+            "content",
+            "content",
+            "text"
+          ],
+          "old": "Ein Schulkonzept, das Konstruktionsholz neben Energie, Lüftung und weiteren Systemen für zentralasiatische Bedingungen untersucht. Technische Machbarkeit, lokale Anpassung, Partner und Finanzierung würden entwickelt, bevor ein Pilotprojekt starten könnte.",
+          "value": "Ein Schulkonzept, das Konstruktionsholz neben Energie, Lüftung und weiteren Systemen für zentralasiatische Bedingungen untersucht. Bevor ein Pilotprojekt starten kann, müssen die technische Machbarkeit geprüft, das Konzept an die örtlichen Bedingungen angepasst sowie Partner und Finanzierung geklärt werden."
+        }
+      ]
+    },
+    {
+      "id": 402,
+      "node": 131,
+      "type": "OxygenElements\\Image",
+      "changed": [
+        {
+          "path": [
+            "content",
+            "image",
+            "custom_alt_when_from_url"
+          ],
+          "old": "Unser Stand auf der Vietnam Wood 2025",
+          "value": "Unser Stand auf der VietnamWood 2025"
+        }
+      ]
+    },
+    {
+      "id": 402,
+      "node": 135,
+      "type": "OxygenElements\\Text",
+      "changed": [
+        {
+          "path": [
+            "content",
+            "content",
+            "text"
+          ],
+          "old": "Partner treffen auf der Vietnam Wood 2025",
+          "value": "Im Austausch mit Partnern auf der VietnamWood 2025"
+        }
+      ]
+    },
+    {
+      "id": 402,
+      "node": 138,
+      "type": "OxygenElements\\Image",
+      "changed": [
+        {
+          "path": [
+            "content",
+            "image",
+            "custom_alt_when_from_url"
+          ],
+          "old": "Dubai Wood Show 2025",
+          "value": "Dubai WoodShow 2025"
+        }
+      ]
+    },
+    {
+      "id": 372,
+      "node": 108,
+      "type": "OxygenElements\\Text",
+      "changed": [
+        {
+          "path": [
+            "content",
+            "content",
+            "text"
+          ],
+          "old": "Dasselbe Projekt mit weniger",
+          "value": "Mit klarer Abstimmung"
+        }
+      ]
+    },
+    {
+      "id": 372,
+      "node": 109,
+      "type": "OxygenElements\\Text",
+      "changed": [
+        {
+          "path": [
+            "content",
+            "content",
+            "text"
+          ],
+          "old": "Fehlschritten",
+          "value": "zum nächsten Projektschritt"
+        }
+      ]
+    },
+    {
+      "id": 345,
+      "node": 114,
+      "type": "OxygenElements\\Text",
+      "changed": [
+        {
+          "path": [
+            "content",
+            "content",
+            "text"
+          ],
+          "old": "Menu",
+          "value": "Menü"
+        }
+      ]
+    }
+  ]
+}

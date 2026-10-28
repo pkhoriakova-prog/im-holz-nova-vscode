@@ -1,0 +1,89 @@
+{
+  "before": {
+    "success": true,
+    "data": {
+      "output": "",
+      "output_encoding": "utf8",
+      "result": [
+        {
+          "id": 401,
+          "meta": {
+            "rank_math_description": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_focus_keyword": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_facebook_title": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_facebook_description": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_twitter_title": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_twitter_description": {
+              "exists": false,
+              "value": ""
+            }
+          }
+        },
+        {
+          "id": 14,
+          "meta": {
+            "rank_math_description": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_focus_keyword": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_facebook_title": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_facebook_description": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_twitter_title": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_twitter_description": {
+              "exists": false,
+              "value": ""
+            }
+          }
+        }
+      ],
+      "result_type": "array",
+      "exception": null
+    }
+  },
+  "after": {
+    "14": {
+      "rank_math_focus_keyword": "IM HOLZ Nova,sustainable development,international cooperation",
+      "rank_math_description": "About IM HOLZ Nova: discover our journey from timber trading to sustainable infrastructure integration, our vision and our approach to international cooperation.",
+      "rank_math_facebook_title": "About IM HOLZ Nova",
+      "rank_math_facebook_description": "From Vienna, we connect technologies, international partners and local expertise for sustainable infrastructure. Discover our story, founder, vision and approach.",
+      "rank_math_twitter_title": "About IM HOLZ Nova",
+      "rank_math_twitter_description": "From Vienna, we connect technologies, international partners and local expertise for sustainable infrastructure. Discover our story, founder, vision and approach."
+    },
+    "401": {
+      "rank_math_focus_keyword": "IM HOLZ Nova,nachhaltige Entwicklung,internationale Zusammenarbeit",
+      "rank_math_description": "Über IM HOLZ Nova: Lernen Sie unseren Weg vom Holzhandel zum Integrator für nachhaltige Infrastruktur, unsere Vision und internationale Zusammenarbeit kennen.",
+      "rank_math_facebook_title": "Über IM HOLZ Nova",
+      "rank_math_facebook_description": "Von Wien aus verbinden wir Technologien, internationale Partner und lokale Expertise für nachhaltige Infrastruktur. Erfahren Sie mehr über unsere Geschichte, Gründerin, Vision und Arbeitsweise.",
+      "rank_math_twitter_title": "Über IM HOLZ Nova",
+      "rank_math_twitter_description": "Von Wien aus verbinden wir Technologien, internationale Partner und lokale Expertise für nachhaltige Infrastruktur. Erfahren Sie mehr über unsere Geschichte, Gründerin, Vision und Arbeitsweise."
+    }
+  }
+}

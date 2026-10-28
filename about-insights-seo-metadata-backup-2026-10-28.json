@@ -1,0 +1,161 @@
+{
+  "before": {
+    "success": true,
+    "data": {
+      "output": "",
+      "output_encoding": "utf8",
+      "result": [
+        {
+          "id": 401,
+          "meta": {
+            "rank_math_description": {
+              "exists": true,
+              "value": "Über IM HOLZ Nova: Lernen Sie unseren Weg vom Holzhandel zum Integrator für nachhaltige Infrastruktur, unsere Vision und internationale Zusammenarbeit kennen."
+            },
+            "rank_math_focus_keyword": {
+              "exists": true,
+              "value": "IM HOLZ Nova,nachhaltige Entwicklung,internationale Zusammenarbeit"
+            },
+            "rank_math_facebook_title": {
+              "exists": true,
+              "value": "Über IM HOLZ Nova"
+            },
+            "rank_math_facebook_description": {
+              "exists": true,
+              "value": "Von Wien aus verbinden wir Technologien, internationale Partner und lokale Expertise für nachhaltige Infrastruktur. Erfahren Sie mehr über unsere Geschichte, Gründerin, Vision und Arbeitsweise."
+            },
+            "rank_math_twitter_title": {
+              "exists": true,
+              "value": "Über IM HOLZ Nova"
+            },
+            "rank_math_twitter_description": {
+              "exists": true,
+              "value": "Von Wien aus verbinden wir Technologien, internationale Partner und lokale Expertise für nachhaltige Infrastruktur. Erfahren Sie mehr über unsere Geschichte, Gründerin, Vision und Arbeitsweise."
+            }
+          },
+          "title": "Über IM HOLZ Nova"
+        },
+        {
+          "id": 14,
+          "meta": {
+            "rank_math_description": {
+              "exists": true,
+              "value": "About IM HOLZ Nova: discover our journey from timber trading to sustainable infrastructure integration, our vision and our approach to international cooperation."
+            },
+            "rank_math_focus_keyword": {
+              "exists": true,
+              "value": "IM HOLZ Nova,sustainable development,international cooperation"
+            },
+            "rank_math_facebook_title": {
+              "exists": true,
+              "value": "About IM HOLZ Nova"
+            },
+            "rank_math_facebook_description": {
+              "exists": true,
+              "value": "From Vienna, we connect technologies, international partners and local expertise for sustainable infrastructure. Discover our story, founder, vision and approach."
+            },
+            "rank_math_twitter_title": {
+              "exists": true,
+              "value": "About IM HOLZ Nova"
+            },
+            "rank_math_twitter_description": {
+              "exists": true,
+              "value": "From Vienna, we connect technologies, international partners and local expertise for sustainable infrastructure. Discover our story, founder, vision and approach."
+            }
+          },
+          "title": "About IM HOLZ Nova"
+        },
+        {
+          "id": 407,
+          "meta": {
+            "rank_math_description": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_focus_keyword": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_facebook_title": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_facebook_description": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_twitter_title": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_twitter_description": {
+              "exists": false,
+              "value": ""
+            }
+          },
+          "title": "Einblicke bei IM HOLZ Nova"
+        },
+        {
+          "id": 297,
+          "meta": {
+            "rank_math_description": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_focus_keyword": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_facebook_title": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_facebook_description": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_twitter_title": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_twitter_description": {
+              "exists": false,
+              "value": ""
+            }
+          },
+          "title": "Insights from IM HOLZ Nova"
+        }
+      ],
+      "result_type": "array",
+      "exception": null
+    }
+  },
+  "after": {
+    "14": {
+      "rank_math_description": "IM HOLZ Nova is a Vienna-based sustainable infrastructure integrator. We bring technologies, international partners and local expertise together to shape project concepts.",
+      "rank_math_facebook_description": "IM HOLZ Nova is a Vienna-based sustainable infrastructure integrator. We bring technologies, international partners and local expertise together to shape project concepts.",
+      "rank_math_twitter_description": "IM HOLZ Nova is a Vienna-based sustainable infrastructure integrator. We bring technologies, international partners and local expertise together to shape project concepts."
+    },
+    "297": {
+      "rank_math_focus_keyword": "insights,sustainable infrastructure,trade fairs",
+      "rank_math_description": "Insights from IM HOLZ Nova: reports from trade fairs and conferences on sustainable infrastructure, international cooperation and conversations with partners.",
+      "rank_math_facebook_title": "Insights from IM HOLZ Nova",
+      "rank_math_facebook_description": "IM HOLZ Nova shares updates from trade fairs, conferences and partner meetings across Europe, Asia and the Middle East, focusing on sustainable infrastructure, technologies and cooperation.",
+      "rank_math_twitter_title": "Insights from IM HOLZ Nova",
+      "rank_math_twitter_description": "IM HOLZ Nova shares updates from trade fairs, conferences and partner meetings across Europe, Asia and the Middle East, focusing on sustainable infrastructure, technologies and cooperation."
+    },
+    "401": {
+      "rank_math_description": "IM HOLZ Nova ist ein Integrator für nachhaltige Infrastruktur aus Wien. Wir verbinden Technologien, internationale Partner und lokale Expertise zu Projektkonzepten.",
+      "rank_math_facebook_description": "IM HOLZ Nova ist ein Integrator für nachhaltige Infrastruktur aus Wien. Wir verbinden Technologien, internationale Partner und lokale Expertise zu Projektkonzepten.",
+      "rank_math_twitter_description": "IM HOLZ Nova ist ein Integrator für nachhaltige Infrastruktur aus Wien. Wir verbinden Technologien, internationale Partner und lokale Expertise zu Projektkonzepten."
+    },
+    "407": {
+      "rank_math_focus_keyword": "Einblicke,nachhaltige Infrastruktur,Konferenzen",
+      "rank_math_description": "Einblicke bei IM HOLZ Nova: Berichte von Fachmessen und Konferenzen über nachhaltige Infrastruktur, internationale Zusammenarbeit und den Austausch mit Partnern.",
+      "rank_math_facebook_title": "Einblicke bei IM HOLZ Nova",
+      "rank_math_facebook_description": "IM HOLZ Nova berichtet von Fachmessen, Konferenzen und Gesprächen mit Partnern in Europa, Asien und im Nahen Osten. Im Mittelpunkt stehen nachhaltige Infrastruktur, Technologien und Zusammenarbeit.",
+      "rank_math_twitter_title": "Einblicke bei IM HOLZ Nova",
+      "rank_math_twitter_description": "IM HOLZ Nova berichtet von Fachmessen, Konferenzen und Gesprächen mit Partnern in Europa, Asien und im Nahen Osten. Im Mittelpunkt stehen nachhaltige Infrastruktur, Technologien und Zusammenarbeit."
+    }
+  }
+}

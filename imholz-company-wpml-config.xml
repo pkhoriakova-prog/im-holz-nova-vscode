@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wpml-config>
+  <admin-texts>
+    <key name="rank-math-options-titles">
+      <key name="organization_description" />
+      <key name="local_seo_about_page" />
+      <key name="local_seo_contact_page" />
+    </key>
+  </admin-texts>
+</wpml-config>

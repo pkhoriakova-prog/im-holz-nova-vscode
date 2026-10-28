@@ -1,0 +1,161 @@
+{
+  "before": {
+    "success": true,
+    "data": {
+      "output": "",
+      "output_encoding": "utf8",
+      "result": [
+        {
+          "id": 342,
+          "title": "Kontakt zu IM HOLZ Nova",
+          "meta": {
+            "rank_math_description": {
+              "exists": true,
+              "value": "Unser Team in Wien ist für Anfragen zu Infrastrukturprojekten und Partnerschaften erreichbar: austria@imholz-group.com, +43 676 365 5362."
+            },
+            "rank_math_focus_keyword": {
+              "exists": true,
+              "value": "Kontakt,Wien,IM HOLZ Nova"
+            },
+            "rank_math_facebook_title": {
+              "exists": true,
+              "value": "Kontakt zu IM HOLZ Nova"
+            },
+            "rank_math_facebook_description": {
+              "exists": true,
+              "value": "Unser Team in Wien bespricht mit Ihnen Projektideen, passende Technologien und mögliche Partnerschaften. Sie erreichen uns per E-Mail unter austria@imholz-group.com oder telefonisch unter +43 676 365 5362."
+            },
+            "rank_math_twitter_title": {
+              "exists": true,
+              "value": "Kontakt zu IM HOLZ Nova"
+            },
+            "rank_math_twitter_description": {
+              "exists": true,
+              "value": "Unser Team in Wien bespricht mit Ihnen Projektideen, passende Technologien und mögliche Partnerschaften. Sie erreichen uns per E-Mail unter austria@imholz-group.com oder telefonisch unter +43 676 365 5362."
+            }
+          }
+        },
+        {
+          "id": 268,
+          "title": "Contact IM HOLZ Nova",
+          "meta": {
+            "rank_math_description": {
+              "exists": true,
+              "value": "Our Vienna team handles enquiries about infrastructure projects and partnerships: austria@imholz-group.com, +43 676 365 5362."
+            },
+            "rank_math_focus_keyword": {
+              "exists": true,
+              "value": "contact,Vienna,IM HOLZ Nova"
+            },
+            "rank_math_facebook_title": {
+              "exists": true,
+              "value": "Contact IM HOLZ Nova"
+            },
+            "rank_math_facebook_description": {
+              "exists": true,
+              "value": "Our Vienna team discusses project ideas, suitable technologies and potential partnerships. Reach us at austria@imholz-group.com or call +43 676 365 5362."
+            },
+            "rank_math_twitter_title": {
+              "exists": true,
+              "value": "Contact IM HOLZ Nova"
+            },
+            "rank_math_twitter_description": {
+              "exists": true,
+              "value": "Our Vienna team discusses project ideas, suitable technologies and potential partnerships. Reach us at austria@imholz-group.com or call +43 676 365 5362."
+            }
+          }
+        },
+        {
+          "id": 376,
+          "title": "CA Smart School: Schulkonzept für Zentralasien | IM HOLZ Nova",
+          "meta": {
+            "rank_math_description": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_focus_keyword": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_facebook_title": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_facebook_description": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_twitter_title": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_twitter_description": {
+              "exists": false,
+              "value": ""
+            }
+          }
+        },
+        {
+          "id": 144,
+          "title": "CA Smart School: Central Asia School Concept | IM HOLZ Nova",
+          "meta": {
+            "rank_math_description": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_focus_keyword": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_facebook_title": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_facebook_description": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_twitter_title": {
+              "exists": false,
+              "value": ""
+            },
+            "rank_math_twitter_description": {
+              "exists": false,
+              "value": ""
+            }
+          }
+        }
+      ],
+      "result_type": "array",
+      "exception": null
+    }
+  },
+  "after": {
+    "144": {
+      "rank_math_focus_keyword": "CA Smart School,timber school,Central Asia",
+      "rank_math_description": "A timber school concept for Central Asia exploring energy efficiency and ventilation. Concept stage only; feasibility, partners and funding remain open.",
+      "rank_math_facebook_title": "CA Smart School: Central Asia School Concept | IM HOLZ Nova",
+      "rank_math_facebook_description": "A replicable concept for a climate-resilient timber school in Central Asia, combining proposed timber construction, energy-efficient building systems and a sheltered courtyard. The initiative remains at the concept stage only.",
+      "rank_math_twitter_title": "CA Smart School: Central Asia School Concept | IM HOLZ Nova",
+      "rank_math_twitter_description": "A replicable concept for a climate-resilient timber school in Central Asia, combining proposed timber construction, energy-efficient building systems and a sheltered courtyard. The initiative remains at the concept stage only."
+    },
+    "268": {
+      "rank_math_description": "Wiedner Hauptstrasse 76/5, 1040 Vienna, Austria. Email: austria@imholz-group.com. Phone: +43 676 365 5362.",
+      "rank_math_facebook_description": "Wiedner Hauptstrasse 76/5, 1040 Vienna, Austria. Email: austria@imholz-group.com. Phone: +43 676 365 5362.",
+      "rank_math_twitter_description": "Wiedner Hauptstrasse 76/5, 1040 Vienna, Austria. Email: austria@imholz-group.com. Phone: +43 676 365 5362."
+    },
+    "342": {
+      "rank_math_description": "Wiedner Hauptstrasse 76/5, 1040 Wien, Österreich. E-Mail: austria@imholz-group.com. Telefon: +43 676 365 5362.",
+      "rank_math_facebook_description": "Wiedner Hauptstrasse 76/5, 1040 Wien, Österreich. E-Mail: austria@imholz-group.com. Telefon: +43 676 365 5362.",
+      "rank_math_twitter_description": "Wiedner Hauptstrasse 76/5, 1040 Wien, Österreich. E-Mail: austria@imholz-group.com. Telefon: +43 676 365 5362."
+    },
+    "376": {
+      "rank_math_focus_keyword": "CA Smart School,Holzschule,Zentralasien",
+      "rank_math_description": "Ein Holzschulkonzept für Zentralasien mit Ansätzen für Energieeffizienz und Lüftung. Noch in der Konzeptphase; Machbarkeit, Partner und Finanzierung sind offen.",
+      "rank_math_facebook_title": "CA Smart School: Schulkonzept für Zentralasien | IM HOLZ Nova",
+      "rank_math_facebook_description": "Eine klimaresiliente Holzschule für Zentralasien als übertragbares Konzept. Vorgesehen sind Holzbau, energieeffiziente Gebäudesysteme und ein geschützter Innenhof. Die Initiative befindet sich ausschließlich in der Konzeptphase.",
+      "rank_math_twitter_title": "CA Smart School: Schulkonzept für Zentralasien | IM HOLZ Nova",
+      "rank_math_twitter_description": "Eine klimaresiliente Holzschule für Zentralasien als übertragbares Konzept. Vorgesehen sind Holzbau, energieeffiziente Gebäudesysteme und ein geschützter Innenhof. Die Initiative befindet sich ausschließlich in der Konzeptphase."
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "success": true,
+  "data": {
+    "output": "",
+    "output_encoding": "utf8",
+    "result": {
+      "blogname": "IM HOLZ Nova",
+      "site_icon": "0",
+      "rank_math_identity": {
+        "knowledgegraph_type": "person",
+        "knowledgegraph_name": "IM HOLZ Nova",
+        "website_name": "IM HOLZ Nova",
+        "local_business_type": "Organization"
+      }
+    },
+    "result_type": "array",
+    "exception": null
+  }
+}

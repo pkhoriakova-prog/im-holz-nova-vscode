@@ -703,6 +703,27 @@
     });
   });
 
+  // on a phone, where one statement is shown at a time, a horizontal swipe
+  // moves between them as the two buttons do: left for the mission, right for
+  // the vision. A short, slow or mostly vertical drag is left alone.
+  var phone = window.matchMedia('(max-width: 699px)');
+  var swipe = null;
+  section.addEventListener('touchstart', function (e) {
+    if (!phone.matches || e.touches.length !== 1) { swipe = null; return; }
+    swipe = { x: e.touches[0].clientX, y: e.touches[0].clientY, at: Date.now() };
+  }, { passive: true });
+  section.addEventListener('touchend', function (e) {
+    if (!swipe) return;
+    var t = e.changedTouches[0];
+    var dx = t.clientX - swipe.x;
+    var dy = t.clientY - swipe.y;
+    var quick = Date.now() - swipe.at < 800;
+    swipe = null;
+    if (!quick || Math.abs(dx) < 40 || Math.abs(dx) < Math.abs(dy) * 1.5) return;
+    var target = section.querySelector('[data-vision-slide="' + (dx < 0 ? 'mission' : 'vision') + '"]');
+    if (target && target.getAttribute('aria-pressed') !== 'true') target.click();
+  }, { passive: true });
+
   var wide = window.matchMedia('(min-width: 700px)');
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
   var queued = false;

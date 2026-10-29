@@ -250,6 +250,78 @@
   row.dataset.looped = 'true';
 })();
 
+/* On a touch screen the strip can also be dragged with a finger. While the
+   finger is down the strip follows it; once it lets go the CSS run picks up
+   again from where the strip was left. The run is a CSS animation over one set
+   width, so the place it resumes from is set through a negative delay. Vertical
+   drags still scroll the page (touch-action: pan-y) and a tap still opens the
+   photograph. */
+(function () {
+  var strip = document.querySelector('.bb-filmstrip');
+  var row = document.querySelector('.bb-filmstrip__row');
+  if (!strip || !row || !window.PointerEvent) return;
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
+  var duration = parseFloat(window.getComputedStyle(row).animationDuration) || 140;
+  var drag = null;
+  var moved = false;
+
+  strip.style.touchAction = 'pan-y';
+
+  function offset() {
+    var m = window.getComputedStyle(row).transform;
+    if (!m || m === 'none') return 0;
+    return new DOMMatrixReadOnly(m).m41;
+  }
+  // the distance one full run covers, as in the strip-run keyframes
+  function span() {
+    return row.offsetWidth / 2 + Math.min(Math.max(15, window.innerWidth * 0.03), 59);
+  }
+
+  row.addEventListener('pointerdown', function (e) {
+    moved = false;
+    if (e.pointerType !== 'touch' || reduce.matches) return;
+    drag = { id: e.pointerId, x: e.clientX, on: false, base: 0, cur: 0 };
+  });
+  row.addEventListener('pointermove', function (e) {
+    if (!drag || e.pointerId !== drag.id) return;
+    var dx = e.clientX - drag.x;
+    if (!drag.on) {
+      if (Math.abs(dx) < 6) return;
+      drag.on = true;
+      moved = true;
+      drag.base = offset();
+      row.style.animation = 'none';
+      row.setPointerCapture(e.pointerId);
+    }
+    drag.cur = drag.base + dx;
+    row.style.transform = 'translateX(' + drag.cur + 'px)';
+  });
+  function release(e) {
+    if (!drag || e.pointerId !== drag.id) return;
+    var d = drag;
+    drag = null;
+    if (!d.on) return;
+    var length = span();
+    var x = ((d.cur % length) - length) % length;
+    row.style.transform = '';
+    row.style.animation = 'none';
+    void row.offsetWidth;
+    row.style.animation = '';
+    row.style.animationDelay = (x / length * duration) + 's';
+    // a touch leaves :hover behind on phones, which would keep the run paused
+    row.style.animationPlayState = 'running';
+  }
+  row.addEventListener('pointerup', release);
+  row.addEventListener('pointercancel', release);
+  // a drag that ends over a photograph is not a tap on it
+  row.addEventListener('click', function (e) {
+    if (!moved) return;
+    moved = false;
+    e.stopPropagation();
+    e.preventDefault();
+  }, true);
+})();
+
 /* Photograph viewer, shared by every set of photographs on the page: the
    running strip and the checkerboard of project types. Each set is its own
    sequence, so the arrows stay inside the set the reader opened. The pages
@@ -259,7 +331,7 @@
   var viewer = document.getElementById('photo-viewer');
   var sets = Array.prototype.slice.call(
     document.querySelectorAll('.bb-filmstrip__row, .bb-photo-grid'));
-  if (!viewer || !sets.length) return;
+  if (!viewer) return;
 
   var image = viewer.querySelector('.bb-viewer__image');
   var title = viewer.querySelector('.bb-viewer__title');
@@ -347,10 +419,65 @@
     });
   });
 
+  // the large photograph at the head of a page opens in the viewer too, on a
+  // phone, as a set of one; its caption is read from the figure
+  var narrow = window.matchMedia('(max-width: 767px)');
+  Array.prototype.slice.call(document.querySelectorAll('.bb-hero__figure')).forEach(function (figure) {
+    var img = figure.querySelector('.bb-hero__image');
+    if (!img) return;
+    function entry() {
+      var note = figure.querySelector('figcaption');
+      var spans = note ? note.querySelectorAll('span') : [];
+      return {
+        src: img.getAttribute('src'),
+        alt: img.alt,
+        title: spans[0] ? spans[0].textContent.trim() : '',
+        caption: spans[1] ? spans[1].textContent.trim() : ''
+      };
+    }
+    function sync() {
+      if (narrow.matches) {
+        img.setAttribute('role', 'button');
+        img.tabIndex = 0;
+        img.style.cursor = 'zoom-in';
+      } else {
+        img.removeAttribute('role');
+        img.removeAttribute('tabindex');
+        img.style.cursor = '';
+      }
+    }
+    function openHero() { if (narrow.matches) open([entry()], 0, img); }
+    figure.addEventListener('click', openHero);
+    img.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openHero(); }
+    });
+    sync();
+    (narrow.addEventListener ? narrow.addEventListener.bind(narrow, 'change') : narrow.addListener.bind(narrow))(sync);
+  });
+
   closeBtn.addEventListener('click', close);
   backdrop.addEventListener('click', close);
   prevBtn.addEventListener('click', function () { show(current - 1); });
   nextBtn.addEventListener('click', function () { show(current + 1); });
+
+  // a horizontal swipe turns the page on touch screens, as the arrows do:
+  // left for the next photograph, right for the previous one. A mostly
+  // vertical or short or slow drag is left alone.
+  var swipe = null;
+  viewer.addEventListener('touchstart', function (e) {
+    if (viewer.hidden || e.touches.length !== 1) { swipe = null; return; }
+    swipe = { x: e.touches[0].clientX, y: e.touches[0].clientY, at: Date.now() };
+  }, { passive: true });
+  viewer.addEventListener('touchend', function (e) {
+    if (!swipe) return;
+    var t = e.changedTouches[0];
+    var dx = t.clientX - swipe.x;
+    var dy = t.clientY - swipe.y;
+    var quick = Date.now() - swipe.at < 800;
+    swipe = null;
+    if (!quick || Math.abs(dx) < 40 || Math.abs(dx) < Math.abs(dy) * 1.5) return;
+    show(current + (dx < 0 ? 1 : -1));
+  }, { passive: true });
 
   document.addEventListener('keydown', function (e) {
     if (viewer.hidden) return;

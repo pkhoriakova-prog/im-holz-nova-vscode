@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__imholz-at-im-holz-nova-wordpress__oxygen-edit-post",
+      "mcp__imholz-at-im-holz-nova-wordpress__oxygen-set-component-instance-properties"
+    ]
+  }
+}

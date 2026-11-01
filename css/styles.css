@@ -1053,8 +1053,9 @@ body > main{
   height:100%;
   margin:0;
 }
+/* the frames run bare; the caption is still read in the viewer */
 .bb-filmstrip__figure .bb-disclosure--overlay{
-  display:block;
+  display:none;
   max-width:calc(100% - 28px);
   pointer-events:none;
 }
